@@ -1,0 +1,4636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Admissions at Global College of Missiology. Discover our ministry training programme, admission structure, requirements and application information."
+    >
+
+    <meta
+        name="keywords"
+        content="Global College of Missiology, GCM, Bible School, Missiology, Christian Ministry, Ministry Training, Bible College, Admissions"
+    >
+
+    <meta
+        name="author"
+        content="Global College of Missiology"
+    >
+
+    <title>Admissions | Global College of Missiology</title>
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =========================================================
+           ROOT
+        ========================================================== */
+
+        :root {
+
+            --navy: #07111f;
+            --navy-dark: #030a13;
+            --navy-light: #0d1d31;
+
+            --gold: #c9a227;
+            --gold-light: #e4c65a;
+            --gold-dark: #927316;
+
+            --ivory: #f7f3e8;
+            --cream: #eae3d2;
+
+            --text: #d9d5ca;
+            --muted: #a9a69d;
+
+            --border: rgba(201, 162, 39, 0.25);
+
+            --glass: rgba(255, 255, 255, 0.045);
+
+            --shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+
+            --max-width: 1400px;
+
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(201, 162, 39, 0.08),
+                    transparent 35%
+                ),
+                var(--navy);
+
+            color: var(--text);
+
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+
+        }
+
+
+        img {
+
+            width: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+        }
+
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+
+        }
+
+
+        button,
+        a {
+
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+
+        ::selection {
+
+            background: var(--gold);
+
+            color: var(--navy);
+
+        }
+
+
+        /* =========================================================
+           GLOBAL CONTAINER
+        ========================================================== */
+
+        .container {
+
+            width: min(
+                calc(100% - 40px),
+                var(--max-width)
+            );
+
+            margin: auto;
+
+        }
+
+
+        /* =========================================================
+           LOADER
+        ========================================================== */
+
+        .loader {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: var(--navy-dark);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            z-index: 99999;
+
+            transition:
+                opacity 0.7s ease,
+                visibility 0.7s ease;
+
+        }
+
+
+        .loader.hidden {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+        }
+
+
+        .loader-inner {
+
+            text-align: center;
+
+            padding: 20px;
+
+        }
+
+
+        .loader-logo {
+
+            width: 90px;
+
+            height: 90px;
+
+            object-fit: contain;
+
+            margin: auto;
+
+            animation:
+                loaderPulse 1.8s infinite ease-in-out;
+
+        }
+
+
+        .loader-line {
+
+            width: 70px;
+
+            height: 2px;
+
+            background: var(--gold);
+
+            margin: 25px auto 0;
+
+            animation:
+                loaderLine 1.5s infinite ease-in-out;
+
+        }
+
+
+        @keyframes loaderPulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+
+        @keyframes loaderLine {
+
+            0% {
+                transform: scaleX(0.3);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scaleX(0.3);
+                opacity: 0.4;
+            }
+
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================== */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            z-index: 5000;
+
+            padding: 15px 0;
+
+            transition:
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        header.scrolled {
+
+            background:
+                rgba(3, 10, 19, 0.92);
+
+            backdrop-filter: blur(15px);
+
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.3);
+
+        }
+
+
+        .navbar {
+
+            width: min(
+                calc(100% - 30px),
+                1400px
+            );
+
+            min-height: 78px;
+
+            margin: auto;
+
+            padding: 10px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+
+            background:
+                rgba(5, 15, 27, 0.72);
+
+            backdrop-filter: blur(14px);
+
+            -webkit-backdrop-filter: blur(14px);
+
+            border-radius: 16px;
+
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .brand img {
+
+            width: 55px;
+
+            height: 55px;
+
+            object-fit: contain;
+
+        }
+
+
+        .brand-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+            line-height: 1.1;
+
+        }
+
+
+        .brand-name {
+
+            color: var(--ivory);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 15px;
+
+            letter-spacing: 1.4px;
+
+        }
+
+
+        .brand-subtitle {
+
+            color: var(--gold-light);
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            margin-top: 5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================== */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            list-style: none;
+
+        }
+
+
+        .nav-links a {
+
+            color: #ddd9cf;
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 12px;
+
+            letter-spacing: 0.7px;
+
+            position: relative;
+
+            padding: 8px 0;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 0;
+
+            width: 0;
+
+            height: 1px;
+
+            background: var(--gold);
+
+            transition: width 0.3s ease;
+
+        }
+
+
+        .nav-links a:hover,
+        .nav-links a.active {
+
+            color: var(--gold-light);
+
+        }
+
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+
+            width: 100%;
+
+        }
+
+
+        .nav-button {
+
+            padding: 12px 19px !important;
+
+            border:
+                1px solid
+                var(--gold);
+
+            border-radius: 4px;
+
+            color: var(--gold-light) !important;
+
+        }
+
+
+        .nav-button::after {
+
+            display: none;
+
+        }
+
+
+        .nav-button:hover {
+
+            background: var(--gold);
+
+            color: var(--navy) !important;
+
+        }
+
+
+        /* =========================================================
+           MOBILE MENU BUTTON
+        ========================================================== */
+
+        .menu-toggle {
+
+            display: none;
+
+            width: 46px;
+
+            height: 42px;
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.5);
+
+            background:
+                rgba(255, 255, 255, 0.04);
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 5px;
+
+        }
+
+
+        .menu-toggle span {
+
+            width: 21px;
+
+            height: 2px;
+
+            background: var(--gold-light);
+
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+
+        }
+
+
+        .menu-toggle.open span:nth-child(1) {
+
+            transform:
+                translateY(7px)
+                rotate(45deg);
+
+        }
+
+
+        .menu-toggle.open span:nth-child(2) {
+
+            opacity: 0;
+
+        }
+
+
+        .menu-toggle.open span:nth-child(3) {
+
+            transform:
+                translateY(-7px)
+                rotate(-45deg);
+
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================== */
+
+        .hero {
+
+            min-height: 720px;
+
+            height: 88svh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(3, 10, 19, 0.95),
+                    rgba(3, 10, 19, 0.68),
+                    rgba(3, 10, 19, 0.72)
+                ),
+                url("assets/images/campus.jpg")
+                center/cover no-repeat;
+
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(3, 10, 19, 0.15),
+                    var(--navy) 100%
+                );
+
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: min(
+                calc(100% - 40px),
+                1100px
+            );
+
+            margin: auto;
+
+            padding-top: 100px;
+
+        }
+
+
+        .eyebrow {
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero h1 {
+
+            max-width: 900px;
+
+            color: var(--ivory);
+
+            font-size:
+                clamp(48px, 7vw, 88px);
+
+            line-height: 0.95;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .hero h1 span {
+
+            color: var(--gold-light);
+
+        }
+
+
+        .hero p {
+
+            max-width: 700px;
+
+            color: #d1cec4;
+
+            font-size:
+                clamp(18px, 2vw, 24px);
+
+            line-height: 1.55;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+        }
+
+
+        .btn {
+
+            min-height: 52px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 13px 26px;
+
+            border-radius: 4px;
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                color 0.3s ease;
+
+            cursor: pointer;
+
+        }
+
+
+        .btn-primary {
+
+            background: var(--gold);
+
+            color: var(--navy);
+
+        }
+
+
+        .btn-primary:hover {
+
+            background: var(--gold-light);
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .btn-outline {
+
+            border:
+                1px solid
+                rgba(228, 198, 90, 0.65);
+
+            color: var(--gold-light);
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+        }
+
+
+        .btn-outline:hover {
+
+            background:
+                rgba(201, 162, 39, 0.12);
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* =========================================================
+           SECTION GLOBAL
+        ========================================================== */
+
+        section {
+
+            padding:
+                clamp(70px, 8vw, 120px)
+                0;
+
+        }
+
+
+        .section-heading {
+
+            max-width: 800px;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .section-label {
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            text-transform: uppercase;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .section-heading h2 {
+
+            color: var(--ivory);
+
+            font-size:
+                clamp(36px, 5vw, 62px);
+
+            line-height: 1.05;
+
+            font-weight: 600;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .section-heading p {
+
+            color: var(--muted);
+
+            font-size: 19px;
+
+            line-height: 1.65;
+
+        }
+
+
+        /* =========================================================
+           ADMISSION INTRO
+        ========================================================== */
+
+        .admission-intro {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--navy),
+                    #081625
+                );
+
+        }
+
+
+        .intro-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.05fr)
+                minmax(320px, 0.95fr);
+
+            gap: 70px;
+
+            align-items: center;
+
+        }
+
+
+        .intro-text p {
+
+            color: var(--text);
+
+            font-size: 20px;
+
+            line-height: 1.7;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .intro-image {
+
+            position: relative;
+
+            min-height: 480px;
+
+        }
+
+
+        .intro-image img {
+
+            height: 100%;
+
+            min-height: 480px;
+
+            border-radius: 8px;
+
+            border:
+                1px solid
+                var(--border);
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+        .image-caption {
+
+            position: absolute;
+
+            left: 25px;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            padding: 18px 20px;
+
+            background:
+                rgba(3, 10, 19, 0.84);
+
+            backdrop-filter: blur(10px);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 5px;
+
+        }
+
+
+        .image-caption strong {
+
+            display: block;
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .image-caption span {
+
+            color: #d0ccc0;
+
+            font-size: 15px;
+
+        }
+
+
+        /* =========================================================
+           ADMISSION HIGHLIGHTS
+        ========================================================== */
+
+        .highlights {
+
+            background:
+                #06101d;
+
+            border-top:
+                1px solid
+                rgba(255, 255, 255, 0.04);
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.04);
+
+        }
+
+
+        .highlight-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .highlight-card {
+
+            padding: 35px 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.045),
+                    rgba(255, 255, 255, 0.015)
+                );
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.18);
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+
+        }
+
+
+        .highlight-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(201, 162, 39, 0.55);
+
+        }
+
+
+        .highlight-number {
+
+            display: block;
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 34px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .highlight-card h3 {
+
+            color: var(--ivory);
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .highlight-card p {
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =========================================================
+           PROGRAMME STRUCTURE
+        ========================================================== */
+
+        .programme {
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(201, 162, 39, 0.045),
+                    transparent 45%
+                ),
+                var(--navy);
+
+        }
+
+
+        .programme-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 30px;
+
+        }
+
+
+        .semester-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 40px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0d1d31,
+                    #081321
+                );
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 10px;
+
+        }
+
+
+        .semester-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+
+            height: 180px;
+
+            right: -80px;
+
+            top: -80px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.15);
+
+        }
+
+
+        .semester-tag {
+
+            display: inline-block;
+
+            color: var(--navy);
+
+            background: var(--gold);
+
+            padding: 7px 12px;
+
+            border-radius: 3px;
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .semester-card h3 {
+
+            color: var(--ivory);
+
+            font-size: 34px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .semester-duration {
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .semester-card ul {
+
+            list-style: none;
+
+        }
+
+
+        .semester-card li {
+
+            position: relative;
+
+            padding:
+                11px 0
+                11px 27px;
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.07);
+
+            color: #d2cec2;
+
+            font-size: 18px;
+
+        }
+
+
+        .semester-card li:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .semester-card li::before {
+
+            content: "◆";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 13px;
+
+            color: var(--gold);
+
+            font-size: 8px;
+
+        }
+
+
+        /* =========================================================
+           WHO CAN APPLY
+        ========================================================== */
+
+        .eligibility {
+
+            background:
+                #081522;
+
+        }
+
+
+        .eligibility-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .eligibility-card {
+
+            display: flex;
+
+            gap: 20px;
+
+            padding: 28px;
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.07);
+
+            border-radius: 7px;
+
+        }
+
+
+        .eligibility-icon {
+
+            flex-shrink: 0;
+
+            width: 45px;
+
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                1px solid
+                var(--gold);
+
+            color: var(--gold-light);
+
+            border-radius: 50%;
+
+            font-family:
+                "Marcellus",
+                serif;
+
+        }
+
+
+        .eligibility-card h3 {
+
+            color: var(--ivory);
+
+            font-size: 23px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .eligibility-card p {
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            line-height: 1.55;
+
+        }
+
+
+        /* =========================================================
+           ADMISSION PROCESS
+        ========================================================== */
+
+        .process {
+
+            background:
+                var(--navy);
+
+        }
+
+
+        .process-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            counter-reset: process;
+
+        }
+
+
+        .process-card {
+
+            position: relative;
+
+            padding: 35px 25px;
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.2);
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            border-radius: 7px;
+
+        }
+
+
+        .process-number {
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                1px solid
+                var(--gold);
+
+            color: var(--gold-light);
+
+            border-radius: 50%;
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 15px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .process-card h3 {
+
+            color: var(--ivory);
+
+            font-size: 24px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .process-card p {
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================================================
+           EXPECTATIONS
+        ========================================================== */
+
+        .expectations {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #081522,
+                    #0b1b2d
+                );
+
+        }
+
+
+        .expectations-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.85fr
+                1.15fr;
+
+            gap: 60px;
+
+            align-items: start;
+
+        }
+
+
+        .expectations-intro h2 {
+
+            color: var(--ivory);
+
+            font-size:
+                clamp(34px, 4vw, 55px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .expectations-intro p {
+
+            color: var(--muted);
+
+            font-size: 18px;
+
+        }
+
+
+        .expectation-list {
+
+            display: grid;
+
+            gap: 12px;
+
+        }
+
+
+        .expectation-item {
+
+            padding: 20px 22px;
+
+            display: flex;
+
+            gap: 16px;
+
+            align-items: flex-start;
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.06);
+
+            border-radius: 6px;
+
+        }
+
+
+        .check {
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 18px;
+
+            line-height: 1;
+
+            margin-top: 4px;
+
+        }
+
+
+        .expectation-item p {
+
+            color: #d4d0c5;
+
+            font-size: 17px;
+
+        }
+
+
+        /* =========================================================
+           CERTIFICATE
+        ========================================================== */
+
+        .certificate {
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(201, 162, 39, 0.07),
+                    transparent 50%
+                ),
+                var(--navy);
+
+            text-align: center;
+
+        }
+
+
+        .certificate-box {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding:
+                clamp(35px, 6vw, 70px);
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.35);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.04),
+                    rgba(255, 255, 255, 0.015)
+                );
+
+            border-radius: 10px;
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+        .certificate-mark {
+
+            color: var(--gold-light);
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .certificate-box h2 {
+
+            color: var(--ivory);
+
+            font-size:
+                clamp(34px, 5vw, 58px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .certificate-box p {
+
+            color: var(--muted);
+
+            font-size: 19px;
+
+            max-width: 700px;
+
+            margin: auto;
+
+        }
+
+
+        /* =========================================================
+           FAQ
+        ========================================================== */
+
+        .faq {
+
+            background:
+                #06101c;
+
+        }
+
+
+        .faq-container {
+
+            max-width: 950px;
+
+            margin: auto;
+
+        }
+
+
+        .faq-item {
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.1);
+
+        }
+
+
+        .faq-question {
+
+            width: 100%;
+
+            border: none;
+
+            background: transparent;
+
+            color: var(--ivory);
+
+            padding: 23px 0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            text-align: left;
+
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+        }
+
+
+        .faq-icon {
+
+            color: var(--gold-light);
+
+            font-family: Arial, sans-serif;
+
+            font-size: 22px;
+
+            transition:
+                transform 0.3s ease;
+
+        }
+
+
+        .faq-item.open .faq-icon {
+
+            transform: rotate(45deg);
+
+        }
+
+
+        .faq-answer {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition:
+                max-height 0.35s ease;
+
+        }
+
+
+        .faq-answer p {
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            padding:
+                0 35px
+                24px
+                0;
+
+        }
+
+
+        /* =========================================================
+           FUTURE PORTAL
+        ========================================================== */
+
+        .portal-notice {
+
+            padding-top: 0;
+
+            background: #06101c;
+
+        }
+
+
+        .portal-box {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding:
+                clamp(35px, 6vw, 65px);
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.35);
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    125deg,
+                    #0e2035,
+                    #091421
+                );
+
+        }
+
+
+        .portal-box::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            right: -120px;
+
+            top: -120px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.16);
+
+        }
+
+
+        .portal-box h2 {
+
+            position: relative;
+
+            z-index: 1;
+
+            color: var(--ivory);
+
+            font-size:
+                clamp(32px, 4vw, 52px);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .portal-box p {
+
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 800px;
+
+            color: var(--muted);
+
+            font-size: 18px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================== */
+
+        .cta {
+
+            min-height: 500px;
+
+            display: flex;
+
+            align-items: center;
+
+            text-align: center;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    rgba(3, 10, 19, 0.87),
+                    rgba(3, 10, 19, 0.9)
+                ),
+                url("assets/images/gallery/conference.jpg")
+                center/cover no-repeat;
+
+        }
+
+
+        .cta-content {
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .cta h2 {
+
+            color: var(--ivory);
+
+            font-size:
+                clamp(40px, 6vw, 72px);
+
+            line-height: 1;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .cta h2 span {
+
+            color: var(--gold-light);
+
+        }
+
+
+        .cta p {
+
+            color: #cbc7bc;
+
+            font-size: 20px;
+
+            max-width: 700px;
+
+            margin:
+                0 auto 32px;
+
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        footer {
+
+            background:
+                #020810;
+
+            border-top:
+                1px solid
+                rgba(201, 162, 39, 0.15);
+
+            padding:
+                70px 0 25px;
+
+        }
+
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.3fr
+                1fr
+                1fr
+                1fr;
+
+            gap: 45px;
+
+            padding-bottom: 50px;
+
+        }
+
+
+        .footer-brand {
+
+            max-width: 400px;
+
+        }
+
+
+        .footer-brand-logo {
+
+            width: 65px;
+
+            height: 65px;
+
+            object-fit: contain;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .footer-brand h3 {
+
+            color: var(--ivory);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 19px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 13px;
+
+        }
+
+
+        .footer-brand p {
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .footer-column h4 {
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .footer-column ul {
+
+            list-style: none;
+
+        }
+
+
+        .footer-column li {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .footer-column a {
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            transition:
+                color 0.3s ease;
+
+        }
+
+
+        .footer-column a:hover {
+
+            color: var(--gold-light);
+
+        }
+
+
+        .footer-bottom {
+
+            border-top:
+                1px solid
+                rgba(255, 255, 255, 0.06);
+
+            padding-top: 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .footer-bottom p {
+
+            color: #77756f;
+
+            font-size: 14px;
+
+        }
+
+
+        .footer-motto {
+
+            color: var(--gold);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================== */
+
+        .back-top {
+
+            position: fixed;
+
+            right: 22px;
+
+            bottom: 22px;
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                1px solid
+                var(--gold);
+
+            background:
+                rgba(3, 10, 19, 0.9);
+
+            color: var(--gold-light);
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(15px);
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease,
+                transform 0.3s ease;
+
+            z-index: 4000;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+
+        .back-top.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+
+        }
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+
+        }
+
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================== */
+
+        @media (max-width: 1100px) {
+
+            .nav-links {
+
+                gap: 15px;
+
+            }
+
+
+            .nav-links a {
+
+                font-size: 11px;
+
+            }
+
+
+            .highlight-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .process-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE NAV
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            header {
+
+                padding: 10px 0;
+
+            }
+
+
+            .navbar {
+
+                min-height: 68px;
+
+                padding:
+                    8px 12px 8px 15px;
+
+            }
+
+
+            .brand img {
+
+                width: 48px;
+
+                height: 48px;
+
+            }
+
+
+            .brand-name {
+
+                font-size: 13px;
+
+            }
+
+
+            .brand-subtitle {
+
+                font-size: 9px;
+
+                letter-spacing: 1.5px;
+
+            }
+
+
+            .menu-toggle {
+
+                display: flex;
+
+            }
+
+
+            .nav-links {
+
+                position: absolute;
+
+                top: calc(100% + 8px);
+
+                left: 0;
+
+                right: 0;
+
+                width: min(
+                    calc(100% - 30px),
+                    600px
+                );
+
+                margin: auto;
+
+                padding: 15px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 3px;
+
+                background:
+                    rgba(4, 12, 22, 0.97);
+
+                backdrop-filter: blur(18px);
+
+                border:
+                    1px solid
+                    rgba(201, 162, 39, 0.25);
+
+                border-radius: 10px;
+
+                box-shadow:
+                    0 20px 60px
+                    rgba(0, 0, 0, 0.45);
+
+            }
+
+
+            .nav-links.open {
+
+                display: flex;
+
+            }
+
+
+            .nav-links li {
+
+                width: 100%;
+
+            }
+
+
+            .nav-links a {
+
+                display: block;
+
+                padding: 13px 12px;
+
+                font-size: 13px;
+
+            }
+
+
+            .nav-links a::after {
+
+                display: none;
+
+            }
+
+
+            .nav-button {
+
+                text-align: center;
+
+                margin-top: 5px;
+
+            }
+
+
+            .intro-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+            }
+
+
+            .intro-image {
+
+                min-height: 400px;
+
+            }
+
+
+            .intro-image img {
+
+                min-height: 400px;
+
+            }
+
+
+            .programme-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .eligibility-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .expectations-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           SMALL TABLET / LARGE PHONE
+        ========================================================== */
+
+        @media (max-width: 700px) {
+
+            .container {
+
+                width:
+                    min(
+                        calc(100% - 30px),
+                        var(--max-width)
+                    );
+
+            }
+
+
+            .hero {
+
+                min-height: 680px;
+
+                height: 90svh;
+
+            }
+
+
+            .hero-content {
+
+                width:
+                    min(
+                        calc(100% - 30px),
+                        1000px
+                    );
+
+                padding-top: 80px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    clamp(43px, 12vw, 65px);
+
+            }
+
+
+            .hero p {
+
+                font-size: 18px;
+
+            }
+
+
+            .hero-buttons {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                max-width: 360px;
+
+            }
+
+
+            .btn {
+
+                width: 100%;
+
+            }
+
+
+            .highlight-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .process-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .semester-card {
+
+                padding: 28px 22px;
+
+            }
+
+
+            .semester-card h3 {
+
+                font-size: 29px;
+
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+            }
+
+
+            .footer-bottom {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           PHONE
+        ========================================================== */
+
+        @media (max-width: 480px) {
+
+            .navbar {
+
+                width:
+                    calc(100% - 18px);
+
+                border-radius: 12px;
+
+            }
+
+
+            .brand {
+
+                gap: 8px;
+
+            }
+
+
+            .brand img {
+
+                width: 43px;
+
+                height: 43px;
+
+            }
+
+
+            .brand-name {
+
+                font-size: 11px;
+
+                letter-spacing: 1px;
+
+            }
+
+
+            .brand-subtitle {
+
+                font-size: 8px;
+
+                letter-spacing: 1px;
+
+            }
+
+
+            .hero {
+
+                min-height: 650px;
+
+            }
+
+
+            .eyebrow {
+
+                font-size: 9px;
+
+                letter-spacing: 2.5px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 43px;
+
+            }
+
+
+            .hero p {
+
+                font-size: 17px;
+
+            }
+
+
+            .section-heading {
+
+                margin-bottom: 35px;
+
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 38px;
+
+            }
+
+
+            .section-heading p {
+
+                font-size: 17px;
+
+            }
+
+
+            .highlight-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .highlight-card {
+
+                padding: 28px 20px;
+
+            }
+
+
+            .intro-text p {
+
+                font-size: 18px;
+
+            }
+
+
+            .intro-image,
+            .intro-image img {
+
+                min-height: 350px;
+
+            }
+
+
+            .semester-card {
+
+                padding: 25px 18px;
+
+            }
+
+
+            .semester-card li {
+
+                font-size: 17px;
+
+            }
+
+
+            .eligibility-card {
+
+                padding: 22px 18px;
+
+                gap: 14px;
+
+            }
+
+
+            .eligibility-card h3 {
+
+                font-size: 21px;
+
+            }
+
+
+            .eligibility-card p {
+
+                font-size: 16px;
+
+            }
+
+
+            .expectation-item {
+
+                padding: 18px;
+
+            }
+
+
+            .expectation-item p {
+
+                font-size: 16px;
+
+            }
+
+
+            .faq-question {
+
+                font-size: 19px;
+
+            }
+
+
+            .faq-answer p {
+
+                font-size: 16px;
+
+            }
+
+
+            .cta {
+
+                min-height: 470px;
+
+            }
+
+
+            .cta h2 {
+
+                font-size: 43px;
+
+            }
+
+
+            .cta p {
+
+                font-size: 17px;
+
+            }
+
+
+            .back-top {
+
+                right: 15px;
+
+                bottom: 15px;
+
+                width: 44px;
+
+                height: 44px;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           VERY SMALL PHONES
+        ========================================================== */
+
+        @media (max-width: 360px) {
+
+            .brand-text {
+
+                max-width: 145px;
+
+            }
+
+
+            .brand-name {
+
+                font-size: 10px;
+
+            }
+
+
+            .brand-subtitle {
+
+                font-size: 7px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 38px;
+
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 34px;
+
+            }
+
+
+            .semester-card h3 {
+
+                font-size: 26px;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           TOUCH DEVICES
+        ========================================================== */
+
+        @media (hover: none) {
+
+            .highlight-card:hover,
+            .btn:hover {
+
+                transform: none;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+
+                scroll-behavior: auto;
+
+            }
+
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration: 0.01ms !important;
+
+                animation-iteration-count: 1 !important;
+
+                transition-duration: 0.01ms !important;
+
+            }
+
+
+            .reveal {
+
+                opacity: 1;
+
+                transform: none;
+
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         LOADER
+    ========================================================== -->
+
+    <div class="loader" id="loader">
+
+        <div class="loader-inner">
+
+            <img
+                src="./img/logo/logo.png"
+                alt="Global College of Missiology"
+                class="loader-logo"
+            >
+
+            <div class="loader-line"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header id="header">
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="Global College of Missiology Home"
+            >
+
+                <img
+                    src="./img/logo/logo.png"
+                    alt="GCM Logo"
+                >
+
+                <span class="brand-text">
+
+                    <span class="brand-name">
+                        GLOBAL COLLEGE OF MISSIOLOGY
+                    </span>
+
+                    <span class="brand-subtitle">
+                        Training • Equipping • Deploying
+                    </span>
+
+                </span>
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="./home.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./director.html">
+                        Director
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./course.html">
+                        Courses
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="admissions.html"
+                        class="active"
+                    >
+                        Admissions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./rules.html">
+                        Rules
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#apply"
+                        class="nav-button"
+                    >
+                        Apply Now
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content reveal">
+
+                <div class="eyebrow">
+                    GCM Admissions
+                </div>
+
+                <h1>
+                    Your Journey Into
+                    <span>Kingdom Training</span>
+                    Begins Here.
+                </h1>
+
+                <p>
+                    Discover the admission structure of Global College
+                    of Missiology and prepare yourself for a focused
+                    season of biblical, spiritual and practical ministry
+                    training.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="./course.html"
+                        class="btn btn-primary"
+                    >
+                        Explore Our Courses
+                    </a>
+
+                    <a
+                        href="#apply"
+                        class="btn btn-outline"
+                    >
+                        Admission Information
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRODUCTION
+        ====================================================== -->
+
+        <section class="admission-intro">
+
+            <div class="container">
+
+                <div class="intro-grid">
+
+                    <div class="intro-text reveal">
+
+                        <div class="section-label">
+                            Admission 2027
+                        </div>
+
+                        <h2>
+                            Prepare For A Season
+                            Of Transformation
+                        </h2>
+
+                        <p>
+                            Global College of Missiology exists to
+                            build God's people for global missions
+                            and evangelization through the Word of
+                            wisdom, grace and power.
+                        </p>
+
+                        <p>
+                            Admission into GCM is an opportunity to
+                            step into a focused training environment
+                            designed to develop biblical understanding,
+                            spiritual maturity, practical ministry
+                            capacity and Kingdom leadership.
+                        </p>
+
+                        <p>
+                            Our academic programme is structured
+                            around two semesters, with each semester
+                            consisting of a focused 15-day training
+                            period.
+                        </p>
+
+                        <a
+                            href="./course.html"
+                            class="btn btn-primary"
+                        >
+                            View Courses
+                        </a>
+
+                    </div>
+
+
+                    <div class="intro-image reveal">
+
+                        <img
+                            src="./img/worshipprayers/worship.jpeg"
+                            alt="Global College of Missiology campus"
+                            loading="lazy"
+                        >
+
+                        <div class="image-caption">
+
+                            <strong>
+                                GLOBAL COLLEGE OF MISSIOLOGY
+                            </strong>
+
+                            <span>
+                                Training men and women for Kingdom service.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ADMISSION HIGHLIGHTS
+        ====================================================== -->
+
+        <section class="highlights">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        At A Glance
+                    </div>
+
+                    <h2>
+                        The Admission Structure
+                    </h2>
+
+                    <p>
+                        A focused academic structure designed to
+                        provide meaningful ministry training within
+                        a concentrated period.
+                    </p>
+
+                </div>
+
+
+                <div class="highlight-grid">
+
+                    <article class="highlight-card reveal">
+
+                        <span class="highlight-number">
+                            2027
+                        </span>
+
+                        <h3>
+                            Admission
+                        </h3>
+
+                        <p>
+                            The current admission cycle is being
+                            prepared for prospective students.
+                        </p>
+
+                    </article>
+
+
+                    <article class="highlight-card reveal">
+
+                        <span class="highlight-number">
+                            15
+                        </span>
+
+                        <h3>
+                            Days Per Semester
+                        </h3>
+
+                        <p>
+                            Each semester is structured around
+                            fifteen days of focused training.
+                        </p>
+
+                    </article>
+
+
+                    <article class="highlight-card reveal">
+
+                        <span class="highlight-number">
+                            2
+                        </span>
+
+                        <h3>
+                            Semesters
+                        </h3>
+
+                        <p>
+                            The programme is divided into first
+                            and second semester courses.
+                        </p>
+
+                    </article>
+
+
+                    <article class="highlight-card reveal">
+
+                        <span class="highlight-number">
+                            GCM
+                        </span>
+
+                        <h3>
+                            Kingdom Training
+                        </h3>
+
+                        <p>
+                            Biblical knowledge combined with
+                            practical preparation for Kingdom service.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROGRAMME STRUCTURE
+        ====================================================== -->
+
+        <section class="programme">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        Programme Structure
+                    </div>
+
+                    <h2>
+                        Two Semesters.
+                        One Kingdom Assignment.
+                    </h2>
+
+                    <p>
+                        Explore the courses currently listed under
+                        the GCM training programme.
+                    </p>
+
+                </div>
+
+
+                <div class="programme-grid">
+
+                    <!-- FIRST SEMESTER -->
+
+                    <article class="semester-card reveal">
+
+                        <span class="semester-tag">
+                            FIRST SEMESTER
+                        </span>
+
+                        <h3>
+                            Semester One
+                        </h3>
+
+                        <div class="semester-duration">
+                            15 DAYS OF TRAINING
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Theology of Christian Ministry (1)
+                            </li>
+
+                            <li>
+                                The Concept of Leadership
+                            </li>
+
+                            <li>
+                                Missiology (1)
+                            </li>
+
+                            <li>
+                                Church Administration
+                            </li>
+
+                            <li>
+                                Kingdom Economics
+                            </li>
+
+                            <li>
+                                Marriage and Family Life
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- SECOND SEMESTER -->
+
+                    <article class="semester-card reveal">
+
+                        <span class="semester-tag">
+                            SECOND SEMESTER
+                        </span>
+
+                        <h3>
+                            Semester Two
+                        </h3>
+
+                        <div class="semester-duration">
+                            15 DAYS OF TRAINING
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Dynamism of Understanding the Bible
+                            </li>
+
+                            <li>
+                                Graciology
+                            </li>
+
+                            <li>
+                                Theology of Christian Ministry (2)
+                            </li>
+
+                            <li>
+                                Missiology (2)
+                            </li>
+
+                            <li>
+                                Theology of Children Ministry
+                            </li>
+
+                            <li>
+                                Marriage and Family Life (2)
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+
+                <div
+                    style="
+                        text-align:center;
+                        margin-top:35px;
+                    "
+                    class="reveal"
+                >
+
+                    <a
+                        href="./course.html"
+                        class="btn btn-outline"
+                    >
+                        View Full Course Catalogue
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WHO CAN APPLY
+        ====================================================== -->
+
+        <section class="eligibility">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        Prospective Students
+                    </div>
+
+                    <h2>
+                        Who Is This Training For?
+                    </h2>
+
+                    <p>
+                        GCM is designed for men and women who desire
+                        deeper biblical understanding and preparation
+                        for effective Kingdom service.
+                    </p>
+
+                </div>
+
+
+                <div class="eligibility-grid">
+
+                    <article class="eligibility-card reveal">
+
+                        <div class="eligibility-icon">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Ministers & Pastors
+                            </h3>
+
+                            <p>
+                                Those already serving in Christian
+                                ministry who desire additional biblical,
+                                leadership and practical ministry
+                                training.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="eligibility-card reveal">
+
+                        <div class="eligibility-icon">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Aspiring Ministers
+                            </h3>
+
+                            <p>
+                                Men and women who sense a call to
+                                ministry and desire preparation before
+                                stepping into greater Kingdom
+                                responsibilities.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="eligibility-card reveal">
+
+                        <div class="eligibility-icon">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Missionaries & Evangelists
+                            </h3>
+
+                            <p>
+                                Believers with a burden for missions,
+                                evangelization and reaching communities
+                                and nations with the Gospel.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="eligibility-card reveal">
+
+                        <div class="eligibility-icon">
+                            04
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Kingdom Leaders
+                            </h3>
+
+                            <p>
+                                Christian leaders and workers who want
+                                to strengthen their biblical foundation,
+                                leadership capacity and Kingdom
+                                effectiveness.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ADMISSION PROCESS
+        ====================================================== -->
+
+        <section class="process" id="apply">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        How Admission Works
+                    </div>
+
+                    <h2>
+                        Your Admission Journey
+                    </h2>
+
+                    <p>
+                        The full online admission portal will be
+                        connected as the next phase of the GCM
+                        platform is developed.
+                    </p>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <article class="process-card reveal">
+
+                        <div class="process-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Explore
+                        </h3>
+
+                        <p>
+                            Review the available courses and
+                            understand the structure of the
+                            programme.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card reveal">
+
+                        <div class="process-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Prepare
+                        </h3>
+
+                        <p>
+                            Read the admission information,
+                            academic expectations and institutional
+                            requirements.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card reveal">
+
+                        <div class="process-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Apply
+                        </h3>
+
+                        <p>
+                            Complete the official application process
+                            when the online enrollment portal becomes
+                            available.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card reveal">
+
+                        <div class="process-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Begin
+                        </h3>
+
+                        <p>
+                            Receive the required admission information
+                            and prepare to begin your training at GCM.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ACADEMIC EXPECTATIONS
+        ====================================================== -->
+
+        <section class="expectations">
+
+            <div class="container">
+
+                <div class="expectations-grid">
+
+                    <div class="expectations-intro reveal">
+
+                        <div class="section-label">
+                            Academic Expectations
+                        </div>
+
+                        <h2>
+                            Come Ready To Learn,
+                            Grow And Serve.
+                        </h2>
+
+                        <p>
+                            GCM training is intended to go beyond
+                            classroom information. Students are
+                            encouraged to approach the programme
+                            with seriousness, humility, discipline
+                            and a genuine desire for Kingdom service.
+                        </p>
+
+                    </div>
+
+
+                    <div class="expectation-list">
+
+                        <div class="expectation-item reveal">
+
+                            <span class="check">
+                                ◆
+                            </span>
+
+                            <p>
+                                Come prepared to engage deeply with
+                                the Word of God and the subjects being
+                                taught.
+                            </p>
+
+                        </div>
+
+
+                        <div class="expectation-item reveal">
+
+                            <span class="check">
+                                ◆
+                            </span>
+
+                            <p>
+                                Maintain discipline and respect for
+                                the institution, lecturers and fellow
+                                students.
+                            </p>
+
+                        </div>
+
+
+                        <div class="expectation-item reveal">
+
+                            <span class="check">
+                                ◆
+                            </span>
+
+                            <p>
+                                Participate actively in the academic
+                                and ministry-training environment.
+                            </p>
+
+                        </div>
+
+
+                        <div class="expectation-item reveal">
+
+                            <span class="check">
+                                ◆
+                            </span>
+
+                            <p>
+                                Approach the training as preparation
+                                for practical Kingdom assignment and
+                                service.
+                            </p>
+
+                        </div>
+
+
+                        <div class="expectation-item reveal">
+
+                            <span class="check">
+                                ◆
+                            </span>
+
+                            <p>
+                                Familiarize yourself with the official
+                                rules and regulations of the college.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CERTIFICATE
+        ====================================================== -->
+
+        <section class="certificate">
+
+            <div class="container">
+
+                <div class="certificate-box reveal">
+
+                    <div class="certificate-mark">
+                        ✦
+                    </div>
+
+                    <div class="section-label">
+                        Completion
+                    </div>
+
+                    <h2>
+                        Training With Purpose.
+                    </h2>
+
+                    <p>
+                        Students who successfully complete the
+                        programme and satisfy the required academic
+                        and assessment expectations will be eligible
+                        for the applicable GCM certificate.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FAQ
+        ====================================================== -->
+
+        <section class="faq">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        Frequently Asked Questions
+                    </div>
+
+                    <h2>
+                        Admission Questions
+                    </h2>
+
+                    <p>
+                        Some important information for prospective
+                        students.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-container">
+
+
+                    <div class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                How long is the programme?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                The programme is structured into two
+                                semesters, with each semester
+                                consisting of a 15-day training
+                                period.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                What courses are available?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                GCM currently lists courses covering
+                                Christian ministry, leadership,
+                                missiology, church administration,
+                                Kingdom economics, marriage and family
+                                life, Bible understanding and
+                                children's ministry. Visit the Courses
+                                page for the complete catalogue.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                Is online enrollment available yet?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                The full online enrollment portal is
+                                part of the next development stage of
+                                the GCM platform. This website is
+                                currently providing the institutional
+                                and admission information needed by
+                                prospective students.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                Will there be an online student account?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. The future GCM platform will
+                                include student accounts and a
+                                dedicated student learning environment.
+                                That functionality will be connected
+                                during the next stage of development.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                Where can I read the college rules?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                The official rules and regulations
+                                will be available on the Rules &
+                                Regulations page.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FUTURE PORTAL NOTICE
+        ====================================================== -->
+
+        <section class="portal-notice">
+
+            <div class="container">
+
+                <div class="portal-box reveal">
+
+                    <div class="section-label">
+                        Next Phase
+                    </div>
+
+                    <h2>
+                        The GCM Online Learning Portal Is Coming.
+                    </h2>
+
+                    <p>
+                        We are building a complete digital learning
+                        environment where students will eventually
+                        be able to create accounts, complete their
+                        admission journey, access their timetable,
+                        participate in lessons, submit assignments,
+                        take assessments and communicate with the
+                        school.
+                    </p>
+
+                    <a
+                        href="./course.html"
+                        class="btn btn-primary"
+                    >
+                        Explore Courses
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <div class="cta-content reveal">
+
+                    <div class="section-label">
+                        Global College of Missiology
+                    </div>
+
+                    <h2>
+                        Build Yourself For
+                        <span>Kingdom Assignment.</span>
+                    </h2>
+
+                    <p>
+                        Explore the training programme and prepare
+                        yourself for a deeper journey of biblical
+                        learning, spiritual development and Kingdom
+                        service.
+                    </p>
+
+                    <div class="hero-buttons"
+                         style="justify-content:center;">
+
+                        <a
+                            href="./course.html"
+                            class="btn btn-primary"
+                        >
+                            Explore Courses
+                        </a>
+
+                        <a
+                            href="./rules.html"
+                            class="btn btn-outline"
+                        >
+                            Rules & Regulations
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div class="footer-brand">
+
+                    <img
+                        src="./img/logo/logo.png"
+                        alt="Global College of Missiology Logo"
+                        class="footer-brand-logo"
+                    >
+
+                    <h3>
+                        GLOBAL COLLEGE OF MISSIOLOGY
+                    </h3>
+
+                    <p>
+                        A Christ-centered ministry-training
+                        institution committed to building God's
+                        people for global missions and evangelization
+                        through the Word of wisdom, grace and power.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Institution
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="./about.html">
+                                About GCM
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./director.html">
+                                Director
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./course.html">
+                                Courses
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admissions.html">
+                                Admissions
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Information
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="./gallery.html">
+                                Gallery
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="rules.html">
+                                Rules & Regulations
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#about">
+                                Our Mission
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#apply">
+                                Admission
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+               
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    ©
+                    <span id="year"></span>
+                    Global College of Missiology.
+                    All Rights Reserved.
+                </p>
+
+                <span class="footer-motto">
+                    TRAINING • EQUIPPING • DEPLOYING
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         BACK TO TOP
+    ========================================================== -->
+
+    <button
+        class="back-top"
+        id="backTop"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =========================================================
+           LOADER
+        ========================================================== */
+
+        window.addEventListener("load", function () {
+
+            const loader =
+                document.getElementById("loader");
+
+            setTimeout(function () {
+
+                loader.classList.add("hidden");
+
+            }, 500);
+
+        });
+
+
+        /* =========================================================
+           HEADER SCROLL
+        ========================================================== */
+
+        const header =
+            document.getElementById("header");
+
+
+        function handleHeaderScroll() {
+
+            if (window.scrollY > 30) {
+
+                header.classList.add("scrolled");
+
+            } else {
+
+                header.classList.remove("scrolled");
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            handleHeaderScroll,
+            { passive: true }
+        );
+
+
+        handleHeaderScroll();
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================== */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    navLinks.classList.toggle("open");
+
+                menuToggle.classList.toggle(
+                    "open",
+                    isOpen
+                );
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+            }
+        );
+
+
+        /* Close menu after clicking a link */
+
+        navLinks
+            .querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove(
+                            "open"
+                        );
+
+                        menuToggle.classList.remove(
+                            "open"
+                        );
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* Close mobile menu when clicking outside */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                const clickedInsideNavbar =
+                    event.target.closest(".navbar");
+
+                if (!clickedInsideNavbar) {
+
+                    navLinks.classList.remove(
+                        "open"
+                    );
+
+                    menuToggle.classList.remove(
+                        "open"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        if (
+            "IntersectionObserver"
+            in window
+        ) {
+
+            const revealObserver =
+                new IntersectionObserver(
+                    function (entries, observer) {
+
+                        entries.forEach(
+                            function (entry) {
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+                                    entry.target.classList.add(
+                                        "visible"
+                                    );
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.12
+                    }
+                );
+
+
+            revealElements.forEach(
+                function (element) {
+
+                    revealObserver.observe(
+                        element
+                    );
+
+                }
+            );
+
+        } else {
+
+            revealElements.forEach(
+                function (element) {
+
+                    element.classList.add(
+                        "visible"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =========================================================
+           FAQ ACCORDION
+        ========================================================== */
+
+        const faqItems =
+            document.querySelectorAll(".faq-item");
+
+
+        faqItems.forEach(
+            function (item) {
+
+                const question =
+                    item.querySelector(
+                        ".faq-question"
+                    );
+
+                const answer =
+                    item.querySelector(
+                        ".faq-answer"
+                    );
+
+
+                question.addEventListener(
+                    "click",
+                    function () {
+
+                        const currentlyOpen =
+                            item.classList.contains(
+                                "open"
+                            );
+
+
+                        faqItems.forEach(
+                            function (otherItem) {
+
+                                otherItem.classList.remove(
+                                    "open"
+                                );
+
+                                const otherAnswer =
+                                    otherItem.querySelector(
+                                        ".faq-answer"
+                                    );
+
+                                otherAnswer.style.maxHeight =
+                                    null;
+
+                            }
+                        );
+
+
+                        if (!currentlyOpen) {
+
+                            item.classList.add(
+                                "open"
+                            );
+
+                            answer.style.maxHeight =
+                                answer.scrollHeight +
+                                "px";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================== */
+
+        const backTop =
+            document.getElementById("backTop");
+
+
+        function handleBackTop() {
+
+            if (window.scrollY > 500) {
+
+                backTop.classList.add(
+                    "show"
+                );
+
+            } else {
+
+                backTop.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            handleBackTop,
+            { passive: true }
+        );
+
+
+        backTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+
+        /* =========================================================
+           CURRENT YEAR
+        ========================================================== */
+
+        document.getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+
+        /* =========================================================
+           IMAGE ERROR HANDLING
+        ========================================================== */
+
+        document
+            .querySelectorAll("img")
+            .forEach(function (image) {
+
+                image.addEventListener(
+                    "error",
+                    function () {
+
+                        console.warn(
+                            "Image could not be loaded:",
+                            image.src
+                        );
+
+                    }
+                );
+
+            });
+
+    </script>
+
+</body>
+</html>

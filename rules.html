@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="description"
+        content="Global College of Missiology Rules and Regulations. Student conduct, attendance, academic integrity, discipline, online learning, graduation requirements and institutional guidelines."
+    >
+
+    <meta
+        name="keywords"
+        content="Global College of Missiology, GCM, rules and regulations, student regulations, Bible college, missiology, Christian ministry training"
+    >
+
+    <meta name="theme-color" content="#07111f">
+
+    <title>Rules & Regulations | Global College of Missiology</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Cormorant Garamond", serif;
+            background: #07111f;
+            color: #f4efe3;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        ::selection {
+            background: #c9a44c;
+            color: #07111f;
+        }
+
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --navy: #07111f;
+            --navy-deep: #040a12;
+            --navy-light: #0c1b2e;
+            --gold: #c9a44c;
+            --gold-light: #e0c777;
+            --gold-dark: #9f7d2f;
+            --ivory: #f4efe3;
+            --muted: #b7b3aa;
+            --border: rgba(201, 164, 76, 0.22);
+            --glass: rgba(255, 255, 255, 0.045);
+            --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+        }
+
+
+        /* =========================================================
+           LOADER
+        ========================================================= */
+
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: var(--navy-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                opacity 0.7s ease,
+                visibility 0.7s ease;
+        }
+
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-inner {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loader-logo {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin: 0 auto 20px;
+            animation: loaderPulse 1.8s ease-in-out infinite;
+        }
+
+        .loader-line {
+            width: 90px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 14px;
+            transform-origin: center;
+            animation: loaderLine 1.5s ease-in-out infinite;
+        }
+
+        .loader-text {
+            color: var(--gold-light);
+            font-family: "Marcellus", serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        @keyframes loaderPulse {
+            0%,
+            100% {
+                opacity: 0.55;
+                transform: scale(0.96);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes loaderLine {
+            0% {
+                transform: scaleX(0.2);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scaleX(0.2);
+                opacity: 0.4;
+            }
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 5000;
+            padding: 18px 20px;
+            transition:
+                padding 0.35s ease,
+                background 0.35s ease;
+        }
+
+        header.scrolled {
+            padding: 10px 20px;
+        }
+
+        .nav-container {
+            width: min(1400px, 100%);
+            margin: 0 auto;
+            min-height: 76px;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+
+            background: rgba(5, 12, 22, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-shrink: 0;
+        }
+
+        .brand img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            line-height: 1.1;
+        }
+
+        .brand-name {
+            font-family: "Marcellus", serif;
+            color: var(--gold-light);
+            font-size: 0.98rem;
+            letter-spacing: 0.03em;
+        }
+
+        .brand-subtitle {
+            margin-top: 4px;
+            color: rgba(244, 239, 227, 0.65);
+            font-size: 0.68rem;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 5px;
+        }
+
+        nav a {
+            position: relative;
+            padding: 10px 12px;
+
+            color: rgba(244, 239, 227, 0.82);
+            font-family: "Marcellus", serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+
+            transition:
+                color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            bottom: 4px;
+            height: 1px;
+
+            background: var(--gold);
+
+            transform: scaleX(0);
+            transform-origin: center;
+
+            transition: transform 0.25s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--gold-light);
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            transform: scaleX(1);
+        }
+
+        .nav-cta {
+            margin-left: 8px;
+            padding: 12px 17px !important;
+
+            background: var(--gold);
+            color: var(--navy) !important;
+
+            border-radius: 8px;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================= */
+
+        .menu-toggle {
+            display: none;
+
+            width: 46px;
+            height: 46px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            cursor: pointer;
+
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 20px;
+            height: 2px;
+            background: var(--gold-light);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            position: relative;
+            min-height: 720px;
+            min-height: 92svh;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4, 10, 18, 0.97) 0%,
+                    rgba(4, 10, 18, 0.88) 48%,
+                    rgba(4, 10, 18, 0.72) 100%
+                ),
+                url("assets/images/campus.jpg") center / cover no-repeat;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 15% 40%,
+                    rgba(201, 164, 76, 0.13),
+                    transparent 32%
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(1180px, 100%);
+            margin: 0 auto;
+
+            padding:
+                150px 30px 90px;
+        }
+
+        .hero-inner {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 38px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            font-family: "Marcellus", serif;
+            font-weight: 400;
+
+            font-size: clamp(2.6rem, 6vw, 5.5rem);
+            line-height: 0.98;
+
+            color: var(--ivory);
+
+            max-width: 850px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin-top: 28px;
+
+            color: rgba(244, 239, 227, 0.76);
+
+            font-size: clamp(1.05rem, 2vw, 1.28rem);
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+
+            margin-top: 36px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 52px;
+            padding: 13px 24px;
+
+            border-radius: 8px;
+
+            font-family: "Marcellus", serif;
+            font-size: 0.76rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(201, 164, 76, 0.5);
+            color: var(--gold-light);
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            background: rgba(201, 164, 76, 0.08);
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .intro {
+            position: relative;
+            padding: 105px 24px 90px;
+            background: var(--navy);
+        }
+
+        .container {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+            font-size: 0.73rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+
+            margin-bottom: 13px;
+        }
+
+        .section-heading h2 {
+            font-family: "Marcellus", serif;
+            font-weight: 400;
+
+            color: var(--ivory);
+
+            font-size: clamp(2rem, 4vw, 3.7rem);
+            line-height: 1.12;
+        }
+
+        .section-heading h2 span {
+            color: var(--gold-light);
+        }
+
+        .section-heading p {
+            margin-top: 18px;
+
+            color: var(--muted);
+
+            font-size: 1.08rem;
+            line-height: 1.8;
+        }
+
+        .intro-card {
+            padding: clamp(25px, 5vw, 48px);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(201, 164, 76, 0.08),
+                    rgba(255, 255, 255, 0.025)
+                );
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .intro-card p {
+            color: rgba(244, 239, 227, 0.82);
+            font-size: clamp(1.05rem, 2vw, 1.22rem);
+            line-height: 1.85;
+        }
+
+        .intro-card strong {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           RULES
+        ========================================================= */
+
+        .rules-section {
+            padding: 30px 24px 110px;
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--navy) 0%,
+                    var(--navy-light) 100%
+                );
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .rule-card {
+            position: relative;
+
+            padding: 34px;
+
+            background: rgba(255, 255, 255, 0.035);
+
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .rule-card::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 3px;
+
+            background: var(--gold);
+
+            transform: scaleY(0);
+            transform-origin: bottom;
+
+            transition: transform 0.3s ease;
+        }
+
+        .rule-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(201, 164, 76, 0.35);
+            background: rgba(201, 164, 76, 0.045);
+        }
+
+        .rule-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .rule-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 45px;
+            height: 45px;
+
+            margin-bottom: 21px;
+
+            border: 1px solid rgba(201, 164, 76, 0.45);
+            border-radius: 50%;
+
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+            font-size: 0.82rem;
+        }
+
+        .rule-card h3 {
+            color: var(--ivory);
+
+            font-family: "Marcellus", serif;
+            font-weight: 400;
+
+            font-size: clamp(1.2rem, 2vw, 1.45rem);
+            line-height: 1.3;
+
+            margin-bottom: 12px;
+        }
+
+        .rule-card p {
+            color: var(--muted);
+
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .rule-card strong {
+            color: var(--gold-light);
+        }
+
+
+        /* =========================================================
+           STUDENT COMMITMENT
+        ========================================================= */
+
+        .commitment {
+            position: relative;
+
+            padding: 110px 24px;
+
+            background:
+                linear-gradient(
+                    rgba(4, 10, 18, 0.91),
+                    rgba(4, 10, 18, 0.95)
+                ),
+                url("assets/images/gallery/seminar.jpg")
+                center / cover no-repeat;
+
+            overflow: hidden;
+        }
+
+        .commitment::before {
+            content: "";
+
+            position: absolute;
+            width: 450px;
+            height: 450px;
+
+            top: -220px;
+            right: -150px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(201, 164, 76, 0.18);
+        }
+
+        .commitment-box {
+            position: relative;
+            z-index: 2;
+
+            width: min(900px, 100%);
+            margin: 0 auto;
+
+            text-align: center;
+
+            padding: clamp(30px, 6vw, 70px);
+
+            border: 1px solid rgba(201, 164, 76, 0.3);
+            border-radius: 20px;
+
+            background: rgba(7, 17, 31, 0.65);
+
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .commitment-box .symbol {
+            color: var(--gold);
+
+            font-size: 2rem;
+
+            margin-bottom: 20px;
+        }
+
+        .commitment-box h2 {
+            font-family: "Marcellus", serif;
+            font-weight: 400;
+
+            color: var(--ivory);
+
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.15;
+        }
+
+        .commitment-box h2 span {
+            color: var(--gold-light);
+        }
+
+        .commitment-box p {
+            max-width: 730px;
+            margin: 24px auto 0;
+
+            color: rgba(244, 239, 227, 0.76);
+
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            line-height: 1.85;
+        }
+
+        .commitment-box .closing {
+            margin-top: 30px;
+
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           POLICY NOTE
+        ========================================================= */
+
+        .policy-note {
+            padding: 85px 24px;
+
+            background: var(--navy-light);
+        }
+
+        .policy-inner {
+            display: grid;
+            grid-template-columns: 0.25fr 1fr;
+            gap: 28px;
+            align-items: start;
+
+            width: min(980px, 100%);
+            margin: 0 auto;
+
+            padding: 35px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .policy-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(201, 164, 76, 0.4);
+            border-radius: 50%;
+
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+            font-size: 1.4rem;
+        }
+
+        .policy-content h3 {
+            color: var(--ivory);
+
+            font-family: "Marcellus", serif;
+            font-weight: 400;
+
+            font-size: 1.4rem;
+
+            margin-bottom: 9px;
+        }
+
+        .policy-content p {
+            color: var(--muted);
+
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .cta {
+            padding: 100px 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(201, 164, 76, 0.11),
+                    rgba(7, 17, 31, 1) 60%
+                );
+        }
+
+        .cta-box {
+            width: min(1050px, 100%);
+            margin: 0 auto;
+
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            font-family: "Marcellus", serif;
+            font-weight: 400;
+
+            color: var(--ivory);
+
+            font-size: clamp(2rem, 5vw, 4.3rem);
+            line-height: 1.1;
+        }
+
+        .cta-box h2 span {
+            color: var(--gold-light);
+        }
+
+        .cta-box p {
+            max-width: 680px;
+            margin: 20px auto 30px;
+
+            color: var(--muted);
+
+            font-size: 1.08rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 70px 24px 25px;
+
+            background: #030811;
+
+            border-top: 1px solid rgba(201, 164, 76, 0.14);
+        }
+
+        .footer-grid {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr 0.8fr;
+            gap: 55px;
+        }
+
+        .footer-brand img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+
+            margin-bottom: 18px;
+        }
+
+        .footer-brand h3 {
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+            font-weight: 400;
+
+            font-size: 1.15rem;
+        }
+
+        .footer-brand p {
+            max-width: 430px;
+
+            margin-top: 14px;
+
+            color: var(--muted);
+
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .footer-title {
+            color: var(--ivory);
+
+            font-family: "Marcellus", serif;
+            font-size: 0.9rem;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+
+            font-size: 0.98rem;
+
+            transition: color 0.25s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .footer-contact p {
+            color: var(--muted);
+            font-size: 0.98rem;
+        }
+
+        .footer-bottom {
+            width: min(1180px, 100%);
+            margin: 50px auto 0;
+
+            padding-top: 22px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: rgba(183, 179, 170, 0.65);
+            font-size: 0.88rem;
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================= */
+
+        #backTop {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 48px;
+            height: 48px;
+
+            z-index: 4000;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(201, 164, 76, 0.45);
+            border-radius: 50%;
+
+            background: rgba(7, 17, 31, 0.88);
+
+            color: var(--gold-light);
+
+            cursor: pointer;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease,
+                transform 0.3s ease,
+                background 0.3s ease;
+        }
+
+        #backTop.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #backTop:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            header {
+                padding: 14px 14px;
+            }
+
+            .nav-container {
+                min-height: 70px;
+            }
+
+            nav {
+                display: none;
+
+                position: fixed;
+
+                top: 92px;
+                left: 14px;
+                right: 14px;
+
+                padding: 20px;
+
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: flex-start;
+
+                background: rgba(4, 10, 18, 0.97);
+
+                border: 1px solid rgba(201, 164, 76, 0.2);
+                border-radius: 16px;
+
+                box-shadow: var(--shadow);
+
+                max-height: calc(100svh - 110px);
+                overflow-y: auto;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            nav a {
+                padding: 14px 12px;
+
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            .nav-cta {
+                margin: 8px 0 0 !important;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+
+        /* =========================================================
+           TABLET / SMALL LAPTOP
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                min-height: 680px;
+                min-height: 90svh;
+            }
+
+            .hero-content {
+                padding-top: 145px;
+            }
+
+            .intro {
+                padding-top: 85px;
+            }
+
+            .rules-section {
+                padding-bottom: 85px;
+            }
+
+            .policy-inner {
+                grid-template-columns: auto 1fr;
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 10px;
+            }
+
+            header.scrolled {
+                padding: 7px 10px;
+            }
+
+            .nav-container {
+                min-height: 64px;
+                padding: 0 12px;
+                border-radius: 14px;
+            }
+
+            .brand {
+                gap: 9px;
+            }
+
+            .brand img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .brand-name {
+                font-size: 0.79rem;
+            }
+
+            .brand-subtitle {
+                font-size: 0.56rem;
+                letter-spacing: 0.09em;
+            }
+
+            .menu-toggle {
+                width: 42px;
+                height: 42px;
+            }
+
+            nav {
+                top: 82px;
+                left: 10px;
+                right: 10px;
+            }
+
+            .hero {
+                min-height: 700px;
+                min-height: 94svh;
+
+                background-position: 60% center;
+            }
+
+            .hero-content {
+                padding:
+                    140px 20px 70px;
+            }
+
+            .eyebrow {
+                font-size: 0.63rem;
+                letter-spacing: 0.13em;
+            }
+
+            .eyebrow::before {
+                width: 24px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.35rem, 12vw, 4rem);
+            }
+
+            .hero p {
+                margin-top: 20px;
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                margin-top: 28px;
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .intro {
+                padding:
+                    75px 18px
+                    65px;
+            }
+
+            .section-heading {
+                margin-bottom: 35px;
+            }
+
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+
+            .intro-card {
+                padding: 25px 21px;
+                border-radius: 14px;
+            }
+
+            .intro-card p {
+                font-size: 1rem;
+            }
+
+            .rules-section {
+                padding:
+                    15px 18px
+                    75px;
+            }
+
+            .rules-grid {
+                gap: 15px;
+            }
+
+            .rule-card {
+                padding: 26px 22px;
+                border-radius: 14px;
+            }
+
+            .rule-number {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 17px;
+            }
+
+            .rule-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .rule-card p {
+                font-size: 0.98rem;
+            }
+
+            .commitment {
+                padding:
+                    75px 18px;
+            }
+
+            .commitment-box {
+                padding:
+                    35px 22px;
+                border-radius: 15px;
+            }
+
+            .commitment-box h2 {
+                font-size: 2rem;
+            }
+
+            .commitment-box p {
+                font-size: 1rem;
+            }
+
+            .policy-note {
+                padding:
+                    65px 18px;
+            }
+
+            .policy-inner {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            .policy-icon {
+                width: 55px;
+                height: 55px;
+            }
+
+            .cta {
+                padding:
+                    75px 18px;
+            }
+
+            .cta-box h2 {
+                font-size: 2.15rem;
+            }
+
+            .cta-actions {
+                flex-direction: column;
+            }
+
+            footer {
+                padding:
+                    60px 18px 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            .footer-bottom {
+                margin-top: 40px;
+
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #backTop {
+                right: 15px;
+                bottom: 15px;
+
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+
+        /* =========================================================
+           SMALL PHONES
+        ========================================================= */
+
+        @media (max-width: 380px) {
+
+            .brand-name {
+                font-size: 0.7rem;
+            }
+
+            .brand-subtitle {
+                font-size: 0.5rem;
+            }
+
+            .hero-content {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .section-heading h2 {
+                font-size: 1.85rem;
+            }
+
+            .rule-card {
+                padding: 23px 18px;
+            }
+
+            .commitment-box {
+                padding: 30px 18px;
+            }
+        }
+
+
+        /* =========================================================
+           VERY SMALL PHONES
+        ========================================================= */
+
+        @media (max-width: 330px) {
+
+            .brand img {
+                width: 39px;
+                height: 39px;
+            }
+
+            .brand-name {
+                font-size: 0.63rem;
+            }
+
+            .brand-subtitle {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         LOADER
+    ========================================================= -->
+
+    <div id="loader">
+
+        <div class="loader-inner">
+
+            <img
+                src="./img/logo/logo.png"
+                alt="Global College of Missiology Logo"
+                class="loader-logo"
+            >
+
+            <div class="loader-line"></div>
+
+            <div class="loader-text">
+                Global College of Missiology
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header id="siteHeader">
+
+        <div class="nav-container">
+
+            <a href="./home.html" class="brand">
+
+                <img
+                    src="./img/logo/logo.png"
+                    alt="Global College of Missiology Logo"
+                >
+
+                <div class="brand-text">
+
+                    <div class="brand-name">
+                        Global College of Missiology
+                    </div>
+
+                    <div class="brand-subtitle">
+                        Training • Equipping • Deploying
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <nav id="mainNav">
+
+                <a href="./home.html">
+                    Home
+                </a>
+
+                <a href="./about.html">
+                    About
+                </a>
+
+                <a href="./director.html">
+                    Director
+                </a>
+
+                <a href="./course.html">
+                    Courses
+                </a>
+
+                <a href="./admissions.html">
+                    Admissions
+                </a>
+
+                <a href="./gallery.html">
+                    Gallery
+                </a>
+
+                <a href="rules.html" class="active">
+                    Rules
+                </a>
+
+                <a href="./contact.html">
+                    Contact
+                </a>
+
+                <a
+                    href="./admissions.html"
+                    class="nav-cta"
+                >
+                    Apply Now
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-inner reveal">
+
+                    <div class="eyebrow">
+                        GCM Student Handbook
+                    </div>
+
+                    <h1>
+                        Rules &
+                        <span>Regulations</span>
+                    </h1>
+
+                    <p>
+                        Building God's people for Global Missions and
+                        Evangelization through sound biblical teaching,
+                        spiritual formation, academic excellence, and
+                        ministerial training.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#rules"
+                            class="btn btn-primary"
+                        >
+                            Read The Regulations
+                        </a>
+
+                        <a
+                            href="./admissions.html"
+                            class="btn btn-outline"
+                        >
+                            Admission Information
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRODUCTION
+        ====================================================== -->
+
+        <section class="intro">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        Institutional Standards
+                    </div>
+
+                    <h2>
+                        A Culture of
+                        <span>Character & Excellence</span>
+                    </h2>
+
+                    <p>
+                        The Global College of Missiology is committed to
+                        creating an environment where biblical truth,
+                        spiritual maturity, academic responsibility,
+                        discipline, and respect are upheld.
+                    </p>
+
+                </div>
+
+
+                <div class="intro-card reveal">
+
+                    <p>
+                        The <strong>Global College of Missiology (GCM)</strong>
+                        is committed to building God’s people for Global
+                        Missions and Evangelization through sound biblical
+                        teaching, spiritual formation, academic excellence,
+                        and ministerial training.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        All students are expected to understand, respect,
+                        and observe the standards of conduct and
+                        responsibility outlined below throughout their
+                        period of training with the College.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RULES
+        ====================================================== -->
+
+        <section
+            class="rules-section"
+            id="rules"
+        >
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        GCM Rules
+                    </div>
+
+                    <h2>
+                        Rules Every
+                        <span>Student Must Observe</span>
+                    </h2>
+
+                    <p>
+                        These regulations provide the framework for
+                        responsible Christian conduct, academic discipline,
+                        respectful relationships, and effective ministerial
+                        training at GCM.
+                    </p>
+
+                </div>
+
+
+                <div class="rules-grid">
+
+
+                    <!-- RULE 01 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Christian Conduct
+                        </h3>
+
+                        <p>
+                            Students must maintain godly character,
+                            integrity, discipline, humility, and respect
+                            for others.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 02 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Attendance & Punctuality
+                        </h3>
+
+                        <p>
+                            Students are required to attend lectures,
+                            devotion, examinations, practical ministry,
+                            and other compulsory activities and must
+                            be punctual.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 03 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Academic Integrity
+                        </h3>
+
+                        <p>
+                            Cheating, plagiarism, examination malpractice,
+                            impersonation, and submission of another
+                            person's work are strictly prohibited.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 04 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Respect for Authority
+                        </h3>
+
+                        <p>
+                            Students must respect the College leadership,
+                            lecturers, staff, and fellow students and
+                            follow legitimate College instructions.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 05 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            05
+                        </div>
+
+                        <h3>
+                            Appropriate Conduct
+                        </h3>
+
+                        <p>
+                            Fighting, bullying, harassment, abusive
+                            language, immoral conduct, fraud, theft,
+                            and other behaviour inconsistent with
+                            Christian values are prohibited.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 06 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            06
+                        </div>
+
+                        <h3>
+                            Dress & Appearance
+                        </h3>
+
+                        <p>
+                            Students must maintain decent, modest,
+                            and appropriate appearance suitable for
+                            a Christian ministerial institution.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 07 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            07
+                        </div>
+
+                        <h3>
+                            Online Learning
+                        </h3>
+
+                        <p>
+                            Students must participate responsibly in
+                            online classes, submit assignments on time,
+                            respect lecturers and fellow students, and
+                            avoid unauthorized sharing of GCM learning
+                            materials.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 08 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            08
+                        </div>
+
+                        <h3>
+                            Use of College Resources
+                        </h3>
+
+                        <p>
+                            Students must handle College property,
+                            books, digital resources, and facilities
+                            responsibly.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 09 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            09
+                        </div>
+
+                        <h3>
+                            Social Media
+                        </h3>
+
+                        <p>
+                            Students must not use the name, identity,
+                            materials, or platforms of GCM without
+                            authorization or publish content that
+                            deliberately misrepresents or brings the
+                            College into disrepute.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 10 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            10
+                        </div>
+
+                        <h3>
+                            Discipline
+                        </h3>
+
+                        <p>
+                            Violation of these regulations may result
+                            in warning, counselling, suspension,
+                            withdrawal of privileges, or dismissal,
+                            depending on the seriousness of the offence.
+                        </p>
+
+                    </article>
+
+
+                    <!-- RULE 11 -->
+
+                    <article class="rule-card reveal">
+
+                        <div class="rule-number">
+                            11
+                        </div>
+
+                        <h3>
+                            Graduation Requirements
+                        </h3>
+
+                        <p>
+                            Students must satisfy the prescribed
+                            academic, attendance, practical ministry,
+                            project, and other requirements before
+                            graduation.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             STUDENT COMMITMENT
+        ====================================================== -->
+
+        <section class="commitment">
+
+            <div class="container">
+
+                <div class="commitment-box reveal">
+
+                    <div class="symbol">
+                        ✦
+                    </div>
+
+                    <h2>
+                        Student
+                        <span>Commitment</span>
+                    </h2>
+
+                    <p>
+                        By enrolling with GCM, every student agrees to
+                        abide by these rules and regulations and to uphold
+                        the values, vision, and mission of the College.
+                    </p>
+
+                    <div class="closing">
+                        Training • Equipping • Deploying
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             POLICY NOTE
+        ====================================================== -->
+
+        <section class="policy-note">
+
+            <div class="container">
+
+                <div class="policy-inner reveal">
+
+                    <div class="policy-icon">
+                        i
+                    </div>
+
+                    <div class="policy-content">
+
+                        <h3>
+                            Institutional Notice
+                        </h3>
+
+                        <p>
+                            Students are expected to remain familiar with
+                            the rules, regulations, instructions, and
+                            academic requirements of the College throughout
+                            their training. GCM may communicate additional
+                            institutional or academic guidelines when
+                            necessary.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <div class="cta-box reveal">
+
+                    <h2>
+                        Ready to Begin Your
+                        <span>Kingdom Training?</span>
+                    </h2>
+
+                    <p>
+                        Explore the programmes and admission information
+                        available at Global College of Missiology.
+                    </p>
+
+                    <div class="cta-actions">
+
+                        <a
+                            href="./course.html"
+                            class="btn btn-primary"
+                        >
+                            Explore Courses
+                        </a>
+
+                        <a
+                            href="./admissions.html"
+                            class="btn btn-outline"
+                        >
+                            View Admissions
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <img
+                    src="./img/logo/logo.png"
+                    alt="Global College of Missiology Logo"
+                >
+
+                <h3>
+                    Global College of Missiology
+                </h3>
+
+                <p>
+                    Building God's people for Global Missions and
+                    Evangelization through the Word of Wisdom,
+                    Grace, and Power.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    QUICK LINKS
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="./home.html">
+                        Home
+                    </a>
+
+                    <a href="./about.html">
+                        About
+                    </a>
+
+                    <a href="./director.html">
+                        Director
+                    </a>
+
+                    <a href="./course.html">
+                        Courses
+                    </a>
+
+                    <a href="./admissions.html">
+                        Admissions
+                    </a>
+
+                    <a href="./gallery.html">
+                        Gallery
+                    </a>
+
+                    <a href="rules.html">
+                        Rules & Regulations
+                    </a>
+
+                    <a href="./contact.html">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                
+
+                
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear"></span>
+                Global College of Missiology.
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Training • Equipping • Deploying
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         BACK TO TOP
+    ========================================================= -->
+
+    <button
+        id="backTop"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* =====================================================
+               LOADER
+            ====================================================== */
+
+            const loader = document.getElementById("loader");
+
+            window.addEventListener("load", () => {
+
+                setTimeout(() => {
+
+                    loader.classList.add("hidden");
+
+                }, 450);
+
+            });
+
+
+            /* =====================================================
+               HEADER SCROLL
+            ====================================================== */
+
+            const header =
+                document.getElementById("siteHeader");
+
+            const handleHeaderScroll = () => {
+
+                if (window.scrollY > 30) {
+
+                    header.classList.add("scrolled");
+
+                } else {
+
+                    header.classList.remove("scrolled");
+
+                }
+
+            };
+
+            handleHeaderScroll();
+
+            window.addEventListener(
+                "scroll",
+                handleHeaderScroll,
+                { passive: true }
+            );
+
+
+            /* =====================================================
+               MOBILE MENU
+            ====================================================== */
+
+            const menuToggle =
+                document.getElementById("menuToggle");
+
+            const mainNav =
+                document.getElementById("mainNav");
+
+            const navLinks =
+                mainNav.querySelectorAll("a");
+
+            const closeMenu = () => {
+
+                mainNav.classList.remove("open");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                document.body.classList.remove("menu-open");
+
+            };
+
+
+            menuToggle.addEventListener("click", () => {
+
+                const isOpen =
+                    mainNav.classList.toggle("open");
+
+                menuToggle.classList.toggle(
+                    "active",
+                    isOpen
+                );
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    isOpen
+                        ? "Close navigation menu"
+                        : "Open navigation menu"
+                );
+
+                document.body.classList.toggle(
+                    "menu-open",
+                    isOpen
+                );
+
+            });
+
+
+            navLinks.forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
+
+            });
+
+
+            window.addEventListener("resize", () => {
+
+                if (window.innerWidth > 1100) {
+
+                    closeMenu();
+
+                }
+
+            });
+
+
+            /* =====================================================
+               SCROLL REVEAL
+            ====================================================== */
+
+            const revealElements =
+                document.querySelectorAll(".reveal");
+
+            if ("IntersectionObserver" in window) {
+
+                const revealObserver =
+                    new IntersectionObserver(
+                        entries => {
+
+                            entries.forEach(entry => {
+
+                                if (entry.isIntersecting) {
+
+                                    entry.target.classList.add(
+                                        "visible"
+                                    );
+
+                                    revealObserver.unobserve(
+                                        entry.target
+                                    );
+
+                                }
+
+                            });
+
+                        },
+                        {
+                            threshold: 0.12,
+                            rootMargin: "0px 0px -30px 0px"
+                        }
+                    );
+
+
+                revealElements.forEach(element => {
+
+                    revealObserver.observe(element);
+
+                });
+
+            } else {
+
+                revealElements.forEach(element => {
+
+                    element.classList.add("visible");
+
+                });
+
+            }
+
+
+            /* =====================================================
+               BACK TO TOP
+            ====================================================== */
+
+            const backTop =
+                document.getElementById("backTop");
+
+            const handleBackTop = () => {
+
+                if (window.scrollY > 500) {
+
+                    backTop.classList.add("show");
+
+                } else {
+
+                    backTop.classList.remove("show");
+
+                }
+
+            };
+
+            handleBackTop();
+
+            window.addEventListener(
+                "scroll",
+                handleBackTop,
+                { passive: true }
+            );
+
+
+            backTop.addEventListener("click", () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            });
+
+
+            /* =====================================================
+               CURRENT YEAR
+            ====================================================== */
+
+            const year =
+                document.getElementById("currentYear");
+
+            year.textContent =
+                new Date().getFullYear();
+
+
+            /* =====================================================
+               IMAGE FALLBACK
+            ====================================================== */
+
+            document.querySelectorAll("img").forEach(img => {
+
+                img.addEventListener("error", () => {
+
+                    console.warn(
+                        "GCM image could not be loaded:",
+                        img.src
+                    );
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
