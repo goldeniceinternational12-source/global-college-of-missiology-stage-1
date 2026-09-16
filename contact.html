@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -23,13 +22,10 @@
 
     <title>Contact Us | Global College of Missiology</title>
 
-
     <!-- =====================================================
          GOOGLE FONTS
     ====================================================== -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
@@ -40,7 +36,6 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap"
         rel="stylesheet"
     >
-
 
     <style>
 
@@ -87,11 +82,15 @@
             font: inherit;
         }
 
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
         ::selection {
             background: #c9a44c;
             color: #07111f;
         }
-
 
         /* =====================================================
            VARIABLES
@@ -101,22 +100,15 @@
             --navy: #07111f;
             --navy-deep: #030811;
             --navy-light: #0c1b2e;
-
             --gold: #c9a44c;
             --gold-light: #e0c777;
             --gold-dark: #9f7d2f;
-
             --ivory: #f4efe3;
             --muted: #b7b3aa;
-
             --border: rgba(201, 164, 76, 0.24);
-
             --glass: rgba(255, 255, 255, 0.045);
-
-            --shadow:
-                0 25px 70px rgba(0, 0, 0, 0.35);
+            --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
         }
-
 
         /* =====================================================
            LOADER
@@ -126,13 +118,10 @@
             position: fixed;
             inset: 0;
             z-index: 99999;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             background: var(--navy-deep);
-
             transition:
                 opacity 0.7s ease,
                 visibility 0.7s ease;
@@ -151,41 +140,28 @@
         .loader-logo {
             width: 90px;
             height: 90px;
-
             object-fit: contain;
-
             margin: 0 auto 20px;
-
-            animation:
-                loaderPulse 1.8s ease-in-out infinite;
+            animation: loaderPulse 1.8s ease-in-out infinite;
         }
 
         .loader-line {
             width: 90px;
             height: 2px;
-
             margin: 0 auto 14px;
-
             background: var(--gold);
-
-            animation:
-                loaderLine 1.5s ease-in-out infinite;
+            animation: loaderLine 1.5s ease-in-out infinite;
         }
 
         .loader-text {
             color: var(--gold-light);
-
             font-family: "Marcellus", serif;
-
             font-size: 0.72rem;
-
             letter-spacing: 0.22em;
-
             text-transform: uppercase;
         }
 
         @keyframes loaderPulse {
-
             0%,
             100% {
                 opacity: 0.55;
@@ -196,11 +172,9 @@
                 opacity: 1;
                 transform: scale(1);
             }
-
         }
 
         @keyframes loaderLine {
-
             0% {
                 transform: scaleX(0.2);
                 opacity: 0.4;
@@ -215,9 +189,7 @@
                 transform: scaleX(0.2);
                 opacity: 0.4;
             }
-
         }
-
 
         /* =====================================================
            HEADER
@@ -225,18 +197,12 @@
 
         header {
             position: fixed;
-
             top: 0;
             left: 0;
-
             width: 100%;
-
             z-index: 5000;
-
             padding: 18px 20px;
-
-            transition:
-                padding 0.35s ease;
+            transition: padding 0.35s ease;
         }
 
         header.scrolled {
@@ -245,78 +211,60 @@
 
         .nav-container {
             width: min(1400px, 100%);
-
             min-height: 76px;
-
             margin: 0 auto;
-
             padding: 0 20px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             gap: 30px;
 
-            background:
-                rgba(5, 12, 22, 0.72);
+            background: rgba(5, 12, 22, 0.72);
 
-            border:
-                1px solid rgba(255, 255, 255, 0.08);
-
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 18px;
 
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
 
-            box-shadow:
-                0 12px 40px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
         }
 
         .brand {
             display: flex;
-
             align-items: center;
-
             gap: 13px;
-
             flex-shrink: 0;
+            min-width: 0;
         }
 
         .brand img {
             width: 56px;
             height: 56px;
-
             object-fit: contain;
+            flex-shrink: 0;
         }
 
         .brand-text {
             line-height: 1.1;
+            min-width: 0;
         }
 
         .brand-name {
             color: var(--gold-light);
-
             font-family: "Marcellus", serif;
-
             font-size: 0.98rem;
+            white-space: nowrap;
         }
 
         .brand-subtitle {
             margin-top: 4px;
-
-            color:
-                rgba(244, 239, 227, 0.65);
-
+            color: rgba(244, 239, 227, 0.65);
             font-size: 0.68rem;
-
             letter-spacing: 0.13em;
-
             text-transform: uppercase;
+            white-space: nowrap;
         }
-
 
         /* =====================================================
            NAVIGATION
@@ -324,48 +272,30 @@
 
         nav {
             display: flex;
-
             align-items: center;
-
             justify-content: flex-end;
-
-            gap: 5px;
+            gap: 4px;
         }
 
         nav a {
             position: relative;
-
-            padding: 10px 12px;
-
-            color:
-                rgba(244, 239, 227, 0.82);
-
+            padding: 10px 11px;
+            color: rgba(244, 239, 227, 0.82);
             font-family: "Marcellus", serif;
-
-            font-size: 0.72rem;
-
-            transition:
-                color 0.25s ease;
+            font-size: 0.70rem;
+            transition: color 0.25s ease;
         }
 
         nav a::after {
             content: "";
-
             position: absolute;
-
-            left: 12px;
-            right: 12px;
+            left: 11px;
+            right: 11px;
             bottom: 4px;
-
             height: 1px;
-
             background: var(--gold);
-
-            transform:
-                scaleX(0);
-
-            transition:
-                transform 0.25s ease;
+            transform: scaleX(0);
+            transition: transform 0.25s ease;
         }
 
         nav a:hover,
@@ -379,14 +309,10 @@
         }
 
         .nav-cta {
-            margin-left: 8px;
-
+            margin-left: 7px;
             padding: 12px 17px !important;
-
             background: var(--gold);
-
             color: var(--navy) !important;
-
             border-radius: 8px;
         }
 
@@ -398,49 +324,38 @@
             background: var(--gold-light);
         }
 
-
         /* =====================================================
-           MOBILE MENU
+           MOBILE MENU BUTTON
         ====================================================== */
 
         .menu-toggle {
             display: none;
-
             width: 46px;
             height: 46px;
-
             align-items: center;
             justify-content: center;
-
             flex-direction: column;
-
             gap: 5px;
 
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 10px;
 
-            background:
-                rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.04);
 
             cursor: pointer;
+            flex-shrink: 0;
         }
 
         .menu-toggle span {
             width: 20px;
             height: 2px;
-
             background: var(--gold-light);
-
-            transition:
-                0.3s ease;
+            border-radius: 10px;
+            transition: 0.3s ease;
         }
 
         .menu-toggle.active span:nth-child(1) {
-            transform:
-                translateY(7px)
-                rotate(45deg);
+            transform: translateY(7px) rotate(45deg);
         }
 
         .menu-toggle.active span:nth-child(2) {
@@ -448,11 +363,31 @@
         }
 
         .menu-toggle.active span:nth-child(3) {
-            transform:
-                translateY(-7px)
-                rotate(-45deg);
+            transform: translateY(-7px) rotate(-45deg);
         }
 
+        /* =====================================================
+           MOBILE MENU OVERLAY
+        ====================================================== */
+
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 4500;
+            background: rgba(0, 0, 0, 0.62);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+        .menu-overlay.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
 
         /* =====================================================
            HERO
@@ -460,12 +395,10 @@
 
         .hero {
             position: relative;
-
             min-height: 690px;
             min-height: 90svh;
 
             display: flex;
-
             align-items: center;
 
             overflow: hidden;
@@ -482,15 +415,12 @@
 
         .hero-content {
             position: relative;
-
             z-index: 2;
 
             width: min(1180px, 100%);
-
             margin: 0 auto;
 
-            padding:
-                155px 30px 90px;
+            padding: 155px 30px 90px;
         }
 
         .hero-inner {
@@ -499,19 +429,14 @@
 
         .eyebrow {
             display: inline-flex;
-
             align-items: center;
-
             gap: 12px;
 
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-
             font-size: 0.74rem;
-
             letter-spacing: 0.2em;
-
             text-transform: uppercase;
 
             margin-bottom: 22px;
@@ -519,21 +444,16 @@
 
         .eyebrow::before {
             content: "";
-
             width: 38px;
             height: 1px;
-
             background: var(--gold);
         }
 
         .hero h1 {
             font-family: "Marcellus", serif;
-
             font-weight: 400;
 
-            font-size:
-                clamp(2.7rem, 6vw, 5.4rem);
-
+            font-size: clamp(2.7rem, 6vw, 5.4rem);
             line-height: 1;
 
             color: var(--ivory);
@@ -545,66 +465,48 @@
 
         .hero p {
             max-width: 700px;
-
             margin-top: 26px;
 
-            color:
-                rgba(244, 239, 227, 0.76);
+            color: rgba(244, 239, 227, 0.76);
 
-            font-size:
-                clamp(1.05rem, 2vw, 1.25rem);
-
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
             line-height: 1.8;
         }
-
 
         /* =====================================================
            MAIN CONTACT
         ====================================================== */
 
         .contact-section {
-            padding:
-                105px 24px 110px;
-
+            padding: 105px 24px 110px;
             background: var(--navy);
         }
 
         .container {
             width: min(1180px, 100%);
-
             margin: 0 auto;
         }
 
         .section-heading {
             max-width: 800px;
-
             margin-bottom: 50px;
         }
 
         .section-label {
             color: var(--gold-light);
-
             font-family: "Marcellus", serif;
-
             font-size: 0.73rem;
-
             letter-spacing: 0.2em;
-
             text-transform: uppercase;
-
             margin-bottom: 13px;
         }
 
         .section-heading h2 {
             color: var(--ivory);
-
             font-family: "Marcellus", serif;
-
             font-weight: 400;
 
-            font-size:
-                clamp(2.1rem, 4vw, 3.6rem);
-
+            font-size: clamp(2.1rem, 4vw, 3.6rem);
             line-height: 1.12;
         }
 
@@ -614,14 +516,10 @@
 
         .section-heading p {
             margin-top: 18px;
-
             color: var(--muted);
-
             font-size: 1.08rem;
-
             line-height: 1.8;
         }
-
 
         /* =====================================================
            CONTACT GRID
@@ -629,15 +527,10 @@
 
         .contact-grid {
             display: grid;
-
-            grid-template-columns:
-                0.85fr 1.15fr;
-
+            grid-template-columns: 0.85fr 1.15fr;
             gap: 30px;
-
             align-items: stretch;
         }
-
 
         /* =====================================================
            CONTACT INFO
@@ -645,27 +538,20 @@
 
         .contact-info {
             display: flex;
-
             flex-direction: column;
-
             gap: 16px;
         }
 
         .contact-card {
             display: flex;
-
             align-items: flex-start;
-
             gap: 18px;
 
             padding: 25px;
 
-            background:
-                rgba(255, 255, 255, 0.035);
+            background: rgba(255, 255, 255, 0.035);
 
-            border:
-                1px solid rgba(255, 255, 255, 0.07);
-
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 15px;
 
             transition:
@@ -677,11 +563,9 @@
         .contact-card:hover {
             transform: translateY(-4px);
 
-            border-color:
-                rgba(201, 164, 76, 0.35);
+            border-color: rgba(201, 164, 76, 0.35);
 
-            background:
-                rgba(201, 164, 76, 0.045);
+            background: rgba(201, 164, 76, 0.045);
         }
 
         .contact-icon {
@@ -691,20 +575,15 @@
             flex-shrink: 0;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
-            border:
-                1px solid
-                rgba(201, 164, 76, 0.42);
-
+            border: 1px solid rgba(201, 164, 76, 0.42);
             border-radius: 50%;
 
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-
             font-size: 0.9rem;
         }
 
@@ -712,7 +591,6 @@
             color: var(--ivory);
 
             font-family: "Marcellus", serif;
-
             font-weight: 400;
 
             font-size: 1.15rem;
@@ -722,22 +600,18 @@
 
         .contact-card p {
             color: var(--muted);
-
             font-size: 1rem;
-
             line-height: 1.6;
         }
 
         .contact-card a {
             color: var(--gold-light);
-
             word-break: break-word;
         }
 
         .contact-card a:hover {
             text-decoration: underline;
         }
-
 
         /* =====================================================
            QUICK CONTACT BUTTONS
@@ -747,10 +621,7 @@
             margin-top: 5px;
 
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
         }
 
@@ -758,7 +629,6 @@
             min-height: 52px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
@@ -767,34 +637,24 @@
             border-radius: 8px;
 
             font-family: "Marcellus", serif;
-
             font-size: 0.72rem;
-
             letter-spacing: 0.05em;
-
             text-transform: uppercase;
 
-            border:
-                1px solid
-                rgba(201, 164, 76, 0.38);
+            border: 1px solid rgba(201, 164, 76, 0.38);
 
             color: var(--gold-light);
 
-            background:
-                rgba(255, 255, 255, 0.025);
+            background: rgba(255, 255, 255, 0.025);
 
-            transition:
-                0.25s ease;
+            transition: 0.25s ease;
         }
 
         .quick-btn:hover {
             background: var(--gold);
-
             color: var(--navy);
-
             transform: translateY(-2px);
         }
-
 
         /* =====================================================
            FORM
@@ -810,10 +670,7 @@
                     rgba(255, 255, 255, 0.02)
                 );
 
-            border:
-                1px solid
-                rgba(201, 164, 76, 0.22);
-
+            border: 1px solid rgba(201, 164, 76, 0.22);
             border-radius: 18px;
 
             box-shadow: var(--shadow);
@@ -823,7 +680,6 @@
             color: var(--ivory);
 
             font-family: "Marcellus", serif;
-
             font-weight: 400;
 
             font-size: 1.8rem;
@@ -833,9 +689,7 @@
 
         .form-description {
             color: var(--muted);
-
             font-size: 1rem;
-
             margin-bottom: 28px;
         }
 
@@ -845,10 +699,7 @@
 
         .form-row {
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
@@ -860,11 +711,8 @@
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-
             font-size: 0.72rem;
-
             letter-spacing: 0.07em;
-
             text-transform: uppercase;
         }
 
@@ -873,26 +721,17 @@
         select {
             width: 100%;
 
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.11);
-
+            border: 1px solid rgba(255, 255, 255, 0.11);
             border-radius: 8px;
 
-            background:
-                rgba(0, 0, 0, 0.18);
-
+            background: rgba(0, 0, 0, 0.18);
             color: var(--ivory);
 
             outline: none;
 
-            padding:
-                13px 14px;
+            padding: 13px 14px;
 
-            font-family:
-                "Cormorant Garamond",
-                serif;
-
+            font-family: "Cormorant Garamond", serif;
             font-size: 1rem;
 
             transition:
@@ -902,23 +741,18 @@
 
         input::placeholder,
         textarea::placeholder {
-            color:
-                rgba(183, 179, 170, 0.55);
+            color: rgba(183, 179, 170, 0.55);
         }
 
         input:focus,
         textarea:focus,
         select:focus {
-            border-color:
-                rgba(201, 164, 76, 0.65);
-
-            background:
-                rgba(201, 164, 76, 0.035);
+            border-color: rgba(201, 164, 76, 0.65);
+            background: rgba(201, 164, 76, 0.035);
         }
 
         select {
             appearance: none;
-
             cursor: pointer;
         }
 
@@ -929,29 +763,22 @@
 
         textarea {
             min-height: 150px;
-
             resize: vertical;
         }
 
         .submit-btn {
             width: 100%;
-
             min-height: 54px;
 
             border: none;
-
             border-radius: 8px;
 
             background: var(--gold);
-
             color: var(--navy);
 
             font-family: "Marcellus", serif;
-
             font-size: 0.76rem;
-
             letter-spacing: 0.08em;
-
             text-transform: uppercase;
 
             cursor: pointer;
@@ -963,8 +790,13 @@
 
         .submit-btn:hover {
             background: var(--gold-light);
-
             transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: wait;
+            transform: none;
         }
 
         .form-note {
@@ -972,20 +804,17 @@
 
             text-align: center;
 
-            color:
-                rgba(183, 179, 170, 0.6);
+            color: rgba(183, 179, 170, 0.6);
 
             font-size: 0.87rem;
         }
-
 
         /* =====================================================
            WHATSAPP SECTION
         ====================================================== */
 
         .whatsapp-section {
-            padding:
-                90px 24px;
+            padding: 90px 24px;
 
             background:
                 linear-gradient(
@@ -997,33 +826,25 @@
 
         .whatsapp-box {
             width: min(1000px, 100%);
-
             margin: 0 auto;
 
-            padding:
-                clamp(30px, 6vw, 55px);
+            padding: clamp(30px, 6vw, 55px);
 
             text-align: center;
 
-            border:
-                1px solid
-                rgba(201, 164, 76, 0.25);
-
+            border: 1px solid rgba(201, 164, 76, 0.25);
             border-radius: 18px;
 
-            background:
-                rgba(255, 255, 255, 0.025);
+            background: rgba(255, 255, 255, 0.025);
         }
 
         .whatsapp-box h2 {
             color: var(--ivory);
 
             font-family: "Marcellus", serif;
-
             font-weight: 400;
 
-            font-size:
-                clamp(2rem, 4vw, 3.3rem);
+            font-size: clamp(2rem, 4vw, 3.3rem);
         }
 
         .whatsapp-box h2 span {
@@ -1042,27 +863,21 @@
 
         .whatsapp-btn {
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
 
             min-height: 52px;
 
-            padding:
-                13px 28px;
+            padding: 13px 28px;
 
             border-radius: 8px;
 
             background: var(--gold);
-
             color: var(--navy);
 
             font-family: "Marcellus", serif;
-
             font-size: 0.76rem;
-
             letter-spacing: 0.07em;
-
             text-transform: uppercase;
 
             transition:
@@ -1072,35 +887,27 @@
 
         .whatsapp-btn:hover {
             background: var(--gold-light);
-
             transform: translateY(-3px);
         }
-
 
         /* =====================================================
            FOOTER
         ====================================================== */
 
         footer {
-            padding:
-                70px 24px 25px;
+            padding: 70px 24px 25px;
 
             background: #030811;
 
-            border-top:
-                1px solid
-                rgba(201, 164, 76, 0.14);
+            border-top: 1px solid rgba(201, 164, 76, 0.14);
         }
 
         .footer-grid {
             width: min(1180px, 100%);
-
             margin: 0 auto;
 
             display: grid;
-
-            grid-template-columns:
-                1.4fr 0.8fr 0.8fr;
+            grid-template-columns: 1.4fr 0.8fr 0.8fr;
 
             gap: 55px;
         }
@@ -1118,7 +925,6 @@
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-
             font-weight: 400;
 
             font-size: 1.15rem;
@@ -1132,7 +938,6 @@
             color: var(--muted);
 
             font-size: 1rem;
-
             line-height: 1.8;
         }
 
@@ -1148,19 +953,15 @@
 
         .footer-links {
             display: flex;
-
             flex-direction: column;
-
             gap: 10px;
         }
 
         .footer-links a {
             color: var(--muted);
-
             font-size: 0.98rem;
 
-            transition:
-                color 0.25s ease;
+            transition: color 0.25s ease;
         }
 
         .footer-links a:hover {
@@ -1169,49 +970,39 @@
 
         .footer-contact {
             display: flex;
-
             flex-direction: column;
-
             gap: 10px;
         }
 
         .footer-contact p {
             color: var(--muted);
-
             font-size: 0.98rem;
         }
 
         .footer-contact a {
             color: var(--gold-light);
+            word-break: break-word;
         }
 
         .footer-bottom {
             width: min(1180px, 100%);
-
             margin: 50px auto 0;
 
             padding-top: 22px;
 
-            border-top:
-                1px solid
-                rgba(255, 255, 255, 0.07);
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
 
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
 
             gap: 20px;
         }
 
         .footer-bottom p {
-            color:
-                rgba(183, 179, 170, 0.65);
-
+            color: rgba(183, 179, 170, 0.65);
             font-size: 0.88rem;
         }
-
 
         /* =====================================================
            BACK TO TOP
@@ -1229,29 +1020,22 @@
             z-index: 4000;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
-            border:
-                1px solid
-                rgba(201, 164, 76, 0.45);
-
+            border: 1px solid rgba(201, 164, 76, 0.45);
             border-radius: 50%;
 
-            background:
-                rgba(7, 17, 31, 0.88);
+            background: rgba(7, 17, 31, 0.88);
 
             color: var(--gold-light);
 
             cursor: pointer;
 
             opacity: 0;
-
             visibility: hidden;
 
-            transform:
-                translateY(12px);
+            transform: translateY(12px);
 
             transition:
                 opacity 0.3s ease,
@@ -1261,19 +1045,27 @@
 
         #backTop.show {
             opacity: 1;
-
             visibility: visible;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
         #backTop:hover {
             background: var(--gold);
-
             color: var(--navy);
         }
 
+        /* =====================================================
+           FOCUS
+        ====================================================== */
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 2px solid var(--gold-light);
+            outline-offset: 3px;
+        }
 
         /* =====================================================
            REVEAL
@@ -1281,9 +1073,7 @@
 
         .reveal {
             opacity: 0;
-
-            transform:
-                translateY(25px);
+            transform: translateY(25px);
 
             transition:
                 opacity 0.8s ease,
@@ -1292,14 +1082,11 @@
 
         .reveal.visible {
             opacity: 1;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
-
         /* =====================================================
-           TABLET
+           LARGE TABLET / SMALL LAPTOP
         ====================================================== */
 
         @media (max-width: 1100px) {
@@ -1308,68 +1095,80 @@
                 padding: 14px;
             }
 
+            header.scrolled {
+                padding: 9px 14px;
+            }
+
             .nav-container {
                 min-height: 70px;
             }
 
+            .menu-toggle {
+                display: flex;
+            }
+
             nav {
-                display: none;
+                display: flex;
 
                 position: fixed;
 
-                top: 92px;
-
+                top: 96px;
                 left: 14px;
                 right: 14px;
 
-                padding: 20px;
+                padding: 18px;
 
                 flex-direction: column;
-
                 align-items: stretch;
 
-                background:
-                    rgba(4, 10, 18, 0.97);
+                background: rgba(4, 10, 18, 0.98);
 
-                border:
-                    1px solid
-                    rgba(201, 164, 76, 0.2);
-
+                border: 1px solid rgba(201, 164, 76, 0.20);
                 border-radius: 16px;
 
                 box-shadow: var(--shadow);
 
-                max-height:
-                    calc(100svh - 110px);
+                max-height: calc(100svh - 115px);
 
                 overflow-y: auto;
+
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+
+                transform: translateY(-10px);
+
+                transition:
+                    opacity 0.3s ease,
+                    visibility 0.3s ease,
+                    transform 0.3s ease;
             }
 
             nav.open {
-                display: flex;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: translateY(0);
             }
 
             nav a {
                 padding: 14px 12px;
 
                 border-bottom:
-                    1px solid
-                    rgba(255, 255, 255, 0.05);
+                    1px solid rgba(255, 255, 255, 0.05);
             }
 
             nav a::after {
                 display: none;
             }
 
-            .nav-cta {
-                margin:
-                    8px 0 0 !important;
-
-                text-align: center;
+            nav a:last-child {
+                border-bottom: none;
             }
 
-            .menu-toggle {
-                display: flex;
+            .nav-cta {
+                margin: 8px 0 0 !important;
+                text-align: center;
             }
 
             .contact-grid {
@@ -1377,17 +1176,45 @@
             }
 
             .footer-grid {
-                grid-template-columns:
-                    1fr 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .footer-brand {
-                grid-column:
-                    1 / -1;
+                grid-column: 1 / -1;
             }
-
         }
 
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .hero-content {
+                padding-top: 145px;
+            }
+
+            .contact-section {
+                padding-top: 85px;
+                padding-bottom: 90px;
+            }
+
+            .contact-grid {
+                gap: 24px;
+            }
+
+            .contact-form-wrapper {
+                padding: 32px 28px;
+            }
+
+            .footer-grid {
+                gap: 40px;
+            }
+        }
 
         /* =====================================================
            MOBILE
@@ -1405,14 +1232,14 @@
 
             .nav-container {
                 min-height: 64px;
-
                 padding: 0 12px;
-
                 border-radius: 14px;
+                gap: 10px;
             }
 
             .brand {
                 gap: 9px;
+                min-width: 0;
             }
 
             .brand img {
@@ -1422,37 +1249,41 @@
 
             .brand-name {
                 font-size: 0.79rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 210px;
             }
 
             .brand-subtitle {
                 font-size: 0.55rem;
+                letter-spacing: 0.08em;
+            }
+
+            .menu-toggle {
+                width: 44px;
+                height: 44px;
             }
 
             nav {
                 top: 82px;
-
                 left: 10px;
                 right: 10px;
+                padding: 14px;
             }
 
             .hero {
                 min-height: 650px;
                 min-height: 92svh;
-
-                background-position:
-                    62% center;
+                background-position: 62% center;
             }
 
             .hero-content {
-                padding:
-                    140px 20px 70px;
+                padding: 140px 20px 70px;
             }
 
             .eyebrow {
                 font-size: 0.62rem;
-
-                letter-spacing:
-                    0.13em;
+                letter-spacing: 0.13em;
             }
 
             .eyebrow::before {
@@ -1460,23 +1291,17 @@
             }
 
             .hero h1 {
-                font-size:
-                    clamp(
-                        2.3rem,
-                        12vw,
-                        4rem
-                    );
+                font-size: clamp(2.3rem, 12vw, 4rem);
             }
 
             .hero p {
                 margin-top: 20px;
-
                 font-size: 1rem;
+                line-height: 1.7;
             }
 
             .contact-section {
-                padding:
-                    75px 18px 80px;
+                padding: 75px 18px 80px;
             }
 
             .section-heading {
@@ -1485,6 +1310,10 @@
 
             .section-heading h2 {
                 font-size: 2rem;
+            }
+
+            .section-heading p {
+                font-size: 1rem;
             }
 
             .contact-card {
@@ -1501,8 +1330,11 @@
             }
 
             .contact-form-wrapper {
-                padding:
-                    26px 20px;
+                padding: 26px 20px;
+            }
+
+            .form-title {
+                font-size: 1.55rem;
             }
 
             .form-row {
@@ -1511,26 +1343,29 @@
             }
 
             .whatsapp-section {
-                padding:
-                    70px 18px;
+                padding: 70px 18px;
             }
 
             .whatsapp-box {
-                padding:
-                    35px 22px;
+                padding: 35px 22px;
             }
 
             .whatsapp-box h2 {
                 font-size: 2rem;
             }
 
+            .whatsapp-box p {
+                font-size: 1rem;
+            }
+
             .whatsapp-btn {
                 width: 100%;
+                padding-left: 18px;
+                padding-right: 18px;
             }
 
             footer {
-                padding:
-                    60px 18px 20px;
+                padding: 60px 18px 20px;
             }
 
             .footer-grid {
@@ -1544,35 +1379,31 @@
 
             .footer-bottom {
                 margin-top: 40px;
-
                 flex-direction: column;
-
                 align-items: flex-start;
             }
 
             #backTop {
                 right: 15px;
                 bottom: 15px;
-
                 width: 44px;
                 height: 44px;
             }
-
         }
-
 
         /* =====================================================
            SMALL PHONES
         ====================================================== */
 
-        @media (max-width: 380px) {
+        @media (max-width: 420px) {
 
             .brand-name {
-                font-size: 0.7rem;
+                font-size: 0.72rem;
+                max-width: 170px;
             }
 
             .brand-subtitle {
-                font-size: 0.5rem;
+                font-size: 0.49rem;
             }
 
             .hero-content {
@@ -1592,8 +1423,59 @@
                 font-size: 1.05rem;
             }
 
+            .contact-card p {
+                font-size: 0.94rem;
+            }
+
+            .contact-icon {
+                width: 42px;
+                height: 42px;
+            }
+
+            .quick-btn {
+                min-height: 50px;
+            }
         }
 
+        /* =====================================================
+           VERY SMALL PHONES
+        ====================================================== */
+
+        @media (max-width: 340px) {
+
+            .nav-container {
+                padding-left: 9px;
+                padding-right: 9px;
+            }
+
+            .brand img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .brand-name {
+                font-size: 0.66rem;
+                max-width: 145px;
+            }
+
+            .brand-subtitle {
+                display: none;
+            }
+
+            .menu-toggle {
+                width: 41px;
+                height: 41px;
+            }
+
+            .contact-section {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .contact-form-wrapper {
+                padding: 23px 16px;
+            }
+        }
 
         /* =====================================================
            REDUCED MOTION
@@ -1608,38 +1490,27 @@
             *,
             *::before,
             *::after {
-                animation-duration:
-                    0.01ms !important;
-
-                animation-iteration-count:
-                    1 !important;
-
-                transition-duration:
-                    0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
 
             .reveal {
                 opacity: 1;
-
                 transform: none;
             }
-
         }
 
     </style>
-
 </head>
 
-
 <body>
-
 
     <!-- =====================================================
          LOADER
     ====================================================== -->
 
     <div id="loader">
-
         <div class="loader-inner">
 
             <img
@@ -1655,8 +1526,18 @@
             </div>
 
         </div>
-
     </div>
+
+
+    <!-- =====================================================
+         MOBILE MENU OVERLAY
+    ====================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+        aria-hidden="true"
+    ></div>
 
 
     <!-- =====================================================
@@ -1666,7 +1547,6 @@
     <header id="siteHeader">
 
         <div class="nav-container">
-
 
             <a
                 href="./home.html"
@@ -1699,18 +1579,20 @@
                 type="button"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
+                aria-controls="mainNav"
             >
-
                 <span></span>
                 <span></span>
                 <span></span>
-
             </button>
 
 
-            <nav id="mainNav">
+            <nav
+                id="mainNav"
+                aria-label="Main navigation"
+            >
 
-                <a href="./home.html">
+                <a href="./index.html">
                     Home
                 </a>
 
@@ -1739,7 +1621,7 @@
                 </a>
 
                 <a
-                    href="contact.html"
+                    href="./contact.html"
                     class="active"
                 >
                     Contact
@@ -1806,7 +1688,6 @@
         <section class="contact-section">
 
             <div class="container">
-
 
                 <div class="section-heading reveal">
 
@@ -1956,7 +1837,6 @@
 
                         </div>
 
-
                     </div>
 
 
@@ -1964,9 +1844,7 @@
                          CONTACT FORM
                     ====================================== -->
 
-                    <div
-                        class="contact-form-wrapper reveal"
-                    >
+                    <div class="contact-form-wrapper reveal">
 
                         <h2 class="form-title">
                             Send An Enquiry
@@ -1995,6 +1873,7 @@
                                         id="name"
                                         name="name"
                                         placeholder="Your full name"
+                                        autocomplete="name"
                                         required
                                     >
 
@@ -2012,6 +1891,7 @@
                                         id="email"
                                         name="email"
                                         placeholder="Your email address"
+                                        autocomplete="email"
                                         required
                                     >
 
@@ -2034,6 +1914,7 @@
                                         id="phone"
                                         name="phone"
                                         placeholder="Your phone number"
+                                        autocomplete="tel"
                                     >
 
                                 </div>
@@ -2051,39 +1932,27 @@
                                         required
                                     >
 
-                                        <option
-                                            value=""
-                                        >
+                                        <option value="">
                                             Select an enquiry
                                         </option>
 
-                                        <option
-                                            value="Course Enquiry"
-                                        >
+                                        <option value="Course Enquiry">
                                             Course Enquiry
                                         </option>
 
-                                        <option
-                                            value="Admission Enquiry"
-                                        >
+                                        <option value="Admission Enquiry">
                                             Admission Enquiry
                                         </option>
 
-                                        <option
-                                            value="General Enquiry"
-                                        >
+                                        <option value="General Enquiry">
                                             General Enquiry
                                         </option>
 
-                                        <option
-                                            value="Ministry Training"
-                                        >
+                                        <option value="Ministry Training">
                                             Ministry Training
                                         </option>
 
-                                        <option
-                                            value="Other"
-                                        >
+                                        <option value="Other">
                                             Other
                                         </option>
 
@@ -2113,6 +1982,7 @@
                             <button
                                 type="submit"
                                 class="submit-btn"
+                                id="submitBtn"
                             >
                                 Send Enquiry
                             </button>
@@ -2125,7 +1995,6 @@
                         </form>
 
                     </div>
-
 
                 </div>
 
@@ -2169,7 +2038,6 @@
             </div>
 
         </section>
-
 
     </main>
 
@@ -2239,7 +2107,7 @@
                         Rules & Regulations
                     </a>
 
-                    <a href="contact.html">
+                    <a href="./contact.html">
                         Contact
                     </a>
 
@@ -2279,7 +2147,6 @@
                 </div>
 
             </div>
-
 
         </div>
 
@@ -2321,266 +2188,289 @@
 
     <script>
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            () => {
+        document.addEventListener("DOMContentLoaded", () => {
 
 
-                /* =============================================
-                   LOADER
-                ============================================== */
+            /* =================================================
+               LOADER
+            ================================================== */
 
-                const loader =
-                    document.getElementById("loader");
+            const loader = document.getElementById("loader");
 
-                window.addEventListener(
-                    "load",
-                    () => {
+            const hideLoader = () => {
+                if (loader) {
+                    loader.classList.add("hidden");
+                }
+            };
 
-                        setTimeout(
-                            () => {
+            window.addEventListener("load", () => {
 
-                                loader.classList.add(
-                                    "hidden"
-                                );
+                setTimeout(hideLoader, 450);
 
-                            },
-                            450
-                        );
+            });
 
-                    }
-                );
+            setTimeout(hideLoader, 2500);
 
 
-                /* =============================================
-                   HEADER
-                ============================================== */
+            /* =================================================
+               HEADER
+            ================================================== */
 
-                const header =
-                    document.getElementById(
-                        "siteHeader"
-                    );
+            const header =
+                document.getElementById("siteHeader");
 
-                const updateHeader =
-                    () => {
+            const updateHeader = () => {
 
-                        if (window.scrollY > 30) {
+                if (!header) {
+                    return;
+                }
 
-                            header.classList.add(
-                                "scrolled"
-                            );
+                if (window.scrollY > 30) {
 
-                        } else {
-
-                            header.classList.remove(
-                                "scrolled"
-                            );
-
-                        }
-
-                    };
-
-                updateHeader();
-
-                window.addEventListener(
-                    "scroll",
-                    updateHeader,
-                    { passive: true }
-                );
-
-
-                /* =============================================
-                   MOBILE MENU
-                ============================================== */
-
-                const menuToggle =
-                    document.getElementById(
-                        "menuToggle"
-                    );
-
-                const mainNav =
-                    document.getElementById(
-                        "mainNav"
-                    );
-
-                const navLinks =
-                    mainNav.querySelectorAll(
-                        "a"
-                    );
-
-
-                const closeMenu = () => {
-
-                    mainNav.classList.remove(
-                        "open"
-                    );
-
-                    menuToggle.classList.remove(
-                        "active"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
-
-                    document.body.classList.remove(
-                        "menu-open"
-                    );
-
-                };
-
-
-                menuToggle.addEventListener(
-                    "click",
-                    () => {
-
-                        const open =
-                            mainNav.classList.toggle(
-                                "open"
-                            );
-
-                        menuToggle.classList.toggle(
-                            "active",
-                            open
-                        );
-
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            String(open)
-                        );
-
-                        menuToggle.setAttribute(
-                            "aria-label",
-                            open
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
-                        );
-
-                        document.body.classList.toggle(
-                            "menu-open",
-                            open
-                        );
-
-                    }
-                );
-
-
-                navLinks.forEach(
-                    link => {
-
-                        link.addEventListener(
-                            "click",
-                            closeMenu
-                        );
-
-                    }
-                );
-
-
-                window.addEventListener(
-                    "resize",
-                    () => {
-
-                        if (
-                            window.innerWidth >
-                            1100
-                        ) {
-
-                            closeMenu();
-
-                        }
-
-                    }
-                );
-
-
-                /* =============================================
-                   SCROLL REVEAL
-                ============================================== */
-
-                const revealElements =
-                    document.querySelectorAll(
-                        ".reveal"
-                    );
-
-                if (
-                    "IntersectionObserver"
-                    in window
-                ) {
-
-                    const observer =
-                        new IntersectionObserver(
-                            entries => {
-
-                                entries.forEach(
-                                    entry => {
-
-                                        if (
-                                            entry.isIntersecting
-                                        ) {
-
-                                            entry.target.classList.add(
-                                                "visible"
-                                            );
-
-                                            observer.unobserve(
-                                                entry.target
-                                            );
-
-                                        }
-
-                                    }
-                                );
-
-                            },
-                            {
-                                threshold: 0.12,
-                                rootMargin:
-                                    "0px 0px -30px 0px"
-                            }
-                        );
-
-
-                    revealElements.forEach(
-                        element => {
-
-                            observer.observe(
-                                element
-                            );
-
-                        }
-                    );
+                    header.classList.add("scrolled");
 
                 } else {
 
-                    revealElements.forEach(
-                        element => {
-
-                            element.classList.add(
-                                "visible"
-                            );
-
-                        }
-                    );
+                    header.classList.remove("scrolled");
 
                 }
 
+            };
 
-                /* =============================================
-                   CONTACT FORM → WHATSAPP
-                ============================================== */
+            updateHeader();
 
-                const contactForm =
-                    document.getElementById(
-                        "contactForm"
+            window.addEventListener(
+                "scroll",
+                updateHeader,
+                { passive: true }
+            );
+
+
+            /* =================================================
+               MOBILE MENU
+            ================================================== */
+
+            const menuToggle =
+                document.getElementById("menuToggle");
+
+            const mainNav =
+                document.getElementById("mainNav");
+
+            const menuOverlay =
+                document.getElementById("menuOverlay");
+
+            const navLinks =
+                mainNav
+                    ? mainNav.querySelectorAll("a")
+                    : [];
+
+
+            const openMenu = () => {
+
+                if (!mainNav || !menuToggle) {
+                    return;
+                }
+
+                mainNav.classList.add("open");
+
+                menuToggle.classList.add("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Close navigation menu"
+                );
+
+                document.body.classList.add("menu-open");
+
+                if (menuOverlay) {
+                    menuOverlay.classList.add("show");
+                    menuOverlay.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+                }
+
+            };
+
+
+            const closeMenu = () => {
+
+                if (!mainNav || !menuToggle) {
+                    return;
+                }
+
+                mainNav.classList.remove("open");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                document.body.classList.remove("menu-open");
+
+                if (menuOverlay) {
+                    menuOverlay.classList.remove("show");
+                    menuOverlay.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+                }
+
+            };
+
+
+            const toggleMenu = () => {
+
+                if (
+                    mainNav &&
+                    mainNav.classList.contains("open")
+                ) {
+
+                    closeMenu();
+
+                } else {
+
+                    openMenu();
+
+                }
+
+            };
+
+
+            if (menuToggle) {
+
+                menuToggle.addEventListener(
+                    "click",
+                    toggleMenu
+                );
+
+            }
+
+
+            navLinks.forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
+
+            });
+
+
+            if (menuOverlay) {
+
+                menuOverlay.addEventListener(
+                    "click",
+                    closeMenu
+                );
+
+            }
+
+
+            document.addEventListener(
+                "keydown",
+                event => {
+
+                    if (event.key === "Escape") {
+                        closeMenu();
+                    }
+
+                }
+            );
+
+
+            window.addEventListener(
+                "resize",
+                () => {
+
+                    if (window.innerWidth > 1100) {
+                        closeMenu();
+                    }
+
+                }
+            );
+
+
+            /* =================================================
+               SCROLL REVEAL
+            ================================================== */
+
+            const revealElements =
+                document.querySelectorAll(".reveal");
+
+
+            if ("IntersectionObserver" in window) {
+
+                const observer =
+                    new IntersectionObserver(
+                        entries => {
+
+                            entries.forEach(entry => {
+
+                                if (entry.isIntersecting) {
+
+                                    entry.target.classList.add(
+                                        "visible"
+                                    );
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+                                }
+
+                            });
+
+                        },
+                        {
+                            threshold: 0.12,
+                            rootMargin:
+                                "0px 0px -30px 0px"
+                        }
                     );
 
+
+                revealElements.forEach(element => {
+
+                    observer.observe(element);
+
+                });
+
+            } else {
+
+                revealElements.forEach(element => {
+
+                    element.classList.add("visible");
+
+                });
+
+            }
+
+
+            /* =================================================
+               CONTACT FORM → WHATSAPP
+            ================================================== */
+
+            const contactForm =
+                document.getElementById("contactForm");
+
+            const submitBtn =
+                document.getElementById("submitBtn");
+
+
+            if (contactForm) {
 
                 contactForm.addEventListener(
                     "submit",
@@ -2591,44 +2481,34 @@
 
                         const name =
                             document
-                                .getElementById(
-                                    "name"
-                                )
+                                .getElementById("name")
                                 .value
                                 .trim();
 
 
                         const email =
                             document
-                                .getElementById(
-                                    "email"
-                                )
+                                .getElementById("email")
                                 .value
                                 .trim();
 
 
                         const phone =
                             document
-                                .getElementById(
-                                    "phone"
-                                )
+                                .getElementById("phone")
                                 .value
                                 .trim();
 
 
                         const subject =
                             document
-                                .getElementById(
-                                    "subject"
-                                )
+                                .getElementById("subject")
                                 .value;
 
 
                         const message =
                             document
-                                .getElementById(
-                                    "message"
-                                )
+                                .getElementById("message")
                                 .value
                                 .trim();
 
@@ -2647,15 +2527,25 @@ Phone: ${phone || "Not provided"}
 Enquiry Type: ${subject}
 
 Message:
+
 ${message}`;
 
 
                         const whatsappURL =
-                            "https://wa.me/2347076988378?text="
-                            +
+                            "https://wa.me/2347076988378?text=" +
                             encodeURIComponent(
                                 whatsappMessage
                             );
+
+
+                        if (submitBtn) {
+
+                            submitBtn.disabled = true;
+
+                            submitBtn.textContent =
+                                "Opening WhatsApp...";
+
+                        }
 
 
                         window.open(
@@ -2663,52 +2553,64 @@ ${message}`;
                             "_blank"
                         );
 
+
+                        setTimeout(() => {
+
+                            if (submitBtn) {
+
+                                submitBtn.disabled = false;
+
+                                submitBtn.textContent =
+                                    "Send Enquiry";
+
+                            }
+
+                        }, 1500);
+
                     }
                 );
 
-
-                /* =============================================
-                   BACK TO TOP
-                ============================================== */
-
-                const backTop =
-                    document.getElementById(
-                        "backTop"
-                    );
+            }
 
 
-                const updateBackTop =
-                    () => {
+            /* =================================================
+               BACK TO TOP
+            ================================================== */
 
-                        if (
-                            window.scrollY >
-                            500
-                        ) {
-
-                            backTop.classList.add(
-                                "show"
-                            );
-
-                        } else {
-
-                            backTop.classList.remove(
-                                "show"
-                            );
-
-                        }
-
-                    };
+            const backTop =
+                document.getElementById("backTop");
 
 
-                updateBackTop();
+            const updateBackTop = () => {
+
+                if (!backTop) {
+                    return;
+                }
+
+                if (window.scrollY > 500) {
+
+                    backTop.classList.add("show");
+
+                } else {
+
+                    backTop.classList.remove("show");
+
+                }
+
+            };
 
 
-                window.addEventListener(
-                    "scroll",
-                    updateBackTop,
-                    { passive: true }
-                );
+            updateBackTop();
 
+
+            window.addEventListener(
+                "scroll",
+                updateBackTop,
+                { passive: true }
+            );
+
+
+            if (backTop) {
 
                 backTop.addEventListener(
                     "click",
@@ -2722,43 +2624,47 @@ ${message}`;
                     }
                 );
 
+            }
 
-                /* =============================================
-                   YEAR
-                ============================================== */
 
-                document.getElementById(
-                    "currentYear"
-                ).textContent =
+            /* =================================================
+               YEAR
+            ================================================== */
+
+            const currentYear =
+                document.getElementById("currentYear");
+
+            if (currentYear) {
+
+                currentYear.textContent =
                     new Date().getFullYear();
 
+            }
 
-                /* =============================================
-                   IMAGE ERROR LOGGING
-                ============================================== */
 
-                document
-                    .querySelectorAll("img")
-                    .forEach(
-                        img => {
+            /* =================================================
+               IMAGE ERROR LOGGING
+            ================================================== */
 
-                            img.addEventListener(
-                                "error",
-                                () => {
+            document
+                .querySelectorAll("img")
+                .forEach(img => {
 
-                                    console.warn(
-                                        "GCM image could not be loaded:",
-                                        img.src
-                                    );
+                    img.addEventListener(
+                        "error",
+                        () => {
 
-                                }
+                            console.warn(
+                                "GCM image could not be loaded:",
+                                img.src
                             );
 
                         }
                     );
 
-            }
-        );
+                });
+
+        });
 
     </script>
 

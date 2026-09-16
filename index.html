@@ -2,505 +2,2108 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
 <title>Global College of Missiology — Welcome</title>
+
+<meta
+  name="description"
+  content="Global College of Missiology — Equipping saints for the harvest fields of the world."
+>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&display=swap"
+  rel="stylesheet"
+>
+
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  :root {
-    --gold: #c9a24b;
-    --gold-light: #f0d78c;
-    --gold-deep: #8f6b1f;
-    --navy: #0a1024;
-    --navy-2: #0e1633;
-    --ivory: #f5efe0;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #c9a24b;
+  --gold-light: #f0d78c;
+  --gold-deep: #8f6b1f;
+
+  --navy: #0a1024;
+  --navy-2: #0e1633;
+  --navy-3: #050914;
+
+  --ivory: #f5efe0;
+  --white: #ffffff;
+
+  --container: 1200px;
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+
+html {
+  min-height: 100%;
+  background: var(--navy);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--navy);
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+/* =========================================================
+   SACRED AMBIENT BACKGROUND
+========================================================= */
+
+.bg {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+
+  background:
+    radial-gradient(
+      ellipse 45% 40% at 28% 30%,
+      rgba(201, 162, 75, 0.16),
+      transparent 62%
+    ),
+
+    radial-gradient(
+      ellipse 50% 45% at 72% 68%,
+      rgba(28, 52, 120, 0.35),
+      transparent 65%
+    ),
+
+    radial-gradient(
+      ellipse 35% 30% at 50% 50%,
+      rgba(240, 215, 140, 0.07),
+      transparent 60%
+    );
+
+  animation: drift 20s ease-in-out infinite alternate;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes drift {
+
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg)
+      scale(1);
   }
 
-  html, body {
-    height: 100%;
-    overflow: hidden;
-    background: var(--navy);
-    font-family: 'Cormorant Garamond', serif;
-    -webkit-font-smoothing: antialiased;
+  100% {
+    transform:
+      translate3d(-3%, 3%, 0)
+      rotate(4deg)
+      scale(1.08);
+  }
+}
+
+/* =========================================================
+   LIGHT RAYS
+========================================================= */
+
+.rays {
+  position: fixed;
+
+  top: -20%;
+  left: 50%;
+
+  width: 140vmax;
+  height: 140vmax;
+
+  transform: translateX(-50%);
+
+  background:
+    conic-gradient(
+      from 180deg at 50% 0%,
+
+      transparent 0deg,
+      rgba(240, 215, 140, 0.05) 8deg,
+      transparent 16deg,
+
+      transparent 40deg,
+      rgba(240, 215, 140, 0.04) 48deg,
+      transparent 56deg,
+
+      transparent 90deg,
+      rgba(240, 215, 140, 0.05) 98deg,
+      transparent 106deg,
+
+      transparent 140deg,
+      rgba(240, 215, 140, 0.04) 148deg,
+      transparent 156deg,
+
+      transparent 200deg,
+      rgba(240, 215, 140, 0.05) 208deg,
+      transparent 216deg,
+
+      transparent 260deg,
+      rgba(240, 215, 140, 0.04) 268deg,
+      transparent 276deg,
+
+      transparent 320deg,
+      rgba(240, 215, 140, 0.05) 328deg,
+      transparent 336deg
+    );
+
+  animation: raysSway 16s ease-in-out infinite alternate;
+
+  pointer-events: none;
+  opacity: 0.8;
+
+  z-index: 1;
+}
+
+@keyframes raysSway {
+
+  from {
+    transform:
+      translateX(-50%)
+      rotate(-2deg);
   }
 
-  /* ---------- Sacred ambient background ---------- */
-  .bg {
-    position: fixed;
-    inset: -50%;
-    width: 200%;
-    height: 200%;
-    background:
-      radial-gradient(ellipse 45% 40% at 28% 30%, rgba(201,162,75,.16), transparent 62%),
-      radial-gradient(ellipse 50% 45% at 72% 68%, rgba(28,52,120,.35), transparent 65%),
-      radial-gradient(ellipse 35% 30% at 50% 50%, rgba(240,215,140,.07), transparent 60%);
-    animation: drift 20s ease-in-out infinite alternate;
-    pointer-events: none;
+  to {
+    transform:
+      translateX(-50%)
+      rotate(2deg);
+  }
+}
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+#particles {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   VIGNETTE
+========================================================= */
+
+.vignette {
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 38%,
+      rgba(3, 5, 14, 0.86) 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 5;
+}
+
+/* =========================================================
+   MAIN STAGE
+========================================================= */
+
+.stage {
+  position: relative;
+
+  z-index: 10;
+
+  min-height: 100svh;
+  min-height: 100dvh;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  gap: clamp(22px, 4vh, 48px);
+
+  padding:
+    max(30px, env(safe-area-inset-top))
+    clamp(18px, 5vw, 50px)
+    max(70px, env(safe-area-inset-bottom))
+    clamp(18px, 5vw, 50px);
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-wrap {
+  position: relative;
+
+  width: clamp(
+    145px,
+    29vw,
+    270px
+  );
+
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  transform:
+    scale(0.85)
+    translateY(24px);
+
+  animation:
+    logoIn 1.6s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.4s
+    forwards;
+}
+
+@keyframes logoIn {
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+}
+
+/* =========================================================
+   HALO
+========================================================= */
+
+.halo {
+  position: absolute;
+
+  inset: -18%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(201, 162, 75, 0.3),
+      transparent 65%
+    );
+
+  filter: blur(20px);
+
+  animation:
+    pulse 4.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
   }
 
-  @keyframes drift {
-    0%   { transform: translate(0,0) rotate(0deg) scale(1); }
-    100% { transform: translate(-3%, 3%) rotate(4deg) scale(1.08); }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+/* =========================================================
+   RINGS
+========================================================= */
+
+.ring {
+  position: absolute;
+
+  inset: -8%;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(201, 162, 75, 0.4);
+
+  animation:
+    spin 16s linear infinite;
+}
+
+.ring::before {
+  content: "";
+
+  position: absolute;
+
+  top: -4px;
+  left: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+    var(--gold-light);
+
+  box-shadow:
+    0 0 14px 4px
+    rgba(240, 215, 140, 0.85);
+
+  transform:
+    translateX(-50%);
+}
+
+.ring.r2 {
+  inset: -15%;
+
+  border-color:
+    rgba(201, 162, 75, 0.16);
+
+  animation-duration: 26s;
+  animation-direction: reverse;
+}
+
+.ring.r2::before {
+  width: 5px;
+  height: 5px;
+
+  background:
+    var(--gold);
+
+  box-shadow:
+    0 0 10px 3px
+    rgba(201, 162, 75, 0.7);
+}
+
+@keyframes spin {
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+/* =========================================================
+   LOGO IMAGE
+========================================================= */
+
+.logo-wrap img {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  filter:
+    drop-shadow(
+      0 0 28px
+      rgba(201, 162, 75, 0.5)
+    );
+
+  animation:
+    floaty 5.5s ease-in-out infinite;
+}
+
+@keyframes floaty {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
   }
 
-  /* Faint light rays from top */
-  .rays {
-    position: fixed;
-    top: -20%;
-    left: 50%;
-    width: 140vmax;
-    height: 140vmax;
-    transform: translateX(-50%);
-    background: conic-gradient(from 180deg at 50% 0%,
-      transparent 0deg, rgba(240,215,140,.05) 8deg, transparent 16deg,
-      transparent 40deg, rgba(240,215,140,.04) 48deg, transparent 56deg,
-      transparent 90deg, rgba(240,215,140,.05) 98deg, transparent 106deg,
-      transparent 140deg, rgba(240,215,140,.04) 148deg, transparent 156deg,
-      transparent 200deg, rgba(240,215,140,.05) 208deg, transparent 216deg,
-      transparent 260deg, rgba(240,215,140,.04) 268deg, transparent 276deg,
-      transparent 320deg, rgba(240,215,140,.05) 328deg, transparent 336deg);
-    animation: raysSway 16s ease-in-out infinite alternate;
-    pointer-events: none;
-    opacity: .8;
+  50% {
+    transform:
+      translateY(-10px);
+  }
+}
+
+/* =========================================================
+   WORDMARK
+========================================================= */
+
+.wordmark {
+  width: min(100%, 1000px);
+
+  opacity: 0;
+
+  animation:
+    fadeUp 1.5s ease 1.3s forwards;
+}
+
+.wordmark .over {
+  display: block;
+
+  font-family: "Marcellus", serif;
+
+  font-size:
+    clamp(0.62rem, 1.8vw, 0.85rem);
+
+  letter-spacing:
+    clamp(0.25em, 0.6em, 0.6em);
+
+  text-indent:
+    clamp(0.25em, 0.6em, 0.6em);
+
+  text-transform: uppercase;
+
+  color:
+    rgba(240, 215, 140, 0.65);
+
+  margin-bottom:
+    clamp(7px, 1.2vh, 14px);
+}
+
+.wordmark .name {
+  display: block;
+
+  font-family: "Marcellus", serif;
+
+  font-weight: 400;
+
+  font-size:
+    clamp(
+      1.45rem,
+      5vw,
+      3rem
+    );
+
+  line-height: 1.12;
+
+  letter-spacing:
+    clamp(0.06em, 0.18em, 0.18em);
+
+  text-indent:
+    clamp(0.06em, 0.18em, 0.18em);
+
+  text-transform: uppercase;
+
+  color:
+    var(--ivory);
+
+  text-shadow:
+    0 0 30px
+    rgba(201, 162, 75, 0.4);
+}
+
+.wordmark .under {
+  display: block;
+
+  max-width: 760px;
+
+  margin:
+    clamp(8px, 1.4vh, 14px)
+    auto 0;
+
+  font-style: italic;
+
+  font-size:
+    clamp(
+      0.86rem,
+      2.2vw,
+      1.1rem
+    );
+
+  line-height: 1.5;
+
+  color:
+    rgba(245, 239, 224, 0.55);
+
+  letter-spacing:
+    0.08em;
+}
+
+/* =========================================================
+   ORNAMENT
+========================================================= */
+
+.ornament {
+  width: min(90vw, 500px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap:
+    clamp(8px, 2vw, 14px);
+
+  opacity: 0;
+
+  animation:
+    fadeUp 1.4s ease 1.6s forwards;
+}
+
+.ornament span {
+  height: 1px;
+
+  flex: 1;
+
+  max-width: 90px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold)
+    );
+}
+
+.ornament span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
+}
+
+.ornament i {
+  flex-shrink: 0;
+
+  font-style: normal;
+
+  color:
+    var(--gold);
+
+  font-size:
+    clamp(0.8rem, 2vw, 1rem);
+
+  text-shadow:
+    0 0 12px
+    rgba(240, 215, 140, 0.9);
+}
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(16px);
   }
 
-  @keyframes raysSway {
-    from { transform: translateX(-50%) rotate(-2deg); }
-    to   { transform: translateX(-50%) rotate(2deg); }
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
   }
+}
 
-  /* ---------- Floating light particles ---------- */
-  #particles {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.explore {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap:
+    clamp(8px, 1.6vw, 14px);
+
+  min-height: 54px;
+
+  max-width: 100%;
+
+  padding:
+    14px
+    clamp(25px, 5vw, 52px);
+
+  font-family:
+    "Marcellus",
+    serif;
+
+  font-size:
+    clamp(
+      0.74rem,
+      1.8vw,
+      1.05rem
+    );
+
+  letter-spacing:
+    clamp(0.16em, 0.38em, 0.38em);
+
+  text-indent:
+    clamp(0.16em, 0.38em, 0.38em);
+
+  text-transform:
+    uppercase;
+
+  text-decoration: none;
+
+  color:
+    var(--gold-light);
+
+  border:
+    1px solid
+    rgba(201, 162, 75, 0.5);
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(201, 162, 75, 0.05),
+      rgba(201, 162, 75, 0.16),
+      rgba(201, 162, 75, 0.05)
+    );
+
+  background-size:
+    230% 100%;
+
+  transition:
+    color 0.4s,
+    box-shadow 0.5s,
+    background-position 0.9s ease,
+    transform 0.3s ease;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  animation:
+    fadeUp 1.5s ease 2s forwards;
+
+  touch-action: manipulation;
+}
+
+.explore::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -80%;
+
+  width: 55%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      105deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  transition:
+    left 0.8s ease;
+}
+
+.explore:hover,
+.explore:focus-visible {
+  color:
+    #fff;
+
+  background-position:
+    100% 0;
+
+  box-shadow:
+    0 0 40px
+    rgba(201, 162, 75, 0.55),
+
+    inset 0 0 20px
+    rgba(201, 162, 75, 0.28);
+
+  outline: none;
+}
+
+.explore:hover::before,
+.explore:focus-visible::before {
+  left: 135%;
+}
+
+.explore .arrow {
+  display: inline-block;
+
+  transition:
+    transform 0.45s
+    cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.explore:hover .arrow,
+.explore:focus-visible .arrow {
+  transform:
+    translateX(8px);
+}
+
+/* =========================================================
+   FEE POLICY
+========================================================= */
+
+.fee-policy {
+  width: min(100%, 850px);
+
+  opacity: 0;
+
+  animation:
+    fadeUp 1.5s ease 2.15s forwards;
+}
+
+.fee-title {
+  margin-bottom: 12px;
+
+  font-family:
+    "Marcellus",
+    serif;
+
+  font-size:
+    clamp(0.72rem, 1.8vw, 0.9rem);
+
+  letter-spacing:
+    0.18em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    rgba(240, 215, 140, 0.7);
+}
+
+.fee-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.fee-card {
+  min-width: 0;
+
+  padding:
+    10px 16px;
+
+  border:
+    1px solid
+    rgba(201, 162, 75, 0.2);
+
+  border-radius: 12px;
+
+  background:
+    rgba(10, 16, 36, 0.48);
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+}
+
+.fee-card strong {
+  display: block;
+
+  font-family:
+    "Marcellus",
+    serif;
+
+  font-size:
+    clamp(0.95rem, 2vw, 1.2rem);
+
+  color:
+    var(--gold-light);
+}
+
+.fee-card span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size:
+    clamp(0.7rem, 1.6vw, 0.82rem);
+
+  color:
+    rgba(245, 239, 224, 0.55);
+}
+
+/* =========================================================
+   VERSE
+========================================================= */
+
+.verse {
+  position: absolute;
+
+  bottom:
+    max(14px, env(safe-area-inset-bottom));
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  width:
+    min(92vw, 650px);
+
+  padding:
+    0 10px;
+
+  font-style:
+    italic;
+
+  font-size:
+    clamp(
+      0.68rem,
+      1.7vw,
+      0.9rem
+    );
+
+  line-height:
+    1.4;
+
+  letter-spacing:
+    0.1em;
+
+  color:
+    rgba(245, 239, 224, 0.45);
+
+  opacity: 0;
+
+  animation:
+    fadeUp 1.6s ease 2.6s forwards;
+
+  white-space:
+    nowrap;
+
+  overflow:
+    hidden;
+
+  text-overflow:
+    ellipsis;
+}
+
+.verse::before {
+  content: "";
+
+  display: block;
+
+  margin:
+    0 auto
+    clamp(7px, 1.2vh, 12px);
+
+  width: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold),
+      transparent
+    );
+
+  animation:
+    lineGrow 1.6s ease 2.4s forwards;
+}
+
+@keyframes lineGrow {
+
+  to {
+    width:
+      min(300px, 55vw);
   }
+}
 
-  .vignette {
-    position: fixed;
-    inset: 0;
-    z-index: 5;
-    background: radial-gradient(ellipse at center, transparent 42%, rgba(3,5,14,.8) 100%);
-    pointer-events: none;
-  }
+/* =========================================================
+   TRANSITION VEIL
+========================================================= */
 
-  /* ---------- Stage ---------- */
+.veil {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #141d3d,
+      #02040c
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.85s ease;
+}
+
+.veil.active {
+  opacity: 1;
+
+  pointer-events: all;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
   .stage {
-    position: relative;
-    z-index: 10;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(28px, 5vh, 56px);
-    padding: clamp(20px, 4vw, 48px);
-    text-align: center;
+    gap:
+      clamp(20px, 3.5vh, 36px);
   }
 
-  /* ---------- Logo ---------- */
   .logo-wrap {
-    position: relative;
-    opacity: 0;
-    transform: scale(.85) translateY(24px);
-    animation: logoIn 1.6s cubic-bezier(.16,1,.3,1) .4s forwards;
-  }
-
-  @keyframes logoIn {
-    to { opacity: 1; transform: scale(1) translateY(0); }
-  }
-
-  .halo {
-    position: absolute;
-    inset: -18%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,162,75,.3), transparent 65%);
-    filter: blur(20px);
-    animation: pulse 4.5s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: .55; transform: scale(1); }
-    50%      { opacity: 1;   transform: scale(1.12); }
-  }
-
-  .ring {
-    position: absolute;
-    inset: -8%;
-    border-radius: 50%;
-    border: 1px solid rgba(201,162,75,.4);
-    animation: spin 16s linear infinite;
-  }
-  .ring::before {
-    content: '';
-    position: absolute;
-    top: -4px; left: 50%;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--gold-light);
-    box-shadow: 0 0 14px 4px rgba(240,215,140,.85);
-    transform: translateX(-50%);
-  }
-  .ring.r2 {
-    inset: -15%;
-    border-color: rgba(201,162,75,.16);
-    animation-duration: 26s;
-    animation-direction: reverse;
-  }
-  .ring.r2::before {
-    width: 5px; height: 5px;
-    background: var(--gold);
-    box-shadow: 0 0 10px 3px rgba(201,162,75,.7);
-  }
-
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .logo-wrap img {
-    display: block;
-    width: clamp(150px, 34vmin, 300px);
-    height: auto;
-    border-radius: 50%;
-    position: relative;
-    filter: drop-shadow(0 0 28px rgba(201,162,75,.5));
-    animation: floaty 5.5s ease-in-out infinite;
-  }
-
-  @keyframes floaty {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-12px); }
-  }
-
-  /* ---------- Wordmark ---------- */
-  .wordmark {
-    opacity: 0;
-    animation: fadeUp 1.5s ease 1.3s forwards;
-  }
-
-  .wordmark .over {
-    display: block;
-    font-family: 'Marcellus', serif;
-    font-size: clamp(.6rem, 1.8vmin, .85rem);
-    letter-spacing: .6em;
-    text-indent: .6em;
-    text-transform: uppercase;
-    color: rgba(240,215,140,.65);
-    margin-bottom: clamp(8px, 1.4vh, 14px);
+    width:
+      clamp(
+        140px,
+        30vw,
+        230px
+      );
   }
 
   .wordmark .name {
-    display: block;
-    font-family: 'Marcellus', serif;
-    font-weight: 400;
-    font-size: clamp(1.5rem, 5.4vmin, 3rem);
-    letter-spacing: .18em;
-    text-indent: .18em;
-    text-transform: uppercase;
-    color: var(--ivory);
-    text-shadow: 0 0 30px rgba(201,162,75,.4);
+    font-size:
+      clamp(
+        1.35rem,
+        5.2vw,
+        2.6rem
+      );
+  }
+
+  .fee-grid {
+    gap: 8px;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .stage {
+    min-height: 100svh;
+
+    justify-content:
+      center;
+
+    gap:
+      20px;
+
+    padding:
+      28px
+      16px
+      72px;
+  }
+
+  .logo-wrap {
+    width:
+      clamp(
+        125px,
+        43vw,
+        190px
+      );
+  }
+
+  .wordmark {
+    width:
+      min(100%, 520px);
+  }
+
+  .wordmark .over {
+    font-size:
+      0.62rem;
+
+    letter-spacing:
+      0.25em;
+
+    text-indent:
+      0.25em;
+  }
+
+  .wordmark .name {
+    font-size:
+      clamp(
+        1.35rem,
+        7vw,
+        2.2rem
+      );
+
+    line-height:
+      1.15;
+
+    letter-spacing:
+      0.07em;
+
+    text-indent:
+      0.07em;
   }
 
   .wordmark .under {
-    display: block;
-    margin-top: clamp(8px, 1.4vh, 14px);
-    font-style: italic;
-    font-size: clamp(.85rem, 2.4vmin, 1.1rem);
-    color: rgba(245,239,224,.55);
-    letter-spacing: .08em;
+    font-size:
+      0.88rem;
+
+    line-height:
+      1.45;
+
+    letter-spacing:
+      0.03em;
+
+    padding:
+      0 8px;
   }
 
-  /* Ornamental divider ✦ */
   .ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    opacity: 0;
-    animation: fadeUp 1.4s ease 1.6s forwards;
-  }
-  .ornament span {
-    height: 1px;
-    width: clamp(40px, 10vmin, 90px);
-    background: linear-gradient(90deg, transparent, var(--gold));
-  }
-  .ornament span:last-child {
-    background: linear-gradient(90deg, var(--gold), transparent);
-  }
-  .ornament i {
-    font-style: normal;
-    color: var(--gold);
-    font-size: clamp(.8rem, 2vmin, 1rem);
-    text-shadow: 0 0 12px rgba(240,215,140,.9);
+    width:
+      min(88vw, 400px);
   }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ---------- Let's Explore link ---------- */
   .explore {
-    position: relative;
-    opacity: 0;
-    animation: fadeUp 1.5s ease 2s forwards;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: clamp(8px, 1.6vmin, 14px);
-    padding: clamp(14px, 2.4vmin, 20px) clamp(28px, 6vmin, 52px);
-    font-family: 'Marcellus', serif;
-    font-size: clamp(.78rem, 2.2vmin, 1.05rem);
-    letter-spacing: .38em;
-    text-indent: .38em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    border: 1px solid rgba(201,162,75,.5);
-    border-radius: 999px;
-    background: linear-gradient(120deg, rgba(201,162,75,.05), rgba(201,162,75,.16), rgba(201,162,75,.05));
-    background-size: 230% 100%;
-    transition: color .4s, box-shadow .5s, background-position .9s ease;
-    overflow: hidden;
-    cursor: pointer;
-    will-change: transform;
+    min-height:
+      52px;
+
+    padding:
+      13px 25px;
+
+    font-size:
+      0.73rem;
+
+    letter-spacing:
+      0.18em;
+
+    text-indent:
+      0.18em;
   }
 
-  .explore::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -80%;
-    width: 55%; height: 100%;
-    background: linear-gradient(105deg, transparent, rgba(255,255,255,.4), transparent);
-    transform: skewX(-20deg);
-    transition: left .8s ease;
+  .fee-policy {
+    width:
+      min(94vw, 430px);
   }
 
-  .explore:hover, .explore:focus-visible {
-    color: #fff;
-    background-position: 100% 0;
-    box-shadow: 0 0 40px rgba(201,162,75,.55), inset 0 0 20px rgba(201,162,75,.28);
-    outline: none;
+  .fee-title {
+    font-size:
+      0.68rem;
+
+    margin-bottom:
+      8px;
   }
 
-  .explore:hover::before,
-  .explore:focus-visible::before { left: 135%; }
-
-  .explore .arrow {
-    display: inline-block;
-    transition: transform .45s cubic-bezier(.34,1.56,.64,1);
+  .fee-grid {
+    grid-template-columns:
+      1fr 1fr;
   }
-  .explore:hover .arrow,
-  .explore:focus-visible .arrow { transform: translateX(8px); }
 
-  /* ---------- Bottom verse line ---------- */
+  .fee-card:last-child {
+    grid-column:
+      1 / -1;
+  }
+
+  .fee-card {
+    padding:
+      8px 10px;
+
+    border-radius:
+      10px;
+  }
+
+  .fee-card strong {
+    font-size:
+      0.95rem;
+  }
+
+  .fee-card span {
+    font-size:
+      0.68rem;
+  }
+
   .verse {
-    position: absolute;
-    bottom: clamp(16px, 3.5vh, 36px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(92vw, 560px);
-    font-style: italic;
-    font-size: clamp(.72rem, 1.9vmin, .9rem);
-    letter-spacing: .14em;
-    color: rgba(245,239,224,.45);
-    opacity: 0;
-    animation: fadeUp 1.6s ease 2.6s forwards;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width:
+      90vw;
+
+    white-space:
+      normal;
+
+    line-height:
+      1.3;
+
+    font-size:
+      0.67rem;
   }
 
-  .verse::before {
-    content: '';
-    display: block;
-    margin: 0 auto clamp(8px, 1.2vh, 12px);
-    width: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    animation: lineGrow 1.6s ease 2.4s forwards;
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .stage {
+    gap:
+      16px;
+
+    padding:
+      24px
+      13px
+      65px;
   }
 
-  @keyframes lineGrow {
-    to { width: min(300px, 55vw); }
+  .logo-wrap {
+    width:
+      118px;
   }
 
-  /* ---------- Transition veil ---------- */
-  .veil {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background: radial-gradient(circle at center, #141d3d, #02040c);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .85s ease;
-  }
-  .veil.active { opacity: 1; pointer-events: all; }
-
-  /* ---------- Touch devices: disable magnetic hover ---------- */
-  @media (hover: none) {
-    .explore { transition: box-shadow .4s, background-position .9s ease; }
+  .wordmark .name {
+    font-size:
+      1.27rem;
   }
 
-  /* ---------- Small phones ---------- */
-  @media (max-width: 480px) {
-    .stage { gap: 24px; }
-    .logo-wrap img { width: clamp(140px, 44vw, 200px); }
-    .verse { white-space: normal; }
+  .wordmark .under {
+    font-size:
+      0.8rem;
   }
 
-  /* ---------- Reduced motion ---------- */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: .01s !important;
-      animation-delay: 0s !important;
-      transition-duration: .2s !important;
-    }
+  .ornament {
+    gap:
+      7px;
   }
+
+  .explore {
+    min-height:
+      48px;
+
+    padding:
+      11px 20px;
+
+    font-size:
+      0.67rem;
+  }
+
+  .fee-grid {
+    gap:
+      6px;
+  }
+
+  .fee-card strong {
+    font-size:
+      0.84rem;
+  }
+
+  .fee-card span {
+    font-size:
+      0.62rem;
+  }
+
+}
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-height: 600px) and (orientation: landscape) {
+
+  .stage {
+    justify-content:
+      flex-start;
+
+    overflow-y:
+      auto;
+
+    padding-top:
+      24px;
+
+    padding-bottom:
+      55px;
+
+    gap:
+      14px;
+  }
+
+  .logo-wrap {
+    width:
+      100px;
+  }
+
+  .wordmark .name {
+    font-size:
+      1.35rem;
+  }
+
+  .wordmark .under {
+    margin-top:
+      4px;
+
+    font-size:
+      0.78rem;
+  }
+
+  .fee-policy {
+    margin-bottom:
+      10px;
+  }
+
+  .verse {
+    display:
+      none;
+  }
+
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .stage {
+    gap:
+      42px;
+  }
+
+  .logo-wrap {
+    width:
+      270px;
+  }
+
+  .wordmark .name {
+    font-size:
+      3rem;
+  }
+
+}
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+  .explore {
+    transition:
+      box-shadow 0.4s,
+      background-position 0.9s ease,
+      transform 0.2s ease;
+  }
+
+  .explore:active {
+    transform:
+      scale(0.97);
+  }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-delay:
+      0ms !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    scroll-behavior:
+      auto !important;
+  }
+
+}
+
 </style>
 </head>
+
 <body>
 
-  <div class="bg"></div>
-  <div class="rays"></div>
-  <canvas id="particles"></canvas>
-  <div class="vignette"></div>
+<!-- =======================================================
+     BACKGROUND
+======================================================= -->
 
-  <main class="stage">
-    <div class="logo-wrap">
-      <div class="halo"></div>
-      <div class="ring"></div>
-      <div class="ring r2"></div>
-      <!-- Replace src with your college logo image -->
-      <img src="./img/logo/logo.png" alt="Global College of Missiology Logo" id="logoImg" />
+<div class="bg"></div>
+<div class="rays"></div>
+
+<canvas
+  id="particles"
+  aria-hidden="true"
+></canvas>
+
+<div
+  class="vignette"
+  aria-hidden="true"
+></div>
+
+
+<!-- =======================================================
+     MAIN
+======================================================= -->
+
+<main class="stage">
+
+  <!-- LOGO -->
+
+  <div class="logo-wrap">
+
+    <div class="halo"></div>
+
+    <div class="ring"></div>
+
+    <div class="ring r2"></div>
+
+    <img
+      src="./img/logo/logo.png"
+      alt="Global College of Missiology Logo"
+      id="logoImg"
+    >
+
+  </div>
+
+
+  <!-- SCHOOL NAME -->
+
+  <header class="wordmark">
+
+    <span class="over">
+      Welcome to
+    </span>
+
+    <span class="name">
+      Global College of Missiology
+    </span>
+
+    <span class="under">
+      Equipping saints for the harvest fields of the world
+    </span>
+
+  </header>
+
+
+  <!-- ORNAMENT -->
+
+  <div
+    class="ornament"
+    aria-hidden="true"
+  >
+
+    <span></span>
+
+    <i>✦</i>
+
+    <span></span>
+
+  </div>
+
+
+  <!-- EXPLORE -->
+
+  <a
+    href="./home.html"
+    class="explore"
+    id="exploreLink"
+    aria-label="Explore Global College of Missiology"
+  >
+
+    <span>
+      Let's Explore
+    </span>
+
+    <span
+      class="arrow"
+      aria-hidden="true"
+    >
+      →
+    </span>
+
+  </a>
+
+
+  <!-- =====================================================
+       FEE POLICY
+  ====================================================== -->
+
+  <section
+    class="fee-policy"
+    aria-label="Semester fee information"
+  >
+
+    <div class="fee-title">
+      Semester Fee Policy
     </div>
 
-    <header class="wordmark">
-      <span class="over">Welcome to</span>
-      <span class="name">Global College of Missiology</span>
-      <span class="under">Equipping saints for the harvest fields of the world</span>
-    </header>
+    <div class="fee-grid">
 
-    <div class="ornament">
-      <span></span><i>✦</i><span></span>
+      <div class="fee-card">
+
+        <strong>
+          $15 USD
+        </strong>
+
+        <span>
+          Students in Nigeria
+        </span>
+
+      </div>
+
+
+      <div class="fee-card">
+
+        <strong>
+          $25 USD
+        </strong>
+
+        <span>
+          Students outside Nigeria
+        </span>
+
+      </div>
+
+
+      <div class="fee-card">
+
+        <strong>
+          15 Days
+        </strong>
+
+        <span>
+          Duration per semester
+        </span>
+
+      </div>
+
     </div>
 
-    <a href="./home.html" class="explore" id="exploreLink">
-      Let's Explore <span class="arrow">→</span>
-    </a>
+  </section>
 
-   
-  </main>
 
-  <div class="veil" id="veil"></div>
+  <!-- VERSE -->
+
+  <div class="verse">
+    "Go ye therefore, and teach all nations." — Matthew 28:19
+  </div>
+
+</main>
+
+
+<!-- TRANSITION -->
+
+<div
+  class="veil"
+  id="veil"
+  aria-hidden="true"
+></div>
+
 
 <script>
-  /* ---------- Floating light particles ---------- */
-  const canvas = document.getElementById('particles');
-  const ctx = canvas.getContext('2d');
-  let W, H;
-  const particles = [];
-  const COUNT = Math.min(110, Math.floor(innerWidth / 12)); // auto-density per screen
 
-  function resize() {
-    W = canvas.width = innerWidth;
-    H = canvas.height = innerHeight;
+/* =========================================================
+   PARTICLE SYSTEM
+========================================================= */
+
+const canvas =
+  document.getElementById("particles");
+
+const ctx =
+  canvas.getContext("2d");
+
+let W = 0;
+let H = 0;
+
+let particles = [];
+
+let animationFrame = null;
+
+
+/* Reduce particle count on smaller devices */
+
+function getParticleCount() {
+
+  const width =
+    window.innerWidth;
+
+  if (width <= 390) {
+    return 25;
   }
-  resize();
-  addEventListener('resize', resize);
 
-  function spawn(anywhere) {
-    return {
-      x: Math.random() * W,
-      y: anywhere ? Math.random() * H : H + 10,
-      r: Math.random() * 1.7 + 0.4,
-      vy: -(Math.random() * 0.32 + 0.08),
-      vx: (Math.random() - 0.5) * 0.14,
-      alpha: Math.random() * 0.55 + 0.12,
-      tw: Math.random() * Math.PI * 2
-    };
+  if (width <= 650) {
+    return 38;
   }
 
-  for (let i = 0; i < COUNT; i++) particles.push(spawn(true));
+  if (width <= 1000) {
+    return 60;
+  }
 
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    for (const p of particles) {
-      p.tw += 0.03;
-      p.x += p.vx;
-      p.y += p.vy;
-      const a = p.alpha * (0.6 + 0.4 * Math.sin(p.tw));
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(240,215,140,${a})`;
-      ctx.shadowColor = 'rgba(240,215,140,.9)';
-      ctx.shadowBlur = 6;
-      ctx.fill();
-      if (p.y < -12 || p.x < -12 || p.x > W + 12) Object.assign(p, spawn(false));
+  return Math.min(
+    110,
+    Math.floor(width / 12)
+  );
+}
+
+
+/* Resize canvas */
+
+function resizeCanvas() {
+
+  const dpr =
+    Math.min(
+      window.devicePixelRatio || 1,
+      2
+    );
+
+  W = window.innerWidth;
+  H = window.innerHeight;
+
+  canvas.width =
+    Math.floor(W * dpr);
+
+  canvas.height =
+    Math.floor(H * dpr);
+
+  canvas.style.width =
+    W + "px";
+
+  canvas.style.height =
+    H + "px";
+
+  ctx.setTransform(
+    dpr,
+    0,
+    0,
+    dpr,
+    0,
+    0
+  );
+}
+
+
+/* Create particle */
+
+function createParticle(anywhere = true) {
+
+  return {
+
+    x:
+      Math.random() * W,
+
+    y:
+      anywhere
+        ? Math.random() * H
+        : H + 10,
+
+    r:
+      Math.random() * 1.5 + 0.35,
+
+    vy:
+      -(Math.random() * 0.30 + 0.07),
+
+    vx:
+      (Math.random() - 0.5) * 0.12,
+
+    alpha:
+      Math.random() * 0.5 + 0.1,
+
+    tw:
+      Math.random() *
+      Math.PI *
+      2
+
+  };
+
+}
+
+
+/* Build particles */
+
+function rebuildParticles() {
+
+  particles = [];
+
+  const count =
+    getParticleCount();
+
+  for (
+    let i = 0;
+    i < count;
+    i++
+  ) {
+
+    particles.push(
+      createParticle(true)
+    );
+
+  }
+
+}
+
+
+/* Draw particles */
+
+function drawParticles() {
+
+  ctx.clearRect(
+    0,
+    0,
+    W,
+    H
+  );
+
+  for (
+    const particle
+    of particles
+  ) {
+
+    particle.tw += 0.03;
+
+    particle.x +=
+      particle.vx;
+
+    particle.y +=
+      particle.vy;
+
+    const alpha =
+      particle.alpha *
+      (
+        0.6 +
+        0.4 *
+        Math.sin(particle.tw)
+      );
+
+    ctx.beginPath();
+
+    ctx.arc(
+      particle.x,
+      particle.y,
+      particle.r,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fillStyle =
+      `rgba(240,215,140,${alpha})`;
+
+    ctx.shadowColor =
+      "rgba(240,215,140,.9)";
+
+    ctx.shadowBlur = 5;
+
+    ctx.fill();
+
+
+    /* Respawn */
+
+    if (
+      particle.y < -12 ||
+      particle.x < -12 ||
+      particle.x > W + 12
+    ) {
+
+      Object.assign(
+        particle,
+        createParticle(false)
+      );
+
     }
-    requestAnimationFrame(draw);
+
   }
-  draw();
 
-  /* ---------- Magnetic "Let's Explore" (fine pointers only) ---------- */
-  const link = document.getElementById('exploreLink');
-  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
-  const STRENGTH = 26;
+  animationFrame =
+    requestAnimationFrame(
+      drawParticles
+    );
 
-  if (fine) {
-    document.addEventListener('mousemove', e => {
-      const rect = link.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dx = e.clientX - cx;
-      const dy = e.clientY - cy;
-      const dist = Math.hypot(dx, dy);
+}
 
-      if (dist < 140 && dist > 0) {
-        const pull = (1 - dist / 140) * STRENGTH;
-        link.style.transform = `translate(${dx / dist * pull}px, ${dy / dist * pull}px)`;
-      } else {
-        link.style.transform = 'translate(0,0)';
+
+/* Initialize */
+
+resizeCanvas();
+
+rebuildParticles();
+
+drawParticles();
+
+
+/* Resize */
+
+let resizeTimer;
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    clearTimeout(
+      resizeTimer
+    );
+
+    resizeTimer =
+      setTimeout(() => {
+
+        resizeCanvas();
+
+        rebuildParticles();
+
+      }, 150);
+
+  },
+  { passive: true }
+);
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+const link =
+  document.getElementById(
+    "exploreLink"
+  );
+
+const veil =
+  document.getElementById(
+    "veil"
+  );
+
+
+/* Magnetic effect only on desktop */
+
+const finePointer =
+  window.matchMedia(
+    "(hover: hover) and (pointer: fine)"
+  ).matches;
+
+
+if (finePointer) {
+
+  let magneticFrame = null;
+
+  document.addEventListener(
+    "mousemove",
+    (event) => {
+
+      if (magneticFrame) {
+        return;
       }
-    });
+
+      magneticFrame =
+        requestAnimationFrame(() => {
+
+          const rect =
+            link.getBoundingClientRect();
+
+          const centerX =
+            rect.left +
+            rect.width / 2;
+
+          const centerY =
+            rect.top +
+            rect.height / 2;
+
+          const dx =
+            event.clientX -
+            centerX;
+
+          const dy =
+            event.clientY -
+            centerY;
+
+          const distance =
+            Math.hypot(
+              dx,
+              dy
+            );
+
+          const strength = 26;
+
+          if (
+            distance < 140 &&
+            distance > 0
+          ) {
+
+            const pull =
+              (
+                1 -
+                distance / 140
+              ) *
+              strength;
+
+            link.style.transform =
+              `translate(
+                ${dx / distance * pull}px,
+                ${dy / distance * pull}px
+              )`;
+
+          } else {
+
+            link.style.transform =
+              "translate(0,0)";
+
+          }
+
+          magneticFrame = null;
+
+        });
+
+    },
+    { passive: true }
+  );
+
+}
+
+
+/* =========================================================
+   PAGE TRANSITION
+========================================================= */
+
+let navigating = false;
+
+link.addEventListener(
+  "click",
+  (event) => {
+
+    if (navigating) {
+      return;
+    }
+
+    event.preventDefault();
+
+    navigating = true;
+
+    link.style.transform =
+      "translate(0,0)";
+
+    veil.classList.add(
+      "active"
+    );
+
+    veil.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    const destination =
+      link.getAttribute(
+        "href"
+      );
+
+    setTimeout(
+      () => {
+
+        window.location.href =
+          destination;
+
+      },
+      850
+    );
+
   }
+);
 
-  /* ---------- Smooth veil transition on click ---------- */
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const veil = document.getElementById('veil');
-    veil.classList.add('active');
-    setTimeout(() => {
-      window.location.href = link.getAttribute('href');
-    }, 880);
-  });
 
-  /* ---------- Graceful logo fallback: golden "GCM" seal ---------- */
-  const logoImg = document.getElementById('logoImg');
-  logoImg.addEventListener('error', () => {
-    const seal = document.createElement('div');
+/* =========================================================
+   LOGO FALLBACK
+========================================================= */
+
+const logoImg =
+  document.getElementById(
+    "logoImg"
+  );
+
+
+logoImg.addEventListener(
+  "error",
+  () => {
+
+    const seal =
+      document.createElement(
+        "div"
+      );
+
+    seal.className =
+      "logo-fallback";
+
     seal.style.cssText = `
-      width: clamp(150px, 34vmin, 300px);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      border: 2px solid rgba(201,162,75,.65);
-      background: radial-gradient(circle at 35% 28%, #1c2a52, #0a1024 70%);
-      box-shadow: 0 0 40px rgba(201,162,75,.4), inset 0 0 34px rgba(201,162,75,.18);
-      position: relative;`;
+
+      width:100%;
+      aspect-ratio:1;
+
+      border-radius:50%;
+
+      display:flex;
+      flex-direction:column;
+
+      align-items:center;
+      justify-content:center;
+
+      border:
+        2px solid
+        rgba(201,162,75,.65);
+
+      background:
+        radial-gradient(
+          circle at 35% 28%,
+          #1c2a52,
+          #0a1024 70%
+        );
+
+      box-shadow:
+        0 0 40px
+        rgba(201,162,75,.4),
+
+        inset 0 0 34px
+        rgba(201,162,75,.18);
+
+      position:relative;
+
+      animation:
+        floaty 5.5s
+        ease-in-out
+        infinite;
+
+    `;
+
+
     seal.innerHTML = `
-      <span style="font-family:'Marcellus',serif;font-size:clamp(2.2rem,10vmin,4rem);
-        color: var(--gold-light); text-shadow: 0 0 24px rgba(201,162,75,.85);
-        letter-spacing:.05em;">GCM</span>
-      <span style="font-size:clamp(.55rem,1.6vmin,.75rem);letter-spacing:.4em;
-        text-indent:.4em;color:rgba(240,215,140,.7);text-transform:uppercase;
-        margin-top:6px;">Est. In Christ</span>
-      <span style="position:absolute;top:8%;left:50%;transform:translateX(-50%);
-        color:rgba(240,215,140,.8);font-size:clamp(.7rem,2vmin,1rem);">✝</span>`;
-    logoImg.replaceWith(seal);
-  });
+
+      <span
+        style="
+          font-family:'Marcellus',serif;
+          font-size:clamp(2.2rem,10vmin,4rem);
+          color:var(--gold-light);
+          text-shadow:
+            0 0 24px
+            rgba(201,162,75,.85);
+          letter-spacing:.05em;
+        "
+      >
+        GCM
+      </span>
+
+      <span
+        style="
+          font-size:clamp(.55rem,1.6vmin,.75rem);
+          letter-spacing:.4em;
+          text-indent:.4em;
+          color:rgba(240,215,140,.7);
+          text-transform:uppercase;
+          margin-top:6px;
+        "
+      >
+        Est. In Christ
+      </span>
+
+      <span
+        style="
+          position:absolute;
+          top:8%;
+          left:50%;
+          transform:translateX(-50%);
+          color:rgba(240,215,140,.8);
+          font-size:clamp(.7rem,2vmin,1rem);
+        "
+      >
+        ✝
+      </span>
+
+    `;
+
+
+    logoImg.replaceWith(
+      seal
+    );
+
+  },
+  { once: true }
+);
+
+
+/* =========================================================
+   PAGE VISIBILITY
+========================================================= */
+
+document.addEventListener(
+  "visibilitychange",
+  () => {
+
+    if (
+      document.hidden
+    ) {
+
+      if (animationFrame) {
+
+        cancelAnimationFrame(
+          animationFrame
+        );
+
+        animationFrame = null;
+
+      }
+
+    } else {
+
+      if (!animationFrame) {
+
+        drawParticles();
+
+      }
+
+    }
+
+  }
+);
+
 </script>
+
 </body>
 </html>

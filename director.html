@@ -23,23 +23,15 @@
         content="#071321"
     >
 
-    <title>
-        Apostle Kingsley Samuel | Global College of Missiology
-    </title>
-
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
+    <title>Apostle Kingsley Samuel | Global College of Missiology</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap"
         rel="stylesheet"
     >
-
 
     <style>
 
@@ -55,16 +47,14 @@
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
 
-
         body {
-            margin: 0;
             min-width: 320px;
+            margin: 0;
 
             font-family: "Cormorant Garamond", serif;
 
@@ -79,83 +69,72 @@
             text-rendering: optimizeLegibility;
         }
 
+        body.menu-open {
+            overflow: hidden;
+        }
 
         img {
             display: block;
             max-width: 100%;
         }
 
-
         a {
             color: inherit;
             text-decoration: none;
         }
-
 
         button,
         a {
             -webkit-tap-highlight-color: transparent;
         }
 
-
         button {
             font: inherit;
         }
 
-
-        :root {
-
-            --navy:
-                #071321;
-
-            --navy-dark:
-                #040a12;
-
-            --navy-light:
-                #0d2035;
-
-            --navy-card:
-                #0b1a2c;
-
-            --gold:
-                #d4af37;
-
-            --gold-light:
-                #f1d77a;
-
-            --ivory:
-                #f7f1e5;
-
-            --text:
-                #d5d0c6;
-
-            --muted:
-                #aaa69d;
-
-            --border:
-                rgba(212, 175, 55, .22);
-
-            --container:
-                1280px;
+        a,
+        button,
+        input,
+        textarea,
+        select {
+            outline: none;
         }
 
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--gold-light);
+            outline-offset: 4px;
+        }
+
+        :root {
+            --navy: #071321;
+            --navy-dark: #040a12;
+            --navy-light: #0d2035;
+            --navy-card: #0b1a2c;
+
+            --gold: #d4af37;
+            --gold-light: #f1d77a;
+
+            --ivory: #f7f1e5;
+            --text: #d5d0c6;
+            --muted: #aaa69d;
+
+            --border: rgba(212, 175, 55, .22);
+
+            --container: 1280px;
+        }
 
         /* =====================================================
-           PAGE LOADER
+           LOADER
         ====================================================== */
 
         .loader {
-
             position: fixed;
-
             inset: 0;
-
             z-index: 99999;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             background:
@@ -167,7 +146,6 @@
                 );
 
             opacity: 1;
-
             visibility: visible;
 
             transition:
@@ -175,27 +153,18 @@
                 visibility .6s ease;
         }
 
-
         .loader.hide {
-
             opacity: 0;
-
             visibility: hidden;
-
             pointer-events: none;
         }
 
-
         .loader-content {
-
             width: min(90%, 320px);
-
             text-align: center;
         }
 
-
         .loader-logo {
-
             width: 82px;
             height: 82px;
 
@@ -203,13 +172,10 @@
 
             object-fit: contain;
 
-            animation:
-                loaderPulse 1.6s ease-in-out infinite;
+            animation: loaderPulse 1.6s ease-in-out infinite;
         }
 
-
         .loader-name {
-
             font-family: "Marcellus", serif;
 
             color: var(--gold);
@@ -223,9 +189,7 @@
             text-transform: uppercase;
         }
 
-
         .loader-line {
-
             width: 90px;
             height: 2px;
 
@@ -233,13 +197,10 @@
 
             background: var(--gold);
 
-            animation:
-                loaderLine 1.5s ease-in-out infinite;
+            animation: loaderLine 1.5s ease-in-out infinite;
         }
 
-
         @keyframes loaderPulse {
-
             0%,
             100% {
                 transform: scale(1);
@@ -252,9 +213,7 @@
             }
         }
 
-
         @keyframes loaderLine {
-
             0% {
                 transform: scaleX(.3);
                 opacity: .3;
@@ -271,20 +230,18 @@
             }
         }
 
-
         /* =====================================================
            HEADER
         ====================================================== */
 
         .site-header {
-
             position: fixed;
 
             top: 0;
             left: 0;
             right: 0;
 
-            z-index: 5000;
+            z-index: 7000;
 
             width: 100%;
 
@@ -294,20 +251,15 @@
             border-bottom:
                 1px solid rgba(212, 175, 55, .12);
 
-            backdrop-filter:
-                blur(18px);
-
-            -webkit-backdrop-filter:
-                blur(18px);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
             transition:
                 background .3s ease,
                 box-shadow .3s ease;
         }
 
-
         .site-header.scrolled {
-
             background:
                 rgba(4, 11, 20, .96);
 
@@ -315,46 +267,35 @@
                 0 12px 40px rgba(0, 0, 0, .28);
         }
 
-
         .navbar {
-
-            width:
-                min(94%, var(--container));
+            width: min(94%, var(--container));
 
             min-height: 88px;
 
             margin: auto;
 
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
 
             gap: 30px;
         }
 
-
         /* =====================================================
-           LOGO / BRAND
+           BRAND
         ====================================================== */
 
         .brand {
-
             display: flex;
-
             align-items: center;
 
             gap: 13px;
 
             min-width: 0;
-
             flex-shrink: 0;
         }
 
-
         .brand-logo {
-
             width: 56px;
             height: 56px;
 
@@ -363,22 +304,15 @@
             flex-shrink: 0;
         }
 
-
         .brand-text {
-
             display: flex;
-
             flex-direction: column;
 
             min-width: 0;
         }
 
-
         .brand-name {
-
-            font-family:
-                "Marcellus",
-                serif;
+            font-family: "Marcellus", serif;
 
             color: var(--ivory);
 
@@ -391,9 +325,7 @@
             white-space: nowrap;
         }
 
-
         .brand-tagline {
-
             margin-top: 4px;
 
             color: var(--gold);
@@ -409,17 +341,13 @@
             white-space: nowrap;
         }
 
-
         /* =====================================================
            DESKTOP NAVIGATION
         ====================================================== */
 
         .nav-menu {
-
             display: flex;
-
             align-items: center;
-
             justify-content: flex-end;
 
             gap: clamp(14px, 1.8vw, 28px);
@@ -427,18 +355,14 @@
             min-width: 0;
         }
 
-
         .nav-menu a {
-
             position: relative;
 
             padding: 10px 0;
 
             color: #d7d2c8;
 
-            font-family:
-                "Marcellus",
-                serif;
+            font-family: "Marcellus", serif;
 
             font-size: 12px;
 
@@ -448,13 +372,10 @@
 
             white-space: nowrap;
 
-            transition:
-                color .25s ease;
+            transition: color .25s ease;
         }
 
-
         .nav-menu a::after {
-
             content: "";
 
             position: absolute;
@@ -467,31 +388,24 @@
 
             background: var(--gold);
 
-            transition:
-                width .25s ease;
+            transition: width .25s ease;
         }
-
 
         .nav-menu a:hover,
         .nav-menu a.active {
-
             color: var(--gold-light);
         }
 
-
         .nav-menu a:hover::after,
         .nav-menu a.active::after {
-
             width: 100%;
         }
-
 
         /* =====================================================
            MOBILE MENU BUTTON
         ====================================================== */
 
         .menu-button {
-
             display: none;
 
             width: 46px;
@@ -499,11 +413,9 @@
 
             flex-shrink: 0;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            background:
-                rgba(255, 255, 255, .04);
+            background: rgba(255, 255, 255, .04);
 
             color: var(--ivory);
 
@@ -512,7 +424,7 @@
             align-items: center;
             justify-content: center;
 
-            border-radius: 2px;
+            border-radius: 3px;
 
             font-size: 23px;
 
@@ -520,32 +432,56 @@
 
             transition:
                 background .25s ease,
-                color .25s ease;
+                color .25s ease,
+                border-color .25s ease;
         }
 
-
-        .menu-button:hover {
-
+        .menu-button:hover,
+        .menu-button.open {
             background: var(--gold);
-
             color: var(--navy);
+            border-color: var(--gold);
         }
 
+        /* =====================================================
+           MOBILE OVERLAY
+        ====================================================== */
+
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+
+            z-index: 6800;
+
+            background:
+                rgba(0, 0, 0, .62);
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            transition:
+                opacity .3s ease,
+                visibility .3s ease;
+        }
+
+        .menu-overlay.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
 
         /* =====================================================
            HERO
         ====================================================== */
 
         .hero {
-
             position: relative;
 
             min-height: 92svh;
-
             min-height: 92vh;
 
             display: flex;
-
             align-items: center;
 
             overflow: hidden;
@@ -553,32 +489,23 @@
             isolation: isolate;
         }
 
-
         .hero-background {
-
             position: absolute;
-
             inset: 0;
 
             z-index: -3;
 
             background-image:
-                url("assets/images/director.jpeg");
+                url("./assets/images/director.jpeg");
 
             background-size: cover;
+            background-position: center center;
 
-            background-position:
-                center center;
-
-            transform:
-                scale(1.02);
+            transform: scale(1.02);
         }
 
-
         .hero-overlay {
-
             position: absolute;
-
             inset: 0;
 
             z-index: -2;
@@ -593,11 +520,8 @@
                 );
         }
 
-
         .hero-glow {
-
             position: absolute;
-
             inset: 0;
 
             z-index: -1;
@@ -610,30 +534,20 @@
                 );
         }
 
-
         .hero-container {
-
-            width:
-                min(92%, var(--container));
+            width: min(92%, var(--container));
 
             margin: auto;
 
-            padding:
-                150px 0 100px;
+            padding: 150px 0 100px;
         }
-
 
         .hero-content {
-
-            width:
-                min(100%, 820px);
+            width: min(100%, 820px);
         }
 
-
         .eyebrow {
-
             display: inline-flex;
-
             align-items: center;
 
             gap: 12px;
@@ -642,9 +556,7 @@
 
             color: var(--gold);
 
-            font-family:
-                "Marcellus",
-                serif;
+            font-family: "Marcellus", serif;
 
             font-size: 13px;
 
@@ -653,9 +565,7 @@
             text-transform: uppercase;
         }
 
-
         .eyebrow::before {
-
             content: "";
 
             width: 44px;
@@ -664,58 +574,41 @@
             background: var(--gold);
         }
 
-
         .hero h1 {
-
             max-width: 850px;
 
-            font-family:
-                "Marcellus",
-                serif;
+            font-family: "Marcellus", serif;
 
             font-weight: 400;
 
-            font-size:
-                clamp(42px, 6vw, 82px);
+            font-size: clamp(42px, 6vw, 82px);
 
-            line-height:
-                1.04;
+            line-height: 1.04;
 
-            letter-spacing:
-                -.8px;
+            letter-spacing: -.8px;
 
             color: var(--ivory);
         }
 
-
         .hero h1 span {
-
             display: block;
-
             color: var(--gold);
         }
 
-
         .hero-description {
-
-            width:
-                min(100%, 760px);
+            width: min(100%, 760px);
 
             margin-top: 25px;
 
             color: #d8d3c8;
 
-            font-size:
-                clamp(18px, 2vw, 23px);
+            font-size: clamp(18px, 2vw, 23px);
 
             line-height: 1.65;
         }
 
-
         .hero-buttons {
-
             display: flex;
-
             flex-wrap: wrap;
 
             gap: 14px;
@@ -723,26 +616,18 @@
             margin-top: 34px;
         }
 
-
         .button {
-
             min-height: 52px;
 
-            padding:
-                13px 25px;
+            padding: 13px 25px;
 
             display: inline-flex;
-
             align-items: center;
-
             justify-content: center;
 
-            border:
-                1px solid var(--gold);
+            border: 1px solid var(--gold);
 
-            font-family:
-                "Marcellus",
-                serif;
+            font-family: "Marcellus", serif;
 
             font-size: 12px;
 
@@ -756,86 +641,55 @@
                 color .25s ease;
         }
 
-
         .button:hover {
-
-            transform:
-                translateY(-3px);
+            transform: translateY(-3px);
         }
-
 
         .button-primary {
-
-            background:
-                var(--gold);
-
-            color:
-                #071321;
+            background: var(--gold);
+            color: #071321;
         }
-
 
         .button-primary:hover {
-
-            background:
-                var(--gold-light);
+            background: var(--gold-light);
         }
-
 
         .button-outline {
-
-            background:
-                rgba(0, 0, 0, .18);
-
-            color:
-                var(--gold);
+            background: rgba(0, 0, 0, .18);
+            color: var(--gold);
         }
-
 
         .button-outline:hover {
-
-            background:
-                var(--gold);
-
-            color:
-                #071321;
+            background: var(--gold);
+            color: #071321;
         }
-
 
         /* =====================================================
            GENERAL SECTION
         ====================================================== */
 
         .section {
+            width: min(92%, var(--container));
 
-            width:
-                min(92%, var(--container));
-
-            margin:
-                0 auto;
+            margin: 0 auto;
 
             padding:
                 clamp(75px, 9vw, 120px) 0;
         }
 
-
         .section-header {
-
             max-width: 820px;
 
             margin-bottom:
                 clamp(38px, 5vw, 62px);
         }
 
-
         .section-label {
-
             margin-bottom: 13px;
 
             color: var(--gold);
 
-            font-family:
-                "Marcellus",
-                serif;
+            font-family: "Marcellus", serif;
 
             font-size: 12px;
 
@@ -844,15 +698,10 @@
             text-transform: uppercase;
         }
 
-
         .section-title {
+            font-family: "Marcellus", serif;
 
-            font-family:
-                "Marcellus",
-                serif;
-
-            font-size:
-                clamp(32px, 5vw, 58px);
+            font-size: clamp(32px, 5vw, 58px);
 
             font-weight: 400;
 
@@ -861,36 +710,27 @@
             color: var(--ivory);
         }
 
-
         .section-title span {
-
-            color:
-                var(--gold);
+            color: var(--gold);
         }
 
-
         .section-description {
-
             max-width: 760px;
 
             margin-top: 18px;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
-            font-size:
-                clamp(17px, 2vw, 20px);
+            font-size: clamp(17px, 2vw, 20px);
 
             line-height: 1.7;
         }
 
-
         /* =====================================================
-           LEGACY STRIP
+           LEGACY
         ====================================================== */
 
         .legacy {
-
             background:
                 linear-gradient(
                     90deg,
@@ -899,83 +739,57 @@
                     #081524
                 );
 
-            border-top:
-                1px solid var(--border);
-
-            border-bottom:
-                1px solid var(--border);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
-
         .legacy-grid {
-
-            width:
-                min(92%, var(--container));
+            width: min(92%, var(--container));
 
             margin: auto;
 
             display: grid;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
 
-
         .legacy-item {
-
             min-width: 0;
 
-            padding:
-                45px 25px;
+            padding: 45px 25px;
 
             text-align: center;
 
-            border-right:
-                1px solid var(--border);
+            border-right: 1px solid var(--border);
         }
-
 
         .legacy-item:last-child {
-
-            border-right:
-                none;
+            border-right: none;
         }
 
-
         .legacy-number {
+            color: var(--gold);
 
-            color:
-                var(--gold);
+            font-family: "Marcellus", serif;
 
-            font-family:
-                "Marcellus",
-                serif;
-
-            font-size:
-                clamp(38px, 5vw, 60px);
+            font-size: clamp(38px, 5vw, 60px);
 
             line-height: 1;
         }
 
-
         .legacy-title {
-
             margin-top: 10px;
 
-            color:
-                var(--ivory);
+            color: var(--ivory);
 
-            font-size:
-                clamp(16px, 2vw, 19px);
+            font-size: clamp(16px, 2vw, 19px);
         }
-
 
         /* =====================================================
            BIOGRAPHY
         ====================================================== */
 
         .bio-grid {
-
             display: grid;
 
             grid-template-columns:
@@ -984,49 +798,36 @@
 
             align-items: center;
 
-            gap:
-                clamp(45px, 7vw, 90px);
+            gap: clamp(45px, 7vw, 90px);
         }
 
-
         .main-portrait {
-
             position: relative;
 
             width: 100%;
-
             max-width: 560px;
 
             margin: auto;
 
             padding: 11px;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            background:
-                rgba(255,255,255,.025);
+            background: rgba(255,255,255,.025);
         }
-
 
         .main-portrait img {
-
             width: 100%;
 
-            aspect-ratio:
-                4 / 5;
+            aspect-ratio: 4 / 5;
 
             object-fit: cover;
-
             object-position: center;
 
-            background:
-                #0b1a2c;
+            background: #0b1a2c;
         }
 
-
         .main-portrait::before {
-
             content: "";
 
             position: absolute;
@@ -1037,18 +838,13 @@
             width: 90px;
             height: 90px;
 
-            border-top:
-                2px solid var(--gold);
-
-            border-left:
-                2px solid var(--gold);
+            border-top: 2px solid var(--gold);
+            border-left: 2px solid var(--gold);
 
             pointer-events: none;
         }
 
-
         .main-portrait::after {
-
             content: "";
 
             position: absolute;
@@ -1059,24 +855,16 @@
             width: 90px;
             height: 90px;
 
-            border-right:
-                2px solid var(--gold);
-
-            border-bottom:
-                2px solid var(--gold);
+            border-right: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
 
             pointer-events: none;
         }
 
-
         .bio-content h2 {
+            font-family: "Marcellus", serif;
 
-            font-family:
-                "Marcellus",
-                serif;
-
-            font-size:
-                clamp(31px, 4vw, 48px);
+            font-size: clamp(31px, 4vw, 48px);
 
             font-weight: 400;
 
@@ -1085,60 +873,43 @@
             margin-bottom: 23px;
         }
 
-
         .bio-content h2 span {
-
-            color:
-                var(--gold);
+            color: var(--gold);
         }
 
-
         .bio-content p {
-
             margin-bottom: 19px;
 
-            color:
-                var(--text);
+            color: var(--text);
 
-            font-size:
-                clamp(17px, 2vw, 19px);
+            font-size: clamp(17px, 2vw, 19px);
 
             line-height: 1.8;
         }
 
-
         .quote {
-
             margin-top: 28px;
 
-            padding:
-                22px 24px;
+            padding: 22px 24px;
 
-            border-left:
-                3px solid var(--gold);
+            border-left: 3px solid var(--gold);
 
-            background:
-                rgba(212,175,55,.055);
+            background: rgba(212,175,55,.055);
 
-            color:
-                var(--ivory);
+            color: var(--ivory);
 
-            font-size:
-                clamp(18px, 2vw, 21px);
+            font-size: clamp(18px, 2vw, 21px);
 
-            font-style:
-                italic;
+            font-style: italic;
 
             line-height: 1.6;
         }
 
-
         /* =====================================================
-           THREE DIRECTOR PHOTOS
+           DIRECTOR PHOTOS
         ====================================================== */
 
         .gallery-grid {
-
             display: grid;
 
             grid-template-columns:
@@ -1149,67 +920,48 @@
 
             gap: 18px;
 
-            min-height:
-                650px;
+            min-height: 650px;
         }
 
-
         .director-photo {
-
             position: relative;
 
             min-width: 0;
-
             min-height: 0;
 
             overflow: hidden;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            background:
-                #0b1a2c;
+            background: #0b1a2c;
         }
-
 
         .director-photo.large {
-
-            grid-row:
-                1 / 3;
+            grid-row: 1 / 3;
         }
 
-
         .director-photo img {
-
             width: 100%;
             height: 100%;
 
             object-fit: cover;
-
             object-position: center;
 
-            transition:
-                transform .7s ease;
+            transition: transform .7s ease;
         }
-
 
         .director-photo:hover img {
-
-            transform:
-                scale(1.05);
+            transform: scale(1.05);
         }
 
-
         .photo-caption {
-
             position: absolute;
 
             left: 0;
             right: 0;
             bottom: 0;
 
-            padding:
-                45px 24px 22px;
+            padding: 45px 24px 22px;
 
             background:
                 linear-gradient(
@@ -1217,8 +969,7 @@
                     rgba(0,0,0,.9)
                 );
 
-            transform:
-                translateY(8px);
+            transform: translateY(8px);
 
             opacity: 0;
 
@@ -1227,42 +978,28 @@
                 transform .35s ease;
         }
 
-
         .director-photo:hover .photo-caption {
-
             opacity: 1;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
-
 
         .photo-caption span {
+            color: var(--gold);
 
-            color:
-                var(--gold);
+            font-family: "Marcellus", serif;
 
-            font-family:
-                "Marcellus",
-                serif;
+            font-size: 11px;
 
-            font-size:
-                11px;
+            letter-spacing: 2px;
 
-            letter-spacing:
-                2px;
-
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
         }
-
 
         /* =====================================================
            DARK SECTION
         ====================================================== */
 
         .dark-section {
-
             background:
                 linear-gradient(
                     180deg,
@@ -1270,20 +1007,15 @@
                     #0b1b2e
                 );
 
-            border-top:
-                1px solid rgba(212,175,55,.08);
-
-            border-bottom:
-                1px solid rgba(212,175,55,.08);
+            border-top: 1px solid rgba(212,175,55,.08);
+            border-bottom: 1px solid rgba(212,175,55,.08);
         }
 
-
         /* =====================================================
-           MINISTRY SECTION
+           MINISTRY
         ====================================================== */
 
         .ministry-grid {
-
             display: grid;
 
             grid-template-columns:
@@ -1292,101 +1024,74 @@
 
             align-items: center;
 
-            gap:
-                clamp(40px, 7vw, 90px);
+            gap: clamp(40px, 7vw, 90px);
         }
 
-
         .ministry-image {
-
             width: 100%;
 
-            height:
-                clamp(400px, 48vw, 620px);
+            height: clamp(400px, 48vw, 620px);
 
             overflow: hidden;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            background:
-                #0b1a2c;
+            background: #0b1a2c;
         }
 
-
         .ministry-image img {
-
             width: 100%;
             height: 100%;
 
             object-fit: cover;
-
             object-position: center;
         }
 
-
         .ministry-content p {
-
             margin-bottom: 20px;
 
-            color:
-                var(--text);
+            color: var(--text);
 
-            font-size:
-                clamp(17px, 2vw, 19px);
+            font-size: clamp(17px, 2vw, 19px);
 
             line-height: 1.8;
         }
 
-
         .ministry-list {
-
             list-style: none;
 
             margin-top: 28px;
         }
 
-
         .ministry-list li {
-
             display: flex;
-
             align-items: flex-start;
 
             gap: 13px;
 
-            padding:
-                13px 0;
+            padding: 13px 0;
 
             border-bottom:
                 1px solid rgba(255,255,255,.07);
 
-            color:
-                var(--ivory);
+            color: var(--ivory);
 
-            font-size:
-                clamp(16px, 2vw, 18px);
+            font-size: clamp(16px, 2vw, 18px);
         }
 
-
         .ministry-list li::before {
+            content: "✦";
 
-            content:
-                "✦";
-
-            color:
-                var(--gold);
+            color: var(--gold);
 
             flex-shrink: 0;
         }
-
 
         /* =====================================================
            VISION
         ====================================================== */
 
         .vision-box {
-
             position: relative;
 
             padding:
@@ -1395,8 +1100,7 @@
 
             text-align: center;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
             background:
                 linear-gradient(
@@ -1408,9 +1112,7 @@
             overflow: hidden;
         }
 
-
         .vision-box::before {
-
             content: "";
 
             position: absolute;
@@ -1421,16 +1123,11 @@
             width: 75px;
             height: 75px;
 
-            border-top:
-                2px solid var(--gold);
-
-            border-left:
-                2px solid var(--gold);
+            border-top: 2px solid var(--gold);
+            border-left: 2px solid var(--gold);
         }
 
-
         .vision-box::after {
-
             content: "";
 
             position: absolute;
@@ -1441,22 +1138,14 @@
             width: 75px;
             height: 75px;
 
-            border-right:
-                2px solid var(--gold);
-
-            border-bottom:
-                2px solid var(--gold);
+            border-right: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
         }
 
-
         .vision-box h2 {
+            font-family: "Marcellus", serif;
 
-            font-family:
-                "Marcellus",
-                serif;
-
-            font-size:
-                clamp(31px, 5vw, 58px);
+            font-size: clamp(31px, 5vw, 58px);
 
             font-weight: 400;
 
@@ -1465,67 +1154,47 @@
             margin-bottom: 22px;
         }
 
-
         .vision-box h2 span {
-
-            color:
-                var(--gold);
+            color: var(--gold);
         }
 
-
         .vision-box p {
-
-            width:
-                min(100%, 850px);
+            width: min(100%, 850px);
 
             margin: auto;
 
-            color:
-                var(--text);
+            color: var(--text);
 
-            font-size:
-                clamp(17px, 2vw, 21px);
+            font-size: clamp(17px, 2vw, 21px);
 
             line-height: 1.8;
         }
 
-
         .vision-quote {
-
             margin-top: 28px;
 
-            color:
-                var(--gold);
+            color: var(--gold);
 
-            font-family:
-                "Marcellus",
-                serif;
+            font-family: "Marcellus", serif;
 
-            font-size:
-                clamp(20px, 3vw, 31px);
+            font-size: clamp(20px, 3vw, 31px);
 
             line-height: 1.35;
         }
-
 
         /* =====================================================
            TIMELINE
         ====================================================== */
 
         .timeline {
-
             position: relative;
 
-            width:
-                min(100%, 1000px);
+            width: min(100%, 1000px);
 
-            margin:
-                55px auto 0;
+            margin: 55px auto 0;
         }
 
-
         .timeline::before {
-
             content: "";
 
             position: absolute;
@@ -1537,43 +1206,30 @@
 
             width: 1px;
 
-            background:
-                var(--border);
+            background: var(--border);
 
-            transform:
-                translateX(-50%);
+            transform: translateX(-50%);
         }
 
-
         .timeline-item {
-
             position: relative;
 
             width: 50%;
 
-            padding:
-                15px 50px 55px;
+            padding: 15px 50px 55px;
         }
 
-
         .timeline-item:nth-child(odd) {
-
             left: 0;
-
             text-align: right;
         }
 
-
         .timeline-item:nth-child(even) {
-
             left: 50%;
-
             text-align: left;
         }
 
-
         .timeline-dot {
-
             position: absolute;
 
             top: 22px;
@@ -1583,79 +1239,53 @@
 
             border-radius: 50%;
 
-            background:
-                var(--gold);
+            background: var(--gold);
 
             box-shadow:
                 0 0 0 6px rgba(212,175,55,.08);
         }
 
-
-        .timeline-item:nth-child(odd)
-        .timeline-dot {
-
+        .timeline-item:nth-child(odd) .timeline-dot {
             right: -7px;
         }
 
-
-        .timeline-item:nth-child(even)
-        .timeline-dot {
-
+        .timeline-item:nth-child(even) .timeline-dot {
             left: -7px;
         }
 
-
         .timeline-year {
+            color: var(--gold);
 
-            color:
-                var(--gold);
+            font-family: "Marcellus", serif;
 
-            font-family:
-                "Marcellus",
-                serif;
+            font-size: 13px;
 
-            font-size:
-                13px;
-
-            letter-spacing:
-                2px;
+            letter-spacing: 2px;
         }
 
-
         .timeline-item h3 {
+            margin: 7px 0 8px;
 
-            margin:
-                7px 0 8px;
+            font-family: "Marcellus", serif;
 
-            font-family:
-                "Marcellus",
-                serif;
-
-            font-size:
-                clamp(22px, 3vw, 28px);
+            font-size: clamp(22px, 3vw, 28px);
 
             font-weight: 400;
         }
 
-
         .timeline-item p {
+            color: var(--muted);
 
-            color:
-                var(--muted);
-
-            font-size:
-                clamp(16px, 2vw, 18px);
+            font-size: clamp(16px, 2vw, 18px);
 
             line-height: 1.7;
         }
-
 
         /* =====================================================
            CTA
         ====================================================== */
 
         .cta {
-
             position: relative;
 
             overflow: hidden;
@@ -1665,18 +1295,14 @@
                     rgba(3,9,16,.82),
                     rgba(3,9,16,.94)
                 ),
-                url("assets/images/director 2.jpeg");
+                url("./assets/images/director 2.jpeg");
 
             background-size: cover;
-
             background-position: center;
         }
 
-
         .cta-inner {
-
-            width:
-                min(92%, 1000px);
+            width: min(92%, 1000px);
 
             margin: auto;
 
@@ -1686,52 +1312,36 @@
             text-align: center;
         }
 
-
         .cta-inner h2 {
+            font-family: "Marcellus", serif;
 
-            font-family:
-                "Marcellus",
-                serif;
-
-            font-size:
-                clamp(35px, 6vw, 68px);
+            font-size: clamp(35px, 6vw, 68px);
 
             font-weight: 400;
 
             line-height: 1.12;
         }
 
-
         .cta-inner h2 span {
-
-            color:
-                var(--gold);
+            color: var(--gold);
         }
 
-
         .cta-inner p {
-
             max-width: 750px;
 
-            margin:
-                20px auto 0;
+            margin: 20px auto 0;
 
-            color:
-                #d0cbc0;
+            color: #d0cbc0;
 
-            font-size:
-                clamp(17px, 2vw, 21px);
+            font-size: clamp(17px, 2vw, 21px);
 
             line-height: 1.7;
         }
 
-
         .cta-buttons {
-
             display: flex;
 
             justify-content: center;
-
             flex-wrap: wrap;
 
             gap: 14px;
@@ -1739,48 +1349,35 @@
             margin-top: 32px;
         }
 
-
         /* =====================================================
            FOOTER
         ====================================================== */
 
         .site-footer {
+            background: #03080e;
 
-            background:
-                #03080e;
-
-            border-top:
-                1px solid var(--border);
+            border-top: 1px solid var(--border);
         }
 
-
         .footer-container {
-
-            width:
-                min(92%, var(--container));
+            width: min(92%, var(--container));
 
             margin: auto;
 
-            padding:
-                70px 0 30px;
+            padding: 70px 0 30px;
         }
 
-
         .footer-grid {
-
             display: grid;
 
             grid-template-columns:
                 1.5fr
                 repeat(3, 1fr);
 
-            gap:
-                45px;
+            gap: 45px;
         }
 
-
         .footer-brand-logo {
-
             width: 65px;
             height: 65px;
 
@@ -1789,12 +1386,8 @@
             margin-bottom: 17px;
         }
 
-
         .footer-brand h3 {
-
-            font-family:
-                "Marcellus",
-                serif;
+            font-family: "Marcellus", serif;
 
             font-size: 22px;
 
@@ -1803,51 +1396,40 @@
             margin-bottom: 13px;
         }
 
-
         .footer-brand p {
-
             max-width: 370px;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 17px;
 
             line-height: 1.7;
         }
 
-
         .footer-column h4 {
-
             margin-bottom: 17px;
 
-            color:
-                var(--gold);
+            color: var(--gold);
 
-            font-family:
-                "Marcellus",
-                serif;
+            font-family: "Marcellus", serif;
 
             font-size: 13px;
 
-            letter-spacing:
-                1.5px;
+            letter-spacing: 1.5px;
 
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
         }
 
-
         .footer-column a {
-
             display: block;
 
             width: fit-content;
 
+            max-width: 100%;
+
             margin-bottom: 9px;
 
-            color:
-                #9d9991;
+            color: #9d9991;
 
             font-size: 16px;
 
@@ -1856,23 +1438,15 @@
                 transform .25s ease;
         }
 
-
         .footer-column a:hover {
-
-            color:
-                var(--gold);
-
-            transform:
-                translateX(4px);
+            color: var(--gold);
+            transform: translateX(4px);
         }
 
-
         .footer-bottom {
-
             display: flex;
 
             align-items: center;
-
             justify-content: space-between;
 
             gap: 20px;
@@ -1884,19 +1458,16 @@
             border-top:
                 1px solid rgba(255,255,255,.07);
 
-            color:
-                #77736c;
+            color: #77736c;
 
             font-size: 14px;
         }
-
 
         /* =====================================================
            BACK TO TOP
         ====================================================== */
 
         .back-top {
-
             position: fixed;
 
             right:
@@ -1911,30 +1482,25 @@
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             z-index: 4000;
 
-            border:
-                1px solid var(--gold);
+            border: 1px solid var(--gold);
 
             background:
                 rgba(3,9,16,.9);
 
-            color:
-                var(--gold);
+            color: var(--gold);
 
             cursor: pointer;
 
             font-size: 20px;
 
             opacity: 0;
-
             visibility: hidden;
 
-            transform:
-                translateY(15px);
+            transform: translateY(15px);
 
             transition:
                 opacity .3s ease,
@@ -1944,96 +1510,65 @@
                 color .3s ease;
         }
 
-
         .back-top.show {
-
             opacity: 1;
-
             visibility: visible;
 
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
-
 
         .back-top:hover {
-
-            background:
-                var(--gold);
-
-            color:
-                var(--navy);
+            background: var(--gold);
+            color: var(--navy);
         }
-
 
         /* =====================================================
            REVEAL
         ====================================================== */
 
         .reveal {
-
             opacity: 0;
 
-            transform:
-                translateY(28px);
+            transform: translateY(28px);
 
             transition:
                 opacity .8s ease,
                 transform .8s ease;
         }
 
-
         .reveal.visible {
-
             opacity: 1;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
-
         /* =====================================================
-           TABLET / IPAD
-           901px - 1100px
+           TABLET
         ====================================================== */
 
         @media (max-width: 1100px) {
 
             .navbar {
-
-                width:
-                    min(94%, 1000px);
-
+                width: min(94%, 1000px);
                 gap: 18px;
             }
 
-
             .brand-name {
-
                 font-size: 16px;
             }
 
-
             .brand-tagline {
-
                 font-size: 9px;
             }
 
-
             .nav-menu {
-
                 gap: 13px;
             }
 
-
             .nav-menu a {
-
                 font-size: 11px;
             }
 
-
             .bio-grid {
-
                 grid-template-columns:
                     minmax(280px, .9fr)
                     minmax(300px, 1.1fr);
@@ -2041,16 +1576,11 @@
                 gap: 45px;
             }
 
-
             .gallery-grid {
-
-                min-height:
-                    580px;
+                min-height: 580px;
             }
 
-
             .footer-grid {
-
                 grid-template-columns:
                     1.3fr
                     repeat(3, 1fr);
@@ -2059,74 +1589,66 @@
             }
         }
 
-
         /* =====================================================
-           TABLET / IPAD PORTRAIT
-           601px - 900px
+           TABLET / MOBILE NAV
         ====================================================== */
 
         @media (max-width: 900px) {
 
             .navbar {
-
-                min-height:
-                    80px;
+                min-height: 80px;
             }
 
+            .menu-button {
+                display: flex;
+
+                position: relative;
+
+                z-index: 7200;
+            }
 
             .nav-menu {
-
                 position: fixed;
 
                 top: 80px;
-
                 left: 0;
                 right: 0;
+
+                z-index: 7100;
 
                 width: 100%;
 
                 max-height:
-                    calc(
-                        100svh - 80px
-                    );
+                    calc(100svh - 80px);
 
                 overflow-y: auto;
 
                 padding:
                     20px 5% 30px;
 
-                flex-direction:
-                    column;
+                flex-direction: column;
 
-                align-items:
-                    stretch;
+                align-items: stretch;
 
-                justify-content:
-                    flex-start;
+                justify-content: flex-start;
 
                 gap: 0;
 
                 background:
-                    rgba(4,11,20,.98);
+                    rgba(4,11,20,.99);
 
                 border-bottom:
                     1px solid var(--border);
 
-                backdrop-filter:
-                    blur(20px);
-
-                -webkit-backdrop-filter:
-                    blur(20px);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
 
                 opacity: 0;
-
                 visibility: hidden;
 
-                transform:
-                    translateY(-10px);
+                transform: translateY(-10px);
 
-                pointer-events:
-                    none;
+                pointer-events: none;
 
                 transition:
                     opacity .3s ease,
@@ -2134,71 +1656,43 @@
                     transform .3s ease;
             }
 
-
             .nav-menu.open {
-
                 opacity: 1;
-
                 visibility: visible;
 
-                transform:
-                    translateY(0);
+                transform: translateY(0);
 
-                pointer-events:
-                    auto;
+                pointer-events: auto;
             }
 
-
             .nav-menu a {
-
                 width: 100%;
 
-                padding:
-                    16px 5px;
+                padding: 16px 5px;
 
                 border-bottom:
                     1px solid rgba(255,255,255,.07);
 
                 font-size: 14px;
 
-                white-space:
-                    normal;
+                white-space: normal;
             }
-
 
             .nav-menu a:last-child {
-
-                border-bottom:
-                    none;
+                border-bottom: none;
             }
-
-
-            .menu-button {
-
-                display:
-                    flex;
-            }
-
 
             .hero {
-
-                min-height:
-                    85svh;
+                min-height: 85svh;
             }
-
 
             .hero-container {
+                width: min(90%, 800px);
 
-                width:
-                    min(90%, 800px);
-
-                padding:
-                    140px 0 85px;
+                padding: 140px 0 85px;
             }
 
-
             .hero-overlay {
-
                 background:
                     linear-gradient(
                         90deg,
@@ -2207,170 +1701,97 @@
                     );
             }
 
-
             .bio-grid {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    55px;
+                grid-template-columns: 1fr;
+                gap: 55px;
             }
-
 
             .main-portrait {
-
-                max-width:
-                    570px;
+                max-width: 570px;
             }
-
 
             .bio-content {
-
-                max-width:
-                    850px;
-
-                margin:
-                    auto;
+                max-width: 850px;
+                margin: auto;
             }
-
 
             .gallery-grid {
-
-                min-height:
-                    520px;
+                min-height: 520px;
             }
-
 
             .ministry-grid {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    45px;
+                grid-template-columns: 1fr;
+                gap: 45px;
             }
-
 
             .ministry-image {
+                height: 520px;
 
-                height:
-                    520px;
+                max-width: 800px;
 
-                max-width:
-                    800px;
-
-                margin:
-                    auto;
+                margin: auto;
             }
-
 
             .footer-grid {
-
-                grid-template-columns:
-                    1fr 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
-
             .footer-brand {
-
-                grid-column:
-                    1 / -1;
+                grid-column: 1 / -1;
             }
         }
 
-
         /* =====================================================
-           LARGE PHONE
-           481px - 600px
+           LARGE PHONES
         ====================================================== */
 
         @media (max-width: 600px) {
 
             .navbar {
-
-                width:
-                    92%;
-
-                min-height:
-                    74px;
+                width: 92%;
+                min-height: 74px;
             }
-
 
             .brand-logo {
-
-                width:
-                    46px;
-
-                height:
-                    46px;
+                width: 46px;
+                height: 46px;
             }
-
 
             .brand-name {
-
-                font-size:
-                    14px;
-
-                letter-spacing:
-                    .5px;
+                font-size: 14px;
+                letter-spacing: .5px;
             }
-
 
             .brand-tagline {
-
-                font-size:
-                    8px;
-
-                letter-spacing:
-                    1.1px;
+                font-size: 8px;
+                letter-spacing: 1.1px;
             }
-
 
             .menu-button {
-
-                width:
-                    44px;
-
-                height:
-                    44px;
+                width: 44px;
+                height: 44px;
             }
 
-
             .nav-menu {
-
-                top:
-                    74px;
+                top: 74px;
 
                 max-height:
-                    calc(
-                        100svh - 74px
-                    );
+                    calc(100svh - 74px);
 
                 padding:
                     15px 5% 25px;
             }
 
-
             .hero {
-
-                min-height:
-                    88svh;
-
-                min-height:
-                    88vh;
+                min-height: 88svh;
+                min-height: 88vh;
             }
-
 
             .hero-background {
-
-                background-position:
-                    58% center;
+                background-position: 58% center;
             }
 
-
             .hero-overlay {
-
                 background:
                     linear-gradient(
                         180deg,
@@ -2379,789 +1800,468 @@
                     );
             }
 
-
             .hero-container {
-
-                width:
-                    90%;
+                width: 90%;
 
                 padding:
                     125px 0 70px;
             }
 
-
             .eyebrow {
+                gap: 9px;
 
-                gap:
-                    9px;
+                font-size: 10px;
 
-                font-size:
-                    10px;
-
-                letter-spacing:
-                    2px;
+                letter-spacing: 2px;
             }
-
 
             .eyebrow::before {
-
-                width:
-                    30px;
+                width: 30px;
             }
 
-
             .hero h1 {
-
                 font-size:
                     clamp(39px, 11vw, 58px);
 
-                letter-spacing:
-                    -.5px;
+                letter-spacing: -.5px;
             }
-
 
             .hero-description {
+                margin-top: 20px;
 
-                margin-top:
-                    20px;
+                font-size: 18px;
 
-                font-size:
-                    18px;
-
-                line-height:
-                    1.6;
+                line-height: 1.6;
             }
-
 
             .hero-buttons {
+                flex-direction: column;
 
-                flex-direction:
-                    column;
+                width: 100%;
 
-                width:
-                    100%;
-
-                margin-top:
-                    27px;
+                margin-top: 27px;
             }
-
 
             .button {
+                width: 100%;
 
-                width:
-                    100%;
+                min-height: 50px;
 
-                min-height:
-                    50px;
-
-                padding:
-                    12px 18px;
+                padding: 12px 18px;
             }
-
 
             .section {
+                width: 90%;
 
-                width:
-                    90%;
-
-                padding:
-                    72px 0;
+                padding: 72px 0;
             }
-
 
             .section-header {
-
-                margin-bottom:
-                    38px;
+                margin-bottom: 38px;
             }
 
-
             .section-title {
-
                 font-size:
                     clamp(31px, 9vw, 45px);
             }
 
-
             .section-description {
-
-                font-size:
-                    17px;
+                font-size: 17px;
             }
-
 
             .legacy-grid {
+                width: 90%;
 
-                width:
-                    90%;
-
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
-
             .legacy-item {
+                padding: 32px 15px;
 
-                padding:
-                    32px 15px;
-
-                border-right:
-                    none;
+                border-right: none;
 
                 border-bottom:
                     1px solid var(--border);
             }
 
-
             .legacy-item:last-child {
-
-                border-bottom:
-                    none;
+                border-bottom: none;
             }
-
 
             .legacy-number {
-
-                font-size:
-                    43px;
+                font-size: 43px;
             }
-
 
             .legacy-title {
-
-                font-size:
-                    17px;
+                font-size: 17px;
             }
-
 
             .main-portrait {
-
-                padding:
-                    8px;
+                padding: 8px;
             }
-
 
             .main-portrait::before {
+                top: -9px;
+                left: -9px;
 
-                top:
-                    -9px;
-
-                left:
-                    -9px;
-
-                width:
-                    55px;
-
-                height:
-                    55px;
+                width: 55px;
+                height: 55px;
             }
-
 
             .main-portrait::after {
+                right: -9px;
+                bottom: -9px;
 
-                right:
-                    -9px;
-
-                bottom:
-                    -9px;
-
-                width:
-                    55px;
-
-                height:
-                    55px;
+                width: 55px;
+                height: 55px;
             }
-
 
             .bio-content h2 {
-
-                font-size:
-                    34px;
+                font-size: 34px;
             }
-
 
             .bio-content p {
-
-                font-size:
-                    17px;
-
-                line-height:
-                    1.72;
+                font-size: 17px;
+                line-height: 1.72;
             }
-
 
             .quote {
+                padding: 18px;
 
-                padding:
-                    18px;
-
-                font-size:
-                    18px;
+                font-size: 18px;
             }
-
 
             .gallery-grid {
+                display: flex;
 
-                display:
-                    flex;
+                flex-direction: column;
 
-                flex-direction:
-                    column;
+                min-height: auto;
 
-                min-height:
-                    auto;
-
-                gap:
-                    14px;
+                gap: 14px;
             }
-
 
             .director-photo,
             .director-photo.large {
+                width: 100%;
 
-                width:
-                    100%;
+                height: auto;
 
-                height:
-                    auto;
+                min-height: 0;
 
-                min-height:
-                    0;
+                aspect-ratio: 4 / 5;
 
-                aspect-ratio:
-                    4 / 5;
+                flex: none;
 
-                flex:
-                    none;
-
-                grid-row:
-                    auto;
+                grid-row: auto;
             }
-
-
-            .director-photo:nth-child(2),
-            .director-photo:nth-child(3) {
-
-                aspect-ratio:
-                    16 / 10;
-            }
-
 
             .photo-caption {
+                opacity: 1;
 
-                opacity:
-                    1;
-
-                transform:
-                    none;
+                transform: none;
 
                 padding:
                     40px 18px 17px;
             }
 
-
             .photo-caption span {
-
-                font-size:
-                    10px;
+                font-size: 10px;
             }
-
 
             .ministry-image {
-
-                height:
-                    430px;
+                height: 430px;
             }
-
 
             .ministry-content p {
-
-                font-size:
-                    17px;
+                font-size: 17px;
             }
-
 
             .ministry-list li {
+                font-size: 17px;
 
-                font-size:
-                    17px;
-
-                padding:
-                    12px 0;
+                padding: 12px 0;
             }
-
 
             .vision-box {
-
-                padding:
-                    50px 20px;
+                padding: 50px 20px;
             }
-
 
             .vision-box::before,
             .vision-box::after {
-
-                width:
-                    45px;
-
-                height:
-                    45px;
+                width: 45px;
+                height: 45px;
             }
-
 
             .vision-box p {
-
-                font-size:
-                    17px;
+                font-size: 17px;
             }
-
 
             .vision-quote {
-
-                font-size:
-                    22px;
+                font-size: 22px;
             }
-
 
             .timeline {
-
-                margin-top:
-                    35px;
+                margin-top: 35px;
             }
-
 
             .timeline::before {
-
-                left:
-                    8px;
-
-                transform:
-                    none;
+                left: 8px;
+                transform: none;
             }
-
 
             .timeline-item,
             .timeline-item:nth-child(odd),
             .timeline-item:nth-child(even) {
+                width: 100%;
 
-                width:
-                    100%;
-
-                left:
-                    0;
+                left: 0;
 
                 padding:
                     15px 0 42px 34px;
 
-                text-align:
-                    left;
+                text-align: left;
             }
 
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 1px;
+                right: auto;
 
-            .timeline-item:nth-child(odd)
-            .timeline-dot,
-            .timeline-item:nth-child(even)
-            .timeline-dot {
-
-                left:
-                    1px;
-
-                right:
-                    auto;
-
-                width:
-                    14px;
-
-                height:
-                    14px;
+                width: 14px;
+                height: 14px;
             }
-
 
             .timeline-item h3 {
-
-                font-size:
-                    24px;
+                font-size: 24px;
             }
-
 
             .timeline-item p {
-
-                font-size:
-                    16px;
+                font-size: 16px;
             }
-
 
             .cta-inner {
-
-                width:
-                    90%;
+                width: 90%;
             }
-
 
             .cta-buttons {
-
-                flex-direction:
-                    column;
+                flex-direction: column;
             }
 
-
             .footer-container {
-
-                width:
-                    90%;
+                width: 90%;
 
                 padding:
                     60px 0 25px;
             }
 
-
             .footer-grid {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    35px;
+                grid-template-columns: 1fr;
+                gap: 35px;
             }
-
 
             .footer-brand {
-
-                grid-column:
-                    auto;
+                grid-column: auto;
             }
-
 
             .footer-bottom {
+                flex-direction: column;
 
-                flex-direction:
-                    column;
+                align-items: flex-start;
 
-                align-items:
-                    flex-start;
+                gap: 8px;
 
-                gap:
-                    8px;
-
-                margin-top:
-                    38px;
+                margin-top: 38px;
             }
 
-
             .back-top {
+                width: 44px;
+                height: 44px;
 
-                width:
-                    44px;
-
-                height:
-                    44px;
-
-                font-size:
-                    18px;
+                font-size: 18px;
             }
         }
 
-
         /* =====================================================
            SMALL PHONES
-           320px - 480px
         ====================================================== */
 
         @media (max-width: 480px) {
 
             .brand-name {
+                max-width: 185px;
 
-                max-width:
-                    185px;
+                overflow: hidden;
 
-                overflow:
-                    hidden;
-
-                text-overflow:
-                    ellipsis;
+                text-overflow: ellipsis;
             }
-
 
             .hero {
-
-                min-height:
-                    90svh;
+                min-height: 90svh;
             }
 
-
             .hero-container {
-
                 padding:
                     118px 0 60px;
             }
 
-
             .hero h1 {
-
                 font-size:
                     clamp(37px, 12vw, 50px);
             }
 
-
             .hero-description {
+                font-size: 17px;
 
-                font-size:
-                    17px;
-
-                line-height:
-                    1.58;
+                line-height: 1.58;
             }
-
 
             .section {
-
-                padding:
-                    65px 0;
+                padding: 65px 0;
             }
 
-
             .section-title {
-
                 font-size:
                     clamp(29px, 9.5vw, 40px);
             }
 
-
             .section-description {
-
-                font-size:
-                    16.5px;
+                font-size: 16.5px;
             }
-
 
             .main-portrait img {
-
-                aspect-ratio:
-                    4 / 5;
+                aspect-ratio: 4 / 5;
             }
-
 
             .director-photo,
             .director-photo.large {
-
-                aspect-ratio:
-                    4 / 5;
+                aspect-ratio: 4 / 5;
             }
-
-
-            .director-photo:nth-child(2),
-            .director-photo:nth-child(3) {
-
-                aspect-ratio:
-                    4 / 3;
-            }
-
 
             .ministry-image {
-
-                height:
-                    380px;
+                height: 380px;
             }
-
 
             .vision-box {
-
-                padding:
-                    45px 17px;
+                padding: 45px 17px;
             }
-
 
             .vision-box h2 {
-
-                font-size:
-                    30px;
+                font-size: 30px;
             }
-
 
             .vision-quote {
-
-                font-size:
-                    20px;
+                font-size: 20px;
             }
-
 
             .cta-inner {
-
-                padding:
-                    75px 0;
+                padding: 75px 0;
             }
-
 
             .cta-inner h2 {
-
-                font-size:
-                    35px;
+                font-size: 35px;
             }
 
-
             .footer-brand h3 {
-
-                font-size:
-                    20px;
+                font-size: 20px;
             }
         }
 
-
         /* =====================================================
            VERY SMALL PHONES
-           320px - 360px
         ====================================================== */
 
         @media (max-width: 360px) {
 
             .navbar {
-
-                width:
-                    94%;
+                width: 94%;
             }
-
 
             .brand-logo {
-
-                width:
-                    42px;
-
-                height:
-                    42px;
+                width: 42px;
+                height: 42px;
             }
-
 
             .brand-name {
+                max-width: 150px;
 
-                max-width:
-                    150px;
-
-                font-size:
-                    13px;
+                font-size: 13px;
             }
-
 
             .menu-button {
-
-                width:
-                    42px;
-
-                height:
-                    42px;
+                width: 42px;
+                height: 42px;
             }
-
 
             .hero-container {
-
-                width:
-                    92%;
+                width: 92%;
             }
-
 
             .hero h1 {
-
-                font-size:
-                    36px;
+                font-size: 36px;
             }
-
 
             .hero-description {
-
-                font-size:
-                    16px;
+                font-size: 16px;
             }
-
 
             .section {
-
-                width:
-                    92%;
+                width: 92%;
             }
 
-
             .button {
-
-                font-size:
-                    11px;
+                font-size: 11px;
             }
         }
 
-
         /* =====================================================
-           IPAD LANDSCAPE / TOUCH DEVICES
+           TOUCH DEVICES
         ====================================================== */
 
         @media (hover: none) and (pointer: coarse) {
 
             .director-photo:hover img {
-
-                transform:
-                    none;
+                transform: none;
             }
-
 
             .director-photo:hover .photo-caption {
-
-                opacity:
-                    1;
-
-                transform:
-                    none;
+                opacity: 1;
+                transform: none;
             }
 
-
             .button:hover {
-
-                transform:
-                    none;
+                transform: none;
             }
         }
 
-
         /* =====================================================
-           ACCESSIBILITY / REDUCED MOTION
+           REDUCED MOTION
         ====================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
             html {
-
-                scroll-behavior:
-                    auto;
+                scroll-behavior: auto;
             }
-
 
             *,
             *::before,
             *::after {
-
-                animation-duration:
-                    .01ms !important;
-
-                animation-iteration-count:
-                    1 !important;
-
-                transition-duration:
-                    .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
             }
 
-
             .reveal {
-
-                opacity:
-                    1;
-
-                transform:
-                    none;
+                opacity: 1;
+                transform: none;
             }
         }
 
     </style>
 </head>
 
-
 <body>
-
 
     <!-- =====================================================
          LOADER
@@ -3188,7 +2288,6 @@
     </div>
 
 
-
     <!-- =====================================================
          HEADER
     ====================================================== -->
@@ -3197,12 +2296,10 @@
 
         <nav class="navbar">
 
-
-            <!-- BRAND -->
-
             <a
                 href="./home.html"
                 class="brand"
+                aria-label="Global College of Missiology Home"
             >
 
                 <img
@@ -3226,26 +2323,22 @@
             </a>
 
 
-
-            <!-- MOBILE BUTTON -->
-
             <button
                 type="button"
                 class="menu-button"
                 id="menuButton"
                 aria-label="Open navigation"
                 aria-expanded="false"
+                aria-controls="navMenu"
             >
                 ☰
             </button>
 
 
-
-            <!-- NAVIGATION -->
-
             <div
                 class="nav-menu"
                 id="navMenu"
+                aria-hidden="true"
             >
 
                 <a href="./home.html">
@@ -3257,7 +2350,7 @@
                 </a>
 
                 <a
-                    href="director.html"
+                    href="./director.html"
                     class="active"
                 >
                     Director
@@ -3286,12 +2379,24 @@
     </header>
 
 
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+        aria-hidden="true"
+    ></div>
+
 
     <!-- =====================================================
-         HERO
+         MAIN
     ====================================================== -->
 
     <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
 
         <section class="hero">
 
@@ -3301,7 +2406,6 @@
 
             <div class="hero-glow"></div>
 
-
             <div class="hero-container">
 
                 <div class="hero-content reveal">
@@ -3310,17 +2414,12 @@
                         Founder & Director
                     </div>
 
-
                     <h1>
-
                         Apostle
-
                         <span>
                             Kingsley Samuel
                         </span>
-
                     </h1>
-
 
                     <p class="hero-description">
 
@@ -3333,7 +2432,6 @@
 
                     </p>
 
-
                     <div class="hero-buttons">
 
                         <a
@@ -3342,7 +2440,6 @@
                         >
                             Read Biography
                         </a>
-
 
                         <a
                             href="#vision"
@@ -3360,7 +2457,6 @@
         </section>
 
 
-
         <!-- =================================================
              LEGACY
         ================================================== -->
@@ -3368,7 +2464,6 @@
         <section class="legacy">
 
             <div class="legacy-grid">
-
 
                 <div class="legacy-item reveal">
 
@@ -3382,7 +2477,6 @@
 
                 </div>
 
-
                 <div class="legacy-item reveal">
 
                     <div class="legacy-number">
@@ -3394,7 +2488,6 @@
                     </div>
 
                 </div>
-
 
                 <div class="legacy-item reveal">
 
@@ -3408,11 +2501,9 @@
 
                 </div>
 
-
             </div>
 
         </section>
-
 
 
         <!-- =================================================
@@ -3452,24 +2543,18 @@
             </div>
 
 
-
             <div class="bio-grid">
-
-
-                <!-- MAIN PHOTO -->
 
                 <div class="main-portrait reveal">
 
                     <img
                         src="./img/director/director 1.jpeg"
                         alt="Apostle Kingsley Samuel"
+                        loading="lazy"
                     >
 
                 </div>
 
-
-
-                <!-- BIO -->
 
                 <div class="bio-content reveal">
 
@@ -3483,7 +2568,6 @@
 
                     </h2>
 
-
                     <p>
 
                         Apostle Kingsley Samuel is a Christian
@@ -3494,7 +2578,6 @@
                         global missions, and evangelization.
 
                     </p>
-
 
                     <p>
 
@@ -3508,7 +2591,6 @@
 
                     </p>
 
-
                     <p>
 
                         Through his ministry, Apostle Kingsley
@@ -3520,7 +2602,6 @@
 
                     </p>
 
-
                     <p>
 
                         His ministry is characterized by
@@ -3531,7 +2612,6 @@
                         living.
 
                     </p>
-
 
                     <div class="quote">
 
@@ -3549,15 +2629,13 @@
         </section>
 
 
-
         <!-- =================================================
-             THREE DIRECTOR PHOTOS
+             MINISTRY PORTRAITS
         ================================================== -->
 
         <section class="dark-section">
 
             <div class="section">
-
 
                 <div class="section-header reveal">
 
@@ -3585,11 +2663,7 @@
                 </div>
 
 
-
                 <div class="gallery-grid">
-
-
-                    <!-- PHOTO ONE -->
 
                     <div class="director-photo large reveal">
 
@@ -3609,25 +2683,47 @@
 
                     </div>
 
+                    <div class="director-photo reveal">
 
+                        <img
+                            src="./img/director/director 1.jpeg"
+                            alt="Apostle Kingsley Samuel"
+                            loading="lazy"
+                        >
 
-                    <!-- PHOTO TWO -->
+                        <div class="photo-caption">
 
-                   
+                            <span>
+                                Ministry & Leadership
+                            </span>
 
+                        </div>
 
+                    </div>
 
-                    <!-- PHOTO THREE -->
+                    <div class="director-photo reveal">
 
-                   
+                        <img
+                            src="./img/director/director 2.jpeg"
+                            alt="Apostle Kingsley Samuel"
+                            loading="lazy"
+                        >
 
+                        <div class="photo-caption">
+
+                            <span>
+                                Teaching & Ministry
+                            </span>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
         </section>
-
 
 
         <!-- =================================================
@@ -3638,7 +2734,6 @@
 
             <div class="ministry-grid">
 
-
                 <div class="ministry-image reveal">
 
                     <img
@@ -3648,7 +2743,6 @@
                     >
 
                 </div>
-
 
 
                 <div class="ministry-content reveal">
@@ -3667,7 +2761,6 @@
 
                     </h2>
 
-
                     <p>
 
                         Apostle Kingsley Samuel is also the
@@ -3681,7 +2774,6 @@
 
                     </p>
 
-
                     <p>
 
                         The college exists under the vision of
@@ -3691,7 +2783,6 @@
                         as Kingdom Commandos.
 
                     </p>
-
 
                     <ul class="ministry-list">
 
@@ -3724,7 +2815,6 @@
         </section>
 
 
-
         <!-- =================================================
              VISION
         ================================================== -->
@@ -3735,7 +2825,6 @@
         >
 
             <div class="section">
-
 
                 <div class="section-header reveal">
 
@@ -3766,7 +2855,6 @@
                 </div>
 
 
-
                 <div class="vision-box reveal">
 
                     <h2>
@@ -3778,7 +2866,6 @@
                         </span>
 
                     </h2>
-
 
                     <p>
 
@@ -3793,7 +2880,6 @@
 
                     </p>
 
-
                     <div class="vision-quote">
 
                         Building God's People for Global
@@ -3806,7 +2892,6 @@
             </div>
 
         </section>
-
 
 
         <!-- =================================================
@@ -3843,9 +2928,7 @@
             </div>
 
 
-
             <div class="timeline">
-
 
                 <div class="timeline-item reveal">
 
@@ -3871,7 +2954,6 @@
                 </div>
 
 
-
                 <div class="timeline-item reveal">
 
                     <div class="timeline-dot"></div>
@@ -3895,7 +2977,6 @@
                     </p>
 
                 </div>
-
 
 
                 <div class="timeline-item reveal">
@@ -3924,7 +3005,6 @@
                 </div>
 
 
-
                 <div class="timeline-item reveal">
 
                     <div class="timeline-dot"></div>
@@ -3951,7 +3031,6 @@
                 </div>
 
 
-
                 <div class="timeline-item reveal">
 
                     <div class="timeline-dot"></div>
@@ -3975,11 +3054,9 @@
 
                 </div>
 
-
             </div>
 
         </section>
-
 
 
         <!-- =================================================
@@ -3991,7 +3068,6 @@
             <div class="section">
 
                 <div class="ministry-grid">
-
 
                     <div class="ministry-content reveal">
 
@@ -4009,7 +3085,6 @@
 
                         </h2>
 
-
                         <p>
 
                             One of the defining features of
@@ -4018,7 +3093,6 @@
                             teaching of God's Word.
 
                         </p>
-
 
                         <p>
 
@@ -4030,7 +3104,6 @@
                             responsibility in the Kingdom.
 
                         </p>
-
 
                         <p>
 
@@ -4047,7 +3120,6 @@
                     </div>
 
 
-
                     <div class="ministry-image reveal">
 
                         <img
@@ -4058,13 +3130,11 @@
 
                     </div>
 
-
                 </div>
 
             </div>
 
         </section>
-
 
 
         <!-- =================================================
@@ -4079,7 +3149,6 @@
                     Global College of Missiology
                 </div>
 
-
                 <h2>
 
                     Training.
@@ -4092,7 +3161,6 @@
 
                 </h2>
 
-
                 <p>
 
                     Global College of Missiology exists
@@ -4101,7 +3169,6 @@
                     Christian leadership and Kingdom service.
 
                 </p>
-
 
                 <div class="vision-quote">
 
@@ -4113,7 +3180,6 @@
             </div>
 
         </section>
-
 
 
         <!-- =================================================
@@ -4128,7 +3194,6 @@
                     Your Kingdom Assignment
                 </div>
 
-
                 <h2>
 
                     Discover.
@@ -4141,7 +3206,6 @@
 
                 </h2>
 
-
                 <p>
 
                     Explore the training opportunities
@@ -4151,7 +3215,6 @@
 
                 </p>
 
-
                 <div class="cta-buttons">
 
                     <a
@@ -4160,7 +3223,6 @@
                     >
                         Explore Courses
                     </a>
-
 
                     <a
                         href="./admissions.html"
@@ -4178,7 +3240,6 @@
     </main>
 
 
-
     <!-- =====================================================
          FOOTER
     ====================================================== -->
@@ -4187,23 +3248,19 @@
 
         <div class="footer-container">
 
-
             <div class="footer-grid">
-
 
                 <div class="footer-brand">
 
                     <img
-                        src="assets/images/logo.png"
-                        alt="GCM Logo"
+                        src="./img/logo/logo.png"
+                        alt="Global College of Missiology Logo"
                         class="footer-brand-logo"
                     >
-
 
                     <h3>
                         Global College of Missiology
                     </h3>
-
 
                     <p>
 
@@ -4214,7 +3271,6 @@
                     </p>
 
                 </div>
-
 
 
                 <div class="footer-column">
@@ -4231,7 +3287,7 @@
                         About Us
                     </a>
 
-                    <a href="director.html">
+                    <a href="./director.html">
                         Director
                     </a>
 
@@ -4240,7 +3296,6 @@
                     </a>
 
                 </div>
-
 
 
                 <div class="footer-column">
@@ -4253,7 +3308,7 @@
                         Admissions
                     </a>
 
-                    <a href="course.html">
+                    <a href="./course.html">
                         Courses
                     </a>
 
@@ -4268,7 +3323,6 @@
                 </div>
 
 
-
                 <div class="footer-column">
 
                     <h4>
@@ -4279,7 +3333,7 @@
                         Our Story
                     </a>
 
-                    <a href="director.html">
+                    <a href="./director.html">
                         Leadership
                     </a>
 
@@ -4293,22 +3347,17 @@
 
                 </div>
 
-
             </div>
-
 
 
             <div class="footer-bottom">
 
                 <span>
-
                     ©
                     <span id="year"></span>
                     Global College of Missiology.
                     All Rights Reserved.
-
                 </span>
-
 
                 <span>
                     Training • Equipping • Deploying
@@ -4319,7 +3368,6 @@
         </div>
 
     </footer>
-
 
 
     <!-- =====================================================
@@ -4336,7 +3384,6 @@
     </button>
 
 
-
     <!-- =====================================================
          JAVASCRIPT
     ====================================================== -->
@@ -4347,25 +3394,20 @@
            LOADER
         ====================================================== */
 
-        window.addEventListener(
-            "load",
-            function () {
+        window.addEventListener("load", function () {
 
-                const loader =
-                    document.getElementById("loader");
+            const loader =
+                document.getElementById("loader");
 
-                setTimeout(
-                    function () {
+            setTimeout(function () {
 
-                        loader.classList.add("hide");
+                if (loader) {
+                    loader.classList.add("hide");
+                }
 
-                    },
-                    500
-                );
+            }, 500);
 
-            }
-        );
-
+        });
 
 
         /* =====================================================
@@ -4375,31 +3417,29 @@
         const siteHeader =
             document.getElementById("siteHeader");
 
+        function updateHeader() {
+
+            if (!siteHeader) return;
+
+            if (window.scrollY > 30) {
+
+                siteHeader.classList.add("scrolled");
+
+            } else {
+
+                siteHeader.classList.remove("scrolled");
+
+            }
+
+        }
 
         window.addEventListener(
             "scroll",
-            function () {
-
-                if (window.scrollY > 30) {
-
-                    siteHeader.classList.add(
-                        "scrolled"
-                    );
-
-                } else {
-
-                    siteHeader.classList.remove(
-                        "scrolled"
-                    );
-
-                }
-
-            },
-            {
-                passive: true
-            }
+            updateHeader,
+            { passive: true }
         );
 
+        updateHeader();
 
 
         /* =====================================================
@@ -4412,31 +3452,19 @@
         const navMenu =
             document.getElementById("navMenu");
 
-
-        function closeMenu() {
-
-            navMenu.classList.remove("open");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuButton.setAttribute(
-                "aria-label",
-                "Open navigation"
-            );
-
-            menuButton.innerHTML = "☰";
-
-            document.body.style.overflow = "";
-
-        }
+        const menuOverlay =
+            document.getElementById("menuOverlay");
 
 
         function openMenu() {
 
+            if (!navMenu || !menuButton) return;
+
             navMenu.classList.add("open");
+
+            menuOverlay?.classList.add("show");
+
+            menuButton.classList.add("open");
 
             menuButton.setAttribute(
                 "aria-expanded",
@@ -4448,49 +3476,107 @@
                 "Close navigation"
             );
 
+            navMenu.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "menu-open"
+            );
+
             menuButton.innerHTML = "✕";
+        }
+
+
+        function closeMenu() {
+
+            if (!navMenu || !menuButton) return;
+
+            navMenu.classList.remove("open");
+
+            menuOverlay?.classList.remove("show");
+
+            menuButton.classList.remove("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+
+            navMenu.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+            menuButton.innerHTML = "☰";
+        }
+
+
+        function toggleMenu() {
+
+            if (
+                navMenu.classList.contains("open")
+            ) {
+
+                closeMenu();
+
+            } else {
+
+                openMenu();
+
+            }
 
         }
 
 
-        menuButton.addEventListener(
-            "click",
-            function () {
+        if (menuButton) {
 
-                if (
-                    navMenu.classList.contains("open")
-                ) {
+            menuButton.addEventListener(
+                "click",
+                toggleMenu
+            );
 
-                    closeMenu();
-
-                } else {
-
-                    openMenu();
-
-                }
-
-            }
-        );
+        }
 
 
-        /* CLOSE AFTER CLICKING LINK */
+        /* CLOSE WHEN LINK IS CLICKED */
 
-        navMenu
-            .querySelectorAll("a")
-            .forEach(
-                function (link) {
+        if (navMenu) {
+
+            navMenu
+                .querySelectorAll("a")
+                .forEach(function (link) {
 
                     link.addEventListener(
                         "click",
-                        function () {
-
-                            closeMenu();
-
-                        }
+                        closeMenu
                     );
 
-                }
+                });
+
+        }
+
+
+        /* CLOSE WHEN OVERLAY IS CLICKED */
+
+        if (menuOverlay) {
+
+            menuOverlay.addEventListener(
+                "click",
+                closeMenu
             );
+
+        }
 
 
         /* CLOSE WITH ESCAPE */
@@ -4500,7 +3586,9 @@
             function (event) {
 
                 if (
-                    event.key === "Escape"
+                    event.key === "Escape" &&
+                    navMenu &&
+                    navMenu.classList.contains("open")
                 ) {
 
                     closeMenu();
@@ -4511,35 +3599,13 @@
         );
 
 
-        /* CLOSE WHEN CLICKING OUTSIDE */
-
-        document.addEventListener(
-            "click",
-            function (event) {
-
-                if (
-                    navMenu.classList.contains("open") &&
-                    !navMenu.contains(event.target) &&
-                    !menuButton.contains(event.target)
-                ) {
-
-                    closeMenu();
-
-                }
-
-            }
-        );
-
-
-        /* CLOSE MENU WHEN SCREEN BECOMES DESKTOP */
+        /* CLOSE WHEN SCREEN BECOMES DESKTOP */
 
         window.addEventListener(
             "resize",
             function () {
 
-                if (
-                    window.innerWidth > 900
-                ) {
+                if (window.innerWidth > 900) {
 
                     closeMenu();
 
@@ -4547,7 +3613,6 @@
 
             }
         );
-
 
 
         /* =====================================================
@@ -4559,8 +3624,7 @@
 
 
         if (
-            "IntersectionObserver"
-            in window
+            "IntersectionObserver" in window
         ) {
 
             const revealObserver =
@@ -4622,7 +3686,6 @@
         }
 
 
-
         /* =====================================================
            BACK TO TOP
         ====================================================== */
@@ -4635,9 +3698,9 @@
             "scroll",
             function () {
 
-                if (
-                    window.scrollY > 500
-                ) {
+                if (!backTop) return;
+
+                if (window.scrollY > 500) {
 
                     backTop.classList.add(
                         "show"
@@ -4658,32 +3721,39 @@
         );
 
 
-        backTop.addEventListener(
-            "click",
-            function () {
+        if (backTop) {
 
-                window.scrollTo({
+            backTop.addEventListener(
+                "click",
+                function () {
 
-                    top: 0,
+                    window.scrollTo({
 
-                    behavior: "smooth"
+                        top: 0,
 
-                });
+                        behavior: "smooth"
 
-            }
-        );
+                    });
 
+                }
+            );
+
+        }
 
 
         /* =====================================================
            CURRENT YEAR
         ====================================================== */
 
-        document.getElementById(
-            "year"
-        ).textContent =
-            new Date().getFullYear();
+        const yearElement =
+            document.getElementById("year");
 
+        if (yearElement) {
+
+            yearElement.textContent =
+                new Date().getFullYear();
+
+        }
 
 
         /* =====================================================
@@ -4692,23 +3762,21 @@
 
         document
             .querySelectorAll("img")
-            .forEach(
-                function (image) {
+            .forEach(function (image) {
 
-                    image.addEventListener(
-                        "error",
-                        function () {
+                image.addEventListener(
+                    "error",
+                    function () {
 
-                            console.warn(
-                                "GCM image could not load:",
-                                image.src
-                            );
+                        console.warn(
+                            "GCM image could not load:",
+                            image.src
+                        );
 
-                        }
-                    );
+                    }
+                );
 
-                }
-            );
+            });
 
     </script>
 

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -10,12 +12,12 @@
 
     <meta
         name="description"
-        content="Admissions at Global College of Missiology. Discover our ministry training programme, admission structure, requirements and application information."
+        content="Admissions at Global College of Missiology. Discover our ministry training programme, admission structure, tuition fees, requirements and application information."
     >
 
     <meta
         name="keywords"
-        content="Global College of Missiology, GCM, Bible School, Missiology, Christian Ministry, Ministry Training, Bible College, Admissions"
+        content="Global College of Missiology, GCM, Bible School, Missiology, Christian Ministry, Ministry Training, Bible College, Admissions, GCM Fees"
     >
 
     <meta
@@ -23,14 +25,27 @@
         content="Global College of Missiology"
     >
 
-    <title>Admissions | Global College of Missiology</title>
+    <meta
+        name="theme-color"
+        content="#07111f"
+    >
+
+    <title>
+        Admissions | Global College of Missiology
+    </title>
+
 
     <!-- =========================================================
          GOOGLE FONTS
     ========================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap"
@@ -85,6 +100,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 110px;
         }
 
 
@@ -109,6 +125,13 @@
 
             overflow-x: hidden;
 
+            min-width: 0;
+
+        }
+
+
+        body.menu-open {
+            overflow: hidden;
         }
 
 
@@ -140,6 +163,13 @@
         }
 
 
+        button {
+
+            font: inherit;
+
+        }
+
+
         ::selection {
 
             background: var(--gold);
@@ -155,10 +185,11 @@
 
         .container {
 
-            width: min(
-                calc(100% - 40px),
-                var(--max-width)
-            );
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--max-width)
+                );
 
             margin: auto;
 
@@ -197,6 +228,8 @@
             opacity: 0;
 
             visibility: hidden;
+
+            pointer-events: none;
 
         }
 
@@ -246,13 +279,19 @@
 
             0%,
             100% {
+
                 opacity: 0.5;
+
                 transform: scale(0.95);
+
             }
 
             50% {
+
                 opacity: 1;
+
                 transform: scale(1);
+
             }
 
         }
@@ -261,18 +300,27 @@
         @keyframes loaderLine {
 
             0% {
+
                 transform: scaleX(0.3);
+
                 opacity: 0.4;
+
             }
 
             50% {
+
                 transform: scaleX(1);
+
                 opacity: 1;
+
             }
 
             100% {
+
                 transform: scaleX(0.3);
+
                 opacity: 0.4;
+
             }
 
         }
@@ -320,10 +368,11 @@
 
         .navbar {
 
-            width: min(
-                calc(100% - 30px),
-                1400px
-            );
+            width:
+                min(
+                    calc(100% - 30px),
+                    1400px
+                );
 
             min-height: 78px;
 
@@ -365,6 +414,8 @@
 
             flex-shrink: 0;
 
+            min-width: 0;
+
         }
 
 
@@ -376,6 +427,8 @@
 
             object-fit: contain;
 
+            flex-shrink: 0;
+
         }
 
 
@@ -386,6 +439,8 @@
             flex-direction: column;
 
             line-height: 1.1;
+
+            min-width: 0;
 
         }
 
@@ -402,6 +457,8 @@
 
             letter-spacing: 1.4px;
 
+            white-space: nowrap;
+
         }
 
 
@@ -417,11 +474,13 @@
 
             text-transform: uppercase;
 
+            white-space: nowrap;
+
         }
 
 
         /* =========================================================
-           NAVIGATION
+           DESKTOP NAVIGATION
         ========================================================== */
 
         .nav-links {
@@ -499,7 +558,8 @@
 
         .nav-button {
 
-            padding: 12px 19px !important;
+            padding:
+                12px 19px !important;
 
             border:
                 1px solid
@@ -507,7 +567,8 @@
 
             border-radius: 4px;
 
-            color: var(--gold-light) !important;
+            color:
+                var(--gold-light) !important;
 
         }
 
@@ -559,6 +620,12 @@
 
             gap: 5px;
 
+            flex-shrink: 0;
+
+            position: relative;
+
+            z-index: 5200;
+
         }
 
 
@@ -598,6 +665,49 @@
             transform:
                 translateY(-7px)
                 rotate(-45deg);
+
+        }
+
+
+        /* =========================================================
+           MOBILE OVERLAY
+        ========================================================== */
+
+        .menu-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 4800;
+
+            background:
+                rgba(0, 0, 0, 0.58);
+
+            backdrop-filter: blur(3px);
+
+            -webkit-backdrop-filter: blur(3px);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+
+        }
+
+
+        .menu-overlay.open {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
 
         }
 
@@ -657,10 +767,11 @@
 
             z-index: 2;
 
-            width: min(
-                calc(100% - 40px),
-                1100px
-            );
+            width:
+                min(
+                    calc(100% - 40px),
+                    1100px
+                );
 
             margin: auto;
 
@@ -913,6 +1024,20 @@
         }
 
 
+        .intro-text h2 {
+
+            color: var(--ivory);
+
+            font-size:
+                clamp(38px, 5vw, 60px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+
+        }
+
+
         .intro-text p {
 
             color: var(--text);
@@ -1005,7 +1130,7 @@
 
 
         /* =========================================================
-           ADMISSION HIGHLIGHTS
+           HIGHLIGHTS
         ========================================================== */
 
         .highlights {
@@ -1107,6 +1232,258 @@
             font-size: 15px;
 
             line-height: 1.5;
+
+        }
+
+
+        /* =========================================================
+           TUITION & FEES
+        ========================================================== */
+
+        .fees {
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(201, 162, 39, 0.07),
+                    transparent 45%
+                ),
+                #07111f;
+
+        }
+
+
+        .fees-heading {
+
+            text-align: center;
+
+            max-width: 850px;
+
+            margin:
+                0 auto 55px;
+
+        }
+
+
+        .fees-heading h2 {
+
+            color: var(--ivory);
+
+            font-size:
+                clamp(38px, 5vw, 62px);
+
+            line-height: 1;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .fees-heading p {
+
+            color: var(--muted);
+
+            font-size: 19px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .fee-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 28px;
+
+            max-width: 1000px;
+
+            margin: auto;
+
+        }
+
+
+        .fee-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding:
+                45px 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0e2035,
+                    #081321
+                );
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.32);
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow:
+                0 18px 55px
+                rgba(0, 0, 0, 0.24);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+
+        }
+
+
+        .fee-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+
+            height: 180px;
+
+            top: -100px;
+
+            right: -80px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.16);
+
+        }
+
+
+        .fee-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(201, 162, 39, 0.7);
+
+        }
+
+
+        .fee-country {
+
+            position: relative;
+
+            z-index: 1;
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .fee-amount {
+
+            position: relative;
+
+            z-index: 1;
+
+            color: var(--ivory);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size:
+                clamp(48px, 7vw, 70px);
+
+            line-height: 1;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .fee-period {
+
+            position: relative;
+
+            z-index: 1;
+
+            color: var(--gold-light);
+
+            font-size: 18px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .fee-description {
+
+            position: relative;
+
+            z-index: 1;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            line-height: 1.55;
+
+            max-width: 400px;
+
+            margin: auto;
+
+        }
+
+
+        .fee-note {
+
+            max-width: 850px;
+
+            margin:
+                30px auto 0;
+
+            padding:
+                18px 22px;
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.2);
+
+            background:
+                rgba(201, 162, 39, 0.05);
+
+            border-radius: 7px;
+
+            text-align: center;
+
+            color: #cfcabe;
+
+            font-size: 16px;
+
+        }
+
+
+        .fee-note strong {
+
+            color: var(--gold-light);
 
         }
 
@@ -1406,8 +1783,6 @@
 
             gap: 20px;
 
-            counter-reset: process;
-
         }
 
 
@@ -1581,6 +1956,8 @@
 
             margin-top: 4px;
 
+            flex-shrink: 0;
+
         }
 
 
@@ -1725,6 +2102,8 @@
 
             align-items: center;
 
+            gap: 20px;
+
             text-align: left;
 
             font-family:
@@ -1749,6 +2128,8 @@
 
             transition:
                 transform 0.3s ease;
+
+            flex-shrink: 0;
 
         }
 
@@ -1858,6 +2239,8 @@
             font-size:
                 clamp(32px, 4vw, 52px);
 
+            line-height: 1.05;
+
             margin-bottom: 15px;
 
         }
@@ -1876,6 +2259,15 @@
             font-size: 18px;
 
             margin-bottom: 25px;
+
+        }
+
+
+        .portal-box .btn {
+
+            position: relative;
+
+            z-index: 2;
 
         }
 
@@ -1975,8 +2367,7 @@
             display: grid;
 
             grid-template-columns:
-                1.3fr
-                1fr
+                1.4fr
                 1fr
                 1fr;
 
@@ -2221,6 +2612,22 @@
 
 
         /* =========================================================
+           FOCUS
+        ========================================================== */
+
+        a:focus-visible,
+        button:focus-visible {
+
+            outline:
+                2px solid
+                var(--gold-light);
+
+            outline-offset: 4px;
+
+        }
+
+
+        /* =========================================================
            TABLET
         ========================================================== */
 
@@ -2267,7 +2674,7 @@
 
 
         /* =========================================================
-           MOBILE NAV
+           MOBILE NAVIGATION
         ========================================================== */
 
         @media (max-width: 900px) {
@@ -2323,24 +2730,27 @@
 
             .nav-links {
 
-                position: absolute;
+                position: fixed;
 
-                top: calc(100% + 8px);
+                top: 88px;
 
-                left: 0;
+                left: 15px;
 
-                right: 0;
+                right: 15px;
 
-                width: min(
-                    calc(100% - 30px),
-                    600px
-                );
+                width: auto;
 
-                margin: auto;
+                max-width: 600px;
+
+                max-height:
+                    calc(100dvh - 105px);
+
+                margin:
+                    0 auto;
 
                 padding: 15px;
 
-                display: none;
+                display: flex;
 
                 flex-direction: column;
 
@@ -2349,9 +2759,11 @@
                 gap: 3px;
 
                 background:
-                    rgba(4, 12, 22, 0.97);
+                    rgba(4, 12, 22, 0.98);
 
                 backdrop-filter: blur(18px);
+
+                -webkit-backdrop-filter: blur(18px);
 
                 border:
                     1px solid
@@ -2363,12 +2775,37 @@
                     0 20px 60px
                     rgba(0, 0, 0, 0.45);
 
+                overflow-y: auto;
+
+                opacity: 0;
+
+                visibility: hidden;
+
+                pointer-events: none;
+
+                transform:
+                    translateY(-10px);
+
+                transition:
+                    opacity 0.25s ease,
+                    visibility 0.25s ease,
+                    transform 0.25s ease;
+
+                z-index: 5100;
+
             }
 
 
             .nav-links.open {
 
-                display: flex;
+                opacity: 1;
+
+                visibility: visible;
+
+                pointer-events: auto;
+
+                transform:
+                    translateY(0);
 
             }
 
@@ -2426,6 +2863,15 @@
             .intro-image img {
 
                 min-height: 400px;
+
+            }
+
+
+            .fee-grid {
+
+                grid-template-columns: 1fr;
+
+                max-width: 650px;
 
             }
 
@@ -2529,7 +2975,8 @@
 
             .highlight-grid {
 
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    1fr 1fr;
 
             }
 
@@ -2543,7 +2990,8 @@
 
             .semester-card {
 
-                padding: 28px 22px;
+                padding:
+                    28px 22px;
 
             }
 
@@ -2551,6 +2999,21 @@
             .semester-card h3 {
 
                 font-size: 29px;
+
+            }
+
+
+            .fee-card {
+
+                padding:
+                    38px 25px;
+
+            }
+
+
+            .fee-amount {
+
+                font-size: 58px;
 
             }
 
@@ -2595,6 +3058,8 @@
 
                 gap: 8px;
 
+                min-width: 0;
+
             }
 
 
@@ -2607,20 +3072,59 @@
             }
 
 
+            .brand-text {
+
+                max-width:
+                    calc(100vw - 115px);
+
+            }
+
+
             .brand-name {
 
-                font-size: 11px;
+                font-size: 10px;
 
                 letter-spacing: 1px;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
 
             }
 
 
             .brand-subtitle {
 
-                font-size: 8px;
+                font-size: 7px;
 
                 letter-spacing: 1px;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+
+            }
+
+
+            .menu-toggle {
+
+                width: 43px;
+
+                height: 40px;
+
+            }
+
+
+            .nav-links {
+
+                top: 80px;
+
+                left: 9px;
+
+                right: 9px;
+
+                max-height:
+                    calc(100dvh - 95px);
 
             }
 
@@ -2628,6 +3132,13 @@
             .hero {
 
                 min-height: 650px;
+
+            }
+
+
+            .hero-content {
+
+                padding-top: 75px;
 
             }
 
@@ -2685,7 +3196,8 @@
 
             .highlight-card {
 
-                padding: 28px 20px;
+                padding:
+                    28px 20px;
 
             }
 
@@ -2705,9 +3217,23 @@
             }
 
 
+            .image-caption {
+
+                left: 15px;
+
+                right: 15px;
+
+                bottom: 15px;
+
+                padding: 15px;
+
+            }
+
+
             .semester-card {
 
-                padding: 25px 18px;
+                padding:
+                    25px 18px;
 
             }
 
@@ -2719,9 +3245,46 @@
             }
 
 
+            .fee-card {
+
+                padding:
+                    34px 20px;
+
+            }
+
+
+            .fee-country {
+
+                font-size: 12px;
+
+            }
+
+
+            .fee-amount {
+
+                font-size: 52px;
+
+            }
+
+
+            .fee-period {
+
+                font-size: 17px;
+
+            }
+
+
+            .fee-description {
+
+                font-size: 16px;
+
+            }
+
+
             .eligibility-card {
 
-                padding: 22px 18px;
+                padding:
+                    22px 18px;
 
                 gap: 14px;
 
@@ -2814,21 +3377,21 @@
 
             .brand-text {
 
-                max-width: 145px;
+                max-width: 135px;
 
             }
 
 
             .brand-name {
 
-                font-size: 10px;
+                font-size: 9px;
 
             }
 
 
             .brand-subtitle {
 
-                font-size: 7px;
+                font-size: 6px;
 
             }
 
@@ -2853,6 +3416,13 @@
 
             }
 
+
+            .fee-amount {
+
+                font-size: 48px;
+
+            }
+
         }
 
 
@@ -2863,6 +3433,7 @@
         @media (hover: none) {
 
             .highlight-card:hover,
+            .fee-card:hover,
             .btn:hover {
 
                 transform: none;
@@ -2889,11 +3460,14 @@
             *::before,
             *::after {
 
-                animation-duration: 0.01ms !important;
+                animation-duration:
+                    0.01ms !important;
 
-                animation-iteration-count: 1 !important;
+                animation-iteration-count:
+                    1 !important;
 
-                transition-duration: 0.01ms !important;
+                transition-duration:
+                    0.01ms !important;
 
             }
 
@@ -2909,6 +3483,7 @@
         }
 
     </style>
+
 </head>
 
 
@@ -2919,7 +3494,10 @@
          LOADER
     ========================================================== -->
 
-    <div class="loader" id="loader">
+    <div
+        class="loader"
+        id="loader"
+    >
 
         <div class="loader-inner">
 
@@ -2942,7 +3520,10 @@
 
     <header id="header">
 
-        <nav class="navbar">
+        <nav
+            class="navbar"
+            aria-label="Primary navigation"
+        >
 
             <a
                 href="index.html"
@@ -2973,8 +3554,10 @@
             <button
                 class="menu-toggle"
                 id="menuToggle"
+                type="button"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
+                aria-controls="navLinks"
             >
 
                 <span></span>
@@ -2984,7 +3567,10 @@
             </button>
 
 
-            <ul class="nav-links" id="navLinks">
+            <ul
+                class="nav-links"
+                id="navLinks"
+            >
 
                 <li>
                     <a href="./home.html">
@@ -3012,7 +3598,7 @@
 
                 <li>
                     <a
-                        href="admissions.html"
+                        href="./admissions.html"
                         class="active"
                     >
                         Admissions
@@ -3047,11 +3633,25 @@
     </header>
 
 
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+        aria-hidden="true"
+    ></div>
+
+
     <!-- =========================================================
-         HERO
+         MAIN
     ========================================================== -->
 
     <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
         <section class="hero">
 
@@ -3084,10 +3684,10 @@
                     </a>
 
                     <a
-                        href="#apply"
+                        href="#fees"
                         class="btn btn-outline"
                     >
-                        Admission Information
+                        View Tuition Fees
                     </a>
 
                 </div>
@@ -3154,7 +3754,7 @@
 
                         <img
                             src="./img/worshipprayers/worship.jpeg"
-                            alt="Global College of Missiology campus"
+                            alt="Global College of Missiology worship and training"
                             loading="lazy"
                         >
 
@@ -3247,16 +3847,16 @@
                     <article class="highlight-card reveal">
 
                         <span class="highlight-number">
-                            2
+                            $15
                         </span>
 
                         <h3>
-                            Semesters
+                            Nigeria
                         </h3>
 
                         <p>
-                            The programme is divided into first
-                            and second semester courses.
+                            Tuition is $15 USD for each semester
+                            for students in Nigeria.
                         </p>
 
                     </article>
@@ -3265,19 +3865,123 @@
                     <article class="highlight-card reveal">
 
                         <span class="highlight-number">
-                            GCM
+                            $25
                         </span>
 
                         <h3>
-                            Kingdom Training
+                            Outside Nigeria
                         </h3>
 
                         <p>
-                            Biblical knowledge combined with
-                            practical preparation for Kingdom service.
+                            Tuition is $25 USD for each semester
+                            for students outside Nigeria.
                         </p>
 
                     </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TUITION & FEES
+        ====================================================== -->
+
+        <section
+            class="fees"
+            id="fees"
+        >
+
+            <div class="container">
+
+                <div class="fees-heading reveal">
+
+                    <div class="section-label">
+                        Tuition & Fees
+                    </div>
+
+                    <h2>
+                        Simple Semester Tuition
+                    </h2>
+
+                    <p>
+                        The tuition fee is determined by the
+                        student's country of residence and applies
+                        to each semester.
+                    </p>
+
+                </div>
+
+
+                <div class="fee-grid">
+
+
+                    <!-- NIGERIA -->
+
+                    <article class="fee-card reveal">
+
+                        <div class="fee-country">
+                            Students In Nigeria
+                        </div>
+
+                        <div class="fee-amount">
+                            $15
+                        </div>
+
+                        <div class="fee-period">
+                            USD / Semester
+                        </div>
+
+                        <p class="fee-description">
+                            Students residing in Nigeria pay
+                            <strong>$15 USD</strong> for each semester.
+                            Each semester has a 15-day training period.
+                        </p>
+
+                    </article>
+
+
+                    <!-- INTERNATIONAL -->
+
+                    <article class="fee-card reveal">
+
+                        <div class="fee-country">
+                            Students Outside Nigeria
+                        </div>
+
+                        <div class="fee-amount">
+                            $25
+                        </div>
+
+                        <div class="fee-period">
+                            USD / Semester
+                        </div>
+
+                        <p class="fee-description">
+                            Students residing outside Nigeria pay
+                            <strong>$25 USD</strong> for each semester.
+                            Each semester has a 15-day training period.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+
+                <div class="fee-note reveal">
+
+                    <strong>
+                        Important:
+                    </strong>
+
+                    The displayed fee is the tuition amount for
+                    <strong>one semester</strong>. Students enrolling
+                    for both semesters should expect the applicable
+                    fee for each semester separately.
 
                 </div>
 
@@ -3315,6 +4019,7 @@
 
                 <div class="programme-grid">
 
+
                     <!-- FIRST SEMESTER -->
 
                     <article class="semester-card reveal">
@@ -3328,7 +4033,7 @@
                         </h3>
 
                         <div class="semester-duration">
-                            15 DAYS OF TRAINING
+                            15 DAYS • $15 NIGERIA • $25 INTERNATIONAL
                         </div>
 
                         <ul>
@@ -3375,7 +4080,7 @@
                         </h3>
 
                         <div class="semester-duration">
-                            15 DAYS OF TRAINING
+                            15 DAYS • $15 NIGERIA • $25 INTERNATIONAL
                         </div>
 
                         <ul>
@@ -3461,6 +4166,7 @@
 
 
                 <div class="eligibility-grid">
+
 
                     <article class="eligibility-card reveal">
 
@@ -3556,6 +4262,7 @@
 
                     </article>
 
+
                 </div>
 
             </div>
@@ -3567,7 +4274,10 @@
              ADMISSION PROCESS
         ====================================================== -->
 
-        <section class="process" id="apply">
+        <section
+            class="process"
+            id="apply"
+        >
 
             <div class="container">
 
@@ -3582,15 +4292,15 @@
                     </h2>
 
                     <p>
-                        The full online admission portal will be
-                        connected as the next phase of the GCM
-                        platform is developed.
+                        Follow the admission process and prepare
+                        for your semester of training.
                     </p>
 
                 </div>
 
 
                 <div class="process-grid">
+
 
                     <article class="process-card reveal">
 
@@ -3618,13 +4328,12 @@
                         </div>
 
                         <h3>
-                            Prepare
+                            Select
                         </h3>
 
                         <p>
-                            Read the admission information,
-                            academic expectations and institutional
-                            requirements.
+                            Choose the semester and course programme
+                            you want to study.
                         </p>
 
                     </article>
@@ -3642,8 +4351,7 @@
 
                         <p>
                             Complete the official application process
-                            when the online enrollment portal becomes
-                            available.
+                            and provide the required information.
                         </p>
 
                     </article>
@@ -3660,11 +4368,12 @@
                         </h3>
 
                         <p>
-                            Receive the required admission information
-                            and prepare to begin your training at GCM.
+                            Complete the admission requirements and
+                            prepare to begin your training at GCM.
                         </p>
 
                     </article>
+
 
                 </div>
 
@@ -3682,6 +4391,7 @@
             <div class="container">
 
                 <div class="expectations-grid">
+
 
                     <div class="expectations-intro reveal">
 
@@ -3706,6 +4416,7 @@
 
 
                     <div class="expectation-list">
+
 
                         <div class="expectation-item reveal">
 
@@ -3778,6 +4489,7 @@
                             </p>
 
                         </div>
+
 
                     </div>
 
@@ -3853,15 +4565,18 @@
                 <div class="faq-container">
 
 
+                    <!-- FAQ 1 -->
+
                     <div class="faq-item reveal">
 
                         <button
                             class="faq-question"
                             type="button"
+                            aria-expanded="false"
                         >
 
                             <span>
-                                How long is the programme?
+                                How much is tuition per semester?
                             </span>
 
                             <span class="faq-icon">
@@ -3873,10 +4588,12 @@
                         <div class="faq-answer">
 
                             <p>
-                                The programme is structured into two
-                                semesters, with each semester
-                                consisting of a 15-day training
-                                period.
+                                Students in Nigeria pay
+                                <strong>$15 USD per semester</strong>.
+                                Students outside Nigeria pay
+                                <strong>$25 USD per semester</strong>.
+                                The fee applies to each semester
+                                separately.
                             </p>
 
                         </div>
@@ -3884,11 +4601,46 @@
                     </div>
 
 
+                    <!-- FAQ 2 -->
+
                     <div class="faq-item reveal">
 
                         <button
                             class="faq-question"
                             type="button"
+                            aria-expanded="false"
+                        >
+
+                            <span>
+                                How long is each semester?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Each semester is structured as a
+                                focused 15-day training period.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 3 -->
+
+                    <div class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                            aria-expanded="false"
                         >
 
                             <span>
@@ -3918,15 +4670,18 @@
                     </div>
 
 
+                    <!-- FAQ 4 -->
+
                     <div class="faq-item reveal">
 
                         <button
                             class="faq-question"
                             type="button"
+                            aria-expanded="false"
                         >
 
                             <span>
-                                Is online enrollment available yet?
+                                Is online enrollment available?
                             </span>
 
                             <span class="faq-icon">
@@ -3938,12 +4693,11 @@
                         <div class="faq-answer">
 
                             <p>
-                                The full online enrollment portal is
-                                part of the next development stage of
-                                the GCM platform. This website is
-                                currently providing the institutional
-                                and admission information needed by
-                                prospective students.
+                                The online admission platform is being
+                                developed as part of the next phase of
+                                the GCM digital platform. Students will
+                                eventually be able to complete their
+                                admission journey online.
                             </p>
 
                         </div>
@@ -3951,11 +4705,14 @@
                     </div>
 
 
+                    <!-- FAQ 5 -->
+
                     <div class="faq-item reveal">
 
                         <button
                             class="faq-question"
                             type="button"
+                            aria-expanded="false"
                         >
 
                             <span>
@@ -3974,8 +4731,9 @@
                                 Yes. The future GCM platform will
                                 include student accounts and a
                                 dedicated student learning environment.
-                                That functionality will be connected
-                                during the next stage of development.
+                                Students will eventually be able to
+                                access lessons, timetables, assignments,
+                                assessments and other academic resources.
                             </p>
 
                         </div>
@@ -3983,11 +4741,14 @@
                     </div>
 
 
+                    <!-- FAQ 6 -->
+
                     <div class="faq-item reveal">
 
                         <button
                             class="faq-question"
                             type="button"
+                            aria-expanded="false"
                         >
 
                             <span>
@@ -4088,8 +4849,10 @@
                         service.
                     </p>
 
-                    <div class="hero-buttons"
-                         style="justify-content:center;">
+                    <div
+                        class="hero-buttons"
+                        style="justify-content:center;"
+                    >
 
                         <a
                             href="./course.html"
@@ -4112,6 +4875,7 @@
             </div>
 
         </section>
+
 
     </main>
 
@@ -4176,7 +4940,7 @@
                         </li>
 
                         <li>
-                            <a href="admissions.html">
+                            <a href="./admissions.html">
                                 Admissions
                             </a>
                         </li>
@@ -4201,14 +4965,20 @@
                         </li>
 
                         <li>
-                            <a href="rules.html">
+                            <a href="./rules.html">
                                 Rules & Regulations
                             </a>
                         </li>
 
                         <li>
-                            <a href="index.html#about">
+                            <a href="./index.html#about">
                                 Our Mission
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#fees">
+                                Tuition Fees
                             </a>
                         </li>
 
@@ -4221,9 +4991,6 @@
                     </ul>
 
                 </div>
-
-
-               
 
 
             </div>
@@ -4256,6 +5023,7 @@
     <button
         class="back-top"
         id="backTop"
+        type="button"
         aria-label="Back to top"
     >
         ↑
@@ -4272,18 +5040,24 @@
            LOADER
         ========================================================== */
 
-        window.addEventListener("load", function () {
+        window.addEventListener(
+            "load",
+            function () {
 
-            const loader =
-                document.getElementById("loader");
+                const loader =
+                    document.getElementById("loader");
 
-            setTimeout(function () {
+                setTimeout(
+                    function () {
 
-                loader.classList.add("hidden");
+                        loader.classList.add("hidden");
 
-            }, 500);
+                    },
+                    500
+                );
 
-        });
+            }
+        );
 
 
         /* =========================================================
@@ -4329,80 +5103,121 @@
         const navLinks =
             document.getElementById("navLinks");
 
+        const menuOverlay =
+            document.getElementById("menuOverlay");
+
+
+        function setMenu(open) {
+
+            navLinks.classList.toggle(
+                "open",
+                open
+            );
+
+            menuToggle.classList.toggle(
+                "open",
+                open
+            );
+
+            menuOverlay.classList.toggle(
+                "open",
+                open
+            );
+
+            document.body.classList.toggle(
+                "menu-open",
+                open
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(open)
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                open
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+            menuOverlay.setAttribute(
+                "aria-hidden",
+                String(!open)
+            );
+
+        }
+
 
         menuToggle.addEventListener(
             "click",
-            function () {
+            function (event) {
+
+                event.stopPropagation();
 
                 const isOpen =
-                    navLinks.classList.toggle("open");
+                    navLinks.classList.contains("open");
 
-                menuToggle.classList.toggle(
-                    "open",
-                    isOpen
-                );
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
+                setMenu(!isOpen);
 
             }
         );
 
 
-        /* Close menu after clicking a link */
+        menuOverlay.addEventListener(
+            "click",
+            function () {
+
+                setMenu(false);
+
+            }
+        );
+
 
         navLinks
             .querySelectorAll("a")
-            .forEach(function (link) {
+            .forEach(
+                function (link) {
 
-                link.addEventListener(
-                    "click",
-                    function () {
+                    link.addEventListener(
+                        "click",
+                        function () {
 
-                        navLinks.classList.remove(
-                            "open"
-                        );
+                            setMenu(false);
 
-                        menuToggle.classList.remove(
-                            "open"
-                        );
+                        }
+                    );
 
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
+                }
+            );
 
-                    }
-                );
-
-            });
-
-
-        /* Close mobile menu when clicking outside */
 
         document.addEventListener(
-            "click",
+            "keydown",
             function (event) {
 
-                const clickedInsideNavbar =
-                    event.target.closest(".navbar");
+                if (
+                    event.key === "Escape" &&
+                    navLinks.classList.contains("open")
+                ) {
 
-                if (!clickedInsideNavbar) {
+                    setMenu(false);
 
-                    navLinks.classList.remove(
-                        "open"
-                    );
+                    menuToggle.focus();
 
-                    menuToggle.classList.remove(
-                        "open"
-                    );
+                }
 
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
+            }
+        );
+
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (window.innerWidth > 900) {
+
+                    setMenu(false);
 
                 }
 
@@ -4419,13 +5234,15 @@
 
 
         if (
-            "IntersectionObserver"
-            in window
+            "IntersectionObserver" in window
         ) {
 
             const revealObserver =
                 new IntersectionObserver(
-                    function (entries, observer) {
+                    function (
+                        entries,
+                        observer
+                    ) {
 
                         entries.forEach(
                             function (entry) {
@@ -4518,6 +5335,11 @@
                                     "open"
                                 );
 
+                                const otherQuestion =
+                                    otherItem.querySelector(
+                                        ".faq-question"
+                                    );
+
                                 const otherAnswer =
                                     otherItem.querySelector(
                                         ".faq-answer"
@@ -4525,6 +5347,11 @@
 
                                 otherAnswer.style.maxHeight =
                                     null;
+
+                                otherQuestion.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
 
                             }
                         );
@@ -4539,6 +5366,11 @@
                             answer.style.maxHeight =
                                 answer.scrollHeight +
                                 "px";
+
+                            question.setAttribute(
+                                "aria-expanded",
+                                "true"
+                            );
 
                         }
 
@@ -4583,6 +5415,9 @@
         );
 
 
+        handleBackTop();
+
+
         backTop.addEventListener(
             "click",
             function () {
@@ -4603,7 +5438,8 @@
            CURRENT YEAR
         ========================================================== */
 
-        document.getElementById("year")
+        document
+            .getElementById("year")
             .textContent =
             new Date().getFullYear();
 
@@ -4614,23 +5450,27 @@
 
         document
             .querySelectorAll("img")
-            .forEach(function (image) {
+            .forEach(
+                function (image) {
 
-                image.addEventListener(
-                    "error",
-                    function () {
+                    image.addEventListener(
+                        "error",
+                        function () {
 
-                        console.warn(
-                            "Image could not be loaded:",
-                            image.src
-                        );
+                            console.warn(
+                                "Image could not be loaded:",
+                                image.src
+                            );
 
-                    }
-                );
+                        }
+                    );
 
-            });
+                }
+            );
 
     </script>
 
+
 </body>
+
 </html>

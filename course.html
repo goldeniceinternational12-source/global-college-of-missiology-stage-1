@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -20,9 +21,15 @@
 
     <meta name="theme-color" content="#07111f">
 
+    <meta name="author" content="Global College of Missiology">
+
     <title>Courses | Global College of Missiology</title>
 
-    <!-- Google Fonts -->
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -31,62 +38,15 @@
         rel="stylesheet"
     >
 
+
     <style>
 
         /* =========================================================
-           GLOBAL RESET
-        ========================================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Cormorant Garamond", serif;
-            background: #07111f;
-            color: #f4efe4;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        img {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-        }
-
-        button,
-        a {
-            font: inherit;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            border: 0;
-            cursor: pointer;
-        }
-
-        ::selection {
-            background: #c7a34b;
-            color: #07111f;
-        }
-
-
-        /* =========================================================
-           VARIABLES
+           ROOT VARIABLES
         ========================================================= */
 
         :root {
+
             --navy: #07111f;
             --navy-2: #0b1728;
             --navy-3: #101f33;
@@ -104,20 +64,112 @@
 
             --shadow:
                 0 25px 70px rgba(0, 0, 0, 0.35);
+
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+
+        body {
+
+            font-family: "Cormorant Garamond", serif;
+
+            background: var(--navy);
+
+            color: var(--ivory);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+
+        }
+
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+
+        img {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 100%;
+
+        }
+
+
+        button,
+        a {
+            font: inherit;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button {
+            border: 0;
+            cursor: pointer;
+        }
+
+
+        ::selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+
+        /* =========================================================
+           ACCESSIBILITY
+        ========================================================== */
+
+        a:focus-visible,
+        button:focus-visible {
+
+            outline: 2px solid var(--gold-light);
+
+            outline-offset: 4px;
+
         }
 
 
         /* =========================================================
            LOADER
-        ========================================================= */
+        ========================================================== */
 
         .loader {
+
             position: fixed;
+
             inset: 0;
+
             z-index: 99999;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             background: var(--navy);
@@ -125,29 +177,49 @@
             transition:
                 opacity 0.6s ease,
                 visibility 0.6s ease;
+
         }
+
 
         .loader.hide {
+
             opacity: 0;
+
             visibility: hidden;
+
             pointer-events: none;
+
         }
+
 
         .loader-content {
+
             text-align: center;
+
             padding: 20px;
+
         }
+
 
         .loader-logo {
+
             width: 100px;
+
             height: 100px;
+
             object-fit: contain;
+
             margin: 0 auto 20px;
+
         }
 
+
         .loader-line {
+
             width: 150px;
+
             height: 2px;
+
             margin: 0 auto 16px;
 
             background:
@@ -158,18 +230,29 @@
                     transparent
                 );
 
-            animation: loaderLine 1.5s infinite ease-in-out;
+            animation:
+                loaderLine 1.5s infinite ease-in-out;
+
         }
+
 
         .loader-text {
+
             color: var(--gold-light);
+
             font-family: "Marcellus", serif;
+
             font-size: 12px;
+
             letter-spacing: 3px;
+
             text-transform: uppercase;
+
         }
 
+
         @keyframes loaderLine {
+
             0% {
                 opacity: 0.2;
                 transform: scaleX(0.5);
@@ -184,160 +267,232 @@
                 opacity: 0.2;
                 transform: scaleX(0.5);
             }
+
         }
 
 
         /* =========================================================
            HEADER
-        ========================================================= */
+        ========================================================== */
 
         .site-header {
+
             position: fixed;
+
             top: 0;
             left: 0;
             right: 0;
 
             z-index: 5000;
 
-            padding: 18px 20px;
+            padding:
+                16px
+                max(20px, env(safe-area-inset-right))
+                16px
+                max(20px, env(safe-area-inset-left));
 
             transition:
                 background 0.3s ease,
                 padding 0.3s ease,
                 box-shadow 0.3s ease;
+
         }
 
+
         .site-header.scrolled {
-            background: rgba(5, 12, 22, 0.92);
+
+            background:
+                rgba(5, 12, 22, 0.94);
 
             backdrop-filter: blur(16px);
+
             -webkit-backdrop-filter: blur(16px);
 
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 9px;
+
+            padding-bottom: 9px;
 
             box-shadow:
                 0 10px 35px rgba(0, 0, 0, 0.25);
+
         }
 
+
         .nav-container {
+
             width: min(1400px, 100%);
+
             min-height: 72px;
 
             margin: 0 auto;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
-            gap: 25px;
+            gap: 20px;
+
         }
 
 
         /* =========================================================
-           LOGO
-        ========================================================= */
+           BRAND
+        ========================================================== */
 
         .brand {
+
             display: flex;
+
             align-items: center;
+
             gap: 13px;
 
-            min-width: max-content;
+            min-width: 0;
+
+            flex-shrink: 0;
+
         }
 
+
         .brand img {
+
             width: 58px;
+
             height: 58px;
 
             object-fit: contain;
+
+            flex-shrink: 0;
+
         }
+
 
         .brand-text {
+
             display: flex;
+
             flex-direction: column;
+
+            min-width: 0;
+
         }
 
+
         .brand-name {
+
             font-family: "Marcellus", serif;
 
             font-size: 18px;
+
             line-height: 1.1;
 
             color: var(--ivory);
+
+            white-space: nowrap;
+
         }
 
+
         .brand-tagline {
+
             margin-top: 4px;
 
             font-size: 11px;
+
             letter-spacing: 1.5px;
 
             color: var(--gold-light);
 
             text-transform: uppercase;
+
+            white-space: nowrap;
+
         }
 
 
         /* =========================================================
-           NAVIGATION
-        ========================================================= */
+           DESKTOP NAVIGATION
+        ========================================================== */
 
         .main-nav {
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
-            gap: 24px;
+            gap: 20px;
+
         }
 
+
         .main-nav a {
+
             position: relative;
 
             color: #ddd8ca;
 
             font-size: 15px;
+
             font-weight: 600;
 
             padding: 8px 0;
 
             transition: color 0.3s ease;
+
         }
 
+
         .main-nav a::after {
+
             content: "";
 
             position: absolute;
 
             left: 0;
+
             bottom: 0;
 
             width: 0;
+
             height: 1px;
 
             background: var(--gold);
 
             transition: width 0.3s ease;
+
         }
+
 
         .main-nav a:hover,
         .main-nav a.active {
+
             color: var(--gold-light);
+
         }
+
 
         .main-nav a:hover::after,
         .main-nav a.active::after {
+
             width: 100%;
+
         }
 
 
         /* =========================================================
            NAV CTA
-        ========================================================= */
+        ========================================================== */
 
         .nav-cta {
+
             display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
 
             min-height: 44px;
@@ -349,6 +504,7 @@
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
+
             font-size: 12px;
 
             letter-spacing: 1px;
@@ -359,49 +515,112 @@
                 background 0.3s ease,
                 color 0.3s ease,
                 transform 0.3s ease;
+
+            flex-shrink: 0;
+
         }
 
+
         .nav-cta:hover {
+
             background: var(--gold);
+
             color: var(--navy);
 
             transform: translateY(-2px);
+
         }
 
 
         /* =========================================================
            MOBILE MENU BUTTON
-        ========================================================= */
+        ========================================================== */
 
         .menu-toggle {
+
             display: none;
 
             width: 46px;
+
             height: 46px;
 
             align-items: center;
+
             justify-content: center;
 
-            background: rgba(255, 255, 255, 0.05);
+            background:
+                rgba(255, 255, 255, 0.05);
 
             border: 1px solid var(--border);
 
             color: var(--gold-light);
 
+            font-family: Arial, sans-serif;
+
             font-size: 25px;
+
+            line-height: 1;
+
+            flex-shrink: 0;
+
+            position: relative;
+
+            z-index: 6000;
+
+        }
+
+
+        /* =========================================================
+           MOBILE OVERLAY
+        ========================================================== */
+
+        .menu-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 4800;
+
+            background:
+                rgba(0, 0, 0, 0.62);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+
+        }
+
+
+        .menu-overlay.open {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+
         }
 
 
         /* =========================================================
            HERO
-        ========================================================= */
+        ========================================================== */
 
         .hero {
+
             position: relative;
 
             min-height: 760px;
 
             display: flex;
+
             align-items: center;
 
             overflow: hidden;
@@ -413,13 +632,18 @@
                     rgba(7, 17, 31, 0.83),
                     rgba(7, 17, 31, 0.96)
                 ),
-                url("assets/images/campus.jpg") center / cover no-repeat;
+                url("assets/images/campus.jpg")
+                center / cover no-repeat;
+
         }
 
+
         .hero::before {
+
             content: "";
 
             position: absolute;
+
             inset: 0;
 
             background:
@@ -428,22 +652,31 @@
                     rgba(199, 163, 75, 0.14),
                     transparent 35%
                 );
+
         }
 
+
         .hero-content {
+
             position: relative;
+
             z-index: 2;
 
-            width: min(1200px, 92%);
+            width: min(1200px, calc(100% - 40px));
 
             margin: 0 auto;
 
-            padding-top: 90px;
+            padding-top: 100px;
+
         }
 
+
         .eyebrow {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 12px;
 
             margin-bottom: 20px;
@@ -451,23 +684,31 @@
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
+
             font-size: 12px;
 
             letter-spacing: 3px;
 
             text-transform: uppercase;
+
         }
 
+
         .eyebrow::before {
+
             content: "";
 
             width: 45px;
+
             height: 1px;
 
             background: var(--gold);
+
         }
 
+
         .hero h1 {
+
             max-width: 900px;
 
             font-family: "Marcellus", serif;
@@ -481,13 +722,19 @@
             color: var(--ivory);
 
             margin-bottom: 25px;
+
         }
+
 
         .hero h1 span {
+
             color: var(--gold-light);
+
         }
 
+
         .hero p {
+
             max-width: 720px;
 
             color: #d0ccc2;
@@ -497,31 +744,41 @@
             line-height: 1.8;
 
             margin-bottom: 34px;
+
         }
 
+
         .hero-actions {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 14px;
+
         }
 
 
         /* =========================================================
            BUTTONS
-        ========================================================= */
+        ========================================================== */
 
         .btn {
+
             min-height: 52px;
 
             padding: 0 25px;
 
             display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
 
             border: 1px solid transparent;
 
             font-family: "Marcellus", serif;
+
             font-size: 12px;
 
             letter-spacing: 1.5px;
@@ -533,65 +790,100 @@
                 background 0.3s ease,
                 color 0.3s ease,
                 border-color 0.3s ease;
+
+            text-align: center;
+
         }
+
 
         .btn-primary {
+
             background: var(--gold);
+
             color: var(--navy);
+
         }
+
 
         .btn-primary:hover {
+
             background: var(--gold-light);
+
             transform: translateY(-3px);
+
         }
 
+
         .btn-outline {
+
             border-color: var(--gold);
 
             background: transparent;
 
             color: var(--gold-light);
+
         }
 
+
         .btn-outline:hover {
+
             background: var(--gold);
+
             color: var(--navy);
 
             transform: translateY(-3px);
+
         }
 
 
         /* =========================================================
            SECTION SYSTEM
-        ========================================================= */
+        ========================================================== */
 
         section {
             position: relative;
         }
 
+
         .section {
-            padding: 110px 20px;
+
+            padding:
+                110px 20px;
+
         }
+
 
         .container {
-            width: min(1200px, 100%);
+
+            width: min(1200px, calc(100% - 40px));
+
             margin: 0 auto;
+
         }
 
+
         .section-heading {
+
             max-width: 760px;
 
             margin-bottom: 55px;
+
         }
 
+
         .section-heading.center {
+
             margin-left: auto;
+
             margin-right: auto;
 
             text-align: center;
+
         }
 
+
         .section-label {
+
             display: inline-block;
 
             margin-bottom: 14px;
@@ -605,9 +897,12 @@
             letter-spacing: 3px;
 
             text-transform: uppercase;
+
         }
 
+
         .section-heading h2 {
+
             font-family: "Marcellus", serif;
 
             font-size: clamp(35px, 5vw, 60px);
@@ -619,26 +914,34 @@
             color: var(--ivory);
 
             margin-bottom: 18px;
+
         }
 
+
         .section-heading p {
+
             color: var(--muted);
 
             font-size: 19px;
 
             line-height: 1.8;
+
         }
 
 
         /* =========================================================
-           COURSE INTRO
-        ========================================================= */
+           INTRODUCTION
+        ========================================================== */
 
         .intro-section {
+
             background: var(--navy);
+
         }
 
+
         .intro-grid {
+
             display: grid;
 
             grid-template-columns:
@@ -648,9 +951,12 @@
             gap: 70px;
 
             align-items: center;
+
         }
 
+
         .intro-text p {
+
             color: #cbc7bd;
 
             font-size: 20px;
@@ -658,27 +964,37 @@
             line-height: 1.9;
 
             margin-bottom: 22px;
+
         }
 
+
         .intro-note {
+
             padding: 25px 28px;
 
             border-left: 2px solid var(--gold);
 
-            background: rgba(255, 255, 255, 0.035);
+            background:
+                rgba(255, 255, 255, 0.035);
 
             color: var(--gold-light);
 
             font-size: 18px;
 
             font-style: italic;
+
         }
+
 
         .intro-image {
+
             position: relative;
+
         }
 
+
         .intro-image img {
+
             min-height: 420px;
 
             object-fit: cover;
@@ -686,18 +1002,24 @@
             border: 1px solid var(--border);
 
             box-shadow: var(--shadow);
+
         }
 
+
         .image-caption {
+
             position: absolute;
 
             left: 20px;
+
             right: 20px;
+
             bottom: 20px;
 
             padding: 18px;
 
-            background: rgba(4, 10, 18, 0.84);
+            background:
+                rgba(4, 10, 18, 0.84);
 
             backdrop-filter: blur(10px);
 
@@ -712,33 +1034,265 @@
             letter-spacing: 1px;
 
             text-align: center;
+
+        }
+
+
+        /* =========================================================
+           TUITION & FEES
+        ========================================================== */
+
+        .fees-section {
+
+            padding:
+                100px 20px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #0a182a,
+                    #07111f
+                );
+
+        }
+
+
+        .fee-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 24px;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .fee-card {
+
+            position: relative;
+
+            padding: 42px 35px;
+
+            text-align: center;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.018)
+                );
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .fee-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 3px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--gold),
+                    transparent
+                );
+
+        }
+
+
+        .fee-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(199, 163, 75, 0.55);
+
+            box-shadow:
+                0 25px 55px rgba(0, 0, 0, 0.25);
+
+        }
+
+
+        .fee-country {
+
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .fee-price {
+
+            color: var(--ivory);
+
+            font-family: "Marcellus", serif;
+
+            font-size: clamp(52px, 7vw, 72px);
+
+            line-height: 1;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .fee-price small {
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 18px;
+
+            color: var(--gold-light);
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .fee-card h3 {
+
+            color: var(--ivory);
+
+            font-family: "Marcellus", serif;
+
+            font-size: 22px;
+
+            font-weight: 400;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .fee-card p {
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .fee-note {
+
+            padding-top: 18px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color: #c8c4bb;
+
+            font-size: 15px;
+
+        }
+
+
+        .fee-summary {
+
+            max-width: 900px;
+
+            margin: 28px auto 0;
+
+            padding: 22px 25px;
+
+            border:
+                1px solid
+                rgba(199,163,75,0.18);
+
+            background:
+                rgba(255,255,255,0.025);
+
+            color: var(--muted);
+
+            text-align: center;
+
+            font-size: 16px;
+
+        }
+
+
+        .fee-summary strong {
+
+            color: var(--gold-light);
+
         }
 
 
         /* =========================================================
            SEMESTER SECTION
-        ========================================================= */
+        ========================================================== */
 
         .semester-section {
+
             background:
                 linear-gradient(
                     180deg,
                     #091526,
                     #07111f
                 );
+
         }
+
 
         .semester-block {
+
             margin-bottom: 90px;
+
         }
+
 
         .semester-block:last-child {
+
             margin-bottom: 0;
+
         }
 
+
         .semester-header {
+
             display: flex;
+
             align-items: flex-end;
+
             justify-content: space-between;
 
             gap: 25px;
@@ -747,29 +1301,43 @@
 
             margin-bottom: 30px;
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid
+                var(--border);
+
         }
 
+
         .semester-title {
+
             font-family: "Marcellus", serif;
 
-            font-size: clamp(27px, 4vw, 40px);
+            font-size:
+                clamp(27px, 4vw, 40px);
 
             font-weight: 400;
 
             color: var(--ivory);
+
         }
+
 
         .semester-title span {
+
             color: var(--gold-light);
+
         }
 
+
         .semester-duration {
+
             flex-shrink: 0;
 
             padding: 8px 14px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
             color: var(--gold-light);
 
@@ -780,28 +1348,34 @@
             letter-spacing: 1.5px;
 
             text-transform: uppercase;
+
         }
 
 
         /* =========================================================
            COURSE GRID
-        ========================================================= */
+        ========================================================== */
 
         .course-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, minmax(0, 1fr));
 
             gap: 22px;
+
         }
 
+
         .course-card {
+
             position: relative;
 
             min-height: 355px;
 
             display: flex;
+
             flex-direction: column;
 
             padding: 30px;
@@ -813,7 +1387,9 @@
                     rgba(255,255,255,0.018)
                 );
 
-            border: 1px solid rgba(199, 163, 75, 0.20);
+            border:
+                1px solid
+                rgba(199, 163, 75, 0.20);
 
             transition:
                 transform 0.35s ease,
@@ -822,17 +1398,22 @@
                 box-shadow 0.35s ease;
 
             overflow: hidden;
+
         }
 
+
         .course-card::before {
+
             content: "";
 
             position: absolute;
 
             top: 0;
+
             left: 0;
 
             width: 100%;
+
             height: 3px;
 
             background:
@@ -847,13 +1428,18 @@
 
             transform-origin: center;
 
-            transition: transform 0.35s ease;
+            transition:
+                transform 0.35s ease;
+
         }
 
+
         .course-card:hover {
+
             transform: translateY(-8px);
 
-            border-color: rgba(199, 163, 75, 0.55);
+            border-color:
+                rgba(199, 163, 75, 0.55);
 
             background:
                 linear-gradient(
@@ -864,32 +1450,46 @@
 
             box-shadow:
                 0 25px 60px rgba(0,0,0,0.25);
+
         }
+
 
         .course-card:hover::before {
+
             transform: scaleX(1);
+
         }
 
+
         .course-number {
+
             width: 48px;
+
             height: 48px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             margin-bottom: 24px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
 
             font-size: 14px;
+
         }
 
+
         .course-card h3 {
+
             font-family: "Marcellus", serif;
 
             font-size: 25px;
@@ -901,9 +1501,14 @@
             color: var(--ivory);
 
             margin-bottom: 15px;
+
+            overflow-wrap: anywhere;
+
         }
 
+
         .course-card p {
+
             color: var(--muted);
 
             font-size: 17px;
@@ -911,10 +1516,14 @@
             line-height: 1.65;
 
             margin-bottom: 20px;
+
         }
 
+
         .course-meta {
+
             display: flex;
+
             flex-wrap: wrap;
 
             gap: 8px;
@@ -922,43 +1531,59 @@
             margin-top: auto;
 
             margin-bottom: 22px;
+
         }
 
+
         .meta-item {
+
             padding: 6px 10px;
 
-            border: 1px solid rgba(199,163,75,0.18);
+            border:
+                1px solid
+                rgba(199,163,75,0.18);
 
             color: #c8c4bb;
 
             font-size: 12px;
 
             letter-spacing: 0.5px;
+
         }
+
 
         .course-actions {
+
             display: flex;
+
             gap: 10px;
+
         }
 
+
         .course-actions .btn {
+
             width: 100%;
+
             min-height: 46px;
 
             padding: 0 12px;
 
             font-size: 10px;
+
         }
 
 
         /* =========================================================
            COURSE STATUS
-        ========================================================= */
+        ========================================================== */
 
         .course-status {
+
             position: absolute;
 
             top: 20px;
+
             right: 20px;
 
             padding: 6px 9px;
@@ -970,36 +1595,54 @@
             letter-spacing: 1px;
 
             text-transform: uppercase;
+
         }
 
+
         .status-current {
-            border: 1px solid rgba(199,163,75,0.45);
+
+            border:
+                1px solid
+                rgba(199,163,75,0.45);
 
             color: var(--gold-light);
 
-            background: rgba(199,163,75,0.07);
+            background:
+                rgba(199,163,75,0.07);
+
         }
 
+
         .status-coming {
-            border: 1px solid rgba(255,255,255,0.12);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
 
             color: #aaa79e;
 
-            background: rgba(255,255,255,0.04);
+            background:
+                rgba(255,255,255,0.04);
+
         }
 
 
         /* =========================================================
            ACADEMIC NOTE
-        ========================================================= */
+        ========================================================== */
 
         .academic-note-section {
-            padding: 85px 20px;
+
+            padding:
+                85px 20px;
 
             background: #0a182a;
+
         }
 
+
         .academic-note {
+
             display: grid;
 
             grid-template-columns: auto 1fr;
@@ -1010,7 +1653,9 @@
 
             padding: 35px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
             background:
                 linear-gradient(
@@ -1018,26 +1663,37 @@
                     rgba(199,163,75,0.07),
                     rgba(255,255,255,0.025)
                 );
+
         }
 
+
         .academic-icon {
+
             width: 55px;
+
             height: 55px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
-            border: 1px solid var(--gold);
+            border:
+                1px solid
+                var(--gold);
 
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
 
             font-size: 20px;
+
         }
 
+
         .academic-note h3 {
+
             font-family: "Marcellus", serif;
 
             font-size: 25px;
@@ -1047,43 +1703,73 @@
             margin-bottom: 8px;
 
             color: var(--ivory);
+
         }
 
+
         .academic-note p {
+
             color: var(--muted);
 
             font-size: 17px;
 
             line-height: 1.8;
+
         }
 
 
         /* =========================================================
            HOW TO PROCEED
-        ========================================================= */
+        ========================================================== */
 
         .proceed-section {
+
             background: var(--navy);
+
         }
 
+
         .steps-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, minmax(0, 1fr));
 
             gap: 22px;
+
         }
+
 
         .step-card {
+
             padding: 32px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
             background: var(--glass);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+
         }
 
+
+        .step-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(199,163,75,0.5);
+
+        }
+
+
         .step-number {
+
             margin-bottom: 18px;
 
             color: var(--gold-light);
@@ -1093,9 +1779,12 @@
             font-size: 14px;
 
             letter-spacing: 2px;
+
         }
 
+
         .step-card h3 {
+
             font-family: "Marcellus", serif;
 
             font-size: 24px;
@@ -1105,23 +1794,29 @@
             color: var(--ivory);
 
             margin-bottom: 12px;
+
         }
 
+
         .step-card p {
+
             color: var(--muted);
 
             font-size: 17px;
 
             line-height: 1.75;
+
         }
 
 
         /* =========================================================
-           STAGE 2 NOTICE
-        ========================================================= */
+           FUTURE PORTAL
+        ========================================================== */
 
         .future-section {
-            padding: 100px 20px;
+
+            padding:
+                100px 20px;
 
             background:
                 linear-gradient(
@@ -1129,18 +1824,24 @@
                     #0b1829,
                     #07111f
                 );
+
         }
 
+
         .future-box {
+
             max-width: 900px;
 
             margin: 0 auto;
 
             text-align: center;
 
-            padding: 55px 35px;
+            padding:
+                55px 35px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
             background:
                 radial-gradient(
@@ -1148,16 +1849,23 @@
                     rgba(199,163,75,0.08),
                     transparent 65%
                 );
+
         }
+
 
         .future-box .section-label {
+
             margin-bottom: 18px;
+
         }
 
+
         .future-box h2 {
+
             font-family: "Marcellus", serif;
 
-            font-size: clamp(34px, 5vw, 52px);
+            font-size:
+                clamp(34px, 5vw, 52px);
 
             font-weight: 400;
 
@@ -1166,30 +1874,40 @@
             color: var(--ivory);
 
             margin-bottom: 18px;
+
         }
 
+
         .future-box p {
+
             max-width: 720px;
 
-            margin: 0 auto 28px;
+            margin:
+                0 auto 28px;
 
             color: var(--muted);
 
             font-size: 19px;
 
             line-height: 1.8;
+
         }
 
 
         /* =========================================================
            CTA
-        ========================================================= */
+        ========================================================== */
 
         .cta-section {
+
             min-height: 450px;
 
             display: flex;
+
             align-items: center;
+
+            padding:
+                80px 20px;
 
             background:
                 linear-gradient(
@@ -1198,20 +1916,27 @@
                 ),
                 url("assets/images/gallery/conference.jpg")
                 center / cover no-repeat;
+
         }
 
+
         .cta-content {
+
             width: min(850px, 100%);
 
             margin: 0 auto;
 
             text-align: center;
+
         }
 
+
         .cta-content h2 {
+
             font-family: "Marcellus", serif;
 
-            font-size: clamp(38px, 5vw, 62px);
+            font-size:
+                clamp(38px, 5vw, 62px);
 
             font-weight: 400;
 
@@ -1220,64 +1945,87 @@
             color: var(--ivory);
 
             margin-bottom: 18px;
+
         }
 
+
         .cta-content p {
+
             color: #d0ccc2;
 
             font-size: 19px;
 
             margin-bottom: 30px;
+
         }
 
+
         .cta-actions {
+
             display: flex;
+
             flex-wrap: wrap;
 
             justify-content: center;
 
             gap: 14px;
+
         }
 
 
         /* =========================================================
            FOOTER
-        ========================================================= */
+        ========================================================== */
 
         footer {
-            padding: 70px 20px 30px;
+
+            padding:
+                70px 20px 30px;
 
             background: #040b14;
 
-            border-top: 1px solid rgba(199,163,75,0.12);
+            border-top:
+                1px solid
+                rgba(199,163,75,0.12);
+
         }
 
+
         .footer-grid {
+
             width: min(1200px, 100%);
 
-            margin: 0 auto 50px;
+            margin:
+                0 auto 50px;
 
             display: grid;
 
             grid-template-columns:
-                1.4fr
+                1.5fr
                 1fr
                 1fr
                 1fr;
 
-            gap: 45px;
+            gap: 40px;
+
         }
 
+
         .footer-brand img {
+
             width: 65px;
+
             height: 65px;
 
             object-fit: contain;
 
             margin-bottom: 15px;
+
         }
 
+
         .footer-brand h3 {
+
             font-family: "Marcellus", serif;
 
             font-size: 23px;
@@ -1285,9 +2033,12 @@
             font-weight: 400;
 
             margin-bottom: 10px;
+
         }
 
+
         .footer-brand p {
+
             max-width: 330px;
 
             color: #9f9c94;
@@ -1295,9 +2046,12 @@
             font-size: 16px;
 
             line-height: 1.7;
+
         }
 
+
         .footer-column h4 {
+
             font-family: "Marcellus", serif;
 
             font-size: 16px;
@@ -1311,9 +2065,12 @@
             margin-bottom: 18px;
 
             text-transform: uppercase;
+
         }
 
+
         .footer-column a {
+
             display: block;
 
             width: fit-content;
@@ -1324,25 +2081,35 @@
 
             font-size: 15px;
 
-            transition: color 0.3s ease;
+            transition:
+                color 0.3s ease;
+
         }
+
 
         .footer-column a:hover {
+
             color: var(--gold-light);
+
         }
 
+
         .footer-bottom {
+
             width: min(1200px, 100%);
 
             margin: 0 auto;
 
             padding-top: 25px;
 
-            border-top: 1px solid rgba(255,255,255,0.07);
+            border-top:
+                1px solid
+                rgba(255,255,255,0.07);
 
             display: flex;
 
             align-items: center;
+
             justify-content: space-between;
 
             gap: 20px;
@@ -1350,31 +2117,40 @@
             color: #77756f;
 
             font-size: 14px;
+
         }
 
 
         /* =========================================================
            BACK TO TOP
-        ========================================================= */
+        ========================================================== */
 
         .back-top {
+
             position: fixed;
 
             right: 22px;
+
             bottom: 22px;
 
             z-index: 4000;
 
             width: 48px;
+
             height: 48px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
-            background: rgba(5, 12, 22, 0.88);
+            background:
+                rgba(5, 12, 22, 0.88);
 
             backdrop-filter: blur(10px);
 
@@ -1383,58 +2159,76 @@
             font-size: 20px;
 
             opacity: 0;
+
             visibility: hidden;
 
-            transform: translateY(15px);
+            transform:
+                translateY(15px);
 
             transition:
                 opacity 0.3s ease,
                 visibility 0.3s ease,
                 transform 0.3s ease;
+
         }
 
+
         .back-top.show {
+
             opacity: 1;
+
             visibility: visible;
 
             transform: translateY(0);
+
         }
 
+
         .back-top:hover {
+
             background: var(--gold);
+
             color: var(--navy);
+
         }
 
 
         /* =========================================================
            SCROLL REVEAL
-        ========================================================= */
+        ========================================================== */
 
         .reveal {
+
             opacity: 0;
 
-            transform: translateY(35px);
+            transform:
+                translateY(35px);
 
             transition:
                 opacity 0.8s ease,
                 transform 0.8s ease;
+
         }
 
+
         .reveal.visible {
+
             opacity: 1;
 
-            transform: translateY(0);
+            transform:
+                translateY(0);
+
         }
 
 
         /* =========================================================
-           TABLET
-        ========================================================= */
+           LARGE TABLET
+        ========================================================== */
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1200px) {
 
             .main-nav {
-                gap: 15px;
+                gap: 14px;
             }
 
             .main-nav a {
@@ -1445,327 +2239,818 @@
                 padding: 0 14px;
             }
 
-            .course-grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
+            .intro-grid {
+                gap: 45px;
             }
 
-            .footer-grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
         }
 
 
         /* =========================================================
-           TABLET / SMALL LAPTOP
-        ========================================================= */
+           TABLET
+        ========================================================== */
 
-        @media (max-width: 900px) {
-
-            .site-header {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
+        @media (max-width: 1050px) {
 
             .menu-toggle {
                 display: flex;
             }
 
+
             .desktop-nav-cta {
                 display: none;
             }
 
+
             .main-nav {
+
                 position: fixed;
 
                 top: 0;
+
                 right: 0;
 
-                width: min(360px, 88vw);
+                width:
+                    min(380px, 88vw);
+
                 height: 100svh;
 
+                min-height: 100vh;
+
                 padding:
-                    105px
-                    28px
-                    35px;
+                    105px 28px 35px;
 
                 display: flex;
+
                 flex-direction: column;
+
                 align-items: stretch;
+
                 justify-content: flex-start;
 
-                gap: 5px;
+                gap: 4px;
 
                 background:
-                    rgba(4, 10, 18, 0.98);
+                    rgba(4, 10, 18, 0.985);
 
-                border-left: 1px solid var(--border);
+                border-left:
+                    1px solid
+                    var(--border);
 
                 box-shadow:
-                    -20px 0 60px rgba(0,0,0,0.35);
+                    -20px 0 60px
+                    rgba(0,0,0,0.45);
 
-                transform: translateX(110%);
+                transform:
+                    translateX(110%);
 
-                transition: transform 0.35s ease;
+                transition:
+                    transform 0.35s ease;
 
                 overflow-y: auto;
+
+                overscroll-behavior: contain;
+
             }
+
 
             .main-nav.open {
-                transform: translateX(0);
+
+                transform:
+                    translateX(0);
+
             }
+
 
             .main-nav a {
+
                 width: 100%;
 
-                padding: 14px 5px;
+                padding:
+                    15px 5px;
 
                 border-bottom:
-                    1px solid rgba(255,255,255,0.06);
+                    1px solid
+                    rgba(255,255,255,0.06);
 
-                font-size: 17px;
+                font-size: 18px;
+
             }
+
 
             .main-nav a::after {
+
                 display: none;
+
             }
 
+
+            .main-nav a.active {
+
+                color:
+                    var(--gold-light);
+
+            }
+
+
             .intro-grid {
+
                 grid-template-columns: 1fr;
 
                 gap: 45px;
+
             }
+
 
             .intro-image {
+
                 max-width: 700px;
+
+                width: 100%;
+
+                margin: 0 auto;
+
             }
 
+
             .steps-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
             }
+
+
+            .course-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+            }
+
+        }
+
+
+        /* =========================================================
+           TABLET / SMALL LAPTOP
+        ========================================================== */
+
+        @media (max-width: 800px) {
+
+            .hero {
+
+                min-height: 700px;
+
+            }
+
+
+            .hero-content {
+
+                padding-top: 90px;
+
+            }
+
+
+            .fee-grid {
+
+                grid-template-columns: 1fr;
+
+                max-width: 600px;
+
+            }
+
+
+            .academic-note {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .academic-icon {
+
+                margin-bottom: -5px;
+
+            }
+
         }
 
 
         /* =========================================================
            MOBILE
-        ========================================================= */
+        ========================================================== */
 
         @media (max-width: 600px) {
 
             .site-header {
-                padding-top: 10px;
-                padding-bottom: 10px;
+
+                padding:
+                    10px 15px;
+
             }
+
 
             .nav-container {
+
                 min-height: 62px;
+
             }
+
+
+            .brand {
+
+                gap: 9px;
+
+            }
+
 
             .brand img {
+
                 width: 47px;
+
                 height: 47px;
+
             }
+
 
             .brand-name {
+
                 font-size: 15px;
+
             }
+
 
             .brand-tagline {
+
                 font-size: 8px;
+
                 letter-spacing: 1px;
+
             }
+
+
+            .menu-toggle {
+
+                width: 44px;
+
+                height: 44px;
+
+                font-size: 24px;
+
+            }
+
+
+            .main-nav {
+
+                width:
+                    min(340px, 90vw);
+
+                padding:
+                    95px 22px 30px;
+
+            }
+
 
             .hero {
+
                 min-height: 680px;
 
-                background-position: 60% center;
+                background-position:
+                    60% center;
+
             }
+
 
             .hero-content {
-                width: min(100% - 36px, 1200px);
+
+                width:
+                    calc(100% - 36px);
 
                 padding-top: 75px;
+
             }
+
+
+            .eyebrow {
+
+                font-size: 10px;
+
+                letter-spacing: 2px;
+
+            }
+
+
+            .eyebrow::before {
+
+                width: 30px;
+
+            }
+
 
             .hero h1 {
-                font-size: clamp(42px, 13vw, 60px);
+
+                font-size:
+                    clamp(42px, 13vw, 60px);
+
+                line-height: 1.06;
+
             }
+
 
             .hero p {
+
                 font-size: 17px;
+
+                line-height: 1.7;
+
             }
 
+
             .hero-actions {
+
                 flex-direction: column;
 
                 align-items: stretch;
+
             }
+
 
             .hero-actions .btn {
+
                 width: 100%;
+
             }
+
 
             .section {
-                padding: 75px 18px;
+
+                padding:
+                    75px 18px;
+
             }
+
+
+            .container {
+
+                width:
+                    calc(100% - 4px);
+
+            }
+
 
             .section-heading {
+
                 margin-bottom: 38px;
+
             }
+
+
+            .section-heading h2 {
+
+                font-size:
+                    clamp(32px, 10vw, 45px);
+
+            }
+
 
             .section-heading p {
+
                 font-size: 17px;
+
             }
+
 
             .intro-text p {
+
                 font-size: 18px;
+
             }
+
+
+            .intro-note {
+
+                padding:
+                    20px;
+
+                font-size: 17px;
+
+            }
+
 
             .intro-image img {
+
                 min-height: 300px;
+
             }
+
+
+            .image-caption {
+
+                left: 12px;
+
+                right: 12px;
+
+                bottom: 12px;
+
+                padding: 13px;
+
+                font-size: 11px;
+
+            }
+
+
+            .fees-section {
+
+                padding:
+                    75px 18px;
+
+            }
+
+
+            .fee-card {
+
+                padding:
+                    35px 22px;
+
+            }
+
+
+            .fee-price {
+
+                font-size: 58px;
+
+            }
+
+
+            .fee-summary {
+
+                padding:
+                    18px;
+
+                font-size: 15px;
+
+            }
+
 
             .semester-block {
+
                 margin-bottom: 65px;
+
             }
+
 
             .semester-header {
+
                 align-items: flex-start;
+
                 flex-direction: column;
+
+                gap: 15px;
+
             }
 
+
+            .semester-duration {
+
+                font-size: 10px;
+
+            }
+
+
             .course-grid {
+
                 grid-template-columns: 1fr;
 
                 gap: 16px;
+
             }
 
+
             .course-card {
+
                 min-height: auto;
 
                 padding: 25px;
+
             }
+
 
             .course-card h3 {
+
                 font-size: 23px;
+
+                padding-right: 25px;
+
             }
+
+
+            .course-card p {
+
+                font-size: 16px;
+
+            }
+
+
+            .course-status {
+
+                top: 17px;
+
+                right: 17px;
+
+            }
+
+
+            .academic-note-section {
+
+                padding:
+                    70px 18px;
+
+            }
+
 
             .academic-note {
+
+                padding:
+                    25px;
+
+                gap: 18px;
+
+            }
+
+
+            .academic-note h3 {
+
+                font-size: 22px;
+
+            }
+
+
+            .academic-note p {
+
+                font-size: 16px;
+
+            }
+
+
+            .steps-grid {
+
                 grid-template-columns: 1fr;
 
-                padding: 25px;
             }
+
+
+            .step-card {
+
+                padding: 27px;
+
+            }
+
 
             .future-section {
-                padding: 75px 18px;
+
+                padding:
+                    75px 18px;
+
             }
+
 
             .future-box {
-                padding: 40px 22px;
+
+                padding:
+                    40px 22px;
+
             }
+
+
+            .future-box h2 {
+
+                font-size:
+                    clamp(31px, 9vw, 43px);
+
+            }
+
+
+            .future-box p {
+
+                font-size: 17px;
+
+            }
+
+
+            .future-box .btn {
+
+                width: 100%;
+
+            }
+
 
             .cta-section {
+
                 min-height: 500px;
 
-                padding: 70px 18px;
+                padding:
+                    70px 18px;
+
             }
 
+
+            .cta-content h2 {
+
+                font-size:
+                    clamp(36px, 10vw, 50px);
+
+            }
+
+
+            .cta-content p {
+
+                font-size: 17px;
+
+            }
+
+
             .cta-actions {
+
                 flex-direction: column;
 
                 align-items: stretch;
+
             }
+
 
             .cta-actions .btn {
+
                 width: 100%;
+
             }
 
+
+            footer {
+
+                padding:
+                    60px 18px 25px;
+
+            }
+
+
             .footer-grid {
+
                 grid-template-columns: 1fr;
 
                 gap: 32px;
 
                 margin-bottom: 35px;
+
             }
 
+
             .footer-bottom {
+
                 flex-direction: column;
 
                 align-items: flex-start;
+
+                font-size: 13px;
+
             }
 
+
             .back-top {
+
                 right: 15px;
+
                 bottom: 15px;
 
                 width: 44px;
+
                 height: 44px;
+
             }
+
         }
 
 
         /* =========================================================
            SMALL PHONES
-        ========================================================= */
+        ========================================================== */
 
         @media (max-width: 380px) {
 
             .brand-text {
-                max-width: 155px;
+
+                max-width: 150px;
+
             }
+
 
             .brand-name {
+
                 font-size: 14px;
+
             }
+
 
             .brand-tagline {
+
                 font-size: 7px;
+
             }
+
 
             .hero h1 {
+
                 font-size: 39px;
+
             }
+
+
+            .hero-content {
+
+                width:
+                    calc(100% - 30px);
+
+            }
+
 
             .course-card {
+
                 padding: 21px;
+
             }
+
 
             .course-actions {
+
                 flex-direction: column;
+
             }
 
+
             .course-actions .btn {
+
                 width: 100%;
+
             }
+
+
+            .fee-price {
+
+                font-size: 52px;
+
+            }
+
         }
 
 
         /* =========================================================
            REDUCED MOTION
-        ========================================================= */
+        ========================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
             html {
+
                 scroll-behavior: auto;
+
             }
+
 
             *,
             *::before,
             *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+
             }
 
+
             .reveal {
+
                 opacity: 1;
+
                 transform: none;
+
             }
+
         }
 
     </style>
+
 </head>
 
 
@@ -1774,9 +3059,13 @@
 
     <!-- =========================================================
          LOADER
-    ========================================================= -->
+    ========================================================== -->
 
-    <div class="loader" id="loader">
+    <div
+        class="loader"
+        id="loader"
+        aria-hidden="true"
+    >
 
         <div class="loader-content">
 
@@ -1800,17 +3089,35 @@
 
 
     <!-- =========================================================
-         HEADER
-    ========================================================= -->
+         MOBILE OVERLAY
+    ========================================================== -->
 
-    <header class="site-header" id="siteHeader">
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header
+        class="site-header"
+        id="siteHeader"
+    >
 
         <div class="nav-container">
 
 
             <!-- BRAND -->
 
-            <a href="./home.html" class="brand">
+            <a
+                href="./home.html"
+                class="brand"
+            >
 
                 <img
                     src="./img/logo/logo.png"
@@ -1833,9 +3140,14 @@
             </a>
 
 
+
             <!-- NAVIGATION -->
 
-            <nav class="main-nav" id="mainNav">
+            <nav
+                class="main-nav"
+                id="mainNav"
+                aria-label="Main navigation"
+            >
 
                 <a href="./home.html">
                     Home
@@ -1849,7 +3161,11 @@
                     Director
                 </a>
 
-                <a href="course.html" class="active">
+                <a
+                    href="./course.html"
+                    class="active"
+                    aria-current="page"
+                >
                     Courses
                 </a>
 
@@ -1872,6 +3188,7 @@
             </nav>
 
 
+
             <!-- DESKTOP CTA -->
 
             <a
@@ -1882,7 +3199,8 @@
             </a>
 
 
-            <!-- MOBILE MENU -->
+
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="menu-toggle"
@@ -1890,6 +3208,7 @@
                 type="button"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
+                aria-controls="mainNav"
             >
                 ☰
             </button>
@@ -1901,10 +3220,15 @@
 
 
     <!-- =========================================================
-         HERO
-    ========================================================= -->
+         MAIN
+    ========================================================== -->
 
     <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
         <section class="hero">
 
@@ -1955,7 +3279,9 @@
              INTRODUCTION
         ====================================================== -->
 
-        <section class="section intro-section">
+        <section
+            class="section intro-section"
+        >
 
             <div class="container">
 
@@ -2004,9 +3330,12 @@
 
                         <img
                             src="./img/class room/class room.jpeg"
-                            alt="Global College of Missiology campus"
+                            alt="Global College of Missiology classroom"
                             loading="lazy"
-                            onerror="this.src='assets/images/gallery/classroom.jpg';"
+                            onerror="
+                                this.onerror=null;
+                                this.src='assets/images/gallery/classroom.jpg';
+                            "
                         >
 
                         <div class="image-caption">
@@ -2014,6 +3343,124 @@
                         </div>
 
                     </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TUITION & FEES
+        ====================================================== -->
+
+        <section
+            class="fees-section"
+            id="fees"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading center reveal">
+
+                    <span class="section-label">
+                        Tuition & Fees
+                    </span>
+
+                    <h2>
+                        Simple, Transparent
+                        Semester Fees
+                    </h2>
+
+                    <p>
+                        Tuition is charged per semester.
+                        Each semester is a focused
+                        15-day training period.
+                    </p>
+
+                </div>
+
+
+
+                <div class="fee-grid">
+
+
+                    <!-- NIGERIA -->
+
+                    <article class="fee-card reveal">
+
+                        <span class="fee-country">
+                            NIGERIA
+                        </span>
+
+                        <div class="fee-price">
+                            $15
+                            <small>USD</small>
+                        </div>
+
+                        <h3>
+                            Per Semester
+                        </h3>
+
+                        <p>
+                            15-day training semester.
+                        </p>
+
+                        <div class="fee-note">
+                            Applicable to students
+                            in Nigeria.
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- OUTSIDE NIGERIA -->
+
+                    <article class="fee-card reveal">
+
+                        <span class="fee-country">
+                            OUTSIDE NIGERIA
+                        </span>
+
+                        <div class="fee-price">
+                            $25
+                            <small>USD</small>
+                        </div>
+
+                        <h3>
+                            Per Semester
+                        </h3>
+
+                        <p>
+                            15-day training semester.
+                        </p>
+
+                        <div class="fee-note">
+                            Applicable to students
+                            outside Nigeria.
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+
+                <div class="fee-summary reveal">
+
+                    <strong>
+                        Important:
+                    </strong>
+
+                    The amounts shown are tuition fees
+                    <strong>per semester</strong>.
+                    If a student enrolls for both semesters,
+                    the applicable semester fee is charged
+                    separately for each semester.
 
                 </div>
 
@@ -2066,7 +3513,8 @@
                     <div class="semester-header reveal">
 
                         <h3 class="semester-title">
-                            First <span>Semester</span>
+                            First
+                            <span>Semester</span>
                         </h3>
 
                         <div class="semester-duration">
@@ -2076,6 +3524,7 @@
                     </div>
 
 
+
                     <div class="course-grid">
 
 
@@ -2083,7 +3532,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-current">
+                            <span
+                                class="course-status status-current"
+                            >
                                 Current Course
                             </span>
 
@@ -2111,6 +3562,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2132,7 +3587,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-current">
+                            <span
+                                class="course-status status-current"
+                            >
                                 Current Course
                             </span>
 
@@ -2160,6 +3617,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2181,7 +3642,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-current">
+                            <span
+                                class="course-status status-current"
+                            >
                                 Current Course
                             </span>
 
@@ -2209,6 +3672,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2230,7 +3697,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-current">
+                            <span
+                                class="course-status status-current"
+                            >
                                 Current Course
                             </span>
 
@@ -2258,6 +3727,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2279,7 +3752,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-current">
+                            <span
+                                class="course-status status-current"
+                            >
                                 Current Course
                             </span>
 
@@ -2307,6 +3782,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2328,7 +3807,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-current">
+                            <span
+                                class="course-status status-current"
+                            >
                                 Current Course
                             </span>
 
@@ -2354,6 +3835,10 @@
 
                                 <span class="meta-item">
                                     15 Days
+                                </span>
+
+                                <span class="meta-item">
+                                    $15 / $25
                                 </span>
 
                             </div>
@@ -2387,7 +3872,8 @@
                     <div class="semester-header reveal">
 
                         <h3 class="semester-title">
-                            Second <span>Semester</span>
+                            Second
+                            <span>Semester</span>
                         </h3>
 
                         <div class="semester-duration">
@@ -2397,6 +3883,7 @@
                     </div>
 
 
+
                     <div class="course-grid">
 
 
@@ -2404,7 +3891,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-coming">
+                            <span
+                                class="course-status status-coming"
+                            >
                                 Programme Course
                             </span>
 
@@ -2432,6 +3921,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2453,7 +3946,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-coming">
+                            <span
+                                class="course-status status-coming"
+                            >
                                 Programme Course
                             </span>
 
@@ -2481,6 +3976,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2502,7 +4001,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-coming">
+                            <span
+                                class="course-status status-coming"
+                            >
                                 Programme Course
                             </span>
 
@@ -2530,6 +4031,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2551,7 +4056,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-coming">
+                            <span
+                                class="course-status status-coming"
+                            >
                                 Programme Course
                             </span>
 
@@ -2579,6 +4086,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2600,7 +4111,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-coming">
+                            <span
+                                class="course-status status-coming"
+                            >
                                 Programme Course
                             </span>
 
@@ -2628,6 +4141,10 @@
                                     15 Days
                                 </span>
 
+                                <span class="meta-item">
+                                    $15 / $25
+                                </span>
+
                             </div>
 
                             <div class="course-actions">
@@ -2649,7 +4166,9 @@
 
                         <article class="course-card reveal">
 
-                            <span class="course-status status-coming">
+                            <span
+                                class="course-status status-coming"
+                            >
                                 Programme Course
                             </span>
 
@@ -2675,6 +4194,10 @@
 
                                 <span class="meta-item">
                                     15 Days
+                                </span>
+
+                                <span class="meta-item">
+                                    $15 / $25
                                 </span>
 
                             </div>
@@ -2715,7 +4238,10 @@
 
                 <div class="academic-note reveal">
 
-                    <div class="academic-icon">
+                    <div
+                        class="academic-icon"
+                        aria-hidden="true"
+                    >
                         i
                     </div>
 
@@ -2748,7 +4274,9 @@
              HOW TO PROCEED
         ====================================================== -->
 
-        <section class="section proceed-section">
+        <section
+            class="section proceed-section"
+        >
 
             <div class="container">
 
@@ -2769,6 +4297,7 @@
                     </p>
 
                 </div>
+
 
 
                 <div class="steps-grid">
@@ -2804,8 +4333,9 @@
                         </h3>
 
                         <p>
-                            Learn about the current admission information
-                            and the requirements for joining the college.
+                            Learn about the current admission information,
+                            tuition fees and requirements for joining
+                            the college.
                         </p>
 
                     </div>
@@ -2823,9 +4353,9 @@
                         </h3>
 
                         <p>
-                            Once the online academic portal is launched,
-                            students will be able to continue into the
-                            digital enrollment and learning environment.
+                            Once enrollment is completed, students can
+                            continue into the digital academic and
+                            learning environment.
                         </p>
 
                     </div>
@@ -2842,7 +4372,9 @@
              FUTURE ONLINE PORTAL
         ====================================================== -->
 
-        <section class="future-section">
+        <section
+            class="future-section"
+        >
 
             <div class="container">
 
@@ -2883,7 +4415,9 @@
              FINAL CTA
         ====================================================== -->
 
-        <section class="cta-section">
+        <section
+            class="cta-section"
+        >
 
             <div class="container">
 
@@ -2933,7 +4467,7 @@
 
     <!-- =========================================================
          FOOTER
-    ========================================================= -->
+    ========================================================== -->
 
     <footer>
 
@@ -2976,7 +4510,7 @@
                     Director
                 </a>
 
-                <a href="course.html">
+                <a href="./course.html">
                     Courses
                 </a>
 
@@ -3006,6 +4540,10 @@
                     Contact
                 </a>
 
+                <a href="./admissions.html#fees">
+                    Tuition & Fees
+                </a>
+
             </div>
 
 
@@ -3016,7 +4554,7 @@
                     Future Portal
                 </h4>
 
-                <a href="course.html">
+                <a href="./course.html">
                     Course Catalogue
                 </a>
 
@@ -3033,10 +4571,12 @@
         </div>
 
 
+
         <div class="footer-bottom">
 
             <div>
-                © <span id="currentYear"></span>
+                ©
+                <span id="currentYear"></span>
                 Global College of Missiology.
                 All Rights Reserved.
             </div>
@@ -3053,7 +4593,7 @@
 
     <!-- =========================================================
          BACK TO TOP
-    ========================================================= -->
+    ========================================================== -->
 
     <button
         class="back-top"
@@ -3068,336 +4608,501 @@
 
     <!-- =========================================================
          JAVASCRIPT
-    ========================================================= -->
+    ========================================================== -->
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
 
-            /* =====================================================
-               LOADER
-            ===================================================== */
+                /* =================================================
+                   LOADER
+                ================================================== */
 
-            const loader =
-                document.getElementById("loader");
+                const loader =
+                    document.getElementById("loader");
 
-            window.addEventListener("load", function () {
 
-                setTimeout(function () {
+                window.addEventListener(
+                    "load",
+                    function () {
 
-                    if (loader) {
-                        loader.classList.add("hide");
+                        setTimeout(
+                            function () {
+
+                                if (loader) {
+
+                                    loader.classList.add(
+                                        "hide"
+                                    );
+
+                                }
+
+                            },
+                            700
+                        );
+
                     }
-
-                }, 700);
-
-            });
+                );
 
 
 
-            /* =====================================================
-               HEADER SCROLL
-            ===================================================== */
+                /* =================================================
+                   HEADER SCROLL
+                ================================================== */
 
-            const header =
-                document.getElementById("siteHeader");
+                const header =
+                    document.getElementById(
+                        "siteHeader"
+                    );
 
-            function handleHeader() {
 
-                if (!header) return;
+                function handleHeader() {
 
-                if (window.scrollY > 40) {
+                    if (!header) return;
 
-                    header.classList.add("scrolled");
 
-                } else {
+                    if (window.scrollY > 40) {
 
-                    header.classList.remove("scrolled");
+                        header.classList.add(
+                            "scrolled"
+                        );
+
+                    } else {
+
+                        header.classList.remove(
+                            "scrolled"
+                        );
+
+                    }
 
                 }
 
-            }
 
-            window.addEventListener(
-                "scroll",
-                handleHeader,
-                { passive: true }
-            );
-
-            handleHeader();
-
+                window.addEventListener(
+                    "scroll",
+                    handleHeader,
+                    {
+                        passive: true
+                    }
+                );
 
 
-            /* =====================================================
-               MOBILE MENU
-            ===================================================== */
+                handleHeader();
 
-            const menuToggle =
-                document.getElementById("menuToggle");
 
-            const mainNav =
-                document.getElementById("mainNav");
 
-            if (menuToggle && mainNav) {
+                /* =================================================
+                   MOBILE MENU
+                ================================================== */
 
-                menuToggle.addEventListener(
-                    "click",
-                    function () {
+                const menuToggle =
+                    document.getElementById(
+                        "menuToggle"
+                    );
 
-                        const isOpen =
-                            mainNav.classList.toggle("open");
+
+                const mainNav =
+                    document.getElementById(
+                        "mainNav"
+                    );
+
+
+                const menuOverlay =
+                    document.getElementById(
+                        "menuOverlay"
+                    );
+
+
+                function openMenu() {
+
+                    if (!mainNav) return;
+
+
+                    mainNav.classList.add(
+                        "open"
+                    );
+
+
+                    if (menuOverlay) {
+
+                        menuOverlay.classList.add(
+                            "open"
+                        );
+
+                    }
+
+
+                    if (menuToggle) {
 
                         menuToggle.setAttribute(
                             "aria-expanded",
-                            String(isOpen)
+                            "true"
                         );
 
                         menuToggle.setAttribute(
                             "aria-label",
-                            isOpen
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
+                            "Close navigation menu"
                         );
 
                         menuToggle.textContent =
-                            isOpen ? "×" : "☰";
+                            "×";
 
                     }
-                );
 
 
-                /* Close after clicking a link */
+                    document.body.classList.add(
+                        "menu-open"
+                    );
 
-                const navLinks =
-                    mainNav.querySelectorAll("a");
+                }
 
-                navLinks.forEach(function (link) {
 
-                    link.addEventListener(
+                function closeMenu() {
+
+                    if (!mainNav) return;
+
+
+                    mainNav.classList.remove(
+                        "open"
+                    );
+
+
+                    if (menuOverlay) {
+
+                        menuOverlay.classList.remove(
+                            "open"
+                        );
+
+                    }
+
+
+                    if (menuToggle) {
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        menuToggle.setAttribute(
+                            "aria-label",
+                            "Open navigation menu"
+                        );
+
+                        menuToggle.textContent =
+                            "☰";
+
+                    }
+
+
+                    document.body.classList.remove(
+                        "menu-open"
+                    );
+
+                }
+
+
+                function toggleMenu() {
+
+                    if (
+                        mainNav &&
+                        mainNav.classList.contains("open")
+                    ) {
+
+                        closeMenu();
+
+                    } else {
+
+                        openMenu();
+
+                    }
+
+                }
+
+
+                if (
+                    menuToggle &&
+                    mainNav
+                ) {
+
+                    menuToggle.addEventListener(
                         "click",
-                        function () {
+                        function (event) {
 
-                            mainNav.classList.remove("open");
+                            event.stopPropagation();
 
-                            menuToggle.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
-
-                            menuToggle.setAttribute(
-                                "aria-label",
-                                "Open navigation menu"
-                            );
-
-                            menuToggle.textContent = "☰";
+                            toggleMenu();
 
                         }
                     );
 
-                });
+
+                    const navLinks =
+                        mainNav.querySelectorAll(
+                            "a"
+                        );
 
 
-                /* Close when clicking outside */
+                    navLinks.forEach(
+                        function (link) {
 
-                document.addEventListener(
-                    "click",
-                    function (event) {
+                            link.addEventListener(
+                                "click",
+                                function () {
 
-                        const clickedInsideNav =
-                            mainNav.contains(event.target);
-
-                        const clickedMenu =
-                            menuToggle.contains(event.target);
-
-                        if (
-                            !clickedInsideNav &&
-                            !clickedMenu &&
-                            mainNav.classList.contains("open")
-                        ) {
-
-                            mainNav.classList.remove("open");
-
-                            menuToggle.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
-
-                            menuToggle.setAttribute(
-                                "aria-label",
-                                "Open navigation menu"
-                            );
-
-                            menuToggle.textContent = "☰";
-
-                        }
-
-                    }
-                );
-
-            }
-
-
-
-            /* =====================================================
-               SCROLL REVEAL
-            ===================================================== */
-
-            const revealElements =
-                document.querySelectorAll(".reveal");
-
-            if (
-                "IntersectionObserver" in window
-            ) {
-
-                const observer =
-                    new IntersectionObserver(
-                        function (entries) {
-
-                            entries.forEach(
-                                function (entry) {
-
-                                    if (
-                                        entry.isIntersecting
-                                    ) {
-
-                                        entry.target.classList.add(
-                                            "visible"
-                                        );
-
-                                        observer.unobserve(
-                                            entry.target
-                                        );
-
-                                    }
+                                    closeMenu();
 
                                 }
                             );
 
-                        },
-                        {
-                            threshold: 0.08,
-                            rootMargin: "0px 0px -40px 0px"
                         }
                     );
 
-                revealElements.forEach(
-                    function (element) {
 
-                        observer.observe(element);
+                    if (menuOverlay) {
 
-                    }
-                );
+                        menuOverlay.addEventListener(
+                            "click",
+                            function () {
 
-            } else {
+                                closeMenu();
 
-                revealElements.forEach(
-                    function (element) {
-
-                        element.classList.add(
-                            "visible"
+                            }
                         );
 
                     }
-                );
-
-            }
 
 
+                    document.addEventListener(
+                        "keydown",
+                        function (event) {
 
-            /* =====================================================
-               BACK TO TOP
-            ===================================================== */
+                            if (
+                                event.key === "Escape" &&
+                                mainNav.classList.contains(
+                                    "open"
+                                )
+                            ) {
 
-            const backTop =
-                document.getElementById("backTop");
+                                closeMenu();
 
-            function handleBackTop() {
+                            }
 
-                if (!backTop) return;
+                        }
+                    );
 
-                if (window.scrollY > 500) {
 
-                    backTop.classList.add("show");
+                    window.addEventListener(
+                        "resize",
+                        function () {
 
-                } else {
+                            if (
+                                window.innerWidth > 1050
+                            ) {
 
-                    backTop.classList.remove("show");
+                                closeMenu();
+
+                            }
+
+                        }
+                    );
 
                 }
 
-            }
-
-            window.addEventListener(
-                "scroll",
-                handleBackTop,
-                { passive: true }
-            );
-
-            handleBackTop();
 
 
-            if (backTop) {
+                /* =================================================
+                   SCROLL REVEAL
+                ================================================== */
 
-                backTop.addEventListener(
-                    "click",
-                    function () {
+                const revealElements =
+                    document.querySelectorAll(
+                        ".reveal"
+                    );
 
-                        window.scrollTo({
-                            top: 0,
-                            behavior: "smooth"
-                        });
 
+                if (
+                    "IntersectionObserver" in window
+                ) {
+
+                    const observer =
+                        new IntersectionObserver(
+                            function (entries) {
+
+                                entries.forEach(
+                                    function (entry) {
+
+                                        if (
+                                            entry.isIntersecting
+                                        ) {
+
+                                            entry.target.classList.add(
+                                                "visible"
+                                            );
+
+                                            observer.unobserve(
+                                                entry.target
+                                            );
+
+                                        }
+
+                                    }
+                                );
+
+                            },
+                            {
+                                threshold: 0.08,
+
+                                rootMargin:
+                                    "0px 0px -40px 0px"
+                            }
+                        );
+
+
+                    revealElements.forEach(
+                        function (element) {
+
+                            observer.observe(
+                                element
+                            );
+
+                        }
+                    );
+
+                } else {
+
+                    revealElements.forEach(
+                        function (element) {
+
+                            element.classList.add(
+                                "visible"
+                            );
+
+                        }
+                    );
+
+                }
+
+
+
+                /* =================================================
+                   BACK TO TOP
+                ================================================== */
+
+                const backTop =
+                    document.getElementById(
+                        "backTop"
+                    );
+
+
+                function handleBackTop() {
+
+                    if (!backTop) return;
+
+
+                    if (
+                        window.scrollY > 500
+                    ) {
+
+                        backTop.classList.add(
+                            "show"
+                        );
+
+                    } else {
+
+                        backTop.classList.remove(
+                            "show"
+                        );
+
+                    }
+
+                }
+
+
+                window.addEventListener(
+                    "scroll",
+                    handleBackTop,
+                    {
+                        passive: true
                     }
                 );
 
-            }
+
+                handleBackTop();
+
+
+                if (backTop) {
+
+                    backTop.addEventListener(
+                        "click",
+                        function () {
+
+                            window.scrollTo({
+
+                                top: 0,
+
+                                behavior: "smooth"
+
+                            });
+
+                        }
+                    );
+
+                }
 
 
 
-            /* =====================================================
-               CURRENT YEAR
-            ===================================================== */
+                /* =================================================
+                   CURRENT YEAR
+                ================================================== */
 
-            const currentYear =
-                document.getElementById(
-                    "currentYear"
-                );
-
-            if (currentYear) {
-
-                currentYear.textContent =
-                    new Date().getFullYear();
-
-            }
+                const currentYear =
+                    document.getElementById(
+                        "currentYear"
+                    );
 
 
+                if (currentYear) {
 
-            /* =====================================================
-               IMAGE FALLBACK
-            ===================================================== */
+                    currentYear.textContent =
+                        new Date().getFullYear();
 
-            const images =
-                document.querySelectorAll("img");
+                }
 
-            images.forEach(function (image) {
 
-                image.addEventListener(
-                    "error",
-                    function () {
 
-                        console.warn(
-                            "Image could not be loaded:",
-                            image.src
+                /* =================================================
+                   IMAGE ERROR LOGGING
+                ================================================== */
+
+                const images =
+                    document.querySelectorAll(
+                        "img"
+                    );
+
+
+                images.forEach(
+                    function (image) {
+
+                        image.addEventListener(
+                            "error",
+                            function () {
+
+                                console.warn(
+                                    "Image could not be loaded:",
+                                    image.src
+                                );
+
+                            }
                         );
 
                     }
                 );
 
-            });
-
-
-        });
+            }
+        );
 
     </script>
 

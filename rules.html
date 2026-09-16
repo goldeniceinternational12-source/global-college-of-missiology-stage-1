@@ -10,19 +10,19 @@
 
     <meta
         name="description"
-        content="Global College of Missiology Rules and Regulations. Student conduct, attendance, academic integrity, discipline, online learning, graduation requirements and institutional guidelines."
+        content="Rules and Regulations of Global College of Missiology. Read the academic, conduct, attendance and student policies governing the college community."
     >
 
     <meta
         name="keywords"
-        content="Global College of Missiology, GCM, rules and regulations, student regulations, Bible college, missiology, Christian ministry training"
+        content="Global College of Missiology, GCM, Bible College, Missiology, Rules, Regulations, Student Rules, Christian Education"
     >
 
-    <meta name="theme-color" content="#07111f">
+    <meta name="theme-color" content="#07111d">
 
     <title>Rules & Regulations | Global College of Missiology</title>
 
-    <!-- Google Fonts -->
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -34,25 +34,38 @@
     <style>
 
         /* =========================================================
-           RESET
+           GLOBAL RESET
         ========================================================= */
 
-        * {
-            margin: 0;
-            padding: 0;
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
-            font-family: "Cormorant Garamond", serif;
-            background: #07111f;
-            color: #f4efe3;
-            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            color: #f5f1e8;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(201, 164, 76, 0.08),
+                    transparent 30%
+                ),
+                #07111d;
+
             overflow-x: hidden;
+            line-height: 1.7;
         }
 
         body.menu-open {
@@ -62,6 +75,14 @@
         img {
             display: block;
             max-width: 100%;
+            height: auto;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
         }
 
         a {
@@ -69,32 +90,57 @@
             text-decoration: none;
         }
 
-        button {
-            font: inherit;
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
-        ::selection {
-            background: #c9a44c;
-            color: #07111f;
+        h1,
+        h2,
+        h3,
+        h4,
+        p {
+            margin-top: 0;
         }
 
+        h1,
+        h2,
+        h3,
+        h4 {
+            overflow-wrap: anywhere;
+        }
 
-        /* =========================================================
-           VARIABLES
-        ========================================================= */
+        p,
+        li,
+        a,
+        span {
+            overflow-wrap: anywhere;
+        }
+
+        :focus-visible {
+            outline: 3px solid #c9a44c;
+            outline-offset: 4px;
+        }
 
         :root {
-            --navy: #07111f;
-            --navy-deep: #040a12;
-            --navy-light: #0c1b2e;
             --gold: #c9a44c;
-            --gold-light: #e0c777;
-            --gold-dark: #9f7d2f;
-            --ivory: #f4efe3;
-            --muted: #b7b3aa;
+            --gold-light: #e5ca7c;
+            --gold-dark: #9f7d2e;
+
+            --navy: #07111d;
+            --navy-light: #0c1b2a;
+            --navy-soft: #102438;
+
+            --white: #ffffff;
+            --cream: #f5f1e8;
+            --muted: #b9c0c8;
+
             --border: rgba(201, 164, 76, 0.22);
-            --glass: rgba(255, 255, 255, 0.045);
-            --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+
+            --shadow:
+                0 25px 70px rgba(0, 0, 0, 0.42);
+
+            --container: 1240px;
         }
 
 
@@ -102,71 +148,100 @@
            LOADER
         ========================================================= */
 
-        #loader {
+        #pageLoader {
             position: fixed;
             inset: 0;
-            z-index: 99999;
-            background: var(--navy-deep);
+            z-index: 10000;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
+            background: #07111d;
+
+            opacity: 1;
+            visibility: visible;
+
             transition:
-                opacity 0.7s ease,
-                visibility 0.7s ease;
+                opacity 0.45s ease,
+                visibility 0.45s ease;
         }
 
-        #loader.hidden {
+        #pageLoader.loaded {
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
         }
 
         .loader-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
-            padding: 20px;
+            padding: 24px;
         }
 
         .loader-logo {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
+
             object-fit: contain;
-            margin: 0 auto 20px;
-            animation: loaderPulse 1.8s ease-in-out infinite;
+
+            margin-bottom: 18px;
+
+            filter:
+                drop-shadow(
+                    0 0 22px rgba(201, 164, 76, 0.24)
+                );
+
+            animation:
+                loaderPulse 1.5s ease-in-out infinite;
+        }
+
+        .loader-name {
+            margin: 0;
+
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+            font-size: clamp(18px, 3vw, 25px);
+
+            letter-spacing: 2px;
         }
 
         .loader-line {
-            width: 90px;
+            width: 100px;
             height: 2px;
-            background: var(--gold);
-            margin: 0 auto 14px;
-            transform-origin: center;
-            animation: loaderLine 1.5s ease-in-out infinite;
-        }
 
-        .loader-text {
-            color: var(--gold-light);
-            font-family: "Marcellus", serif;
-            font-size: 0.72rem;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
+            margin-top: 18px;
+
+            background: var(--gold);
+
+            animation:
+                loaderLine 1.4s ease-in-out infinite;
         }
 
         @keyframes loaderPulse {
+
             0%,
             100% {
-                opacity: 0.55;
-                transform: scale(0.96);
+                transform: scale(0.97);
+                opacity: 0.8;
             }
 
             50% {
+                transform: scale(1.03);
                 opacity: 1;
-                transform: scale(1);
             }
         }
 
         @keyframes loaderLine {
+
             0% {
-                transform: scaleX(0.2);
-                opacity: 0.4;
+                transform: scaleX(0.25);
+                opacity: 0.35;
             }
 
             50% {
@@ -175,8 +250,8 @@
             }
 
             100% {
-                transform: scaleX(0.2);
-                opacity: 0.4;
+                transform: scaleX(0.25);
+                opacity: 0.35;
             }
         }
 
@@ -185,186 +260,330 @@
            HEADER
         ========================================================= */
 
-        header {
+        #siteHeader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 5000;
-            padding: 18px 20px;
+
+            z-index: 7000;
+
+            padding: 14px 20px;
+
             transition:
-                padding 0.35s ease,
-                background 0.35s ease;
+                background 0.3s ease,
+                box-shadow 0.3s ease,
+                padding 0.3s ease;
         }
 
-        header.scrolled {
-            padding: 10px 20px;
+        #siteHeader.scrolled {
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            background:
+                rgba(4, 10, 18, 0.88);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.28);
         }
 
         .nav-container {
-            width: min(1400px, 100%);
+            width: min(100%, 1400px);
+
+            min-height: 70px;
+
             margin: 0 auto;
-            min-height: 76px;
-            padding: 0 20px;
+            padding: 0 22px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 30px;
 
-            background: rgba(5, 12, 22, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            gap: 20px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.07);
+
             border-radius: 18px;
 
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background:
+                rgba(5, 12, 21, 0.66);
 
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 12px 40px rgba(0, 0, 0, 0.18);
         }
 
+        #siteHeader.scrolled .nav-container {
+            border-color:
+                rgba(201, 164, 76, 0.15);
+        }
+
+
+        /* =========================================================
+           BRAND
+        ========================================================= */
+
         .brand {
-            display: flex;
-            align-items: center;
-            gap: 13px;
             flex-shrink: 0;
+
+            display: inline-flex;
+            align-items: center;
+
+            min-width: 0;
+
+            gap: 12px;
         }
 
         .brand img {
-            width: 56px;
-            height: 56px;
+            width: 52px;
+            height: 52px;
+
             object-fit: contain;
+
+            flex-shrink: 0;
         }
 
         .brand-text {
-            line-height: 1.1;
+            display: flex;
+            flex-direction: column;
+
+            min-width: 0;
         }
 
         .brand-name {
+            color: var(--white);
+
             font-family: "Marcellus", serif;
-            color: var(--gold-light);
-            font-size: 0.98rem;
-            letter-spacing: 0.03em;
+            font-size: 15px;
+
+            line-height: 1.15;
+
+            letter-spacing: 0.7px;
+
+            white-space: nowrap;
         }
 
         .brand-subtitle {
-            margin-top: 4px;
-            color: rgba(244, 239, 227, 0.65);
-            font-size: 0.68rem;
-            letter-spacing: 0.13em;
+            margin-top: 3px;
+
+            color: var(--gold-light);
+
+            font-size: 11px;
+
+            letter-spacing: 1.4px;
             text-transform: uppercase;
+
+            white-space: nowrap;
         }
 
-        nav {
+
+        /* =========================================================
+           DESKTOP NAVIGATION
+        ========================================================= */
+
+        #mainNav {
             display: flex;
             align-items: center;
             justify-content: flex-end;
+
             gap: 5px;
+
+            margin-left: auto;
         }
 
-        nav a {
+        #mainNav a {
             position: relative;
-            padding: 10px 12px;
 
-            color: rgba(244, 239, 227, 0.82);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 44px;
+
+            padding: 8px 11px;
+
+            color: rgba(255, 255, 255, 0.82);
+
             font-family: "Marcellus", serif;
-            font-size: 0.72rem;
-            letter-spacing: 0.04em;
+            font-size: 12px;
+
+            letter-spacing: 0.25px;
+
+            border-radius: 9px;
 
             transition:
                 color 0.25s ease,
                 background 0.25s ease;
         }
 
-        nav a::after {
-            content: "";
-            position: absolute;
-            left: 12px;
-            right: 12px;
-            bottom: 4px;
-            height: 1px;
-
-            background: var(--gold);
-
-            transform: scaleX(0);
-            transform-origin: center;
-
-            transition: transform 0.25s ease;
-        }
-
-        nav a:hover,
-        nav a.active {
+        #mainNav a:hover,
+        #mainNav a.active {
             color: var(--gold-light);
+
+            background:
+                rgba(201, 164, 76, 0.08);
         }
 
-        nav a:hover::after,
-        nav a.active::after {
-            transform: scaleX(1);
-        }
+        #mainNav a.active::after {
+            content: "";
 
-        .nav-cta {
-            margin-left: 8px;
-            padding: 12px 17px !important;
+            position: absolute;
+
+            left: 14px;
+            right: 14px;
+            bottom: 4px;
+
+            height: 2px;
 
             background: var(--gold);
-            color: var(--navy) !important;
 
-            border-radius: 8px;
-
-            transition:
-                transform 0.25s ease,
-                background 0.25s ease;
+            border-radius: 999px;
         }
 
-        .nav-cta::after {
-            display: none;
+        #mainNav .nav-cta {
+            margin-left: 7px;
+
+            padding-left: 18px;
+            padding-right: 18px;
+
+            color: #07111d;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-light),
+                    var(--gold)
+                );
+
+            font-weight: 700;
+
+            box-shadow:
+                0 8px 25px rgba(201, 164, 76, 0.18);
         }
 
-        .nav-cta:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
+        #mainNav .nav-cta:hover {
+            color: #07111d;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0d991,
+                    var(--gold-light)
+                );
+
+            transform: translateY(-1px);
         }
 
 
         /* =========================================================
-           MOBILE MENU
+           MOBILE MENU BUTTON
         ========================================================= */
 
         .menu-toggle {
             display: none;
 
-            width: 46px;
-            height: 46px;
+            position: relative;
 
-            border: 1px solid var(--border);
-            border-radius: 10px;
+            z-index: 7200;
 
-            background: rgba(255, 255, 255, 0.04);
+            width: 50px;
+            min-width: 50px;
+            height: 50px;
+
+            padding: 0;
+
+            border: 1px solid
+                rgba(201, 164, 76, 0.25);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255, 255, 255, 0.05);
 
             cursor: pointer;
 
             align-items: center;
             justify-content: center;
+
             flex-direction: column;
+
             gap: 5px;
         }
 
         .menu-toggle span {
-            width: 20px;
+            display: block;
+
+            width: 22px;
             height: 2px;
-            background: var(--gold-light);
-            transition: transform 0.3s ease;
+
+            border-radius: 999px;
+
+            background: var(--white);
+
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease,
+                width 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            border-color:
+                rgba(201, 164, 76, 0.55);
+
+            background:
+                rgba(201, 164, 76, 0.08);
         }
 
         .menu-toggle.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
+            transform:
+                translateY(7px)
+                rotate(45deg);
         }
 
         .menu-toggle.active span:nth-child(2) {
             opacity: 0;
+            width: 0;
         }
 
         .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
+            transform:
+                translateY(-7px)
+                rotate(-45deg);
+        }
+
+
+        /* =========================================================
+           MOBILE MENU OVERLAY
+        ========================================================= */
+
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+
+            z-index: 5500;
+
+            background:
+                rgba(0, 0, 0, 0.64);
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
+        }
+
+        .menu-overlay.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
         }
 
 
@@ -372,36 +591,44 @@
            HERO
         ========================================================= */
 
-        .hero {
+        .rules-hero {
             position: relative;
-            min-height: 720px;
-            min-height: 92svh;
+
+            min-height: 620px;
+
+            padding:
+                190px
+                20px
+                100px;
 
             display: flex;
             align-items: center;
+            justify-content: center;
+
+            text-align: center;
 
             overflow: hidden;
 
             background:
                 linear-gradient(
-                    90deg,
-                    rgba(4, 10, 18, 0.97) 0%,
-                    rgba(4, 10, 18, 0.88) 48%,
-                    rgba(4, 10, 18, 0.72) 100%
+                    rgba(4, 10, 18, 0.68),
+                    rgba(4, 10, 18, 0.88)
                 ),
-                url("assets/images/campus.jpg") center / cover no-repeat;
+                url("assets/images/campus.jpg")
+                center / cover no-repeat;
         }
 
-        .hero::before {
+        .rules-hero::before {
             content: "";
+
             position: absolute;
             inset: 0;
 
             background:
                 radial-gradient(
-                    circle at 15% 40%,
-                    rgba(201, 164, 76, 0.13),
-                    transparent 32%
+                    circle at center,
+                    rgba(201, 164, 76, 0.12),
+                    transparent 45%
                 );
         }
 
@@ -409,115 +636,148 @@
             position: relative;
             z-index: 2;
 
-            width: min(1180px, 100%);
+            width: min(900px, 100%);
+
             margin: 0 auto;
-
-            padding:
-                150px 30px 90px;
         }
 
-        .hero-inner {
-            max-width: 850px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-
-            margin-bottom: 22px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 38px;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        .hero h1 {
-            font-family: "Marcellus", serif;
-            font-weight: 400;
-
-            font-size: clamp(2.6rem, 6vw, 5.5rem);
-            line-height: 0.98;
-
-            color: var(--ivory);
-
-            max-width: 850px;
-        }
-
-        .hero h1 span {
-            color: var(--gold-light);
-        }
-
-        .hero p {
-            max-width: 720px;
-            margin-top: 28px;
-
-            color: rgba(244, 239, 227, 0.76);
-
-            font-size: clamp(1.05rem, 2vw, 1.28rem);
-            line-height: 1.75;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-
-            margin-top: 36px;
-        }
-
-        .btn {
+        .hero-kicker {
             display: inline-flex;
             align-items: center;
             justify-content: center;
 
-            min-height: 52px;
-            padding: 13px 24px;
+            min-height: 38px;
 
-            border-radius: 8px;
+            padding: 6px 16px;
+
+            margin-bottom: 20px;
+
+            color: var(--gold-light);
+
+            border:
+                1px solid
+                rgba(201, 164, 76, 0.3);
+
+            border-radius: 999px;
+
+            background:
+                rgba(201, 164, 76, 0.08);
 
             font-family: "Marcellus", serif;
-            font-size: 0.76rem;
-            letter-spacing: 0.07em;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
             text-transform: uppercase;
-
-            transition:
-                transform 0.25s ease,
-                background 0.25s ease,
-                color 0.25s ease,
-                border-color 0.25s ease;
         }
 
-        .btn-primary {
-            background: var(--gold);
-            color: var(--navy);
+        .rules-hero h1 {
+            margin-bottom: 20px;
+
+            color: var(--white);
+
+            font-family: "Marcellus", serif;
+
+            font-size:
+                clamp(42px, 7vw, 78px);
+
+            line-height: 1.02;
+
+            font-weight: 400;
+
+            letter-spacing: -1px;
         }
 
-        .btn-primary:hover {
-            background: var(--gold-light);
-            transform: translateY(-3px);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(201, 164, 76, 0.5);
+        .rules-hero h1 span {
             color: var(--gold-light);
-            background: rgba(255, 255, 255, 0.025);
         }
 
-        .btn-outline:hover {
-            border-color: var(--gold);
-            background: rgba(201, 164, 76, 0.08);
-            transform: translateY(-3px);
+        .rules-hero p {
+            max-width: 700px;
+
+            margin:
+                0 auto;
+
+            color:
+                rgba(255, 255, 255, 0.78);
+
+            font-size:
+                clamp(17px, 2.2vw, 21px);
+
+            line-height: 1.65;
+        }
+
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
+
+        .section {
+            width: 100%;
+
+            padding:
+                100px
+                20px;
+        }
+
+        .container {
+            width: min(
+                var(--container),
+                100%
+            );
+
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            max-width: 800px;
+
+            margin:
+                0 auto 55px;
+
+            text-align: center;
+        }
+
+        .section-heading .eyebrow {
+            display: block;
+
+            margin-bottom: 13px;
+
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+
+            font-size: 12px;
+
+            letter-spacing: 2.5px;
+
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 18px;
+
+            color: var(--white);
+
+            font-family: "Marcellus", serif;
+
+            font-size:
+                clamp(32px, 5vw, 50px);
+
+            line-height: 1.15;
+
+            font-weight: 400;
+        }
+
+        .section-heading p {
+            margin: 0;
+
+            color: var(--muted);
+
+            font-size:
+                clamp(16px, 2vw, 19px);
+
+            line-height: 1.7;
         }
 
 
@@ -525,113 +785,99 @@
            INTRO
         ========================================================= */
 
-        .intro {
-            position: relative;
-            padding: 105px 24px 90px;
-            background: var(--navy);
-        }
-
-        .container {
-            width: min(1180px, 100%);
-            margin: 0 auto;
-        }
-
-        .section-heading {
-            max-width: 800px;
-            margin-bottom: 50px;
-        }
-
-        .section-label {
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-            font-size: 0.73rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-
-            margin-bottom: 13px;
-        }
-
-        .section-heading h2 {
-            font-family: "Marcellus", serif;
-            font-weight: 400;
-
-            color: var(--ivory);
-
-            font-size: clamp(2rem, 4vw, 3.7rem);
-            line-height: 1.12;
-        }
-
-        .section-heading h2 span {
-            color: var(--gold-light);
-        }
-
-        .section-heading p {
-            margin-top: 18px;
-
-            color: var(--muted);
-
-            font-size: 1.08rem;
-            line-height: 1.8;
+        .intro-section {
+            background:
+                linear-gradient(
+                    180deg,
+                    #07111d,
+                    #0a1724
+                );
         }
 
         .intro-card {
-            padding: clamp(25px, 5vw, 48px);
+            width: min(900px, 100%);
+
+            margin: 0 auto;
+
+            padding:
+                clamp(28px, 5vw, 55px);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 24px;
 
             background:
                 linear-gradient(
-                    135deg,
-                    rgba(201, 164, 76, 0.08),
-                    rgba(255, 255, 255, 0.025)
+                    145deg,
+                    rgba(255, 255, 255, 0.055),
+                    rgba(255, 255, 255, 0.018)
                 );
 
-            border: 1px solid var(--border);
-            border-radius: 18px;
-
             box-shadow: var(--shadow);
+
+            text-align: center;
         }
 
         .intro-card p {
-            color: rgba(244, 239, 227, 0.82);
-            font-size: clamp(1.05rem, 2vw, 1.22rem);
+            margin: 0;
+
+            color:
+                rgba(255, 255, 255, 0.78);
+
+            font-size:
+                clamp(17px, 2.2vw, 21px);
+
             line-height: 1.85;
         }
 
         .intro-card strong {
             color: var(--gold-light);
-            font-weight: 600;
         }
 
 
         /* =========================================================
-           RULES
+           RULES GRID
         ========================================================= */
 
         .rules-section {
-            padding: 30px 24px 110px;
             background:
-                linear-gradient(
-                    180deg,
-                    var(--navy) 0%,
-                    var(--navy-light) 100%
-                );
+                #081521;
         }
 
         .rules-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
             gap: 22px;
         }
 
         .rule-card {
             position: relative;
 
-            padding: 34px;
+            min-width: 0;
 
-            background: rgba(255, 255, 255, 0.035);
+            padding:
+                30px 26px;
 
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 16px;
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.075);
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.045),
+                    rgba(255, 255, 255, 0.012)
+                );
+
+            box-shadow:
+                0 15px 45px
+                rgba(0, 0, 0, 0.17);
 
             overflow: hidden;
 
@@ -645,169 +891,232 @@
             content: "";
 
             position: absolute;
-            left: 0;
+
             top: 0;
-            bottom: 0;
+            left: 0;
 
-            width: 3px;
+            width: 100%;
+            height: 2px;
 
-            background: var(--gold);
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--gold),
+                    transparent
+                );
 
-            transform: scaleY(0);
-            transform-origin: bottom;
-
-            transition: transform 0.3s ease;
+            opacity: 0.55;
         }
 
         .rule-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(201, 164, 76, 0.35);
-            background: rgba(201, 164, 76, 0.045);
-        }
 
-        .rule-card:hover::before {
-            transform: scaleY(1);
+            border-color:
+                rgba(201, 164, 76, 0.3);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(201, 164, 76, 0.065),
+                    rgba(255, 255, 255, 0.018)
+                );
         }
 
         .rule-number {
+            width: 48px;
+            height: 48px;
+
+            margin-bottom: 22px;
+
             display: flex;
             align-items: center;
             justify-content: center;
 
-            width: 45px;
-            height: 45px;
-
-            margin-bottom: 21px;
-
-            border: 1px solid rgba(201, 164, 76, 0.45);
-            border-radius: 50%;
-
             color: var(--gold-light);
 
+            border:
+                1px solid
+                rgba(201, 164, 76, 0.3);
+
+            border-radius: 50%;
+
+            background:
+                rgba(201, 164, 76, 0.08);
+
             font-family: "Marcellus", serif;
-            font-size: 0.82rem;
+
+            font-size: 15px;
         }
 
         .rule-card h3 {
-            color: var(--ivory);
+            margin-bottom: 12px;
+
+            color: var(--white);
 
             font-family: "Marcellus", serif;
+
+            font-size: 21px;
+
             font-weight: 400;
 
-            font-size: clamp(1.2rem, 2vw, 1.45rem);
             line-height: 1.3;
-
-            margin-bottom: 12px;
         }
 
         .rule-card p {
+            margin: 0;
+
             color: var(--muted);
 
-            font-size: 1rem;
-            line-height: 1.8;
-        }
+            font-size: 16px;
 
-        .rule-card strong {
-            color: var(--gold-light);
+            line-height: 1.75;
         }
 
 
         /* =========================================================
-           STUDENT COMMITMENT
+           COMMITMENT SECTION
         ========================================================= */
 
-        .commitment {
-            position: relative;
-
-            padding: 110px 24px;
-
+        .commitment-section {
             background:
                 linear-gradient(
-                    rgba(4, 10, 18, 0.91),
-                    rgba(4, 10, 18, 0.95)
-                ),
-                url("assets/images/gallery/seminar.jpg")
-                center / cover no-repeat;
-
-            overflow: hidden;
+                    180deg,
+                    #081521,
+                    #07111d
+                );
         }
 
-        .commitment::before {
+        .commitment-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 0.9fr)
+                minmax(0, 1.1fr);
+
+            align-items: center;
+
+            gap: 70px;
+        }
+
+        .commitment-image {
+            position: relative;
+
+            min-width: 0;
+        }
+
+        .commitment-image::after {
             content: "";
 
             position: absolute;
-            width: 450px;
-            height: 450px;
 
-            top: -220px;
-            right: -150px;
+            left: 18px;
+            bottom: -18px;
 
-            border-radius: 50%;
+            width: 100%;
+            height: 100%;
 
-            border: 1px solid rgba(201, 164, 76, 0.18);
+            border:
+                1px solid
+                rgba(201, 164, 76, 0.3);
+
+            border-radius: 22px;
+
+            z-index: 0;
         }
 
-        .commitment-box {
+        .commitment-image img {
             position: relative;
-            z-index: 2;
+            z-index: 1;
 
-            width: min(900px, 100%);
-            margin: 0 auto;
+            width: 100%;
 
-            text-align: center;
+            min-height: 420px;
 
-            padding: clamp(30px, 6vw, 70px);
+            object-fit: cover;
 
-            border: 1px solid rgba(201, 164, 76, 0.3);
-            border-radius: 20px;
+            border-radius: 22px;
 
-            background: rgba(7, 17, 31, 0.65);
-
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            box-shadow: var(--shadow);
         }
 
-        .commitment-box .symbol {
-            color: var(--gold);
-
-            font-size: 2rem;
-
-            margin-bottom: 20px;
+        .commitment-content {
+            min-width: 0;
         }
 
-        .commitment-box h2 {
-            font-family: "Marcellus", serif;
-            font-weight: 400;
+        .commitment-content .eyebrow {
+            display: block;
 
-            color: var(--ivory);
-
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            line-height: 1.15;
-        }
-
-        .commitment-box h2 span {
-            color: var(--gold-light);
-        }
-
-        .commitment-box p {
-            max-width: 730px;
-            margin: 24px auto 0;
-
-            color: rgba(244, 239, 227, 0.76);
-
-            font-size: clamp(1.05rem, 2vw, 1.2rem);
-            line-height: 1.85;
-        }
-
-        .commitment-box .closing {
-            margin-top: 30px;
+            margin-bottom: 14px;
 
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-            font-size: 0.78rem;
-            letter-spacing: 0.15em;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
             text-transform: uppercase;
+        }
+
+        .commitment-content h2 {
+            margin-bottom: 20px;
+
+            color: var(--white);
+
+            font-family: "Marcellus", serif;
+
+            font-size:
+                clamp(32px, 5vw, 52px);
+
+            line-height: 1.1;
+
+            font-weight: 400;
+        }
+
+        .commitment-content p {
+            margin-bottom: 18px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+        .commitment-list {
+            margin: 25px 0 0;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        .commitment-list li {
+            position: relative;
+
+            padding-left: 31px;
+
+            margin-bottom: 14px;
+
+            color:
+                rgba(255, 255, 255, 0.8);
+
+            font-size: 16px;
+        }
+
+        .commitment-list li::before {
+            content: "✓";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            color: var(--gold-light);
+
+            font-family: Arial, sans-serif;
+            font-weight: 700;
         }
 
 
@@ -815,62 +1124,53 @@
            POLICY NOTE
         ========================================================= */
 
-        .policy-note {
-            padding: 85px 24px;
+        .policy-section {
+            padding-top: 20px;
 
-            background: var(--navy-light);
+            background: #07111d;
         }
 
-        .policy-inner {
-            display: grid;
-            grid-template-columns: 0.25fr 1fr;
-            gap: 28px;
-            align-items: start;
+        .policy-note {
+            width: min(1000px, 100%);
 
-            width: min(980px, 100%);
             margin: 0 auto;
 
-            padding: 35px;
+            padding:
+                30px
+                clamp(22px, 4vw, 42px);
 
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
+            border:
+                1px solid
+                rgba(201, 164, 76, 0.25);
 
-            background: rgba(255, 255, 255, 0.025);
+            border-radius: 20px;
+
+            background:
+                rgba(201, 164, 76, 0.055);
+
+            text-align: center;
         }
 
-        .policy-icon {
-            width: 65px;
-            height: 65px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border: 1px solid rgba(201, 164, 76, 0.4);
-            border-radius: 50%;
+        .policy-note h3 {
+            margin-bottom: 10px;
 
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-            font-size: 1.4rem;
-        }
 
-        .policy-content h3 {
-            color: var(--ivory);
+            font-size: 24px;
 
-            font-family: "Marcellus", serif;
             font-weight: 400;
-
-            font-size: 1.4rem;
-
-            margin-bottom: 9px;
         }
 
-        .policy-content p {
+        .policy-note p {
+            margin: 0;
+
             color: var(--muted);
 
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 16px;
+
+            line-height: 1.75;
         }
 
 
@@ -878,52 +1178,161 @@
            CTA
         ========================================================= */
 
-        .cta {
-            padding: 100px 24px;
+        .cta-section {
+            position: relative;
+
+            padding:
+                110px
+                20px;
+
+            text-align: center;
+
+            overflow: hidden;
 
             background:
                 linear-gradient(
                     135deg,
-                    rgba(201, 164, 76, 0.11),
-                    rgba(7, 17, 31, 1) 60%
+                    #0c1b2a,
+                    #07111d
                 );
         }
 
-        .cta-box {
-            width: min(1050px, 100%);
-            margin: 0 auto;
+        .cta-section::before {
+            content: "";
 
-            text-align: center;
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            top: -250px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                rgba(201, 164, 76, 0.07);
+
+            filter: blur(20px);
         }
 
-        .cta-box h2 {
+        .cta-content {
+            position: relative;
+            z-index: 1;
+
+            width: min(760px, 100%);
+
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            margin-bottom: 16px;
+
+            color: var(--white);
+
             font-family: "Marcellus", serif;
+
+            font-size:
+                clamp(32px, 5vw, 54px);
+
             font-weight: 400;
 
-            color: var(--ivory);
-
-            font-size: clamp(2rem, 5vw, 4.3rem);
-            line-height: 1.1;
+            line-height: 1.12;
         }
 
-        .cta-box h2 span {
-            color: var(--gold-light);
-        }
-
-        .cta-box p {
-            max-width: 680px;
-            margin: 20px auto 30px;
+        .cta-content p {
+            margin-bottom: 30px;
 
             color: var(--muted);
 
-            font-size: 1.08rem;
+            font-size: 18px;
         }
 
-        .cta-actions {
+        .cta-buttons {
             display: flex;
-            flex-wrap: wrap;
+
+            align-items: center;
             justify-content: center;
-            gap: 14px;
+
+            flex-wrap: wrap;
+
+            gap: 13px;
+        }
+
+        .btn {
+            min-height: 52px;
+
+            padding:
+                12px 24px;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            font-family: "Marcellus", serif;
+
+            font-size: 14px;
+
+            letter-spacing: 0.4px;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .btn-primary {
+            color: #07111d;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-light),
+                    var(--gold)
+                );
+
+            border:
+                1px solid var(--gold);
+
+            box-shadow:
+                0 10px 30px
+                rgba(201, 164, 76, 0.18);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0d991,
+                    var(--gold-light)
+                );
+        }
+
+        .btn-secondary {
+            color: var(--white);
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.16);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+
+            border-color:
+                rgba(201, 164, 76, 0.4);
+
+            color: var(--gold-light);
         }
 
 
@@ -932,105 +1341,138 @@
         ========================================================= */
 
         footer {
-            padding: 70px 24px 25px;
+            padding:
+                65px
+                20px
+                28px;
 
-            background: #030811;
+            background:
+                #040b13;
 
-            border-top: 1px solid rgba(201, 164, 76, 0.14);
+            border-top:
+                1px solid
+                rgba(255, 255, 255, 0.06);
         }
 
-        .footer-grid {
-            width: min(1180px, 100%);
-            margin: 0 auto;
+        .footer-container {
+            width: min(
+                var(--container),
+                100%
+            );
 
+            margin: 0 auto;
+        }
+
+        .footer-main {
             display: grid;
-            grid-template-columns: 1.4fr 0.8fr 0.8fr;
-            gap: 55px;
+
+            grid-template-columns:
+                1.3fr
+                1fr
+                1fr
+                1fr;
+
+            gap: 45px;
+
+            padding-bottom: 45px;
+        }
+
+        .footer-brand {
+            min-width: 0;
         }
 
         .footer-brand img {
             width: 70px;
             height: 70px;
+
             object-fit: contain;
 
-            margin-bottom: 18px;
+            margin-bottom: 17px;
         }
 
         .footer-brand h3 {
-            color: var(--gold-light);
+            margin-bottom: 10px;
+
+            color: var(--white);
 
             font-family: "Marcellus", serif;
-            font-weight: 400;
 
-            font-size: 1.15rem;
+            font-size: 20px;
+
+            font-weight: 400;
         }
 
         .footer-brand p {
-            max-width: 430px;
+            max-width: 350px;
 
-            margin-top: 14px;
+            margin: 0;
 
             color: var(--muted);
 
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 15px;
+
+            line-height: 1.75;
         }
 
-        .footer-title {
-            color: var(--ivory);
+        .footer-column h4 {
+            margin-bottom: 17px;
+
+            color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-            font-size: 0.9rem;
 
-            margin-bottom: 20px;
+            font-size: 15px;
+
+            font-weight: 400;
+
+            letter-spacing: 0.7px;
         }
 
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .footer-column a {
+            display: block;
+
+            width: fit-content;
+            max-width: 100%;
+
+            margin-bottom: 10px;
+
+            color:
+                rgba(255, 255, 255, 0.63);
+
+            font-size: 15px;
+
+            transition:
+                color 0.2s ease;
         }
 
-        .footer-links a {
-            color: var(--muted);
-
-            font-size: 0.98rem;
-
-            transition: color 0.25s ease;
-        }
-
-        .footer-links a:hover {
+        .footer-column a:hover {
             color: var(--gold-light);
         }
 
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 11px;
-        }
-
-        .footer-contact p {
-            color: var(--muted);
-            font-size: 0.98rem;
-        }
-
         .footer-bottom {
-            width: min(1180px, 100%);
-            margin: 50px auto 0;
+            padding-top: 24px;
 
-            padding-top: 22px;
-
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            border-top:
+                1px solid
+                rgba(255, 255, 255, 0.07);
 
             display: flex;
+
             align-items: center;
             justify-content: space-between;
+
             gap: 20px;
+
+            flex-wrap: wrap;
         }
 
         .footer-bottom p {
-            color: rgba(183, 179, 170, 0.65);
-            font-size: 0.88rem;
+            margin: 0;
+
+            color:
+                rgba(255, 255, 255, 0.45);
+
+            font-size: 13px;
         }
 
 
@@ -1041,66 +1483,84 @@
         #backTop {
             position: fixed;
 
-            right: 22px;
-            bottom: 22px;
-
-            width: 48px;
-            height: 48px;
+            right: 20px;
+            bottom: 20px;
 
             z-index: 4000;
+
+            width: 50px;
+            height: 50px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border: 1px solid rgba(201, 164, 76, 0.45);
+            border:
+                1px solid
+                rgba(201, 164, 76, 0.35);
+
             border-radius: 50%;
 
-            background: rgba(7, 17, 31, 0.88);
-
             color: var(--gold-light);
+
+            background:
+                rgba(5, 12, 21, 0.9);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
 
             cursor: pointer;
 
             opacity: 0;
             visibility: hidden;
-            transform: translateY(12px);
+
+            transform:
+                translateY(10px);
 
             transition:
-                opacity 0.3s ease,
-                visibility 0.3s ease,
-                transform 0.3s ease,
-                background 0.3s ease;
+                opacity 0.25s ease,
+                visibility 0.25s ease,
+                transform 0.25s ease,
+                background 0.25s ease;
         }
 
         #backTop.show {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
+
+            transform:
+                translateY(0);
         }
 
         #backTop:hover {
-            background: var(--gold);
-            color: var(--navy);
+            background:
+                rgba(201, 164, 76, 0.12);
+
+            transform:
+                translateY(-3px);
         }
 
 
         /* =========================================================
-           REVEAL ANIMATION
+           SCROLL REVEAL
         ========================================================= */
 
         .reveal {
             opacity: 0;
-            transform: translateY(25px);
+
+            transform:
+                translateY(25px);
 
             transition:
-                opacity 0.8s ease,
-                transform 0.8s ease;
+                opacity 0.75s ease,
+                transform 0.75s ease;
         }
 
         .reveal.visible {
             opacity: 1;
-            transform: translateY(0);
+
+            transform:
+                translateY(0);
         }
 
 
@@ -1110,102 +1570,115 @@
 
         @media (max-width: 1100px) {
 
-            header {
-                padding: 14px 14px;
+            #siteHeader {
+                padding:
+                    10px 14px;
             }
 
             .nav-container {
-                min-height: 70px;
-            }
+                min-height: 64px;
 
-            nav {
-                display: none;
-
-                position: fixed;
-
-                top: 92px;
-                left: 14px;
-                right: 14px;
-
-                padding: 20px;
-
-                flex-direction: column;
-                align-items: stretch;
-                justify-content: flex-start;
-
-                background: rgba(4, 10, 18, 0.97);
-
-                border: 1px solid rgba(201, 164, 76, 0.2);
-                border-radius: 16px;
-
-                box-shadow: var(--shadow);
-
-                max-height: calc(100svh - 110px);
-                overflow-y: auto;
-            }
-
-            nav.open {
-                display: flex;
-            }
-
-            nav a {
-                padding: 14px 12px;
-
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            nav a::after {
-                display: none;
-            }
-
-            .nav-cta {
-                margin: 8px 0 0 !important;
-                text-align: center;
+                padding:
+                    0 16px;
             }
 
             .menu-toggle {
                 display: flex;
             }
 
+            #mainNav {
+                position: fixed;
+
+                top: 82px;
+                left: 14px;
+                right: 14px;
+
+                z-index: 6000;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+                justify-content: flex-start;
+
+                gap: 5px;
+
+                margin: 0;
+
+                padding: 14px;
+
+                max-height:
+                    calc(100svh - 96px);
+
+                overflow-y: auto;
+
+                overscroll-behavior: contain;
+
+                border:
+                    1px solid
+                    rgba(201, 164, 76, 0.2);
+
+                border-radius: 18px;
+
+                background:
+                    rgba(4, 10, 18, 0.98);
+
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+
+                box-shadow:
+                    0 25px 80px
+                    rgba(0, 0, 0, 0.55);
+            }
+
+            #mainNav.open {
+                display: flex;
+            }
+
+            #mainNav a {
+                width: 100%;
+
+                min-height: 50px;
+
+                padding:
+                    12px 15px;
+
+                justify-content: flex-start;
+
+                font-size: 14px;
+
+                border-radius: 10px;
+            }
+
+            #mainNav a.active::after {
+                left: 15px;
+                right: auto;
+
+                width: 25px;
+
+                bottom: 6px;
+            }
+
+            #mainNav .nav-cta {
+                margin:
+                    8px 0 0;
+
+                justify-content: center;
+            }
+
             .rules-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
             }
 
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
+            .commitment-grid {
+                gap: 45px;
             }
 
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
-        }
-
-
-        /* =========================================================
-           TABLET / SMALL LAPTOP
-        ========================================================= */
-
-        @media (max-width: 900px) {
-
-            .hero {
-                min-height: 680px;
-                min-height: 90svh;
-            }
-
-            .hero-content {
-                padding-top: 145px;
-            }
-
-            .intro {
-                padding-top: 85px;
-            }
-
-            .rules-section {
-                padding-bottom: 85px;
-            }
-
-            .policy-inner {
-                grid-template-columns: auto 1fr;
+            .footer-main {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -1214,253 +1687,199 @@
            MOBILE
         ========================================================= */
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
-            header {
-                padding: 10px;
-            }
-
-            header.scrolled {
-                padding: 7px 10px;
+            #siteHeader {
+                padding:
+                    8px 10px;
             }
 
             .nav-container {
-                min-height: 64px;
-                padding: 0 12px;
+                min-height: 60px;
+
+                padding:
+                    0 11px;
+
                 border-radius: 14px;
             }
 
             .brand {
-                gap: 9px;
+                gap: 8px;
             }
 
             .brand img {
-                width: 45px;
-                height: 45px;
+                width: 43px;
+                height: 43px;
             }
 
             .brand-name {
-                font-size: 0.79rem;
+                font-size: 12px;
             }
 
             .brand-subtitle {
-                font-size: 0.56rem;
-                letter-spacing: 0.09em;
+                font-size: 8px;
+
+                letter-spacing: 1px;
             }
 
             .menu-toggle {
-                width: 42px;
-                height: 42px;
+                width: 46px;
+                min-width: 46px;
+                height: 46px;
             }
 
-            nav {
-                top: 82px;
+            #mainNav {
+                top: 72px;
                 left: 10px;
                 right: 10px;
+
+                max-height:
+                    calc(100svh - 84px);
             }
 
-            .hero {
-                min-height: 700px;
-                min-height: 94svh;
+            .rules-hero {
+                min-height:
+                    570px;
 
-                background-position: 60% center;
-            }
-
-            .hero-content {
                 padding:
-                    140px 20px 70px;
-            }
-
-            .eyebrow {
-                font-size: 0.63rem;
-                letter-spacing: 0.13em;
-            }
-
-            .eyebrow::before {
-                width: 24px;
-            }
-
-            .hero h1 {
-                font-size: clamp(2.35rem, 12vw, 4rem);
-            }
-
-            .hero p {
-                margin-top: 20px;
-                font-size: 1rem;
-            }
-
-            .hero-actions {
-                margin-top: 28px;
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .intro {
-                padding:
-                    75px 18px
-                    65px;
-            }
-
-            .section-heading {
-                margin-bottom: 35px;
-            }
-
-            .section-heading h2 {
-                font-size: 2rem;
-            }
-
-            .intro-card {
-                padding: 25px 21px;
-                border-radius: 14px;
-            }
-
-            .intro-card p {
-                font-size: 1rem;
-            }
-
-            .rules-section {
-                padding:
-                    15px 18px
+                    155px
+                    16px
                     75px;
             }
 
+            .hero-kicker {
+                font-size: 10px;
+
+                letter-spacing: 1.5px;
+
+                padding:
+                    6px 12px;
+            }
+
+            .rules-hero h1 {
+                font-size:
+                    clamp(39px, 13vw, 58px);
+            }
+
+            .rules-hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding:
+                    70px 16px;
+            }
+
+            .section-heading {
+                margin-bottom: 38px;
+            }
+
+            .section-heading h2 {
+                font-size:
+                    clamp(30px, 9vw, 42px);
+            }
+
+            .intro-card {
+                padding:
+                    27px 20px;
+
+                border-radius: 18px;
+            }
+
+            .intro-card p {
+                font-size: 17px;
+            }
+
             .rules-grid {
-                gap: 15px;
+                grid-template-columns:
+                    1fr;
+
+                gap: 16px;
             }
 
             .rule-card {
-                padding: 26px 22px;
-                border-radius: 14px;
-            }
-
-            .rule-number {
-                width: 40px;
-                height: 40px;
-                margin-bottom: 17px;
-            }
-
-            .rule-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .rule-card p {
-                font-size: 0.98rem;
-            }
-
-            .commitment {
                 padding:
-                    75px 18px;
+                    26px 21px;
             }
 
-            .commitment-box {
-                padding:
-                    35px 22px;
-                border-radius: 15px;
+            .commitment-grid {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
             }
 
-            .commitment-box h2 {
-                font-size: 2rem;
+            .commitment-image img {
+                min-height: 280px;
+
+                max-height: 430px;
             }
 
-            .commitment-box p {
-                font-size: 1rem;
+            .commitment-image::after {
+                left: 10px;
+                bottom: -10px;
+            }
+
+            .commitment-content h2 {
+                font-size:
+                    clamp(31px, 9vw, 44px);
+            }
+
+            .policy-section {
+                padding-top: 10px;
             }
 
             .policy-note {
                 padding:
-                    65px 18px;
+                    25px 19px;
             }
 
-            .policy-inner {
-                grid-template-columns: 1fr;
-                padding: 25px;
-            }
-
-            .policy-icon {
-                width: 55px;
-                height: 55px;
-            }
-
-            .cta {
+            .cta-section {
                 padding:
-                    75px 18px;
+                    75px 16px;
             }
 
-            .cta-box h2 {
-                font-size: 2.15rem;
-            }
-
-            .cta-actions {
+            .cta-buttons {
                 flex-direction: column;
+
+                width: 100%;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
             }
 
             footer {
                 padding:
-                    60px 18px 20px;
+                    50px 16px 25px;
             }
 
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 38px;
+            .footer-main {
+                grid-template-columns:
+                    1fr;
+
+                gap: 32px;
+
+                padding-bottom: 32px;
             }
 
-            .footer-brand {
-                grid-column: auto;
+            .footer-brand p {
+                max-width: 100%;
             }
 
             .footer-bottom {
-                margin-top: 40px;
+                align-items: flex-start;
 
                 flex-direction: column;
-                align-items: flex-start;
+
+                gap: 8px;
             }
 
             #backTop {
-                right: 15px;
-                bottom: 15px;
+                right: 14px;
+                bottom: 14px;
 
-                width: 44px;
-                height: 44px;
-            }
-        }
-
-
-        /* =========================================================
-           SMALL PHONES
-        ========================================================= */
-
-        @media (max-width: 380px) {
-
-            .brand-name {
-                font-size: 0.7rem;
-            }
-
-            .brand-subtitle {
-                font-size: 0.5rem;
-            }
-
-            .hero-content {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .section-heading h2 {
-                font-size: 1.85rem;
-            }
-
-            .rule-card {
-                padding: 23px 18px;
-            }
-
-            .commitment-box {
-                padding: 30px 18px;
+                width: 46px;
+                height: 46px;
             }
         }
 
@@ -1469,27 +1888,39 @@
            VERY SMALL PHONES
         ========================================================= */
 
-        @media (max-width: 330px) {
+        @media (max-width: 380px) {
 
-            .brand img {
-                width: 39px;
-                height: 39px;
+            .brand-text {
+                max-width: 180px;
             }
 
             .brand-name {
-                font-size: 0.63rem;
+                font-size: 11px;
             }
 
             .brand-subtitle {
-                display: none;
+                font-size: 7px;
             }
 
-            .hero h1 {
-                font-size: 2rem;
+            .rules-hero {
+                min-height:
+                    540px;
+
+                padding-top:
+                    140px;
             }
 
-            .hero p {
-                font-size: 0.95rem;
+            .rules-hero h1 {
+                font-size:
+                    38px;
+            }
+
+            .rule-card h3 {
+                font-size: 19px;
+            }
+
+            .rule-card p {
+                font-size: 15px;
             }
         }
 
@@ -1509,6 +1940,7 @@
             *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
+
                 transition-duration: 0.01ms !important;
             }
 
@@ -1524,26 +1956,25 @@
 
 <body>
 
-
     <!-- =========================================================
          LOADER
-    ========================================================= -->
+    ========================================================== -->
 
-    <div id="loader">
+    <div id="pageLoader" aria-hidden="true">
 
         <div class="loader-inner">
 
             <img
                 src="./img/logo/logo.png"
-                alt="Global College of Missiology Logo"
+                alt="Global College of Missiology"
                 class="loader-logo"
             >
 
-            <div class="loader-line"></div>
-
-            <div class="loader-text">
+            <p class="loader-name">
                 Global College of Missiology
-            </div>
+            </p>
+
+            <div class="loader-line"></div>
 
         </div>
 
@@ -1551,34 +1982,51 @@
 
 
     <!-- =========================================================
+         MOBILE MENU OVERLAY
+    ========================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
          HEADER
-    ========================================================= -->
+    ========================================================== -->
 
     <header id="siteHeader">
 
         <div class="nav-container">
 
-            <a href="./home.html" class="brand">
+            <a
+                href="./home.html"
+                class="brand"
+                aria-label="Global College of Missiology Home"
+            >
 
                 <img
                     src="./img/logo/logo.png"
                     alt="Global College of Missiology Logo"
                 >
 
-                <div class="brand-text">
+                <span class="brand-text">
 
-                    <div class="brand-name">
+                    <span class="brand-name">
                         Global College of Missiology
-                    </div>
+                    </span>
 
-                    <div class="brand-subtitle">
-                        Training • Equipping • Deploying
-                    </div>
+                    <span class="brand-subtitle">
+                        Equipping Global Ministers
+                    </span>
 
-                </div>
+                </span>
 
             </a>
 
+
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="menu-toggle"
@@ -1586,6 +2034,7 @@
                 type="button"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
+                aria-controls="mainNav"
             >
 
                 <span></span>
@@ -1595,7 +2044,9 @@
             </button>
 
 
-            <nav id="mainNav">
+            <!-- NAVIGATION -->
+
+            <nav id="mainNav" aria-label="Main navigation">
 
                 <a href="./home.html">
                     Home
@@ -1621,7 +2072,11 @@
                     Gallery
                 </a>
 
-                <a href="rules.html" class="active">
+                <a
+                    href="./rules.html"
+                    class="active"
+                    aria-current="page"
+                >
                     Rules
                 </a>
 
@@ -1645,51 +2100,29 @@
 
     <!-- =========================================================
          HERO
-    ========================================================= -->
+    ========================================================== -->
 
     <main>
 
-        <section class="hero">
+        <section class="rules-hero">
 
-            <div class="hero-content">
+            <div class="hero-content reveal">
 
-                <div class="hero-inner reveal">
+                <span class="hero-kicker">
+                    Student Handbook
+                </span>
 
-                    <div class="eyebrow">
-                        GCM Student Handbook
-                    </div>
+                <h1>
+                    Rules
+                    <span>&amp;</span>
+                    Regulations
+                </h1>
 
-                    <h1>
-                        Rules &
-                        <span>Regulations</span>
-                    </h1>
-
-                    <p>
-                        Building God's people for Global Missions and
-                        Evangelization through sound biblical teaching,
-                        spiritual formation, academic excellence, and
-                        ministerial training.
-                    </p>
-
-                    <div class="hero-actions">
-
-                        <a
-                            href="#rules"
-                            class="btn btn-primary"
-                        >
-                            Read The Regulations
-                        </a>
-
-                        <a
-                            href="./admissions.html"
-                            class="btn btn-outline"
-                        >
-                            Admission Information
-                        </a>
-
-                    </div>
-
-                </div>
+                <p>
+                    Building a disciplined, respectful and Christ-centered
+                    academic community where every student is encouraged
+                    to grow in knowledge, character and service.
+                </p>
 
             </div>
 
@@ -1697,51 +2130,24 @@
 
 
         <!-- =====================================================
-             INTRODUCTION
+             INTRO
         ====================================================== -->
 
-        <section class="intro">
+        <section class="section intro-section">
 
             <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <div class="section-label">
-                        Institutional Standards
-                    </div>
-
-                    <h2>
-                        A Culture of
-                        <span>Character & Excellence</span>
-                    </h2>
-
-                    <p>
-                        The Global College of Missiology is committed to
-                        creating an environment where biblical truth,
-                        spiritual maturity, academic responsibility,
-                        discipline, and respect are upheld.
-                    </p>
-
-                </div>
-
 
                 <div class="intro-card reveal">
 
                     <p>
-                        The <strong>Global College of Missiology (GCM)</strong>
-                        is committed to building God’s people for Global
-                        Missions and Evangelization through sound biblical
-                        teaching, spiritual formation, academic excellence,
-                        and ministerial training.
-                    </p>
-
-                    <br>
-
-                    <p>
-                        All students are expected to understand, respect,
-                        and observe the standards of conduct and
-                        responsibility outlined below throughout their
-                        period of training with the College.
+                        The rules and regulations of
+                        <strong>
+                            Global College of Missiology
+                        </strong>
+                        are established to maintain academic excellence,
+                        spiritual growth, discipline, respect and a healthy
+                        learning environment for every member of the college
+                        community.
                     </p>
 
                 </div>
@@ -1755,29 +2161,24 @@
              RULES
         ====================================================== -->
 
-        <section
-            class="rules-section"
-            id="rules"
-        >
+        <section class="section rules-section">
 
             <div class="container">
 
                 <div class="section-heading reveal">
 
-                    <div class="section-label">
-                        GCM Rules
-                    </div>
+                    <span class="eyebrow">
+                        College Standards
+                    </span>
 
                     <h2>
-                        Rules Every
-                        <span>Student Must Observe</span>
+                        Rules Every Student Should Know
                     </h2>
 
                     <p>
-                        These regulations provide the framework for
-                        responsible Christian conduct, academic discipline,
-                        respectful relationships, and effective ministerial
-                        training at GCM.
+                        Students are expected to understand and respect
+                        the standards that guide life and learning at
+                        Global College of Missiology.
                     </p>
 
                 </div>
@@ -1795,13 +2196,14 @@
                         </div>
 
                         <h3>
-                            Christian Conduct
+                            Respect and Good Conduct
                         </h3>
 
                         <p>
-                            Students must maintain godly character,
-                            integrity, discipline, humility, and respect
-                            for others.
+                            Every student is expected to conduct themselves
+                            respectfully toward fellow students, lecturers,
+                            directors, staff and every member of the college
+                            community.
                         </p>
 
                     </article>
@@ -1816,14 +2218,14 @@
                         </div>
 
                         <h3>
-                            Attendance & Punctuality
+                            Academic Integrity
                         </h3>
 
                         <p>
-                            Students are required to attend lectures,
-                            devotion, examinations, practical ministry,
-                            and other compulsory activities and must
-                            be punctual.
+                            Students must complete academic work honestly.
+                            Plagiarism, impersonation, examination malpractice
+                            and other forms of academic dishonesty are not
+                            acceptable.
                         </p>
 
                     </article>
@@ -1838,13 +2240,14 @@
                         </div>
 
                         <h3>
-                            Academic Integrity
+                            Attendance and Participation
                         </h3>
 
                         <p>
-                            Cheating, plagiarism, examination malpractice,
-                            impersonation, and submission of another
-                            person's work are strictly prohibited.
+                            Students are expected to participate actively
+                            in scheduled classes, lessons, assessments and
+                            other academic activities relevant to their
+                            programme.
                         </p>
 
                     </article>
@@ -1859,13 +2262,13 @@
                         </div>
 
                         <h3>
-                            Respect for Authority
+                            Submission of Assignments
                         </h3>
 
                         <p>
-                            Students must respect the College leadership,
-                            lecturers, staff, and fellow students and
-                            follow legitimate College instructions.
+                            Assignments and other academic activities should
+                            be submitted according to the instructions and
+                            deadlines communicated by the college or lecturer.
                         </p>
 
                     </article>
@@ -1880,14 +2283,13 @@
                         </div>
 
                         <h3>
-                            Appropriate Conduct
+                            Communication
                         </h3>
 
                         <p>
-                            Fighting, bullying, harassment, abusive
-                            language, immoral conduct, fraud, theft,
-                            and other behaviour inconsistent with
-                            Christian values are prohibited.
+                            Students should communicate with college
+                            administrators and lecturers respectfully and
+                            through the appropriate official channels.
                         </p>
 
                     </article>
@@ -1902,13 +2304,14 @@
                         </div>
 
                         <h3>
-                            Dress & Appearance
+                            Use of College Resources
                         </h3>
 
                         <p>
-                            Students must maintain decent, modest,
-                            and appropriate appearance suitable for
-                            a Christian ministerial institution.
+                            College learning materials, digital resources,
+                            accounts and other facilities should be used
+                            responsibly and only for appropriate educational
+                            purposes.
                         </p>
 
                     </article>
@@ -1923,15 +2326,14 @@
                         </div>
 
                         <h3>
-                            Online Learning
+                            Appropriate Online Behaviour
                         </h3>
 
                         <p>
-                            Students must participate responsibly in
-                            online classes, submit assignments on time,
-                            respect lecturers and fellow students, and
-                            avoid unauthorized sharing of GCM learning
-                            materials.
+                            Students are expected to maintain respectful
+                            behaviour when participating in online classes,
+                            student groups, discussion platforms and other
+                            college-related digital spaces.
                         </p>
 
                     </article>
@@ -1946,13 +2348,13 @@
                         </div>
 
                         <h3>
-                            Use of College Resources
+                            Personal Responsibility
                         </h3>
 
                         <p>
-                            Students must handle College property,
-                            books, digital resources, and facilities
-                            responsibly.
+                            Students are responsible for keeping their
+                            personal information, account credentials and
+                            academic activities secure and up to date.
                         </p>
 
                     </article>
@@ -1967,15 +2369,14 @@
                         </div>
 
                         <h3>
-                            Social Media
+                            Spiritual Discipline
                         </h3>
 
                         <p>
-                            Students must not use the name, identity,
-                            materials, or platforms of GCM without
-                            authorization or publish content that
-                            deliberately misrepresents or brings the
-                            College into disrepute.
+                            Students are encouraged to cultivate personal
+                            devotion, prayer, biblical study, Christian
+                            character and a commitment to the mission of
+                            the college.
                         </p>
 
                     </article>
@@ -1990,14 +2391,14 @@
                         </div>
 
                         <h3>
-                            Discipline
+                            Misconduct
                         </h3>
 
                         <p>
-                            Violation of these regulations may result
-                            in warning, counselling, suspension,
-                            withdrawal of privileges, or dismissal,
-                            depending on the seriousness of the offence.
+                            Behaviour that seriously disrupts the academic
+                            environment, harms others or violates established
+                            college standards may be subject to appropriate
+                            administrative action.
                         </p>
 
                     </article>
@@ -2012,14 +2413,13 @@
                         </div>
 
                         <h3>
-                            Graduation Requirements
+                            Compliance With College Policies
                         </h3>
 
                         <p>
-                            Students must satisfy the prescribed
-                            academic, attendance, practical ministry,
-                            project, and other requirements before
-                            graduation.
+                            Students are expected to follow official policies,
+                            instructions and updates communicated by the
+                            leadership and administration of the college.
                         </p>
 
                     </article>
@@ -2036,29 +2436,74 @@
              STUDENT COMMITMENT
         ====================================================== -->
 
-        <section class="commitment">
+        <section class="section commitment-section">
 
             <div class="container">
 
-                <div class="commitment-box reveal">
+                <div class="commitment-grid">
 
-                    <div class="symbol">
-                        ✦
+
+                    <div class="commitment-image reveal">
+
+                        <img
+                            src="assets/images/gallery/seminar.jpg"
+                            alt="Global College of Missiology students participating in a seminar"
+                            loading="lazy"
+                        >
+
                     </div>
 
-                    <h2>
-                        Student
-                        <span>Commitment</span>
-                    </h2>
 
-                    <p>
-                        By enrolling with GCM, every student agrees to
-                        abide by these rules and regulations and to uphold
-                        the values, vision, and mission of the College.
-                    </p>
+                    <div class="commitment-content reveal">
 
-                    <div class="closing">
-                        Training • Equipping • Deploying
+                        <span class="eyebrow">
+                            Student Commitment
+                        </span>
+
+                        <h2>
+                            Excellence,
+                            Discipline &amp;
+                            Character
+                        </h2>
+
+                        <p>
+                            Becoming part of Global College of Missiology
+                            means joining a community committed to learning,
+                            spiritual development and preparation for
+                            effective Christian service.
+                        </p>
+
+                        <p>
+                            Every student is encouraged to approach their
+                            studies with seriousness, integrity, humility
+                            and a willingness to grow.
+                        </p>
+
+
+                        <ul class="commitment-list">
+
+                            <li>
+                                Pursue academic excellence.
+                            </li>
+
+                            <li>
+                                Demonstrate honesty and integrity.
+                            </li>
+
+                            <li>
+                                Treat fellow students and staff with respect.
+                            </li>
+
+                            <li>
+                                Participate responsibly in college activities.
+                            </li>
+
+                            <li>
+                                Represent the values of the college positively.
+                            </li>
+
+                        </ul>
+
                     </div>
 
                 </div>
@@ -2072,32 +2517,22 @@
              POLICY NOTE
         ====================================================== -->
 
-        <section class="policy-note">
+        <section class="section policy-section">
 
             <div class="container">
 
-                <div class="policy-inner reveal">
+                <div class="policy-note reveal">
 
-                    <div class="policy-icon">
-                        i
-                    </div>
+                    <h3>
+                        Important Notice
+                    </h3>
 
-                    <div class="policy-content">
-
-                        <h3>
-                            Institutional Notice
-                        </h3>
-
-                        <p>
-                            Students are expected to remain familiar with
-                            the rules, regulations, instructions, and
-                            academic requirements of the College throughout
-                            their training. GCM may communicate additional
-                            institutional or academic guidelines when
-                            necessary.
-                        </p>
-
-                    </div>
+                    <p>
+                        College policies and procedures may be updated when
+                        necessary. Students are expected to pay attention to
+                        official announcements and follow the latest
+                        instructions issued by the administration.
+                    </p>
 
                 </div>
 
@@ -2110,39 +2545,34 @@
              CTA
         ====================================================== -->
 
-        <section class="cta">
+        <section class="cta-section">
 
-            <div class="container">
+            <div class="cta-content reveal">
 
-                <div class="cta-box reveal">
+                <h2>
+                    Ready to Begin Your Journey?
+                </h2>
 
-                    <h2>
-                        Ready to Begin Your
-                        <span>Kingdom Training?</span>
-                    </h2>
+                <p>
+                    Explore our programmes and take the next step toward
+                    your academic and ministry development.
+                </p>
 
-                    <p>
-                        Explore the programmes and admission information
-                        available at Global College of Missiology.
-                    </p>
+                <div class="cta-buttons">
 
-                    <div class="cta-actions">
+                    <a
+                        href="./admissions.html"
+                        class="btn btn-primary"
+                    >
+                        Apply Now
+                    </a>
 
-                        <a
-                            href="./course.html"
-                            class="btn btn-primary"
-                        >
-                            Explore Courses
-                        </a>
-
-                        <a
-                            href="./admissions.html"
-                            class="btn btn-outline"
-                        >
-                            View Admissions
-                        </a>
-
-                    </div>
+                    <a
+                        href="./course.html"
+                        class="btn btn-secondary"
+                    >
+                        Explore Courses
+                    </a>
 
                 </div>
 
@@ -2155,40 +2585,45 @@
 
     <!-- =========================================================
          FOOTER
-    ========================================================= -->
+    ========================================================== -->
 
     <footer>
 
-        <div class="footer-grid">
+        <div class="footer-container">
+
+            <div class="footer-main">
 
 
-            <div class="footer-brand">
+                <!-- FOOTER BRAND -->
 
-                <img
-                    src="./img/logo/logo.png"
-                    alt="Global College of Missiology Logo"
-                >
+                <div class="footer-brand">
 
-                <h3>
-                    Global College of Missiology
-                </h3>
+                    <img
+                        src="./img/logo/logo.png"
+                        alt="Global College of Missiology Logo"
+                        loading="lazy"
+                    >
 
-                <p>
-                    Building God's people for Global Missions and
-                    Evangelization through the Word of Wisdom,
-                    Grace, and Power.
-                </p>
+                    <h3>
+                        Global College of Missiology
+                    </h3>
 
-            </div>
+                    <p>
+                        Equipping believers with knowledge, character and
+                        practical preparation for effective Christian
+                        ministry and global mission.
+                    </p>
 
-
-            <div>
-
-                <div class="footer-title">
-                    QUICK LINKS
                 </div>
 
-                <div class="footer-links">
+
+                <!-- QUICK LINKS -->
+
+                <div class="footer-column">
+
+                    <h4>
+                        Quick Links
+                    </h4>
 
                     <a href="./home.html">
                         Home
@@ -2206,16 +2641,27 @@
                         Courses
                     </a>
 
+                </div>
+
+
+                <!-- STUDENTS -->
+
+                <div class="footer-column">
+
+                    <h4>
+                        Students
+                    </h4>
+
                     <a href="./admissions.html">
                         Admissions
                     </a>
 
-                    <a href="./gallery.html">
-                        Gallery
+                    <a href="./rules.html">
+                        Rules &amp; Regulations
                     </a>
 
-                    <a href="rules.html">
-                        Rules & Regulations
+                    <a href="./gallery.html">
+                        Gallery
                     </a>
 
                     <a href="./contact.html">
@@ -2224,31 +2670,50 @@
 
                 </div>
 
+
+                <!-- CONTACT -->
+
+                <div class="footer-column">
+
+                    <h4>
+                        Contact
+                    </h4>
+
+                    <a href="mailto:gcm4global@gmail.com">
+                        gcm4global@gmail.com
+                    </a>
+
+                    <a href="tel:+2347076988378">
+                        +234 707 698 8378
+                    </a>
+
+                    <a
+                        href="https://wa.me/2347076988378"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp
+                    </a>
+
+                </div>
+
             </div>
 
 
-            <div>
+            <div class="footer-bottom">
 
-                
+                <p>
+                    &copy;
+                    <span id="year"></span>
+                    Global College of Missiology.
+                    All rights reserved.
+                </p>
 
-                
+                <p>
+                    Rules &amp; Regulations
+                </p>
 
             </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <p>
-                © <span id="currentYear"></span>
-                Global College of Missiology.
-                All Rights Reserved.
-            </p>
-
-            <p>
-                Training • Equipping • Deploying
-            </p>
 
         </div>
 
@@ -2257,12 +2722,13 @@
 
     <!-- =========================================================
          BACK TO TOP
-    ========================================================= -->
+    ========================================================== -->
 
     <button
         id="backTop"
         type="button"
         aria-label="Back to top"
+        title="Back to top"
     >
         ↑
     </button>
@@ -2270,55 +2736,57 @@
 
     <!-- =========================================================
          JAVASCRIPT
-    ========================================================= -->
+    ========================================================== -->
 
     <script>
 
         document.addEventListener("DOMContentLoaded", () => {
 
+
             /* =====================================================
                LOADER
             ====================================================== */
 
-            const loader = document.getElementById("loader");
+            const pageLoader =
+                document.getElementById("pageLoader");
 
-            window.addEventListener("load", () => {
+            window.setTimeout(() => {
 
-                setTimeout(() => {
+                if (pageLoader) {
+                    pageLoader.classList.add("loaded");
+                }
 
-                    loader.classList.add("hidden");
-
-                }, 450);
-
-            });
+            }, 450);
 
 
             /* =====================================================
                HEADER SCROLL
             ====================================================== */
 
-            const header =
+            const siteHeader =
                 document.getElementById("siteHeader");
 
-            const handleHeaderScroll = () => {
+            const updateHeader = () => {
 
-                if (window.scrollY > 30) {
+                if (!siteHeader) return;
 
-                    header.classList.add("scrolled");
+                if (window.scrollY > 25) {
+
+                    siteHeader.classList.add("scrolled");
 
                 } else {
 
-                    header.classList.remove("scrolled");
+                    siteHeader.classList.remove("scrolled");
 
                 }
 
             };
 
-            handleHeaderScroll();
+            updateHeader();
 
             window.addEventListener(
                 "scroll",
-                handleHeaderScroll,
+                updateHeader,
                 { passive: true }
             );
 
@@ -2333,79 +2801,144 @@
             const mainNav =
                 document.getElementById("mainNav");
 
-            const navLinks =
-                mainNav.querySelectorAll("a");
-
-            const closeMenu = () => {
-
-                mainNav.classList.remove("open");
-
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-                document.body.classList.remove("menu-open");
-
-            };
+            const menuOverlay =
+                document.getElementById("menuOverlay");
 
 
-            menuToggle.addEventListener("click", () => {
+            if (
+                menuToggle &&
+                mainNav &&
+                menuOverlay
+            ) {
 
-                const isOpen =
-                    mainNav.classList.toggle("open");
-
-                menuToggle.classList.toggle(
-                    "active",
-                    isOpen
-                );
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    isOpen
-                        ? "Close navigation menu"
-                        : "Open navigation menu"
-                );
-
-                document.body.classList.toggle(
-                    "menu-open",
-                    isOpen
-                );
-
-            });
+                const navLinks =
+                    mainNav.querySelectorAll("a");
 
 
-            navLinks.forEach(link => {
+                const setMenuState = (open) => {
 
-                link.addEventListener(
+                    mainNav.classList.toggle(
+                        "open",
+                        open
+                    );
+
+                    menuOverlay.classList.toggle(
+                        "show",
+                        open
+                    );
+
+                    menuToggle.classList.toggle(
+                        "active",
+                        open
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        String(open)
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        open
+                            ? "Close navigation menu"
+                            : "Open navigation menu"
+                    );
+
+                    menuOverlay.setAttribute(
+                        "aria-hidden",
+                        String(!open)
+                    );
+
+                    document.body.classList.toggle(
+                        "menu-open",
+                        open
+                    );
+
+                };
+
+
+                /* TOGGLE BUTTON */
+
+                menuToggle.addEventListener(
                     "click",
-                    closeMenu
+                    () => {
+
+                        const isOpen =
+                            mainNav.classList.contains("open");
+
+                        setMenuState(!isOpen);
+
+                    }
                 );
 
-            });
+
+                /* OVERLAY CLICK */
+
+                menuOverlay.addEventListener(
+                    "click",
+                    () => {
+
+                        setMenuState(false);
+
+                    }
+                );
 
 
-            window.addEventListener("resize", () => {
+                /* NAV LINK CLICK */
 
-                if (window.innerWidth > 1100) {
+                navLinks.forEach((link) => {
 
-                    closeMenu();
+                    link.addEventListener(
+                        "click",
+                        () => {
 
-                }
+                            setMenuState(false);
 
-            });
+                        }
+                    );
+
+                });
+
+
+                /* ESCAPE KEY */
+
+                document.addEventListener(
+                    "keydown",
+                    (event) => {
+
+                        if (
+                            event.key === "Escape" &&
+                            mainNav.classList.contains("open")
+                        ) {
+
+                            setMenuState(false);
+
+                            menuToggle.focus();
+
+                        }
+
+                    }
+                );
+
+
+                /* RESIZE */
+
+                window.addEventListener(
+                    "resize",
+                    () => {
+
+                        if (
+                            window.innerWidth > 1100
+                        ) {
+
+                            setMenuState(false);
+
+                        }
+
+                    }
+                );
+
+            }
 
 
             /* =====================================================
@@ -2415,49 +2948,63 @@
             const revealElements =
                 document.querySelectorAll(".reveal");
 
-            if ("IntersectionObserver" in window) {
+
+            if (
+                "IntersectionObserver" in window
+            ) {
 
                 const revealObserver =
                     new IntersectionObserver(
-                        entries => {
+                        (entries, observer) => {
 
-                            entries.forEach(entry => {
+                            entries.forEach(
+                                (entry) => {
 
-                                if (entry.isIntersecting) {
+                                    if (
+                                        entry.isIntersecting
+                                    ) {
 
-                                    entry.target.classList.add(
-                                        "visible"
-                                    );
+                                        entry.target.classList.add(
+                                            "visible"
+                                        );
 
-                                    revealObserver.unobserve(
-                                        entry.target
-                                    );
+                                        observer.unobserve(
+                                            entry.target
+                                        );
+
+                                    }
 
                                 }
-
-                            });
+                            );
 
                         },
                         {
-                            threshold: 0.12,
-                            rootMargin: "0px 0px -30px 0px"
+                            threshold: 0.12
                         }
                     );
 
 
-                revealElements.forEach(element => {
+                revealElements.forEach(
+                    (element) => {
 
-                    revealObserver.observe(element);
+                        revealObserver.observe(
+                            element
+                        );
 
-                });
+                    }
+                );
 
             } else {
 
-                revealElements.forEach(element => {
+                revealElements.forEach(
+                    (element) => {
 
-                    element.classList.add("visible");
+                        element.classList.add(
+                            "visible"
+                        );
 
-                });
+                    }
+                );
 
             }
 
@@ -2469,66 +3016,96 @@
             const backTop =
                 document.getElementById("backTop");
 
-            const handleBackTop = () => {
 
-                if (window.scrollY > 500) {
+            if (backTop) {
 
-                    backTop.classList.add("show");
+                const updateBackTop =
+                    () => {
 
-                } else {
+                        if (
+                            window.scrollY > 500
+                        ) {
 
-                    backTop.classList.remove("show");
+                            backTop.classList.add(
+                                "show"
+                            );
 
-                }
+                        } else {
 
-            };
+                            backTop.classList.remove(
+                                "show"
+                            );
 
-            handleBackTop();
+                        }
 
-            window.addEventListener(
-                "scroll",
-                handleBackTop,
-                { passive: true }
-            );
+                    };
 
 
-            backTop.addEventListener("click", () => {
+                updateBackTop();
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
 
-            });
+                window.addEventListener(
+                    "scroll",
+                    updateBackTop,
+                    { passive: true }
+                );
+
+
+                backTop.addEventListener(
+                    "click",
+                    () => {
+
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+
+                    }
+                );
+
+            }
 
 
             /* =====================================================
-               CURRENT YEAR
+               YEAR
             ====================================================== */
 
             const year =
-                document.getElementById("currentYear");
+                document.getElementById("year");
 
-            year.textContent =
-                new Date().getFullYear();
+            if (year) {
+
+                year.textContent =
+                    new Date().getFullYear();
+
+            }
 
 
             /* =====================================================
-               IMAGE FALLBACK
+               IMAGE ERROR HANDLING
             ====================================================== */
 
-            document.querySelectorAll("img").forEach(img => {
+            const images =
+                document.querySelectorAll("img");
 
-                img.addEventListener("error", () => {
 
-                    console.warn(
-                        "GCM image could not be loaded:",
-                        img.src
+            images.forEach(
+                (image) => {
+
+                    image.addEventListener(
+                        "error",
+                        () => {
+
+                            console.warn(
+                                "Image could not be loaded:",
+                                image.src
+                            );
+
+                        }
                     );
 
-                });
-
-            });
+                }
+            );
 
         });
 
