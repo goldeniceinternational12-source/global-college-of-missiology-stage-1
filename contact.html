@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        content="width=device-width, initial-scale=1.0"
     >
 
     <meta
         name="description"
-        content="Contact Global College of Missiology. Get in touch with GCM for enquiries about courses, admissions, ministry training and programmes."
+        content="Contact Global College of Missiology for admission enquiries, academic information, and general enquiries."
     >
 
     <meta
-        name="keywords"
-        content="Global College of Missiology, GCM, contact GCM, Bible college Nigeria, missiology, ministry training, admissions"
+        name="theme-color"
+        content="#071a33"
     >
 
-    <meta name="theme-color" content="#07111f">
+    <title>
+        Contact Us | Global College of Missiology
+    </title>
 
-    <title>Contact Us | Global College of Missiology</title>
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
@@ -37,11 +40,17 @@
         rel="stylesheet"
     >
 
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
     <style>
 
-        /* =====================================================
+        /* ==============================
            RESET
-        ====================================================== */
+        ============================== */
 
         * {
             margin: 0;
@@ -55,8 +64,8 @@
 
         body {
             font-family: "Cormorant Garamond", serif;
-            background: #07111f;
-            color: #f4efe3;
+            background: #061426;
+            color: #ffffff;
             line-height: 1.7;
             overflow-x: hidden;
         }
@@ -65,135 +74,100 @@
             overflow: hidden;
         }
 
-        img {
-            display: block;
-            max-width: 100%;
-        }
-
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
         button,
         input,
-        textarea,
-        select {
+        textarea {
             font: inherit;
         }
 
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
+        button {
+            cursor: pointer;
         }
 
-        ::selection {
-            background: #c9a44c;
-            color: #07111f;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
-        /* =====================================================
+
+        /* ==============================
            VARIABLES
-        ====================================================== */
+        ============================== */
 
         :root {
-            --navy: #07111f;
-            --navy-deep: #030811;
-            --navy-light: #0c1b2e;
-            --gold: #c9a44c;
-            --gold-light: #e0c777;
-            --gold-dark: #9f7d2f;
-            --ivory: #f4efe3;
-            --muted: #b7b3aa;
-            --border: rgba(201, 164, 76, 0.24);
-            --glass: rgba(255, 255, 255, 0.045);
-            --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+            --navy: #061426;
+            --navy-light: #0a1e37;
+            --navy-card: rgba(12, 34, 59, 0.82);
+            --gold: #d4af37;
+            --gold-light: #f2d675;
+            --white: #ffffff;
+            --muted: #c7d0dc;
+            --border: rgba(212, 175, 55, 0.28);
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
         }
 
-        /* =====================================================
-           LOADER
-        ====================================================== */
 
-        #loader {
+        /* ==============================
+           LOADER
+        ============================== */
+
+        .loader {
             position: fixed;
             inset: 0;
             z-index: 99999;
+            background: var(--navy);
             display: flex;
-            align-items: center;
             justify-content: center;
-            background: var(--navy-deep);
-            transition:
-                opacity 0.7s ease,
-                visibility 0.7s ease;
+            align-items: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
         }
 
-        #loader.hidden {
+        .loader.hide {
             opacity: 0;
             visibility: hidden;
         }
 
-        .loader-inner {
+        .loader-content {
             text-align: center;
-            padding: 20px;
         }
 
         .loader-logo {
-            width: 90px;
-            height: 90px;
+            width: 95px;
+            height: 95px;
             object-fit: contain;
-            margin: 0 auto 20px;
-            animation: loaderPulse 1.8s ease-in-out infinite;
+            margin: 0 auto 18px;
+            animation: loaderPulse 1.8s infinite;
         }
 
-        .loader-line {
-            width: 90px;
-            height: 2px;
-            margin: 0 auto 14px;
-            background: var(--gold);
-            animation: loaderLine 1.5s ease-in-out infinite;
-        }
-
-        .loader-text {
-            color: var(--gold-light);
+        .loader-content p {
+            color: var(--gold);
             font-family: "Marcellus", serif;
-            font-size: 0.72rem;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
         }
 
         @keyframes loaderPulse {
             0%,
             100% {
-                opacity: 0.55;
-                transform: scale(0.96);
-            }
-
-            50% {
-                opacity: 1;
                 transform: scale(1);
-            }
-        }
-
-        @keyframes loaderLine {
-            0% {
-                transform: scaleX(0.2);
-                opacity: 0.4;
-            }
-
-            50% {
-                transform: scaleX(1);
                 opacity: 1;
             }
 
-            100% {
-                transform: scaleX(0.2);
-                opacity: 0.4;
+            50% {
+                transform: scale(1.08);
+                opacity: 0.7;
             }
         }
 
-        /* =====================================================
+
+        /* ==============================
            HEADER
-        ====================================================== */
+        ============================== */
 
         header {
             position: fixed;
@@ -201,156 +175,132 @@
             left: 0;
             width: 100%;
             z-index: 5000;
-            padding: 18px 20px;
-            transition: padding 0.35s ease;
+            background: rgba(4, 17, 32, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.16);
         }
 
-        header.scrolled {
-            padding: 10px 20px;
-        }
-
-        .nav-container {
-            width: min(1400px, 100%);
-            min-height: 76px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .navbar {
+            width: min(1200px, 92%);
+            height: 88px;
+            margin: auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 30px;
-
-            background: rgba(5, 12, 22, 0.72);
-
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 18px;
-
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
         }
+
+        /* Logo */
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 13px;
+            gap: 12px;
             flex-shrink: 0;
-            min-width: 0;
         }
 
         .brand img {
-            width: 56px;
-            height: 56px;
+            width: 52px;
+            height: 52px;
             object-fit: contain;
-            flex-shrink: 0;
         }
 
         .brand-text {
-            line-height: 1.1;
-            min-width: 0;
+            display: flex;
+            flex-direction: column;
         }
 
-        .brand-name {
-            color: var(--gold-light);
+        .brand-title {
             font-family: "Marcellus", serif;
-            font-size: 0.98rem;
-            white-space: nowrap;
+            font-size: 18px;
+            color: var(--gold);
+            letter-spacing: 0.5px;
         }
 
         .brand-subtitle {
-            margin-top: 4px;
-            color: rgba(244, 239, 227, 0.65);
-            font-size: 0.68rem;
-            letter-spacing: 0.13em;
+            font-size: 12px;
+            color: #dce3eb;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+        }
+
+
+        /* Navigation */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #f2f4f7;
+            font-size: 15px;
+            transition: color 0.3s ease;
             white-space: nowrap;
         }
 
-        /* =====================================================
-           NAVIGATION
-        ====================================================== */
-
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 4px;
-        }
-
-        nav a {
-            position: relative;
-            padding: 10px 11px;
-            color: rgba(244, 239, 227, 0.82);
-            font-family: "Marcellus", serif;
-            font-size: 0.70rem;
-            transition: color 0.25s ease;
-        }
-
-        nav a::after {
+        .nav-links a::after {
             content: "";
             position: absolute;
-            left: 11px;
-            right: 11px;
-            bottom: 4px;
-            height: 1px;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
             background: var(--gold);
-            transform: scaleX(0);
-            transition: transform 0.25s ease;
+            transition: width 0.3s ease;
         }
 
-        nav a:hover,
-        nav a.active {
-            color: var(--gold-light);
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
         }
 
-        nav a:hover::after,
-        nav a.active::after {
-            transform: scaleX(1);
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
         }
 
-        .nav-cta {
-            margin-left: 7px;
-            padding: 12px 17px !important;
+        .apply-btn {
+            padding: 10px 18px;
+            border: 1px solid var(--gold);
+            color: var(--gold) !important;
+            border-radius: 4px;
+            transition: 0.3s ease;
+        }
+
+        .apply-btn::after {
+            display: none;
+        }
+
+        .apply-btn:hover {
             background: var(--gold);
             color: var(--navy) !important;
-            border-radius: 8px;
         }
 
-        .nav-cta::after {
-            display: none;
-        }
 
-        .nav-cta:hover {
-            background: var(--gold-light);
-        }
-
-        /* =====================================================
-           MOBILE MENU BUTTON
-        ====================================================== */
+        /* Mobile Menu Button */
 
         .menu-toggle {
+            width: 45px;
+            height: 45px;
             display: none;
-            width: 46px;
-            height: 46px;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             flex-direction: column;
             gap: 5px;
-
-            border: 1px solid var(--border);
-            border-radius: 10px;
-
-            background: rgba(255, 255, 255, 0.04);
-
-            cursor: pointer;
-            flex-shrink: 0;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: transparent;
+            border-radius: 5px;
+            color: var(--gold);
         }
 
         .menu-toggle span {
-            width: 20px;
+            width: 22px;
             height: 2px;
-            background: var(--gold-light);
-            border-radius: 10px;
+            background: var(--gold);
             transition: 0.3s ease;
         }
 
@@ -366,426 +316,352 @@
             transform: translateY(-7px) rotate(-45deg);
         }
 
-        /* =====================================================
-           MOBILE MENU OVERLAY
-        ====================================================== */
+
+        /* Mobile Overlay */
 
         .menu-overlay {
             position: fixed;
             inset: 0;
-            z-index: 4500;
-            background: rgba(0, 0, 0, 0.62);
+            background: rgba(0, 0, 0, 0.68);
             opacity: 0;
             visibility: hidden;
-            pointer-events: none;
-            transition:
-                opacity 0.3s ease,
-                visibility 0.3s ease;
+            transition: 0.3s ease;
+            z-index: 4000;
         }
 
-        .menu-overlay.show {
+        .menu-overlay.active {
             opacity: 1;
             visibility: visible;
-            pointer-events: auto;
         }
 
-        /* =====================================================
+
+        /* ==============================
            HERO
-        ====================================================== */
+        ============================== */
 
         .hero {
-            position: relative;
             min-height: 690px;
             min-height: 90svh;
-
+            padding: 150px 20px 100px;
+            position: relative;
             display: flex;
             align-items: center;
-
-            overflow: hidden;
-
+            justify-content: center;
+            text-align: center;
             background:
                 linear-gradient(
-                    90deg,
-                    rgba(4, 10, 18, 0.96),
-                    rgba(4, 10, 18, 0.78)
+                    rgba(4, 17, 32, 0.76),
+                    rgba(4, 17, 32, 0.86)
                 ),
-                url("assets/images/campus.jpg")
-                center / cover no-repeat;
+                url("assets/images/campus.jpg") center/cover no-repeat;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(212, 175, 55, 0.08),
+                    transparent 55%
+                );
+            pointer-events: none;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-
-            width: min(1180px, 100%);
-            margin: 0 auto;
-
-            padding: 155px 30px 90px;
+            max-width: 850px;
         }
 
-        .hero-inner {
-            max-width: 800px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-            font-size: 0.74rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-
-            margin-bottom: 22px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 38px;
-            height: 1px;
+        .hero-line {
+            width: 70px;
+            height: 2px;
             background: var(--gold);
+            margin: 0 auto 25px;
         }
 
         .hero h1 {
             font-family: "Marcellus", serif;
-            font-weight: 400;
-
-            font-size: clamp(2.7rem, 6vw, 5.4rem);
-            line-height: 1;
-
-            color: var(--ivory);
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.1;
+            color: #ffffff;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
-            color: var(--gold-light);
+            color: var(--gold);
         }
 
         .hero p {
             max-width: 700px;
-            margin-top: 26px;
-
-            color: rgba(244, 239, 227, 0.76);
-
-            font-size: clamp(1.05rem, 2vw, 1.25rem);
-            line-height: 1.8;
+            margin: auto;
+            color: #d7e0ea;
+            font-size: clamp(17px, 2vw, 21px);
         }
 
-        /* =====================================================
-           MAIN CONTACT
-        ====================================================== */
 
-        .contact-section {
-            padding: 105px 24px 110px;
-            background: var(--navy);
-        }
+        /* ==============================
+           SECTION
+        ============================== */
 
-        .container {
-            width: min(1180px, 100%);
-            margin: 0 auto;
+        .section {
+            width: min(1150px, 92%);
+            margin: auto;
+            padding: 100px 0;
         }
 
         .section-heading {
-            max-width: 800px;
-            margin-bottom: 50px;
+            text-align: center;
+            margin-bottom: 55px;
         }
 
-        .section-label {
-            color: var(--gold-light);
+        .section-heading .small-title {
+            display: inline-block;
+            color: var(--gold);
             font-family: "Marcellus", serif;
-            font-size: 0.73rem;
-            letter-spacing: 0.2em;
             text-transform: uppercase;
-            margin-bottom: 13px;
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-bottom: 12px;
         }
 
         .section-heading h2 {
-            color: var(--ivory);
             font-family: "Marcellus", serif;
-            font-weight: 400;
-
-            font-size: clamp(2.1rem, 4vw, 3.6rem);
-            line-height: 1.12;
-        }
-
-        .section-heading h2 span {
-            color: var(--gold-light);
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 16px;
         }
 
         .section-heading p {
-            margin-top: 18px;
+            max-width: 680px;
+            margin: auto;
             color: var(--muted);
-            font-size: 1.08rem;
-            line-height: 1.8;
+            font-size: 17px;
         }
 
-        /* =====================================================
-           CONTACT GRID
-        ====================================================== */
+
+        /* ==============================
+           CONTACT CARDS
+        ============================== */
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 0.85fr 1.15fr;
-            gap: 30px;
-            align-items: stretch;
-        }
-
-        /* =====================================================
-           CONTACT INFO
-        ====================================================== */
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-bottom: 70px;
         }
 
         .contact-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 18px;
-
-            padding: 25px;
-
-            background: rgba(255, 255, 255, 0.035);
-
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 15px;
-
+            background: var(--navy-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
             transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                background 0.3s ease;
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                background 0.35s ease;
         }
 
         .contact-card:hover {
-            transform: translateY(-4px);
-
-            border-color: rgba(201, 164, 76, 0.35);
-
-            background: rgba(201, 164, 76, 0.045);
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.65);
+            background: rgba(17, 44, 72, 0.9);
         }
 
         .contact-icon {
-            width: 52px;
-            height: 52px;
-
-            flex-shrink: 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border: 1px solid rgba(201, 164, 76, 0.42);
+            width: 68px;
+            height: 68px;
             border-radius: 50%;
-
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-            font-size: 0.9rem;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--gold);
+            font-size: 25px;
         }
 
         .contact-card h3 {
-            color: var(--ivory);
-
             font-family: "Marcellus", serif;
-            font-weight: 400;
-
-            font-size: 1.15rem;
-
-            margin-bottom: 4px;
+            font-size: 21px;
+            margin-bottom: 10px;
         }
 
         .contact-card p {
             color: var(--muted);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .contact-card a {
-            color: var(--gold-light);
+            font-size: 16px;
+            margin-bottom: 15px;
             word-break: break-word;
         }
 
-        .contact-card a:hover {
-            text-decoration: underline;
+        .contact-card a {
+            color: var(--gold);
+            transition: color 0.3s ease;
         }
 
-        /* =====================================================
-           QUICK CONTACT BUTTONS
-        ====================================================== */
+        .contact-card a:hover {
+            color: var(--gold-light);
+        }
 
-        .quick-contact {
-            margin-top: 5px;
 
+        /* ==============================
+           CONTACT AREA
+        ============================== */
+
+        .contact-wrapper {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 35px;
+            align-items: stretch;
+        }
+
+        .contact-info-box,
+        .contact-form-box {
+            background: var(--navy-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info-box h3,
+        .contact-form-box h3 {
+            font-family: "Marcellus", serif;
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .contact-info-box > p {
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 22px;
+        }
+
+        .info-item-icon {
+            width: 43px;
+            height: 43px;
+            flex: 0 0 43px;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            color: var(--gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 7px;
+        }
+
+        .info-item h4 {
+            font-family: "Marcellus", serif;
+            color: var(--gold);
+            font-size: 17px;
+            margin-bottom: 2px;
+        }
+
+        .info-item p,
+        .info-item a {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .info-item a:hover {
+            color: var(--gold);
+        }
+
+
+        /* ==============================
+           QUICK BUTTONS
+        ============================== */
+
+        .quick-buttons {
+            display: flex;
             gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
 
         .quick-btn {
-            min-height: 52px;
-
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-
-            padding: 12px 15px;
-
-            border-radius: 8px;
-
-            font-family: "Marcellus", serif;
-            font-size: 0.72rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-
-            border: 1px solid rgba(201, 164, 76, 0.38);
-
-            color: var(--gold-light);
-
-            background: rgba(255, 255, 255, 0.025);
-
-            transition: 0.25s ease;
+            gap: 9px;
+            padding: 11px 17px;
+            border-radius: 5px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            transition: 0.3s ease;
         }
 
         .quick-btn:hover {
             background: var(--gold);
             color: var(--navy);
-            transform: translateY(-2px);
         }
 
-        /* =====================================================
+
+        /* ==============================
            FORM
-        ====================================================== */
-
-        .contact-form-wrapper {
-            padding: clamp(25px, 5vw, 45px);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255, 255, 255, 0.05),
-                    rgba(255, 255, 255, 0.02)
-                );
-
-            border: 1px solid rgba(201, 164, 76, 0.22);
-            border-radius: 18px;
-
-            box-shadow: var(--shadow);
-        }
-
-        .form-title {
-            color: var(--ivory);
-
-            font-family: "Marcellus", serif;
-            font-weight: 400;
-
-            font-size: 1.8rem;
-
-            margin-bottom: 8px;
-        }
-
-        .form-description {
-            color: var(--muted);
-            font-size: 1rem;
-            margin-bottom: 28px;
-        }
+        ============================== */
 
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        label {
+        .form-group label {
             display: block;
-
+            color: #e9edf2;
+            font-size: 15px;
             margin-bottom: 7px;
-
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-            font-size: 0.72rem;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
         }
 
-        input,
-        textarea,
-        select {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-
-            border: 1px solid rgba(255, 255, 255, 0.11);
-            border-radius: 8px;
-
-            background: rgba(0, 0, 0, 0.18);
-            color: var(--ivory);
-
+            padding: 14px 15px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 6px;
+            background: rgba(3, 15, 29, 0.65);
+            color: #ffffff;
             outline: none;
-
-            padding: 13px 14px;
-
-            font-family: "Cormorant Garamond", serif;
-            font-size: 1rem;
-
             transition:
-                border-color 0.25s ease,
-                background 0.25s ease;
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
-        input::placeholder,
-        textarea::placeholder {
-            color: rgba(183, 179, 170, 0.55);
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #8795a5;
         }
 
-        input:focus,
-        textarea:focus,
-        select:focus {
-            border-color: rgba(201, 164, 76, 0.65);
-            background: rgba(201, 164, 76, 0.035);
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.08);
         }
 
-        select {
-            appearance: none;
-            cursor: pointer;
-        }
-
-        select option {
-            background: var(--navy);
-            color: var(--ivory);
-        }
-
-        textarea {
+        .form-group textarea {
             min-height: 150px;
             resize: vertical;
         }
 
         .submit-btn {
             width: 100%;
-            min-height: 54px;
-
-            border: none;
-            border-radius: 8px;
-
+            padding: 14px 20px;
+            border: 1px solid var(--gold);
+            border-radius: 6px;
             background: var(--gold);
             color: var(--navy);
-
             font-family: "Marcellus", serif;
-            font-size: 0.76rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-
-            cursor: pointer;
-
-            transition:
-                transform 0.25s ease,
-                background 0.25s ease;
+            font-weight: 600;
+            font-size: 16px;
+            transition: 0.3s ease;
         }
 
         .submit-btn:hover {
@@ -793,96 +669,71 @@
             transform: translateY(-2px);
         }
 
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: wait;
-            transform: none;
+        .submit-btn i {
+            margin-right: 7px;
         }
 
         .form-note {
-            margin-top: 13px;
-
+            margin-top: 12px;
             text-align: center;
-
-            color: rgba(183, 179, 170, 0.6);
-
-            font-size: 0.87rem;
+            color: #8e9baa;
+            font-size: 13px;
         }
 
-        /* =====================================================
-           WHATSAPP SECTION
-        ====================================================== */
+
+        /* ==============================
+           WHATSAPP CTA
+        ============================== */
 
         .whatsapp-section {
-            padding: 90px 24px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(201, 164, 76, 0.10),
-                    transparent 65%
-                );
+            padding: 0 0 100px;
         }
 
         .whatsapp-box {
-            width: min(1000px, 100%);
-            margin: 0 auto;
-
-            padding: clamp(30px, 6vw, 55px);
-
+            width: min(1000px, 92%);
+            margin: auto;
+            padding: 55px 30px;
             text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(12, 36, 62, 0.9),
+                    rgba(7, 24, 42, 0.95)
+                );
+            box-shadow: var(--shadow);
+        }
 
-            border: 1px solid rgba(201, 164, 76, 0.25);
-            border-radius: 18px;
-
-            background: rgba(255, 255, 255, 0.025);
+        .whatsapp-box i {
+            color: var(--gold);
+            font-size: 44px;
+            margin-bottom: 18px;
         }
 
         .whatsapp-box h2 {
-            color: var(--ivory);
-
             font-family: "Marcellus", serif;
-            font-weight: 400;
-
-            font-size: clamp(2rem, 4vw, 3.3rem);
-        }
-
-        .whatsapp-box h2 span {
-            color: var(--gold-light);
+            font-size: clamp(28px, 5vw, 42px);
+            margin-bottom: 12px;
         }
 
         .whatsapp-box p {
-            max-width: 650px;
-
-            margin: 17px auto 27px;
-
             color: var(--muted);
-
-            font-size: 1.08rem;
+            max-width: 650px;
+            margin: 0 auto 25px;
+            font-size: 17px;
         }
 
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-
-            min-height: 52px;
-
-            padding: 13px 28px;
-
-            border-radius: 8px;
-
+            gap: 10px;
             background: var(--gold);
             color: var(--navy);
-
+            padding: 14px 25px;
+            border-radius: 5px;
             font-family: "Marcellus", serif;
-            font-size: 0.76rem;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-
-            transition:
-                transform 0.25s ease,
-                background 0.25s ease;
+            transition: 0.3s ease;
         }
 
         .whatsapp-btn:hover {
@@ -890,191 +741,149 @@
             transform: translateY(-3px);
         }
 
-        /* =====================================================
+
+        /* ==============================
            FOOTER
-        ====================================================== */
+        ============================== */
 
         footer {
-            padding: 70px 24px 25px;
-
-            background: #030811;
-
-            border-top: 1px solid rgba(201, 164, 76, 0.14);
+            background: #03101f;
+            border-top: 1px solid rgba(212, 175, 55, 0.18);
+            padding-top: 65px;
         }
 
-        .footer-grid {
-            width: min(1180px, 100%);
-            margin: 0 auto;
-
+        .footer-container {
+            width: min(1150px, 92%);
+            margin: auto;
             display: grid;
-            grid-template-columns: 1.4fr 0.8fr 0.8fr;
-
-            gap: 55px;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 45px;
+            padding-bottom: 50px;
         }
 
-        .footer-brand img {
-            width: 70px;
-            height: 70px;
-
-            object-fit: contain;
-
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             margin-bottom: 18px;
         }
 
-        .footer-brand h3 {
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-            font-weight: 400;
-
-            font-size: 1.15rem;
+        .footer-logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
         }
 
-        .footer-brand p {
+        .footer-logo h3 {
+            font-family: "Marcellus", serif;
+            color: var(--gold);
+            font-size: 20px;
+        }
+
+        .footer-about {
+            color: #9facba;
             max-width: 430px;
-
-            margin-top: 14px;
-
-            color: var(--muted);
-
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 15px;
         }
 
-        .footer-title {
-            color: var(--ivory);
-
+        .footer-column h4 {
             font-family: "Marcellus", serif;
-
-            font-size: 0.9rem;
-
+            color: var(--gold);
+            font-size: 18px;
             margin-bottom: 20px;
         }
 
         .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: var(--muted);
-            font-size: 0.98rem;
-
-            transition: color 0.25s ease;
+            color: #aeb9c5;
+            font-size: 15px;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--gold-light);
+            color: var(--gold);
         }
 
         .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
             display: flex;
-            flex-direction: column;
             gap: 10px;
+            color: #aeb9c5;
+            font-size: 15px;
+            margin-bottom: 12px;
         }
 
-        .footer-contact p {
-            color: var(--muted);
-            font-size: 0.98rem;
-        }
-
-        .footer-contact a {
-            color: var(--gold-light);
-            word-break: break-word;
+        .footer-contact i {
+            color: var(--gold);
+            margin-top: 5px;
         }
 
         .footer-bottom {
-            width: min(1180px, 100%);
-            margin: 50px auto 0;
-
-            padding-top: 22px;
-
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 22px 20px;
+            text-align: center;
+            color: #778594;
+            font-size: 14px;
         }
 
-        .footer-bottom p {
-            color: rgba(183, 179, 170, 0.65);
-            font-size: 0.88rem;
+        .footer-bottom span {
+            color: var(--gold);
         }
 
-        /* =====================================================
+
+        /* ==============================
            BACK TO TOP
-        ====================================================== */
+        ============================== */
 
-        #backTop {
+        .back-to-top {
             position: fixed;
-
             right: 22px;
             bottom: 22px;
-
-            width: 48px;
-            height: 48px;
-
-            z-index: 4000;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border: 1px solid rgba(201, 164, 76, 0.45);
+            width: 45px;
+            height: 45px;
+            border: 1px solid var(--gold);
             border-radius: 50%;
-
-            background: rgba(7, 17, 31, 0.88);
-
-            color: var(--gold-light);
-
-            cursor: pointer;
-
+            background: rgba(4, 17, 32, 0.9);
+            color: var(--gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             opacity: 0;
             visibility: hidden;
-
-            transform: translateY(12px);
-
-            transition:
-                opacity 0.3s ease,
-                visibility 0.3s ease,
-                transform 0.3s ease;
+            transform: translateY(15px);
+            transition: 0.3s ease;
+            z-index: 3500;
         }
 
-        #backTop.show {
+        .back-to-top.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
 
-        #backTop:hover {
+        .back-to-top:hover {
             background: var(--gold);
             color: var(--navy);
         }
 
-        /* =====================================================
-           FOCUS
-        ====================================================== */
 
-        a:focus-visible,
-        button:focus-visible,
-        input:focus-visible,
-        textarea:focus-visible,
-        select:focus-visible {
-            outline: 2px solid var(--gold-light);
-            outline-offset: 3px;
-        }
-
-        /* =====================================================
-           REVEAL
-        ====================================================== */
+        /* ==============================
+           REVEAL ANIMATION
+        ============================== */
 
         .reveal {
             opacity: 0;
-            transform: translateY(25px);
-
+            transform: translateY(35px);
             transition:
                 opacity 0.8s ease,
                 transform 0.8s ease;
@@ -1085,89 +894,83 @@
             transform: translateY(0);
         }
 
-        /* =====================================================
-           LARGE TABLET / SMALL LAPTOP
-        ====================================================== */
 
-        @media (max-width: 1100px) {
+        /* ==============================
+           RESPONSIVE
+        ============================== */
 
-            header {
-                padding: 14px;
+        @media (max-width: 1050px) {
+
+            .nav-links {
+                gap: 15px;
             }
 
-            header.scrolled {
-                padding: 9px 14px;
+            .nav-links a {
+                font-size: 14px;
             }
 
-            .nav-container {
-                min-height: 70px;
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 850px) {
+
+            .navbar {
+                height: 80px;
             }
 
             .menu-toggle {
                 display: flex;
             }
 
-            nav {
-                display: flex;
-
+            .nav-links {
                 position: fixed;
-
-                top: 96px;
-                left: 14px;
-                right: 14px;
-
-                padding: 18px;
-
+                top: 80px;
+                right: -100%;
+                width: min(340px, 85%);
+                height: calc(100vh - 80px);
+                height: calc(100svh - 80px);
+                background: #071a2f;
+                border-left: 1px solid rgba(212, 175, 55, 0.2);
+                display: flex;
                 flex-direction: column;
-                align-items: stretch;
-
-                background: rgba(4, 10, 18, 0.98);
-
-                border: 1px solid rgba(201, 164, 76, 0.20);
-                border-radius: 16px;
-
-                box-shadow: var(--shadow);
-
-                max-height: calc(100svh - 115px);
-
+                align-items: flex-start;
+                gap: 0;
+                padding: 30px 25px;
                 overflow-y: auto;
-
-                opacity: 0;
-                visibility: hidden;
-                pointer-events: none;
-
-                transform: translateY(-10px);
-
-                transition:
-                    opacity 0.3s ease,
-                    visibility 0.3s ease,
-                    transform 0.3s ease;
+                transition: right 0.35s ease;
+                z-index: 5001;
             }
 
-            nav.open {
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-                transform: translateY(0);
+            .nav-links.active {
+                right: 0;
             }
 
-            nav a {
-                padding: 14px 12px;
-
-                border-bottom:
-                    1px solid rgba(255, 255, 255, 0.05);
+            .nav-links li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             }
 
-            nav a::after {
+            .nav-links a {
+                display: block;
+                padding: 15px 5px;
+                width: 100%;
+                font-size: 17px;
+            }
+
+            .nav-links a::after {
                 display: none;
             }
 
-            nav a:last-child {
-                border-bottom: none;
-            }
-
-            .nav-cta {
-                margin: 8px 0 0 !important;
+            .apply-btn {
+                margin-top: 10px;
                 text-align: center;
             }
 
@@ -1175,71 +978,18 @@
                 grid-template-columns: 1fr;
             }
 
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
         }
 
-        /* =====================================================
-           TABLET
-        ====================================================== */
 
-        @media (max-width: 800px) {
+        @media (max-width: 650px) {
 
-            .hero {
-                min-height: 650px;
+            .brand-title {
+                font-size: 15px;
             }
 
-            .hero-content {
-                padding-top: 145px;
-            }
-
-            .contact-section {
-                padding-top: 85px;
-                padding-bottom: 90px;
-            }
-
-            .contact-grid {
-                gap: 24px;
-            }
-
-            .contact-form-wrapper {
-                padding: 32px 28px;
-            }
-
-            .footer-grid {
-                gap: 40px;
-            }
-        }
-
-        /* =====================================================
-           MOBILE
-        ====================================================== */
-
-        @media (max-width: 600px) {
-
-            header {
-                padding: 10px;
-            }
-
-            header.scrolled {
-                padding: 7px 10px;
-            }
-
-            .nav-container {
-                min-height: 64px;
-                padding: 0 12px;
-                border-radius: 14px;
-                gap: 10px;
-            }
-
-            .brand {
-                gap: 9px;
-                min-width: 0;
+            .brand-subtitle {
+                font-size: 9px;
+                letter-spacing: 1px;
             }
 
             .brand img {
@@ -1247,331 +997,148 @@
                 height: 45px;
             }
 
-            .brand-name {
-                font-size: 0.79rem;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 210px;
-            }
-
-            .brand-subtitle {
-                font-size: 0.55rem;
-                letter-spacing: 0.08em;
-            }
-
-            .menu-toggle {
-                width: 44px;
-                height: 44px;
-            }
-
-            nav {
-                top: 82px;
-                left: 10px;
-                right: 10px;
-                padding: 14px;
-            }
-
             .hero {
-                min-height: 650px;
-                min-height: 92svh;
-                background-position: 62% center;
+                padding-top: 130px;
             }
 
-            .hero-content {
-                padding: 140px 20px 70px;
+            .section {
+                padding: 75px 0;
             }
 
-            .eyebrow {
-                font-size: 0.62rem;
-                letter-spacing: 0.13em;
+            .contact-info-box,
+            .contact-form-box {
+                padding: 28px 22px;
             }
 
-            .eyebrow::before {
-                width: 24px;
-            }
-
-            .hero h1 {
-                font-size: clamp(2.3rem, 12vw, 4rem);
-            }
-
-            .hero p {
-                margin-top: 20px;
-                font-size: 1rem;
-                line-height: 1.7;
-            }
-
-            .contact-section {
-                padding: 75px 18px 80px;
-            }
-
-            .section-heading {
-                margin-bottom: 35px;
-            }
-
-            .section-heading h2 {
-                font-size: 2rem;
-            }
-
-            .section-heading p {
-                font-size: 1rem;
-            }
-
-            .contact-card {
-                padding: 22px 18px;
-            }
-
-            .contact-icon {
-                width: 45px;
-                height: 45px;
-            }
-
-            .quick-contact {
+            .footer-container {
                 grid-template-columns: 1fr;
+                gap: 35px;
             }
 
-            .contact-form-wrapper {
-                padding: 26px 20px;
-            }
-
-            .form-title {
-                font-size: 1.55rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .whatsapp-section {
-                padding: 70px 18px;
-            }
-
-            .whatsapp-box {
-                padding: 35px 22px;
-            }
-
-            .whatsapp-box h2 {
-                font-size: 2rem;
-            }
-
-            .whatsapp-box p {
-                font-size: 1rem;
-            }
-
-            .whatsapp-btn {
-                width: 100%;
-                padding-left: 18px;
-                padding-right: 18px;
-            }
-
-            footer {
-                padding: 60px 18px 20px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 38px;
-            }
-
-            .footer-brand {
-                grid-column: auto;
-            }
-
-            .footer-bottom {
-                margin-top: 40px;
+            .quick-buttons {
                 flex-direction: column;
-                align-items: flex-start;
-            }
-
-            #backTop {
-                right: 15px;
-                bottom: 15px;
-                width: 44px;
-                height: 44px;
-            }
-        }
-
-        /* =====================================================
-           SMALL PHONES
-        ====================================================== */
-
-        @media (max-width: 420px) {
-
-            .brand-name {
-                font-size: 0.72rem;
-                max-width: 170px;
-            }
-
-            .brand-subtitle {
-                font-size: 0.49rem;
-            }
-
-            .hero-content {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .contact-card {
-                gap: 13px;
-            }
-
-            .contact-card h3 {
-                font-size: 1.05rem;
-            }
-
-            .contact-card p {
-                font-size: 0.94rem;
-            }
-
-            .contact-icon {
-                width: 42px;
-                height: 42px;
             }
 
             .quick-btn {
-                min-height: 50px;
+                justify-content: center;
             }
+
+            .whatsapp-box {
+                padding: 40px 20px;
+            }
+
         }
 
-        /* =====================================================
-           VERY SMALL PHONES
-        ====================================================== */
 
-        @media (max-width: 340px) {
-
-            .nav-container {
-                padding-left: 9px;
-                padding-right: 9px;
-            }
-
-            .brand img {
-                width: 40px;
-                height: 40px;
-            }
-
-            .brand-name {
-                font-size: 0.66rem;
-                max-width: 145px;
-            }
+        @media (max-width: 420px) {
 
             .brand-subtitle {
                 display: none;
             }
 
-            .menu-toggle {
-                width: 41px;
-                height: 41px;
+            .brand-title {
+                font-size: 14px;
             }
 
-            .contact-section {
-                padding-left: 14px;
-                padding-right: 14px;
+            .hero h1 {
+                font-size: 39px;
             }
 
-            .contact-form-wrapper {
-                padding: 23px 16px;
-            }
-        }
-
-        /* =====================================================
-           REDUCED MOTION
-        ====================================================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
+            .hero p {
+                font-size: 16px;
             }
 
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+            .section-heading h2 {
+                font-size: 31px;
             }
 
-            .reveal {
-                opacity: 1;
-                transform: none;
-            }
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- =====================================================
-         LOADER
-    ====================================================== -->
 
-    <div id="loader">
-        <div class="loader-inner">
+    <!-- ==============================
+         LOADER
+    ============================== -->
+
+    <div
+        class="loader"
+        id="loader"
+        aria-label="Loading Global College of Missiology"
+    >
+
+        <div class="loader-content">
 
             <img
                 src="./img/logo/logo.png"
-                alt="Global College of Missiology"
+                alt="Global College of Missiology Logo"
                 class="loader-logo"
             >
 
-            <div class="loader-line"></div>
-
-            <div class="loader-text">
-                Global College of Missiology
-            </div>
+            <p>
+                GLOBAL COLLEGE OF MISSIOLOGY
+            </p>
 
         </div>
+
     </div>
 
 
-    <!-- =====================================================
-         MOBILE MENU OVERLAY
-    ====================================================== -->
+    <!-- ==============================
+         MOBILE OVERLAY
+    ============================== -->
 
     <div
         class="menu-overlay"
         id="menuOverlay"
-        aria-hidden="true"
     ></div>
 
 
-    <!-- =====================================================
+    <!-- ==============================
          HEADER
-    ====================================================== -->
+    ============================== -->
 
-    <header id="siteHeader">
+    <header>
 
-        <div class="nav-container">
+        <nav
+            class="navbar"
+            aria-label="Main Navigation"
+        >
+
+            <!-- BRAND -->
 
             <a
                 href="./home.html"
                 class="brand"
+                aria-label="Global College of Missiology Home"
             >
 
                 <img
                     src="./img/logo/logo.png"
-                    alt="Global College of Missiology Logo"
+                    alt="GCM Logo"
                 >
 
-                <div class="brand-text">
+                <span class="brand-text">
 
-                    <div class="brand-name">
+                    <span class="brand-title">
                         Global College of Missiology
-                    </div>
+                    </span>
 
-                    <div class="brand-subtitle">
-                        Training • Equipping • Deploying
-                    </div>
+                    <span class="brand-subtitle">
+                        Training Kingdom Leaders
+                    </span>
 
-                </div>
+                </span>
 
             </a>
 
+
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="menu-toggle"
@@ -1579,461 +1146,519 @@
                 type="button"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
-                aria-controls="mainNav"
+                aria-controls="navLinks"
             >
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </button>
 
 
-            <nav
-                id="mainNav"
-                aria-label="Main navigation"
+            <!-- NAVIGATION -->
+
+            <ul
+                class="nav-links"
+                id="navLinks"
             >
 
-                <a href="./index.html">
-                    Home
-                </a>
+                <li>
+                    <a href="./home.html">
+                        Home
+                    </a>
+                </li>
 
-                <a href="./about.html">
-                    About
-                </a>
+                <li>
+                    <a href="./about.html">
+                        About
+                    </a>
+                </li>
 
-                <a href="./director.html">
-                    Director
-                </a>
+                <li>
+                    <a href="./director.html">
+                        Director
+                    </a>
+                </li>
 
-                <a href="./course.html">
-                    Courses
-                </a>
+                <li>
+                    <a href="./courses.html">
+                        Courses
+                    </a>
+                </li>
 
-                <a href="./admissions.html">
-                    Admissions
-                </a>
+                <li>
+                    <a href="./admission.html">
+                        Admissions
+                    </a>
+                </li>
 
-                <a href="./gallery.html">
-                    Gallery
-                </a>
+                <li>
+                    <a href="./gallery.html">
+                        Gallery
+                    </a>
+                </li>
 
-                <a href="./rules.html">
-                    Rules
-                </a>
+                <li>
+                    <a href="./rules.html">
+                        Rules
+                    </a>
+                </li>
 
-                <a
-                    href="./contact.html"
-                    class="active"
-                >
-                    Contact
-                </a>
+                <li>
+                    <a
+                        href="./contact.html"
+                        class="active"
+                    >
+                        Contact
+                    </a>
+                </li>
 
-                <a
-                    href="./admissions.html"
-                    class="nav-cta"
-                >
-                    Apply Now
-                </a>
+                <li>
+                    <a
+                        href="./admission.html"
+                        class="apply-btn"
+                    >
+                        Apply Now
+                    </a>
+                </li>
 
-            </nav>
+            </ul>
 
-        </div>
+        </nav>
 
     </header>
 
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
+    <!-- ==============================
+         HERO
+    ============================== -->
 
     <main>
-
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
 
         <section class="hero">
 
             <div class="hero-content">
 
-                <div class="hero-inner reveal">
+                <div class="hero-line"></div>
 
-                    <div class="eyebrow">
-                        Connect With GCM
-                    </div>
+                <h1>
+                    Contact <span>Us</span>
+                </h1>
 
-                    <h1>
-                        We Are Here
-                        <span>To Help</span>
-                    </h1>
-
-                    <p>
-                        Have a question about Global College of Missiology,
-                        our courses, admissions, training programmes, or
-                        ministry preparation? Reach out to us and our team
-                        will be glad to assist you.
-                    </p>
-
-                </div>
+                <p>
+                    We are here to answer your questions,
+                    guide you through the admission process,
+                    and help you take the next step in your
+                    Kingdom assignment.
+                </p>
 
             </div>
 
         </section>
 
 
-        <!-- =================================================
-             CONTACT SECTION
-        ================================================== -->
-
-        <section class="contact-section">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <div class="section-label">
-                        Contact GCM
-                    </div>
-
-                    <h2>
-                        Start A
-                        <span>Conversation</span>
-                    </h2>
-
-                    <p>
-                        Contact Global College of Missiology directly
-                        through any of the channels below, or send us
-                        an enquiry using the form.
-                    </p>
-
-                </div>
-
-
-                <div class="contact-grid">
-
-
-                    <!-- =====================================
-                         CONTACT INFORMATION
-                    ====================================== -->
-
-                    <div class="contact-info">
-
-
-                        <!-- EMAIL -->
-
-                        <div class="contact-card reveal">
-
-                            <div class="contact-icon">
-                                @
-                            </div>
-
-                            <div>
-
-                                <h3>
-                                    Email Us
-                                </h3>
-
-                                <p>
-                                    Send us your enquiry by email.
-                                </p>
-
-                                <p>
-                                    <a
-                                        href="mailto:gcm4global@gmail.com"
-                                    >
-                                        gcm4global@gmail.com
-                                    </a>
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- WHATSAPP -->
-
-                        <div class="contact-card reveal">
-
-                            <div class="contact-icon">
-                                WA
-                            </div>
-
-                            <div>
-
-                                <h3>
-                                    WhatsApp
-                                </h3>
-
-                                <p>
-                                    Chat directly with GCM through
-                                    WhatsApp.
-                                </p>
-
-                                <p>
-                                    <a
-                                        href="https://wa.me/2347076988378"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        +234 707 698 8378
-                                    </a>
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- PHONE -->
-
-                        <div class="contact-card reveal">
-
-                            <div class="contact-icon">
-                                ☎
-                            </div>
-
-                            <div>
-
-                                <h3>
-                                    Call Us
-                                </h3>
-
-                                <p>
-                                    Speak directly with the College.
-                                </p>
-
-                                <p>
-                                    <a
-                                        href="tel:+2347076988378"
-                                    >
-                                        +234 707 698 8378
-                                    </a>
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- QUICK BUTTONS -->
-
-                        <div class="quick-contact reveal">
-
-                            <a
-                                href="tel:+2347076988378"
-                                class="quick-btn"
-                            >
-                                Call GCM
-                            </a>
-
-                            <a
-                                href="https://wa.me/2347076988378"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="quick-btn"
-                            >
-                                WhatsApp
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =====================================
-                         CONTACT FORM
-                    ====================================== -->
-
-                    <div class="contact-form-wrapper reveal">
-
-                        <h2 class="form-title">
-                            Send An Enquiry
-                        </h2>
-
-                        <p class="form-description">
-                            Complete the form below and choose how
-                            you would like to send your enquiry.
-                        </p>
-
-
-                        <form id="contactForm">
-
-
-                            <div class="form-row">
-
-
-                                <div class="form-group">
-
-                                    <label for="name">
-                                        Full Name
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        placeholder="Your full name"
-                                        autocomplete="name"
-                                        required
-                                    >
-
-                                </div>
-
-
-                                <div class="form-group">
-
-                                    <label for="email">
-                                        Email Address
-                                    </label>
-
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        placeholder="Your email address"
-                                        autocomplete="email"
-                                        required
-                                    >
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="form-row">
-
-
-                                <div class="form-group">
-
-                                    <label for="phone">
-                                        Phone Number
-                                    </label>
-
-                                    <input
-                                        type="tel"
-                                        id="phone"
-                                        name="phone"
-                                        placeholder="Your phone number"
-                                        autocomplete="tel"
-                                    >
-
-                                </div>
-
-
-                                <div class="form-group">
-
-                                    <label for="subject">
-                                        Enquiry Type
-                                    </label>
-
-                                    <select
-                                        id="subject"
-                                        name="subject"
-                                        required
-                                    >
-
-                                        <option value="">
-                                            Select an enquiry
-                                        </option>
-
-                                        <option value="Course Enquiry">
-                                            Course Enquiry
-                                        </option>
-
-                                        <option value="Admission Enquiry">
-                                            Admission Enquiry
-                                        </option>
-
-                                        <option value="General Enquiry">
-                                            General Enquiry
-                                        </option>
-
-                                        <option value="Ministry Training">
-                                            Ministry Training
-                                        </option>
-
-                                        <option value="Other">
-                                            Other
-                                        </option>
-
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="message">
-                                    Message
-                                </label>
-
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    placeholder="Write your enquiry here..."
-                                    required
-                                ></textarea>
-
-                            </div>
-
-
-                            <button
-                                type="submit"
-                                class="submit-btn"
-                                id="submitBtn"
-                            >
-                                Send Enquiry
-                            </button>
-
-                            <div class="form-note">
-                                Your enquiry will be prepared for
-                                submission through WhatsApp.
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                </div>
+        <!-- ==============================
+             CONTACT INFORMATION
+        ============================== -->
+
+        <section class="section">
+
+            <div class="section-heading reveal">
+
+                <span class="small-title">
+                    Get In Touch
+                </span>
+
+                <h2>
+                    We Would Love To Hear From You
+                </h2>
+
+                <p>
+                    For admission enquiries, academic information,
+                    partnership opportunities, or general enquiries,
+                    please reach out to us through any of the channels below.
+                </p>
 
             </div>
 
-        </section>
+
+            <div class="contact-grid">
 
 
-        <!-- =================================================
-             WHATSAPP CTA
-        ================================================== -->
+                <!-- EMAIL -->
 
-        <section class="whatsapp-section">
+                <div class="contact-card reveal">
 
-            <div class="container">
+                    <div class="contact-icon">
 
-                <div class="whatsapp-box reveal">
+                        <i class="fa-solid fa-envelope"></i>
 
-                    <h2>
-                        Prefer
-                        <span>WhatsApp?</span>
-                    </h2>
+                    </div>
+
+                    <h3>
+                        Email Us
+                    </h3>
 
                     <p>
-                        You can contact Global College of Missiology
-                        directly through WhatsApp for enquiries about
-                        admissions, courses and training.
+                        Send us an email for enquiries
+                        and official communication.
+                    </p>
+
+                    <a href="mailto:gcm4global@gmail.com">
+                        gcm4global@gmail.com
+                    </a>
+
+                </div>
+
+
+                <!-- WHATSAPP -->
+
+                <div class="contact-card reveal">
+
+                    <div class="contact-icon">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </div>
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+                    <p>
+                        Chat directly with us for
+                        quick enquiries and assistance.
                     </p>
 
                     <a
                         href="https://wa.me/2347076988378"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="whatsapp-btn"
                     >
-                        Chat With GCM On WhatsApp
+                        +234 707 698 8378
                     </a>
 
                 </div>
+
+
+                <!-- PHONE -->
+
+                <div class="contact-card reveal">
+
+                    <div class="contact-icon">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                    </div>
+
+                    <h3>
+                        Call Us
+                    </h3>
+
+                    <p>
+                        Speak with us directly
+                        regarding your enquiries.
+                    </p>
+
+                    <a href="tel:+2347076988378">
+                        +234 707 698 8378
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ==============================
+                 CONTACT FORM AREA
+            ============================== -->
+
+            <div class="contact-wrapper">
+
+
+                <!-- CONTACT INFORMATION -->
+
+                <div class="contact-info-box reveal">
+
+                    <h3>
+                        Let's Connect
+                    </h3>
+
+                    <p>
+                        Whether you are interested in studying with us,
+                        learning more about our programmes, or seeking
+                        clarification about the college, our team is
+                        available to assist you.
+                    </p>
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Location
+                            </h4>
+
+                            <p>
+                                Isiokpo, Rivers State, Nigeria
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Email
+                            </h4>
+
+                            <a href="mailto:gcm4global@gmail.com">
+                                gcm4global@gmail.com
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Phone
+                            </h4>
+
+                            <a href="tel:+2347076988378">
+                                +234 707 698 8378
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Enquiries
+                            </h4>
+
+                            <p>
+                                Monday – Saturday
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK BUTTONS -->
+
+                    <div class="quick-buttons">
+
+                        <a
+                            href="tel:+2347076988378"
+                            class="quick-btn"
+                        >
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            Call Us
+
+                        </a>
+
+
+                        <a
+                            href="https://wa.me/2347076988378"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="quick-btn"
+                        >
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                            WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <div class="contact-form-box reveal">
+
+                    <h3>
+                        Send Us A Message
+                    </h3>
+
+                    <form id="contactForm">
+
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone / WhatsApp Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="message">
+                                Your Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Write your message here..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                            id="submitBtn"
+                        >
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                            Send Message via WhatsApp
+
+                        </button>
+
+
+                        <p class="form-note">
+                            Your message will open directly in WhatsApp.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             WHATSAPP CTA
+        ============================== -->
+
+        <section class="whatsapp-section">
+
+            <div class="whatsapp-box reveal">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                <h2>
+                    Need A Quick Response?
+                </h2>
+
+                <p>
+                    Chat with Global College of Missiology
+                    directly on WhatsApp for quick assistance
+                    with your enquiries.
+                </p>
+
+                <a
+                    href="https://wa.me/2347076988378"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="whatsapp-btn"
+                >
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Chat With Us
+
+                </a>
 
             </div>
 
@@ -2042,126 +1667,177 @@
     </main>
 
 
-    <!-- =====================================================
+    <!-- ==============================
          FOOTER
-    ====================================================== -->
+    ============================== -->
 
     <footer>
 
-        <div class="footer-grid">
+        <div class="footer-container">
 
 
-            <div class="footer-brand">
+            <!-- ABOUT -->
 
-                <img
-                    src="./img/logo/logo.png"
-                    alt="Global College of Missiology Logo"
+            <div>
+
+                <a
+                    href="./home.html"
+                    class="footer-logo"
                 >
 
-                <h3>
-                    Global College of Missiology
-                </h3>
+                    <img
+                        src="./img/logo/logo.png"
+                        alt="Global College of Missiology Logo"
+                    >
 
-                <p>
-                    Building God's people for Global Missions and
-                    Evangelization through the Word of Wisdom,
-                    Grace, and Power.
+                    <h3>
+                        Global College of Missiology
+                    </h3>
+
+                </a>
+
+                <p class="footer-about">
+                    Building God's people for Global Missions
+                    and Evangelization through the Word of
+                    Wisdom, Grace, and Power.
                 </p>
 
             </div>
 
 
-            <div>
+            <!-- QUICK LINKS -->
 
-                <div class="footer-title">
-                    QUICK LINKS
-                </div>
+            <div class="footer-column">
 
-                <div class="footer-links">
+                <h4>
+                    Quick Links
+                </h4>
 
-                    <a href="./home.html">
-                        Home
-                    </a>
+                <ul class="footer-links">
 
-                    <a href="./about.html">
-                        About
-                    </a>
+                    <li>
+                        <a href="./home.html">
+                            Home
+                        </a>
+                    </li>
 
-                    <a href="./director.html">
-                        Director
-                    </a>
+                    <li>
+                        <a href="./about.html">
+                            About Us
+                        </a>
+                    </li>
 
-                    <a href="./course.html">
-                        Courses
-                    </a>
+                    <li>
+                        <a href="./director.html">
+                            Director
+                        </a>
+                    </li>
 
-                    <a href="./admissions.html">
-                        Admissions
-                    </a>
+                    <li>
+                        <a href="./courses.html">
+                            Courses
+                        </a>
+                    </li>
 
-                    <a href="./gallery.html">
-                        Gallery
-                    </a>
+                    <li>
+                        <a href="./admission.html">
+                            Admissions
+                        </a>
+                    </li>
 
-                    <a href="./rules.html">
-                        Rules & Regulations
-                    </a>
+                    <li>
+                        <a href="./gallery.html">
+                            Gallery
+                        </a>
+                    </li>
 
-                    <a href="./contact.html">
-                        Contact
-                    </a>
+                    <li>
+                        <a href="./rules.html">
+                            Rules
+                        </a>
+                    </li>
 
-                </div>
+                    <li>
+                        <a href="./contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
 
             </div>
 
 
-            <div>
+            <!-- CONTACT -->
 
-                <div class="footer-title">
-                    CONTACT
-                </div>
+            <div class="footer-column">
 
-                <div class="footer-contact">
+                <h4>
+                    Contact Information
+                </h4>
 
-                    <p>
-                        Global College of Missiology
-                    </p>
+                <ul class="footer-contact">
 
-                    <p>
-                        Isiokpo, Rivers State, Nigeria
-                    </p>
+                    <li>
 
-                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <span>
+                            Isiokpo, Rivers State, Nigeria
+                        </span>
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-envelope"></i>
+
                         <a href="mailto:gcm4global@gmail.com">
                             gcm4global@gmail.com
                         </a>
-                    </p>
 
-                    <p>
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-phone"></i>
+
                         <a href="tel:+2347076988378">
                             +234 707 698 8378
                         </a>
-                    </p>
 
-                </div>
+                    </li>
+
+                    <li>
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        <a
+                            href="https://wa.me/2347076988378"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            WhatsApp
+                        </a>
+
+                    </li>
+
+                </ul>
 
             </div>
 
         </div>
 
 
+        <!-- FOOTER BOTTOM -->
+
         <div class="footer-bottom">
 
             <p>
-                ©
+                &copy;
                 <span id="currentYear"></span>
                 Global College of Missiology.
                 All Rights Reserved.
-            </p>
-
-            <p>
-                Training • Equipping • Deploying
             </p>
 
         </div>
@@ -2169,173 +1845,111 @@
     </footer>
 
 
-    <!-- =====================================================
+    <!-- ==============================
          BACK TO TOP
-    ====================================================== -->
+    ============================== -->
 
     <button
-        id="backTop"
+        class="back-to-top"
+        id="backToTop"
         type="button"
         aria-label="Back to top"
     >
-        ↑
+
+        <i class="fa-solid fa-arrow-up"></i>
+
     </button>
 
 
-    <!-- =====================================================
+    <!-- ==============================
          JAVASCRIPT
-    ====================================================== -->
+    ============================== -->
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", () => {
+        /* ==============================
+           LOADER
+        ============================== */
 
-
-            /* =================================================
-               LOADER
-            ================================================== */
+        window.addEventListener("load", function () {
 
             const loader = document.getElementById("loader");
 
-            const hideLoader = () => {
-                if (loader) {
-                    loader.classList.add("hidden");
-                }
-            };
+            setTimeout(function () {
 
-            window.addEventListener("load", () => {
+                loader.classList.add("hide");
 
-                setTimeout(hideLoader, 450);
+            }, 700);
 
-            });
-
-            setTimeout(hideLoader, 2500);
+        });
 
 
-            /* =================================================
-               HEADER
-            ================================================== */
+        /* ==============================
+           MOBILE MENU
+        ============================== */
 
-            const header =
-                document.getElementById("siteHeader");
+        const menuToggle =
+            document.getElementById("menuToggle");
 
-            const updateHeader = () => {
+        const navLinks =
+            document.getElementById("navLinks");
 
-                if (!header) {
-                    return;
-                }
+        const menuOverlay =
+            document.getElementById("menuOverlay");
 
-                if (window.scrollY > 30) {
 
-                    header.classList.add("scrolled");
+        function openMenu() {
 
-                } else {
+            navLinks.classList.add("active");
 
-                    header.classList.remove("scrolled");
+            menuOverlay.classList.add("active");
 
-                }
+            menuToggle.classList.add("active");
 
-            };
-
-            updateHeader();
-
-            window.addEventListener(
-                "scroll",
-                updateHeader,
-                { passive: true }
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "true"
             );
 
+            menuToggle.setAttribute(
+                "aria-label",
+                "Close navigation menu"
+            );
 
-            /* =================================================
-               MOBILE MENU
-            ================================================== */
+            document.body.classList.add("menu-open");
 
-            const menuToggle =
-                document.getElementById("menuToggle");
-
-            const mainNav =
-                document.getElementById("mainNav");
-
-            const menuOverlay =
-                document.getElementById("menuOverlay");
-
-            const navLinks =
-                mainNav
-                    ? mainNav.querySelectorAll("a")
-                    : [];
+        }
 
 
-            const openMenu = () => {
+        function closeMenu() {
 
-                if (!mainNav || !menuToggle) {
-                    return;
-                }
+            navLinks.classList.remove("active");
 
-                mainNav.classList.add("open");
+            menuOverlay.classList.remove("active");
 
-                menuToggle.classList.add("active");
+            menuToggle.classList.remove("active");
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "true"
-                );
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Close navigation menu"
-                );
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
 
-                document.body.classList.add("menu-open");
+            document.body.classList.remove("menu-open");
 
-                if (menuOverlay) {
-                    menuOverlay.classList.add("show");
-                    menuOverlay.setAttribute(
-                        "aria-hidden",
-                        "false"
-                    );
-                }
-
-            };
+        }
 
 
-            const closeMenu = () => {
-
-                if (!mainNav || !menuToggle) {
-                    return;
-                }
-
-                mainNav.classList.remove("open");
-
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-                document.body.classList.remove("menu-open");
-
-                if (menuOverlay) {
-                    menuOverlay.classList.remove("show");
-                    menuOverlay.setAttribute(
-                        "aria-hidden",
-                        "true"
-                    );
-                }
-
-            };
-
-
-            const toggleMenu = () => {
+        menuToggle.addEventListener(
+            "click",
+            function () {
 
                 if (
-                    mainNav &&
-                    mainNav.classList.contains("open")
+                    navLinks.classList.contains("active")
                 ) {
 
                     closeMenu();
@@ -2346,20 +1960,19 @@
 
                 }
 
-            };
-
-
-            if (menuToggle) {
-
-                menuToggle.addEventListener(
-                    "click",
-                    toggleMenu
-                );
-
             }
+        );
 
 
-            navLinks.forEach(link => {
+        menuOverlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
 
                 link.addEventListener(
                     "click",
@@ -2369,302 +1982,270 @@
             });
 
 
-            if (menuOverlay) {
+        /* ==============================
+           ESCAPE KEY
+        ============================== */
 
-                menuOverlay.addEventListener(
-                    "click",
-                    closeMenu
-                );
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    closeMenu();
+
+                }
 
             }
+        );
 
 
-            document.addEventListener(
-                "keydown",
-                event => {
+        /* ==============================
+           WHATSAPP CONTACT FORM
+        ============================== */
 
-                    if (event.key === "Escape") {
-                        closeMenu();
-                    }
+        const contactForm =
+            document.getElementById("contactForm");
 
-                }
-            );
-
-
-            window.addEventListener(
-                "resize",
-                () => {
-
-                    if (window.innerWidth > 1100) {
-                        closeMenu();
-                    }
-
-                }
-            );
+        const submitBtn =
+            document.getElementById("submitBtn");
 
 
-            /* =================================================
-               SCROLL REVEAL
-            ================================================== */
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
 
-            const revealElements =
-                document.querySelectorAll(".reveal");
+                event.preventDefault();
 
 
-            if ("IntersectionObserver" in window) {
+                const name =
+                    document
+                        .getElementById("name")
+                        .value
+                        .trim();
 
-                const observer =
-                    new IntersectionObserver(
-                        entries => {
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
 
-                            entries.forEach(entry => {
+                const phone =
+                    document
+                        .getElementById("phone")
+                        .value
+                        .trim();
 
-                                if (entry.isIntersecting) {
+                const message =
+                    document
+                        .getElementById("message")
+                        .value
+                        .trim();
 
-                                    entry.target.classList.add(
-                                        "visible"
-                                    );
 
-                                    observer.unobserve(
-                                        entry.target
-                                    );
+                if (
+                    !name ||
+                    !email ||
+                    !phone ||
+                    !message
+                ) {
 
-                                }
-
-                            });
-
-                        },
-                        {
-                            threshold: 0.12,
-                            rootMargin:
-                                "0px 0px -30px 0px"
-                        }
+                    alert(
+                        "Please complete all the required fields."
                     );
 
+                    return;
 
-                revealElements.forEach(element => {
-
-                    observer.observe(element);
-
-                });
-
-            } else {
-
-                revealElements.forEach(element => {
-
-                    element.classList.add("visible");
-
-                });
-
-            }
+                }
 
 
-            /* =================================================
-               CONTACT FORM → WHATSAPP
-            ================================================== */
-
-            const contactForm =
-                document.getElementById("contactForm");
-
-            const submitBtn =
-                document.getElementById("submitBtn");
+                const whatsappNumber =
+                    "2347076988378";
 
 
-            if (contactForm) {
+                const whatsappMessage =
+                    `Hello Global College of Missiology,
 
-                contactForm.addEventListener(
-                    "submit",
-                    event => {
-
-                        event.preventDefault();
-
-
-                        const name =
-                            document
-                                .getElementById("name")
-                                .value
-                                .trim();
-
-
-                        const email =
-                            document
-                                .getElementById("email")
-                                .value
-                                .trim();
-
-
-                        const phone =
-                            document
-                                .getElementById("phone")
-                                .value
-                                .trim();
-
-
-                        const subject =
-                            document
-                                .getElementById("subject")
-                                .value;
-
-
-                        const message =
-                            document
-                                .getElementById("message")
-                                .value
-                                .trim();
-
-
-                        const whatsappMessage =
-`Hello Global College of Missiology,
-
-I would like to make an enquiry.
-
-Name: ${name}
+My name is ${name}.
 
 Email: ${email}
 
-Phone: ${phone || "Not provided"}
-
-Enquiry Type: ${subject}
+Phone / WhatsApp: ${phone}
 
 Message:
+${message}
 
-${message}`;
-
-
-                        const whatsappURL =
-                            "https://wa.me/2347076988378?text=" +
-                            encodeURIComponent(
-                                whatsappMessage
-                            );
+Thank you.`;
 
 
-                        if (submitBtn) {
-
-                            submitBtn.disabled = true;
-
-                            submitBtn.textContent =
-                                "Opening WhatsApp...";
-
-                        }
-
-
-                        window.open(
-                            whatsappURL,
-                            "_blank"
-                        );
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    encodeURIComponent(
+                        whatsappMessage
+                    );
 
 
-                        setTimeout(() => {
+                submitBtn.innerHTML =
+                    '<i class="fa-brands fa-whatsapp"></i> Opening WhatsApp...';
 
-                            if (submitBtn) {
-
-                                submitBtn.disabled = false;
-
-                                submitBtn.textContent =
-                                    "Send Enquiry";
-
-                            }
-
-                        }, 1500);
-
-                    }
-                );
-
-            }
+                submitBtn.disabled = true;
 
 
-            /* =================================================
-               BACK TO TOP
-            ================================================== */
+                const newWindow =
+                    window.open(
+                        whatsappURL,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
 
-            const backTop =
-                document.getElementById("backTop");
 
+                /*
+                    Fallback if the browser blocks
+                    opening a new tab.
+                */
 
-            const updateBackTop = () => {
+                if (!newWindow) {
 
-                if (!backTop) {
-                    return;
+                    window.location.href =
+                        whatsappURL;
+
                 }
 
-                if (window.scrollY > 500) {
 
-                    backTop.classList.add("show");
+                setTimeout(function () {
+
+                    submitBtn.innerHTML =
+                        '<i class="fa-brands fa-whatsapp"></i> Send Message via WhatsApp';
+
+                    submitBtn.disabled = false;
+
+                }, 2000);
+
+            }
+        );
+
+
+        /* ==============================
+           BACK TO TOP
+        ============================== */
+
+        const backToTop =
+            document.getElementById("backToTop");
+
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 450) {
+
+                    backToTop.classList.add("show");
 
                 } else {
 
-                    backTop.classList.remove("show");
+                    backToTop.classList.remove("show");
 
                 }
 
-            };
+            }
+        );
 
 
-            updateBackTop();
+        backToTop.addEventListener(
+            "click",
+            function () {
 
+                window.scrollTo({
 
-            window.addEventListener(
-                "scroll",
-                updateBackTop,
-                { passive: true }
-            );
+                    top: 0,
 
+                    behavior: "smooth"
 
-            if (backTop) {
-
-                backTop.addEventListener(
-                    "click",
-                    () => {
-
-                        window.scrollTo({
-                            top: 0,
-                            behavior: "smooth"
-                        });
-
-                    }
-                );
+                });
 
             }
+        );
 
 
-            /* =================================================
-               YEAR
-            ================================================== */
+        /* ==============================
+           SCROLL REVEAL
+        ============================== */
 
-            const currentYear =
-                document.getElementById("currentYear");
-
-            if (currentYear) {
-
-                currentYear.textContent =
-                    new Date().getFullYear();
-
-            }
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
 
-            /* =================================================
-               IMAGE ERROR LOGGING
-            ================================================== */
+        const revealObserver =
+            new IntersectionObserver(
+                function (entries, observer) {
 
-            document
-                .querySelectorAll("img")
-                .forEach(img => {
+                    entries.forEach(
+                        function (entry) {
 
-                    img.addEventListener(
-                        "error",
-                        () => {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            console.warn(
-                                "GCM image could not be loaded:",
-                                img.src
-                            );
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
 
                         }
                     );
 
-                });
+                },
+                {
+                    threshold: 0.12
+                }
+            );
 
-        });
+
+        revealElements.forEach(
+            function (element) {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+
+        /* ==============================
+           CURRENT YEAR
+        ============================== */
+
+        document.getElementById(
+            "currentYear"
+        ).textContent =
+            new Date().getFullYear();
+
+
+        /* ==============================
+           PREVENT MENU FROM STAYING OPEN
+           WHEN RESIZING TO DESKTOP
+        ============================== */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (window.innerWidth > 850) {
+
+                    closeMenu();
+
+                }
+
+            }
+        );
 
     </script>
 

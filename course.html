@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        content="width=device-width, initial-scale=1.0"
     >
+
+    <title>
+        Courses | Global College of Missiology
+    </title>
 
     <meta
         name="description"
-        content="Explore the courses offered by Global College of Missiology. Biblical studies, ministry, missions, leadership, church administration and Kingdom-focused training."
+        content="Explore the academic courses, annual programme fees and semester structure of Global College of Missiology."
     >
 
-    <meta
-        name="keywords"
-        content="Global College of Missiology, GCM, Bible School, Missiology, Theology, Christian Ministry, Missions, Bible Training, Ministry Training"
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
     >
 
-    <meta name="theme-color" content="#07111f">
-
-    <meta name="author" content="Global College of Missiology">
-
-    <title>Courses | Global College of Missiology</title>
-
-
-    <!-- =========================================================
-         GOOGLE FONTS
-    ========================================================== -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap"
         rel="stylesheet"
     >
 
-
     <style>
 
         /* =========================================================
-           ROOT VARIABLES
-        ========================================================= */
+           ROOT
+        ========================================================== */
 
         :root {
 
-            --navy: #07111f;
-            --navy-2: #0b1728;
-            --navy-3: #101f33;
+            --navy: #071525;
+            --navy-light: #0d2238;
+            --navy-soft: #102b43;
 
-            --gold: #c7a34b;
-            --gold-light: #e2c66f;
-            --gold-dark: #94762b;
+            --gold: #c9a45c;
+            --gold-light: #e1c27a;
+            --gold-dark: #9c7838;
 
-            --ivory: #f4efe4;
-            --muted: #b9b6ae;
+            --white: #ffffff;
+            --cream: #f5f1e8;
+            --text: #172536;
+            --muted: #697586;
 
-            --border: rgba(199, 163, 75, 0.25);
-
-            --glass: rgba(255, 255, 255, 0.045);
+            --border: rgba(201, 164, 92, 0.28);
 
             --shadow:
-                0 25px 70px rgba(0, 0, 0, 0.35);
+                0 20px 60px rgba(0, 0, 0, 0.18);
+
+            --transition:
+                all 0.35s ease;
+
+            --serif:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            --display:
+                "Marcellus",
+                Georgia,
+                serif;
 
         }
 
-
-        /* =========================================================
-           RESET
-        ========================================================== */
 
         * {
             margin: 0;
@@ -81,17 +86,16 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
         }
 
 
         body {
 
-            font-family: "Cormorant Garamond", serif;
+            font-family: var(--serif);
 
-            background: var(--navy);
+            color: var(--text);
 
-            color: var(--ivory);
+            background: #ffffff;
 
             line-height: 1.7;
 
@@ -106,50 +110,31 @@
 
 
         img {
-
-            display: block;
-
-            width: 100%;
-
             max-width: 100%;
+            display: block;
+        }
 
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
 
         button,
         a {
-            font: inherit;
+            -webkit-tap-highlight-color: transparent;
         }
 
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+        .container {
 
+            width: min(
+                1180px,
+                calc(100% - 40px)
+            );
 
-        button {
-            border: 0;
-            cursor: pointer;
-        }
-
-
-        ::selection {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-
-        /* =========================================================
-           ACCESSIBILITY
-        ========================================================== */
-
-        a:focus-visible,
-        button:focus-visible {
-
-            outline: 2px solid var(--gold-light);
-
-            outline-offset: 4px;
+            margin-inline: auto;
 
         }
 
@@ -164,15 +149,15 @@
 
             inset: 0;
 
-            z-index: 99999;
+            z-index: 9999;
+
+            background: var(--navy);
 
             display: flex;
 
             align-items: center;
 
             justify-content: center;
-
-            background: var(--navy);
 
             transition:
                 opacity 0.6s ease,
@@ -187,8 +172,6 @@
 
             visibility: hidden;
 
-            pointer-events: none;
-
         }
 
 
@@ -196,16 +179,14 @@
 
             text-align: center;
 
-            padding: 20px;
-
         }
 
 
         .loader-logo {
 
-            width: 100px;
+            width: 90px;
 
-            height: 100px;
+            height: 90px;
 
             object-fit: contain;
 
@@ -216,57 +197,79 @@
 
         .loader-line {
 
-            width: 150px;
+            width: 100px;
 
             height: 2px;
 
-            margin: 0 auto 16px;
+            background: var(--gold);
 
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    var(--gold),
-                    transparent
-                );
+            margin: 0 auto 18px;
 
             animation:
-                loaderLine 1.5s infinite ease-in-out;
+                loaderLine 1.4s infinite ease-in-out;
 
         }
 
 
         .loader-text {
 
-            color: var(--gold-light);
+            color: var(--cream);
 
-            font-family: "Marcellus", serif;
+            font-family: var(--display);
 
-            font-size: 12px;
+            font-size: 15px;
 
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
+            letter-spacing: 1.5px;
 
         }
 
 
         @keyframes loaderLine {
 
-            0% {
-                opacity: 0.2;
-                transform: scaleX(0.5);
+            0%,
+            100% {
+                transform: scaleX(0.4);
+                opacity: 0.5;
             }
 
             50% {
-                opacity: 1;
                 transform: scaleX(1);
+                opacity: 1;
             }
 
-            100% {
-                opacity: 0.2;
-                transform: scaleX(0.5);
-            }
+        }
+
+
+        /* =========================================================
+           MOBILE OVERLAY
+        ========================================================== */
+
+        .menu-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0, 0, 0, 0.65);
+
+            z-index: 998;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                var(--transition);
+
+        }
+
+
+        .menu-overlay.open {
+
+            opacity: 1;
+
+            visibility: visible;
 
         }
 
@@ -280,21 +283,17 @@
             position: fixed;
 
             top: 0;
+
             left: 0;
-            right: 0;
 
-            z-index: 5000;
+            width: 100%;
 
-            padding:
-                16px
-                max(20px, env(safe-area-inset-right))
-                16px
-                max(20px, env(safe-area-inset-left));
+            z-index: 1000;
+
+            padding: 18px 0;
 
             transition:
-                background 0.3s ease,
-                padding 0.3s ease,
-                box-shadow 0.3s ease;
+                var(--transition);
 
         }
 
@@ -302,44 +301,37 @@
         .site-header.scrolled {
 
             background:
-                rgba(5, 12, 22, 0.94);
+                rgba(7, 21, 37, 0.97);
 
-            backdrop-filter: blur(16px);
+            backdrop-filter:
+                blur(14px);
 
-            -webkit-backdrop-filter: blur(16px);
-
-            padding-top: 9px;
-
-            padding-bottom: 9px;
+            padding: 10px 0;
 
             box-shadow:
-                0 10px 35px rgba(0, 0, 0, 0.25);
+                0 10px 35px
+                rgba(0, 0, 0, 0.18);
 
         }
 
 
         .nav-container {
 
-            width: min(1400px, 100%);
+            width: min(
+                1280px,
+                calc(100% - 40px)
+            );
 
-            min-height: 72px;
-
-            margin: 0 auto;
+            margin: auto;
 
             display: flex;
 
             align-items: center;
 
-            justify-content: space-between;
-
-            gap: 20px;
+            gap: 25px;
 
         }
 
-
-        /* =========================================================
-           BRAND
-        ========================================================== */
 
         .brand {
 
@@ -347,24 +339,20 @@
 
             align-items: center;
 
-            gap: 13px;
+            gap: 12px;
 
-            min-width: 0;
-
-            flex-shrink: 0;
+            margin-right: auto;
 
         }
 
 
         .brand img {
 
-            width: 58px;
+            width: 48px;
 
-            height: 58px;
+            height: 48px;
 
             object-fit: contain;
-
-            flex-shrink: 0;
 
         }
 
@@ -375,46 +363,34 @@
 
             flex-direction: column;
 
-            min-width: 0;
-
         }
 
 
         .brand-name {
 
-            font-family: "Marcellus", serif;
+            color: var(--white);
 
-            font-size: 18px;
+            font-family: var(--display);
 
-            line-height: 1.1;
+            font-size: 16px;
 
-            color: var(--ivory);
-
-            white-space: nowrap;
+            line-height: 1.2;
 
         }
 
 
         .brand-tagline {
 
-            margin-top: 4px;
+            color: var(--gold-light);
 
             font-size: 11px;
 
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
 
-            color: var(--gold-light);
-
-            text-transform: uppercase;
-
-            white-space: nowrap;
+            margin-top: 4px;
 
         }
 
-
-        /* =========================================================
-           DESKTOP NAVIGATION
-        ========================================================== */
 
         .main-nav {
 
@@ -422,26 +398,24 @@
 
             align-items: center;
 
-            justify-content: center;
-
-            gap: 20px;
+            gap: 18px;
 
         }
 
 
         .main-nav a {
 
+            color:
+                rgba(255, 255, 255, 0.88);
+
+            font-size: 14px;
+
+            transition:
+                var(--transition);
+
             position: relative;
 
-            color: #ddd8ca;
-
-            font-size: 15px;
-
-            font-weight: 600;
-
-            padding: 8px 0;
-
-            transition: color 0.3s ease;
+            white-space: nowrap;
 
         }
 
@@ -454,7 +428,7 @@
 
             left: 0;
 
-            bottom: 0;
+            bottom: -7px;
 
             width: 0;
 
@@ -462,7 +436,8 @@
 
             background: var(--gold);
 
-            transition: width 0.3s ease;
+            transition:
+                var(--transition);
 
         }
 
@@ -483,10 +458,6 @@
         }
 
 
-        /* =========================================================
-           NAV CTA
-        ========================================================== */
-
         .nav-cta {
 
             display: inline-flex;
@@ -495,28 +466,19 @@
 
             justify-content: center;
 
-            min-height: 44px;
+            min-height: 42px;
 
             padding: 0 18px;
 
-            border: 1px solid var(--gold);
+            border:
+                1px solid var(--gold);
 
             color: var(--gold-light);
 
-            font-family: "Marcellus", serif;
-
-            font-size: 12px;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
+            font-size: 13px;
 
             transition:
-                background 0.3s ease,
-                color 0.3s ease,
-                transform 0.3s ease;
-
-            flex-shrink: 0;
+                var(--transition);
 
         }
 
@@ -527,84 +489,24 @@
 
             color: var(--navy);
 
-            transform: translateY(-2px);
-
         }
 
-
-        /* =========================================================
-           MOBILE MENU BUTTON
-        ========================================================== */
 
         .menu-toggle {
 
             display: none;
 
-            width: 46px;
+            border: 0;
 
-            height: 46px;
+            background: transparent;
 
-            align-items: center;
+            color: var(--white);
 
-            justify-content: center;
+            font-size: 30px;
 
-            background:
-                rgba(255, 255, 255, 0.05);
-
-            border: 1px solid var(--border);
-
-            color: var(--gold-light);
-
-            font-family: Arial, sans-serif;
-
-            font-size: 25px;
+            cursor: pointer;
 
             line-height: 1;
-
-            flex-shrink: 0;
-
-            position: relative;
-
-            z-index: 6000;
-
-        }
-
-
-        /* =========================================================
-           MOBILE OVERLAY
-        ========================================================== */
-
-        .menu-overlay {
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 4800;
-
-            background:
-                rgba(0, 0, 0, 0.62);
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            pointer-events: none;
-
-            transition:
-                opacity 0.3s ease,
-                visibility 0.3s ease;
-
-        }
-
-
-        .menu-overlay.open {
-
-            opacity: 1;
-
-            visibility: visible;
-
-            pointer-events: auto;
 
         }
 
@@ -615,25 +517,26 @@
 
         .hero {
 
-            position: relative;
+            min-height: 88vh;
 
-            min-height: 760px;
+            padding:
+                180px 20px 100px;
 
             display: flex;
 
             align-items: center;
 
-            overflow: hidden;
+            position: relative;
 
             background:
                 linear-gradient(
-                    120deg,
-                    rgba(4, 10, 18, 0.97),
-                    rgba(7, 17, 31, 0.83),
-                    rgba(7, 17, 31, 0.96)
+                    rgba(7, 21, 37, 0.82),
+                    rgba(7, 21, 37, 0.90)
                 ),
-                url("assets/images/campus.jpg")
+                url("./assets/images/campus.jpg")
                 center / cover no-repeat;
+
+            color: var(--white);
 
         }
 
@@ -647,10 +550,10 @@
             inset: 0;
 
             background:
-                radial-gradient(
-                    circle at 75% 40%,
-                    rgba(199, 163, 75, 0.14),
-                    transparent 35%
+                linear-gradient(
+                    90deg,
+                    rgba(7, 21, 37, 0.95),
+                    rgba(7, 21, 37, 0.45)
                 );
 
         }
@@ -660,66 +563,52 @@
 
             position: relative;
 
-            z-index: 2;
+            z-index: 1;
 
-            width: min(1200px, calc(100% - 40px));
+            width: min(
+                850px,
+                100%
+            );
 
-            margin: 0 auto;
+            margin: auto;
 
-            padding-top: 100px;
+            text-align: center;
 
         }
 
 
-        .eyebrow {
+        .eyebrow,
+        .section-label {
 
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            margin-bottom: 20px;
+            display: inline-block;
 
             color: var(--gold-light);
 
-            font-family: "Marcellus", serif;
+            font-size: 13px;
 
-            font-size: 12px;
-
-            letter-spacing: 3px;
+            letter-spacing: 2px;
 
             text-transform: uppercase;
 
-        }
-
-
-        .eyebrow::before {
-
-            content: "";
-
-            width: 45px;
-
-            height: 1px;
-
-            background: var(--gold);
+            margin-bottom: 15px;
 
         }
 
 
         .hero h1 {
 
-            max-width: 900px;
+            font-family: var(--display);
 
-            font-family: "Marcellus", serif;
-
-            font-size: clamp(48px, 7vw, 86px);
-
-            font-weight: 400;
+            font-size:
+                clamp(
+                    42px,
+                    7vw,
+                    78px
+                );
 
             line-height: 1.05;
 
-            color: var(--ivory);
+            font-weight: 400;
 
             margin-bottom: 25px;
 
@@ -735,22 +624,30 @@
 
         .hero p {
 
-            max-width: 720px;
+            max-width: 760px;
 
-            color: #d0ccc2;
+            margin:
+                0 auto 30px;
 
-            font-size: clamp(18px, 2vw, 22px);
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.84
+                );
 
-            line-height: 1.8;
-
-            margin-bottom: 34px;
+            font-size: 18px;
 
         }
 
 
-        .hero-actions {
+        .hero-actions,
+        .cta-actions {
 
             display: flex;
+
+            justify-content: center;
 
             flex-wrap: wrap;
 
@@ -759,15 +656,7 @@
         }
 
 
-        /* =========================================================
-           BUTTONS
-        ========================================================== */
-
         .btn {
-
-            min-height: 52px;
-
-            padding: 0 25px;
 
             display: inline-flex;
 
@@ -775,23 +664,23 @@
 
             justify-content: center;
 
-            border: 1px solid transparent;
+            min-height: 48px;
 
-            font-family: "Marcellus", serif;
+            padding: 0 24px;
 
-            font-size: 12px;
+            border:
+                1px solid transparent;
 
-            letter-spacing: 1.5px;
+            font-family: var(--display);
 
-            text-transform: uppercase;
+            font-size: 13px;
+
+            letter-spacing: 0.5px;
+
+            cursor: pointer;
 
             transition:
-                transform 0.3s ease,
-                background 0.3s ease,
-                color 0.3s ease,
-                border-color 0.3s ease;
-
-            text-align: center;
+                var(--transition);
 
         }
 
@@ -802,6 +691,8 @@
 
             color: var(--navy);
 
+            border-color: var(--gold);
+
         }
 
 
@@ -809,18 +700,20 @@
 
             background: var(--gold-light);
 
-            transform: translateY(-3px);
+            border-color: var(--gold-light);
+
+            transform: translateY(-2px);
 
         }
 
 
         .btn-outline {
 
-            border-color: var(--gold);
-
             background: transparent;
 
             color: var(--gold-light);
+
+            border-color: var(--gold);
 
         }
 
@@ -831,89 +724,58 @@
 
             color: var(--navy);
 
-            transform: translateY(-3px);
+            transform: translateY(-2px);
 
         }
 
 
         /* =========================================================
-           SECTION SYSTEM
+           GENERAL SECTIONS
         ========================================================== */
-
-        section {
-            position: relative;
-        }
-
 
         .section {
 
-            padding:
-                110px 20px;
-
-        }
-
-
-        .container {
-
-            width: min(1200px, calc(100% - 40px));
-
-            margin: 0 auto;
+            padding: 100px 0;
 
         }
 
 
         .section-heading {
 
-            max-width: 760px;
-
-            margin-bottom: 55px;
+            margin-bottom: 45px;
 
         }
 
 
         .section-heading.center {
 
-            margin-left: auto;
-
-            margin-right: auto;
-
             text-align: center;
 
-        }
+            max-width: 780px;
 
-
-        .section-label {
-
-            display: inline-block;
-
-            margin-bottom: 14px;
-
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-
-            font-size: 12px;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
+            margin-inline: auto;
 
         }
 
 
         .section-heading h2 {
 
-            font-family: "Marcellus", serif;
+            font-family: var(--display);
 
-            font-size: clamp(35px, 5vw, 60px);
+            color: var(--navy);
+
+            font-size:
+                clamp(
+                    32px,
+                    5vw,
+                    50px
+                );
 
             font-weight: 400;
 
-            line-height: 1.12;
+            line-height: 1.15;
 
-            color: var(--ivory);
-
-            margin-bottom: 18px;
+            margin-bottom: 16px;
 
         }
 
@@ -922,20 +784,18 @@
 
             color: var(--muted);
 
-            font-size: 19px;
-
-            line-height: 1.8;
+            font-size: 17px;
 
         }
 
 
         /* =========================================================
-           INTRODUCTION
+           INTRO
         ========================================================== */
 
         .intro-section {
 
-            background: var(--navy);
+            background: var(--white);
 
         }
 
@@ -945,8 +805,7 @@
             display: grid;
 
             grid-template-columns:
-                minmax(0, 1fr)
-                minmax(300px, 0.75fr);
+                1fr 1fr;
 
             gap: 70px;
 
@@ -957,31 +816,30 @@
 
         .intro-text p {
 
-            color: #cbc7bd;
+            color: var(--muted);
 
-            font-size: 20px;
+            margin-bottom: 18px;
 
-            line-height: 1.9;
-
-            margin-bottom: 22px;
+            font-size: 17px;
 
         }
 
 
         .intro-note {
 
-            padding: 25px 28px;
+            border-left:
+                3px solid var(--gold);
 
-            border-left: 2px solid var(--gold);
+            padding:
+                18px 20px;
 
-            background:
-                rgba(255, 255, 255, 0.035);
+            background: #f8f5ee;
 
-            color: var(--gold-light);
+            color: var(--navy);
 
-            font-size: 18px;
+            margin-top: 25px;
 
-            font-style: italic;
+            font-size: 16px;
 
         }
 
@@ -995,13 +853,11 @@
 
         .intro-image img {
 
-            min-height: 420px;
+            width: 100%;
+
+            height: 470px;
 
             object-fit: cover;
-
-            border: 1px solid var(--border);
-
-            box-shadow: var(--shadow);
 
         }
 
@@ -1012,46 +868,59 @@
 
             left: 20px;
 
-            right: 20px;
-
             bottom: 20px;
 
-            padding: 18px;
+            padding:
+                10px 15px;
 
             background:
-                rgba(4, 10, 18, 0.84);
+                rgba(
+                    7,
+                    21,
+                    37,
+                    0.9
+                );
 
-            backdrop-filter: blur(10px);
+            color: var(--gold-light);
 
-            border: 1px solid var(--border);
+            font-size: 11px;
 
-            color: var(--ivory);
-
-            font-family: "Marcellus", serif;
-
-            font-size: 13px;
-
-            letter-spacing: 1px;
-
-            text-align: center;
+            letter-spacing: 2px;
 
         }
 
 
         /* =========================================================
-           TUITION & FEES
+           ANNUAL FEES
         ========================================================== */
 
         .fees-section {
 
             padding:
-                100px 20px;
+                100px 0;
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #0a182a,
-                    #07111f
+            background: var(--navy);
+
+            color: var(--white);
+
+        }
+
+
+        .fees-section .section-heading h2 {
+
+            color: var(--white);
+
+        }
+
+
+        .fees-section .section-heading p {
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.7
                 );
 
         }
@@ -1062,11 +931,11 @@
             display: grid;
 
             grid-template-columns:
-                repeat(2, minmax(0, 1fr));
+                repeat(2, 1fr);
 
-            gap: 24px;
+            gap: 25px;
 
-            max-width: 900px;
+            max-width: 850px;
 
             margin: 0 auto;
 
@@ -1075,153 +944,150 @@
 
         .fee-card {
 
-            position: relative;
-
-            padding: 42px 35px;
+            padding:
+                40px 30px;
 
             text-align: center;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.018)
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.035
                 );
-
-            overflow: hidden;
 
             transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease;
-
-        }
-
-
-        .fee-card::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 3px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    var(--gold),
-                    transparent
-                );
+                var(--transition);
 
         }
 
 
         .fee-card:hover {
 
-            transform: translateY(-6px);
+            transform:
+                translateY(-6px);
 
             border-color:
-                rgba(199, 163, 75, 0.55);
+                var(--gold);
 
-            box-shadow:
-                0 25px 55px rgba(0, 0, 0, 0.25);
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.06
+                );
 
         }
 
 
         .fee-country {
 
-            display: inline-block;
+            display: block;
 
-            margin-bottom: 18px;
-
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
+            color:
+                var(--gold-light);
 
             font-size: 12px;
 
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
 
         }
 
 
         .fee-price {
 
-            color: var(--ivory);
+            color: var(--white);
 
-            font-family: "Marcellus", serif;
+            font-family:
+                var(--display);
 
-            font-size: clamp(52px, 7vw, 72px);
+            font-size: 58px;
 
             line-height: 1;
 
-            margin-bottom: 12px;
+            margin-bottom: 15px;
 
         }
 
 
         .fee-price small {
 
-            font-family:
-                "Cormorant Garamond",
-                serif;
+            font-size: 14px;
 
-            font-size: 18px;
-
-            color: var(--gold-light);
-
-            letter-spacing: 1px;
+            color:
+                var(--gold-light);
 
         }
 
 
         .fee-card h3 {
 
-            color: var(--ivory);
-
-            font-family: "Marcellus", serif;
-
-            font-size: 22px;
+            font-family:
+                var(--display);
 
             font-weight: 400;
 
-            margin-bottom: 8px;
+            font-size: 22px;
+
+            margin-bottom: 10px;
+
+            color: var(--white);
 
         }
 
 
         .fee-card p {
 
-            color: var(--muted);
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.72
+                );
 
-            font-size: 17px;
-
-            margin-bottom: 20px;
+            margin-bottom: 18px;
 
         }
 
 
         .fee-note {
 
-            padding-top: 18px;
+            color:
+                var(--gold-light);
 
-            border-top:
-                1px solid
-                rgba(255,255,255,0.08);
+            font-size: 14px;
 
-            color: #c8c4bb;
+        }
 
-            font-size: 15px;
+
+        .annual-badge {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding:
+                7px 14px;
+
+            border:
+                1px solid var(--gold);
+
+            color:
+                var(--gold-light);
+
+            font-size: 11px;
+
+            letter-spacing: 1.3px;
+
+            text-transform: uppercase;
 
         }
 
@@ -1230,18 +1096,22 @@
 
             max-width: 900px;
 
-            margin: 28px auto 0;
+            margin:
+                30px auto 0;
 
-            padding: 22px 25px;
+            padding:
+                25px 28px;
 
             border:
-                1px solid
-                rgba(199,163,75,0.18);
+                1px solid var(--border);
 
-            background:
-                rgba(255,255,255,0.025);
-
-            color: var(--muted);
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.78
+                );
 
             text-align: center;
 
@@ -1252,30 +1122,26 @@
 
         .fee-summary strong {
 
-            color: var(--gold-light);
+            color:
+                var(--gold-light);
 
         }
 
 
         /* =========================================================
-           SEMESTER SECTION
+           SEMESTERS
         ========================================================== */
 
         .semester-section {
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #091526,
-                    #07111f
-                );
+            background: #f8f7f3;
 
         }
 
 
         .semester-block {
 
-            margin-bottom: 90px;
+            margin-bottom: 70px;
 
         }
 
@@ -1291,79 +1157,77 @@
 
             display: flex;
 
-            align-items: flex-end;
+            align-items: center;
 
             justify-content: space-between;
 
-            gap: 25px;
+            gap: 20px;
 
-            padding-bottom: 22px;
+            padding-bottom: 18px;
 
             margin-bottom: 30px;
 
             border-bottom:
                 1px solid
-                var(--border);
+                rgba(
+                    7,
+                    21,
+                    37,
+                    0.14
+                );
 
         }
 
 
         .semester-title {
 
-            font-family: "Marcellus", serif;
+            font-family:
+                var(--display);
 
-            font-size:
-                clamp(27px, 4vw, 40px);
+            font-size: 34px;
 
             font-weight: 400;
 
-            color: var(--ivory);
+            color: var(--navy);
 
         }
 
 
         .semester-title span {
 
-            color: var(--gold-light);
+            color: var(--gold-dark);
 
         }
 
 
         .semester-duration {
 
-            flex-shrink: 0;
-
-            padding: 8px 14px;
+            padding:
+                8px 16px;
 
             border:
-                1px solid
-                var(--border);
+                1px solid var(--gold);
 
-            color: var(--gold-light);
+            color:
+                var(--gold-dark);
 
-            font-family: "Marcellus", serif;
+            font-size: 13px;
 
-            font-size: 11px;
+            letter-spacing: 1px;
 
-            letter-spacing: 1.5px;
-
-            text-transform: uppercase;
+            white-space: nowrap;
 
         }
 
-
-        /* =========================================================
-           COURSE GRID
-        ========================================================== */
 
         .course-grid {
 
             display: grid;
 
             grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+                repeat(3, 1fr);
 
-            gap: 22px;
+            gap: 25px;
 
         }
 
@@ -1372,150 +1236,147 @@
 
             position: relative;
 
-            min-height: 355px;
+            background: var(--white);
 
-            display: flex;
-
-            flex-direction: column;
-
-            padding: 30px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.018)
-                );
+            padding:
+                32px 28px;
 
             border:
                 1px solid
-                rgba(199, 163, 75, 0.20);
-
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                background 0.35s ease,
-                box-shadow 0.35s ease;
-
-            overflow: hidden;
-
-        }
-
-
-        .course-card::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 3px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    var(--gold),
-                    transparent
+                rgba(
+                    7,
+                    21,
+                    37,
+                    0.09
                 );
 
-            transform: scaleX(0);
-
-            transform-origin: center;
+            box-shadow:
+                0 10px 35px
+                rgba(
+                    7,
+                    21,
+                    37,
+                    0.05
+                );
 
             transition:
-                transform 0.35s ease;
+                var(--transition);
 
         }
 
 
         .course-card:hover {
 
-            transform: translateY(-8px);
+            transform:
+                translateY(-7px);
 
             border-color:
-                rgba(199, 163, 75, 0.55);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(199,163,75,0.08),
-                    rgba(255,255,255,0.025)
-                );
+                var(--gold);
 
             box-shadow:
-                0 25px 60px rgba(0,0,0,0.25);
+                0 18px 45px
+                rgba(
+                    7,
+                    21,
+                    37,
+                    0.1
+                );
 
         }
 
 
-        .course-card:hover::before {
+        .course-status {
 
-            transform: scaleX(1);
+            display: inline-block;
+
+            font-size: 10px;
+
+            letter-spacing: 1.3px;
+
+            text-transform: uppercase;
+
+            padding:
+                5px 9px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .status-current {
+
+            background:
+                rgba(
+                    201,
+                    164,
+                    92,
+                    0.14
+                );
+
+            color:
+                var(--gold-dark);
+
+        }
+
+
+        .status-coming {
+
+            background:
+                rgba(
+                    7,
+                    21,
+                    37,
+                    0.07
+                );
+
+            color:
+                var(--navy);
 
         }
 
 
         .course-number {
 
-            width: 48px;
+            font-family:
+                var(--display);
 
-            height: 48px;
+            font-size: 20px;
 
-            display: flex;
+            color:
+                var(--gold-dark);
 
-            align-items: center;
-
-            justify-content: center;
-
-            margin-bottom: 24px;
-
-            border:
-                1px solid
-                var(--border);
-
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-
-            font-size: 14px;
+            margin-bottom: 8px;
 
         }
 
 
         .course-card h3 {
 
-            font-family: "Marcellus", serif;
+            font-family:
+                var(--display);
 
-            font-size: 25px;
+            color:
+                var(--navy);
+
+            font-size: 23px;
 
             font-weight: 400;
 
-            line-height: 1.3;
+            line-height: 1.25;
 
-            color: var(--ivory);
-
-            margin-bottom: 15px;
-
-            overflow-wrap: anywhere;
+            margin-bottom: 14px;
 
         }
 
 
         .course-card p {
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
-            font-size: 17px;
+            font-size: 15px;
 
-            line-height: 1.65;
-
-            margin-bottom: 20px;
+            margin-bottom: 22px;
 
         }
 
@@ -1524,39 +1385,32 @@
 
             display: flex;
 
-            flex-wrap: wrap;
+            flex-direction: column;
 
-            gap: 8px;
+            gap: 7px;
 
-            margin-top: auto;
+            padding-top: 15px;
 
-            margin-bottom: 22px;
+            border-top:
+                1px solid
+                rgba(
+                    7,
+                    21,
+                    37,
+                    0.1
+                );
+
+            margin-bottom: 20px;
 
         }
 
 
         .meta-item {
 
-            padding: 6px 10px;
-
-            border:
-                1px solid
-                rgba(199,163,75,0.18);
-
-            color: #c8c4bb;
-
             font-size: 12px;
 
-            letter-spacing: 0.5px;
-
-        }
-
-
-        .course-actions {
-
-            display: flex;
-
-            gap: 10px;
+            color:
+                var(--muted);
 
         }
 
@@ -1565,64 +1419,9 @@
 
             width: 100%;
 
-            min-height: 46px;
+            min-height: 44px;
 
-            padding: 0 12px;
-
-            font-size: 10px;
-
-        }
-
-
-        /* =========================================================
-           COURSE STATUS
-        ========================================================== */
-
-        .course-status {
-
-            position: absolute;
-
-            top: 20px;
-
-            right: 20px;
-
-            padding: 6px 9px;
-
-            font-family: "Marcellus", serif;
-
-            font-size: 9px;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .status-current {
-
-            border:
-                1px solid
-                rgba(199,163,75,0.45);
-
-            color: var(--gold-light);
-
-            background:
-                rgba(199,163,75,0.07);
-
-        }
-
-
-        .status-coming {
-
-            border:
-                1px solid
-                rgba(255,255,255,0.12);
-
-            color: #aaa79e;
-
-            background:
-                rgba(255,255,255,0.04);
+            font-size: 11px;
 
         }
 
@@ -1634,44 +1433,41 @@
         .academic-note-section {
 
             padding:
-                85px 20px;
+                55px 0;
 
-            background: #0a182a;
+            background:
+                var(--white);
 
         }
 
 
         .academic-note {
 
-            display: grid;
+            display: flex;
 
-            grid-template-columns: auto 1fr;
+            gap: 20px;
 
-            gap: 25px;
+            align-items: flex-start;
 
-            align-items: start;
-
-            padding: 35px;
-
-            border:
-                1px solid
-                var(--border);
+            padding:
+                30px;
 
             background:
-                linear-gradient(
-                    135deg,
-                    rgba(199,163,75,0.07),
-                    rgba(255,255,255,0.025)
-                );
+                #f8f5ee;
+
+            border-left:
+                4px solid var(--gold);
 
         }
 
 
         .academic-icon {
 
-            width: 55px;
+            width: 38px;
 
-            height: 55px;
+            height: 38px;
+
+            flex: 0 0 38px;
 
             display: flex;
 
@@ -1679,52 +1475,53 @@
 
             justify-content: center;
 
-            border:
-                1px solid
-                var(--gold);
+            border-radius: 50%;
 
-            color: var(--gold-light);
+            background:
+                var(--navy);
 
-            font-family: "Marcellus", serif;
+            color:
+                var(--gold-light);
 
-            font-size: 20px;
+            font-family:
+                var(--display);
 
         }
 
 
         .academic-note h3 {
 
-            font-family: "Marcellus", serif;
+            font-family:
+                var(--display);
 
-            font-size: 25px;
+            font-size: 23px;
 
             font-weight: 400;
 
-            margin-bottom: 8px;
+            color:
+                var(--navy);
 
-            color: var(--ivory);
+            margin-bottom: 7px;
 
         }
 
 
         .academic-note p {
 
-            color: var(--muted);
-
-            font-size: 17px;
-
-            line-height: 1.8;
+            color:
+                var(--muted);
 
         }
 
 
         /* =========================================================
-           HOW TO PROCEED
+           PROCEED
         ========================================================== */
 
         .proceed-section {
 
-            background: var(--navy);
+            background:
+                var(--white);
 
         }
 
@@ -1734,64 +1531,69 @@
             display: grid;
 
             grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+                repeat(3, 1fr);
 
-            gap: 22px;
+            gap: 25px;
 
         }
 
 
         .step-card {
 
-            padding: 32px;
+            padding:
+                32px;
 
             border:
                 1px solid
-                var(--border);
-
-            background: var(--glass);
+                rgba(
+                    7,
+                    21,
+                    37,
+                    0.1
+                );
 
             transition:
-                transform 0.3s ease,
-                border-color 0.3s ease;
+                var(--transition);
 
         }
 
 
         .step-card:hover {
 
-            transform: translateY(-5px);
-
             border-color:
-                rgba(199,163,75,0.5);
+                var(--gold);
+
+            transform:
+                translateY(-5px);
 
         }
 
 
         .step-number {
 
-            margin-bottom: 18px;
+            color:
+                var(--gold-dark);
 
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-
-            font-size: 14px;
+            font-size: 11px;
 
             letter-spacing: 2px;
+
+            margin-bottom: 15px;
 
         }
 
 
         .step-card h3 {
 
-            font-family: "Marcellus", serif;
+            font-family:
+                var(--display);
 
-            font-size: 24px;
+            font-size: 23px;
 
             font-weight: 400;
 
-            color: var(--ivory);
+            color:
+                var(--navy);
 
             margin-bottom: 12px;
 
@@ -1800,11 +1602,8 @@
 
         .step-card p {
 
-            color: var(--muted);
-
-            font-size: 17px;
-
-            line-height: 1.75;
+            color:
+                var(--muted);
 
         }
 
@@ -1816,80 +1615,66 @@
         .future-section {
 
             padding:
-                100px 20px;
+                100px 0;
 
             background:
-                linear-gradient(
-                    135deg,
-                    #0b1829,
-                    #07111f
-                );
+                var(--navy);
 
         }
 
 
         .future-box {
 
-            max-width: 900px;
+            max-width: 850px;
 
-            margin: 0 auto;
+            margin:
+                0 auto;
 
             text-align: center;
 
-            padding:
-                55px 35px;
-
-            border:
-                1px solid
-                var(--border);
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(199,163,75,0.08),
-                    transparent 65%
-                );
-
-        }
-
-
-        .future-box .section-label {
-
-            margin-bottom: 18px;
+            color:
+                var(--white);
 
         }
 
 
         .future-box h2 {
 
-            font-family: "Marcellus", serif;
-
-            font-size:
-                clamp(34px, 5vw, 52px);
+            font-family:
+                var(--display);
 
             font-weight: 400;
 
-            line-height: 1.2;
+            font-size:
+                clamp(
+                    32px,
+                    5vw,
+                    50px
+                );
 
-            color: var(--ivory);
+            line-height: 1.15;
 
-            margin-bottom: 18px;
+            margin-bottom: 20px;
 
         }
 
 
         .future-box p {
 
-            max-width: 720px;
+            max-width: 750px;
 
             margin:
-                0 auto 28px;
+                0 auto 30px;
 
-            color: var(--muted);
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.72
+                );
 
-            font-size: 19px;
-
-            line-height: 1.8;
+            font-size: 17px;
 
         }
 
@@ -1900,31 +1685,41 @@
 
         .cta-section {
 
-            min-height: 450px;
-
-            display: flex;
-
-            align-items: center;
-
             padding:
-                80px 20px;
+                110px 20px;
+
+            position: relative;
 
             background:
                 linear-gradient(
-                    rgba(5, 12, 22, 0.88),
-                    rgba(5, 12, 22, 0.94)
+                    rgba(
+                        7,
+                        21,
+                        37,
+                        0.88
+                    ),
+                    rgba(
+                        7,
+                        21,
+                        37,
+                        0.93
+                    )
                 ),
-                url("assets/images/gallery/conference.jpg")
+                url("./assets/images/gallery/conference.jpg")
                 center / cover no-repeat;
+
+            color:
+                var(--white);
 
         }
 
 
         .cta-content {
 
-            width: min(850px, 100%);
+            max-width: 850px;
 
-            margin: 0 auto;
+            margin:
+                0 auto;
 
             text-align: center;
 
@@ -1933,16 +1728,19 @@
 
         .cta-content h2 {
 
-            font-family: "Marcellus", serif;
-
-            font-size:
-                clamp(38px, 5vw, 62px);
+            font-family:
+                var(--display);
 
             font-weight: 400;
 
-            line-height: 1.15;
+            font-size:
+                clamp(
+                    35px,
+                    6vw,
+                    58px
+                );
 
-            color: var(--ivory);
+            line-height: 1.1;
 
             margin-bottom: 18px;
 
@@ -1951,24 +1749,20 @@
 
         .cta-content p {
 
-            color: #d0ccc2;
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.75
+                );
 
-            font-size: 19px;
+            font-size: 17px;
 
-            margin-bottom: 30px;
+            max-width: 700px;
 
-        }
-
-
-        .cta-actions {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            gap: 14px;
+            margin:
+                0 auto 30px;
 
         }
 
@@ -1979,34 +1773,37 @@
 
         footer {
 
+            background:
+                #040e18;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.72
+                );
+
             padding:
-                70px 20px 30px;
-
-            background: #040b14;
-
-            border-top:
-                1px solid
-                rgba(199,163,75,0.12);
+                75px 5% 25px;
 
         }
 
 
         .footer-grid {
 
-            width: min(1200px, 100%);
+            max-width: 1180px;
 
             margin:
-                0 auto 50px;
+                0 auto 55px;
 
             display: grid;
 
             grid-template-columns:
-                1.5fr
-                1fr
-                1fr
-                1fr;
+                1.6fr
+                repeat(3, 1fr);
 
-            gap: 40px;
+            gap: 45px;
 
         }
 
@@ -2026,85 +1823,96 @@
 
         .footer-brand h3 {
 
-            font-family: "Marcellus", serif;
+            color:
+                var(--white);
 
-            font-size: 23px;
+            font-family:
+                var(--display);
+
+            font-size: 21px;
 
             font-weight: 400;
 
-            margin-bottom: 10px;
+            margin-bottom: 12px;
 
         }
 
 
         .footer-brand p {
 
-            max-width: 330px;
+            max-width: 360px;
 
-            color: #9f9c94;
+            font-size: 14px;
 
-            font-size: 16px;
+        }
 
-            line-height: 1.7;
+
+        .footer-column {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
 
         }
 
 
         .footer-column h4 {
 
-            font-family: "Marcellus", serif;
+            color:
+                var(--gold-light);
+
+            font-family:
+                var(--display);
 
             font-size: 16px;
 
             font-weight: 400;
 
-            color: var(--gold-light);
-
-            letter-spacing: 1px;
-
-            margin-bottom: 18px;
-
-            text-transform: uppercase;
+            margin-bottom: 8px;
 
         }
 
 
         .footer-column a {
 
-            display: block;
-
-            width: fit-content;
-
-            margin-bottom: 10px;
-
-            color: #aaa79f;
-
-            font-size: 15px;
+            font-size: 14px;
 
             transition:
-                color 0.3s ease;
+                var(--transition);
 
         }
 
 
         .footer-column a:hover {
 
-            color: var(--gold-light);
+            color:
+                var(--gold-light);
+
+            transform:
+                translateX(3px);
 
         }
 
 
         .footer-bottom {
 
-            width: min(1200px, 100%);
+            max-width: 1180px;
 
-            margin: 0 auto;
+            margin:
+                auto;
 
-            padding-top: 25px;
+            padding-top: 22px;
 
             border-top:
                 1px solid
-                rgba(255,255,255,0.07);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.1
+                );
 
             display: flex;
 
@@ -2114,9 +1922,7 @@
 
             gap: 20px;
 
-            color: #77756f;
-
-            font-size: 14px;
+            font-size: 12px;
 
         }
 
@@ -2133,30 +1939,24 @@
 
             bottom: 22px;
 
-            z-index: 4000;
-
             width: 48px;
 
             height: 48px;
 
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
             border:
-                1px solid
-                var(--border);
+                1px solid var(--gold);
 
             background:
-                rgba(5, 12, 22, 0.88);
+                var(--navy);
 
-            backdrop-filter: blur(10px);
+            color:
+                var(--gold-light);
 
-            color: var(--gold-light);
+            font-size: 22px;
 
-            font-size: 20px;
+            cursor: pointer;
+
+            z-index: 900;
 
             opacity: 0;
 
@@ -2166,9 +1966,7 @@
                 translateY(15px);
 
             transition:
-                opacity 0.3s ease,
-                visibility 0.3s ease,
-                transform 0.3s ease;
+                var(--transition);
 
         }
 
@@ -2179,22 +1977,25 @@
 
             visibility: visible;
 
-            transform: translateY(0);
+            transform:
+                translateY(0);
 
         }
 
 
         .back-top:hover {
 
-            background: var(--gold);
+            background:
+                var(--gold);
 
-            color: var(--navy);
+            color:
+                var(--navy);
 
         }
 
 
         /* =========================================================
-           SCROLL REVEAL
+           REVEAL ANIMATION
         ========================================================== */
 
         .reveal {
@@ -2202,11 +2003,11 @@
             opacity: 0;
 
             transform:
-                translateY(35px);
+                translateY(25px);
 
             transition:
-                opacity 0.8s ease,
-                transform 0.8s ease;
+                opacity 0.7s ease,
+                transform 0.7s ease;
 
         }
 
@@ -2222,45 +2023,10 @@
 
 
         /* =========================================================
-           LARGE TABLET
+           RESPONSIVE
         ========================================================== */
 
-        @media (max-width: 1200px) {
-
-            .main-nav {
-                gap: 14px;
-            }
-
-            .main-nav a {
-                font-size: 14px;
-            }
-
-            .nav-cta {
-                padding: 0 14px;
-            }
-
-            .intro-grid {
-                gap: 45px;
-            }
-
-        }
-
-
-        /* =========================================================
-           TABLET
-        ========================================================== */
-
-        @media (max-width: 1050px) {
-
-            .menu-toggle {
-                display: flex;
-            }
-
-
-            .desktop-nav-cta {
-                display: none;
-            }
-
+        @media (max-width: 1100px) {
 
             .main-nav {
 
@@ -2268,115 +2034,81 @@
 
                 top: 0;
 
-                right: 0;
+                right: -100%;
 
-                width:
-                    min(380px, 88vw);
+                width: min(
+                    350px,
+                    86%
+                );
 
-                height: 100svh;
+                height: 100vh;
 
-                min-height: 100vh;
-
-                padding:
-                    105px 28px 35px;
-
-                display: flex;
+                background:
+                    var(--navy);
 
                 flex-direction: column;
 
-                align-items: stretch;
+                align-items: flex-start;
 
                 justify-content: flex-start;
 
-                gap: 4px;
+                padding:
+                    110px 30px 40px;
 
-                background:
-                    rgba(4, 10, 18, 0.985);
-
-                border-left:
-                    1px solid
-                    var(--border);
-
-                box-shadow:
-                    -20px 0 60px
-                    rgba(0,0,0,0.45);
-
-                transform:
-                    translateX(110%);
-
-                transition:
-                    transform 0.35s ease;
+                gap: 20px;
 
                 overflow-y: auto;
 
-                overscroll-behavior: contain;
+                transition:
+                    right 0.35s ease;
+
+                box-shadow:
+                    -20px 0 50px
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        0.25
+                    );
 
             }
 
 
             .main-nav.open {
 
-                transform:
-                    translateX(0);
+                right: 0;
 
             }
 
 
             .main-nav a {
 
-                width: 100%;
-
-                padding:
-                    15px 5px;
-
-                border-bottom:
-                    1px solid
-                    rgba(255,255,255,0.06);
-
-                font-size: 18px;
+                font-size: 17px;
 
             }
 
 
-            .main-nav a::after {
+            .desktop-nav-cta {
 
                 display: none;
 
             }
 
 
-            .main-nav a.active {
+            .menu-toggle {
 
-                color:
-                    var(--gold-light);
+                display: block;
+
+                position: relative;
+
+                z-index: 1002;
 
             }
 
 
             .intro-grid {
 
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-
-            }
-
-
-            .intro-image {
-
-                max-width: 700px;
-
-                width: 100%;
-
-                margin: 0 auto;
-
-            }
-
-
-            .steps-grid {
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
+                gap: 40px;
 
             }
 
@@ -2384,7 +2116,59 @@
             .course-grid {
 
                 grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            .hero {
+
+                min-height: 80vh;
+
+                padding:
+                    150px 20px 80px;
+
+            }
+
+
+            .hero p {
+
+                font-size: 16px;
+
+            }
+
+
+            .intro-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .intro-image img {
+
+                height: 400px;
+
+            }
+
+
+            .fee-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .steps-grid {
+
+                grid-template-columns:
+                    1fr;
 
             }
 
@@ -2392,165 +2176,62 @@
             .footer-grid {
 
                 grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
+                    1fr 1fr;
 
             }
 
         }
 
-
-        /* =========================================================
-           TABLET / SMALL LAPTOP
-        ========================================================== */
-
-        @media (max-width: 800px) {
-
-            .hero {
-
-                min-height: 700px;
-
-            }
-
-
-            .hero-content {
-
-                padding-top: 90px;
-
-            }
-
-
-            .fee-grid {
-
-                grid-template-columns: 1fr;
-
-                max-width: 600px;
-
-            }
-
-
-            .academic-note {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .academic-icon {
-
-                margin-bottom: -5px;
-
-            }
-
-        }
-
-
-        /* =========================================================
-           MOBILE
-        ========================================================== */
 
         @media (max-width: 600px) {
 
-            .site-header {
+            .container {
 
-                padding:
-                    10px 15px;
+                width:
+                    min(
+                        calc(100% - 28px),
+                        1180px
+                    );
 
             }
 
 
             .nav-container {
 
-                min-height: 62px;
-
-            }
-
-
-            .brand {
-
-                gap: 9px;
-
-            }
-
-
-            .brand img {
-
-                width: 47px;
-
-                height: 47px;
+                width:
+                    calc(
+                        100% - 28px
+                    );
 
             }
 
 
             .brand-name {
 
-                font-size: 15px;
+                font-size: 14px;
 
             }
 
 
             .brand-tagline {
 
-                font-size: 8px;
-
-                letter-spacing: 1px;
+                font-size: 9px;
 
             }
 
 
-            .menu-toggle {
+            .brand img {
 
-                width: 44px;
+                width: 42px;
 
-                height: 44px;
-
-                font-size: 24px;
-
-            }
-
-
-            .main-nav {
-
-                width:
-                    min(340px, 90vw);
-
-                padding:
-                    95px 22px 30px;
+                height: 42px;
 
             }
 
 
             .hero {
 
-                min-height: 680px;
-
-                background-position:
-                    60% center;
-
-            }
-
-
-            .hero-content {
-
-                width:
-                    calc(100% - 36px);
-
-                padding-top: 75px;
-
-            }
-
-
-            .eyebrow {
-
-                font-size: 10px;
-
-                letter-spacing: 2px;
-
-            }
-
-
-            .eyebrow::before {
-
-                width: 30px;
+                min-height: 78vh;
 
             }
 
@@ -2558,27 +2239,19 @@
             .hero h1 {
 
                 font-size:
-                    clamp(42px, 13vw, 60px);
-
-                line-height: 1.06;
-
-            }
-
-
-            .hero p {
-
-                font-size: 17px;
-
-                line-height: 1.7;
+                    clamp(
+                        38px,
+                        12vw,
+                        52px
+                    );
 
             }
 
 
             .hero-actions {
 
-                flex-direction: column;
-
-                align-items: stretch;
+                flex-direction:
+                    column;
 
             }
 
@@ -2593,76 +2266,7 @@
             .section {
 
                 padding:
-                    75px 18px;
-
-            }
-
-
-            .container {
-
-                width:
-                    calc(100% - 4px);
-
-            }
-
-
-            .section-heading {
-
-                margin-bottom: 38px;
-
-            }
-
-
-            .section-heading h2 {
-
-                font-size:
-                    clamp(32px, 10vw, 45px);
-
-            }
-
-
-            .section-heading p {
-
-                font-size: 17px;
-
-            }
-
-
-            .intro-text p {
-
-                font-size: 18px;
-
-            }
-
-
-            .intro-note {
-
-                padding:
-                    20px;
-
-                font-size: 17px;
-
-            }
-
-
-            .intro-image img {
-
-                min-height: 300px;
-
-            }
-
-
-            .image-caption {
-
-                left: 12px;
-
-                right: 12px;
-
-                bottom: 12px;
-
-                padding: 13px;
-
-                font-size: 11px;
+                    75px 0;
 
             }
 
@@ -2670,7 +2274,7 @@
             .fees-section {
 
                 padding:
-                    75px 18px;
+                    75px 0;
 
             }
 
@@ -2678,14 +2282,14 @@
             .fee-card {
 
                 padding:
-                    35px 22px;
+                    30px 20px;
 
             }
 
 
             .fee-price {
 
-                font-size: 58px;
+                font-size: 48px;
 
             }
 
@@ -2695,83 +2299,41 @@
                 padding:
                     18px;
 
-                font-size: 15px;
-
-            }
-
-
-            .semester-block {
-
-                margin-bottom: 65px;
+                font-size: 14px;
 
             }
 
 
             .semester-header {
 
-                align-items: flex-start;
+                align-items:
+                    flex-start;
 
-                flex-direction: column;
-
-                gap: 15px;
+                flex-direction:
+                    column;
 
             }
 
 
-            .semester-duration {
+            .semester-title {
 
-                font-size: 10px;
+                font-size: 29px;
 
             }
 
 
             .course-grid {
 
-                grid-template-columns: 1fr;
-
-                gap: 16px;
+                grid-template-columns:
+                    1fr;
 
             }
 
 
             .course-card {
 
-                min-height: auto;
-
-                padding: 25px;
-
-            }
-
-
-            .course-card h3 {
-
-                font-size: 23px;
-
-                padding-right: 25px;
-
-            }
-
-
-            .course-card p {
-
-                font-size: 16px;
-
-            }
-
-
-            .course-status {
-
-                top: 17px;
-
-                right: 17px;
-
-            }
-
-
-            .academic-note-section {
-
                 padding:
-                    70px 18px;
+                    28px 22px;
 
             }
 
@@ -2779,109 +2341,47 @@
             .academic-note {
 
                 padding:
-                    25px;
+                    22px;
 
-                gap: 18px;
-
-            }
-
-
-            .academic-note h3 {
-
-                font-size: 22px;
+                flex-direction:
+                    column;
 
             }
 
 
-            .academic-note p {
+            .footer-grid {
 
-                font-size: 16px;
+                grid-template-columns:
+                    1fr;
 
-            }
-
-
-            .steps-grid {
-
-                grid-template-columns: 1fr;
+                gap: 35px;
 
             }
 
 
-            .step-card {
+            .footer-bottom {
 
-                padding: 27px;
+                flex-direction:
+                    column;
 
-            }
-
-
-            .future-section {
-
-                padding:
-                    75px 18px;
-
-            }
-
-
-            .future-box {
-
-                padding:
-                    40px 22px;
-
-            }
-
-
-            .future-box h2 {
-
-                font-size:
-                    clamp(31px, 9vw, 43px);
-
-            }
-
-
-            .future-box p {
-
-                font-size: 17px;
-
-            }
-
-
-            .future-box .btn {
-
-                width: 100%;
+                align-items:
+                    flex-start;
 
             }
 
 
             .cta-section {
 
-                min-height: 500px;
-
                 padding:
-                    70px 18px;
-
-            }
-
-
-            .cta-content h2 {
-
-                font-size:
-                    clamp(36px, 10vw, 50px);
-
-            }
-
-
-            .cta-content p {
-
-                font-size: 17px;
+                    80px 20px;
 
             }
 
 
             .cta-actions {
 
-                flex-direction: column;
-
-                align-items: stretch;
+                flex-direction:
+                    column;
 
             }
 
@@ -2892,136 +2392,14 @@
 
             }
 
-
-            footer {
-
-                padding:
-                    60px 18px 25px;
-
-            }
-
-
-            .footer-grid {
-
-                grid-template-columns: 1fr;
-
-                gap: 32px;
-
-                margin-bottom: 35px;
-
-            }
-
-
-            .footer-bottom {
-
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                font-size: 13px;
-
-            }
-
-
-            .back-top {
-
-                right: 15px;
-
-                bottom: 15px;
-
-                width: 44px;
-
-                height: 44px;
-
-            }
-
         }
 
-
-        /* =========================================================
-           SMALL PHONES
-        ========================================================== */
-
-        @media (max-width: 380px) {
-
-            .brand-text {
-
-                max-width: 150px;
-
-            }
-
-
-            .brand-name {
-
-                font-size: 14px;
-
-            }
-
-
-            .brand-tagline {
-
-                font-size: 7px;
-
-            }
-
-
-            .hero h1 {
-
-                font-size: 39px;
-
-            }
-
-
-            .hero-content {
-
-                width:
-                    calc(100% - 30px);
-
-            }
-
-
-            .course-card {
-
-                padding: 21px;
-
-            }
-
-
-            .course-actions {
-
-                flex-direction: column;
-
-            }
-
-
-            .course-actions .btn {
-
-                width: 100%;
-
-            }
-
-
-            .fee-price {
-
-                font-size: 52px;
-
-            }
-
-        }
-
-
-        /* =========================================================
-           REDUCED MOTION
-        ========================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
             html {
-
                 scroll-behavior: auto;
-
             }
-
 
             *,
             *::before,
@@ -3035,15 +2413,6 @@
 
                 transition-duration:
                     0.01ms !important;
-
-            }
-
-
-            .reveal {
-
-                opacity: 1;
-
-                transform: none;
 
             }
 
@@ -3087,7 +2456,6 @@
     </div>
 
 
-
     <!-- =========================================================
          MOBILE OVERLAY
     ========================================================== -->
@@ -3097,7 +2465,6 @@
         id="menuOverlay"
         aria-hidden="true"
     ></div>
-
 
 
     <!-- =========================================================
@@ -3138,7 +2505,6 @@
                 </div>
 
             </a>
-
 
 
             <!-- NAVIGATION -->
@@ -3188,7 +2554,6 @@
             </nav>
 
 
-
             <!-- DESKTOP CTA -->
 
             <a
@@ -3197,7 +2562,6 @@
             >
                 Admissions
             </a>
-
 
 
             <!-- MOBILE MENU BUTTON -->
@@ -3216,7 +2580,6 @@
         </div>
 
     </header>
-
 
 
     <!-- =========================================================
@@ -3274,14 +2637,11 @@
         </section>
 
 
-
         <!-- =====================================================
              INTRODUCTION
         ====================================================== -->
 
-        <section
-            class="section intro-section"
-        >
+        <section class="section intro-section">
 
             <div class="container">
 
@@ -3312,15 +2672,17 @@
                         </p>
 
                         <p>
-                            The courses are arranged across two
-                            semesters, with each semester designed as
-                            a focused period of training.
+                            The academic year consists of two semesters.
+                            Each semester provides 30 days of focused
+                            academic and ministry training.
                         </p>
 
                         <div class="intro-note">
-                            Our goal is not simply to give students
-                            information, but to prepare people for
-                            effective Kingdom assignment.
+
+                            Students pay the programme fee only once
+                            for the entire academic year. The annual
+                            fee covers both semesters.
+
                         </div>
 
                     </div>
@@ -3351,9 +2713,8 @@
         </section>
 
 
-
         <!-- =====================================================
-             TUITION & FEES
+             ANNUAL TUITION & FEES
         ====================================================== -->
 
         <section
@@ -3367,22 +2728,21 @@
                 <div class="section-heading center reveal">
 
                     <span class="section-label">
-                        Tuition & Fees
+                        Annual Tuition & Fees
                     </span>
 
                     <h2>
-                        Simple, Transparent
-                        Semester Fees
+                        One Payment.
+                        Full Academic Year.
                     </h2>
 
                     <p>
-                        Tuition is charged per semester.
-                        Each semester is a focused
-                        30-day training period.
+                        Students pay only once for the academic year.
+                        The annual programme fee covers both semesters,
+                        with 30 days of training in each semester.
                     </p>
 
                 </div>
-
 
 
                 <div class="fee-grid">
@@ -3393,29 +2753,42 @@
                     <article class="fee-card reveal">
 
                         <span class="fee-country">
-                            NIGERIA
+                            STUDENTS IN NIGERIA
                         </span>
 
                         <div class="fee-price">
+
                             $15
-                            <small>USD</small>
+
+                            <small>
+                                USD
+                            </small>
+
                         </div>
 
                         <h3>
-                            Per Semester
+                            Annual Programme Fee
                         </h3>
 
                         <p>
-                            30-day training semester.
+                            One payment for the complete
+                            academic year.
                         </p>
 
                         <div class="fee-note">
-                            Applicable to students
-                            in Nigeria.
+
+                            Includes Semester 1
+                            + Semester 2
+
+                        </div>
+
+                        <div class="annual-badge">
+
+                            Pay Once Per Year
+
                         </div>
 
                     </article>
-
 
 
                     <!-- OUTSIDE NIGERIA -->
@@ -3423,25 +2796,39 @@
                     <article class="fee-card reveal">
 
                         <span class="fee-country">
-                            OUTSIDE NIGERIA
+                            STUDENTS OUTSIDE NIGERIA
                         </span>
 
                         <div class="fee-price">
+
                             $25
-                            <small>USD</small>
+
+                            <small>
+                                USD
+                            </small>
+
                         </div>
 
                         <h3>
-                            Per Semester
+                            Annual Programme Fee
                         </h3>
 
                         <p>
-                            30-day training semester.
+                            One payment for the complete
+                            academic year.
                         </p>
 
                         <div class="fee-note">
-                            Applicable to students
-                            outside Nigeria.
+
+                            Includes Semester 1
+                            + Semester 2
+
+                        </div>
+
+                        <div class="annual-badge">
+
+                            Pay Once Per Year
+
                         </div>
 
                     </article>
@@ -3449,25 +2836,32 @@
                 </div>
 
 
+                <!-- IMPORTANT ANNUAL FEE NOTICE -->
 
                 <div class="fee-summary reveal">
 
                     <strong>
-                        Important:
+                        IMPORTANT:
                     </strong>
 
-                    The amounts shown are tuition fees
-                    <strong>per semester</strong>.
-                    If a student enrolls for both semesters,
-                    the applicable semester fee is charged
-                    separately for each semester.
+                    The programme fee is paid
+                    <strong>once per academic year</strong>.
+                    There is <strong>no separate semester fee</strong>.
+                    Students in Nigeria pay
+                    <strong>$15 USD</strong> for the entire academic
+                    year, while students outside Nigeria pay
+                    <strong>$25 USD</strong> for the entire academic
+                    year.
+
+                    The academic year consists of
+                    <strong>two semesters</strong>, with
+                    <strong>30 days per semester</strong>.
 
                 </div>
 
             </div>
 
         </section>
-
 
 
         <!-- =====================================================
@@ -3482,8 +2876,6 @@
             <div class="container">
 
 
-                <!-- SECTION HEADING -->
-
                 <div class="section-heading center reveal">
 
                     <span class="section-label">
@@ -3496,11 +2888,11 @@
 
                     <p>
                         Explore the current academic course structure
-                        of Global College of Missiology.
+                        of Global College of Missiology. The academic
+                        year consists of two 30-day semesters.
                     </p>
 
                 </div>
-
 
 
                 <!-- =================================================
@@ -3513,8 +2905,12 @@
                     <div class="semester-header reveal">
 
                         <h3 class="semester-title">
+
                             First
-                            <span>Semester</span>
+                            <span>
+                                Semester
+                            </span>
+
                         </h3>
 
                         <div class="semester-duration">
@@ -3522,7 +2918,6 @@
                         </div>
 
                     </div>
-
 
 
                     <div class="course-grid">
@@ -3563,7 +2958,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -3580,7 +2975,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 2 -->
@@ -3618,7 +3012,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -3635,7 +3029,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 3 -->
@@ -3673,7 +3066,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -3690,7 +3083,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 4 -->
@@ -3728,7 +3120,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -3745,7 +3137,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 5 -->
@@ -3783,7 +3174,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -3800,7 +3191,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 6 -->
@@ -3838,7 +3228,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -3861,7 +3251,6 @@
                 </div>
 
 
-
                 <!-- =================================================
                      SECOND SEMESTER
                 ================================================== -->
@@ -3872,16 +3261,19 @@
                     <div class="semester-header reveal">
 
                         <h3 class="semester-title">
+
                             Second
-                            <span>Semester</span>
+                            <span>
+                                Semester
+                            </span>
+
                         </h3>
 
                         <div class="semester-duration">
-                            15 Days
+                            30 Days
                         </div>
 
                     </div>
-
 
 
                     <div class="course-grid">
@@ -3922,7 +3314,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -3939,7 +3331,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 2 -->
@@ -3977,7 +3368,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -3994,7 +3385,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 3 -->
@@ -4032,7 +3422,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -4049,7 +3439,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 4 -->
@@ -4087,7 +3476,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -4104,7 +3493,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 5 -->
@@ -4142,7 +3530,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -4159,7 +3547,6 @@
                             </div>
 
                         </article>
-
 
 
                         <!-- COURSE 6 -->
@@ -4197,7 +3584,7 @@
                                 </span>
 
                                 <span class="meta-item">
-                                    $15 / $25
+                                    Included in Annual Programme Fee
                                 </span>
 
                             </div>
@@ -4222,7 +3609,6 @@
             </div>
 
         </section>
-
 
 
         <!-- =====================================================
@@ -4253,10 +3639,10 @@
 
                         <p>
                             Course descriptions, academic requirements,
-                            fees, enrollment procedures, timetable
-                            access, student accounts and online learning
-                            facilities will be connected to the GCM
-                            student platform as the college's online
+                            annual programme fees, enrollment procedures,
+                            timetable access, student accounts and online
+                            learning facilities will be connected to the
+                            GCM student platform as the college's online
                             academic system is developed.
                         </p>
 
@@ -4269,14 +3655,11 @@
         </section>
 
 
-
         <!-- =====================================================
              HOW TO PROCEED
         ====================================================== -->
 
-        <section
-            class="section proceed-section"
-        >
+        <section class="section proceed-section">
 
             <div class="container">
 
@@ -4297,7 +3680,6 @@
                     </p>
 
                 </div>
-
 
 
                 <div class="steps-grid">
@@ -4321,7 +3703,6 @@
                     </div>
 
 
-
                     <div class="step-card reveal">
 
                         <div class="step-number">
@@ -4334,12 +3715,11 @@
 
                         <p>
                             Learn about the current admission information,
-                            tuition fees and requirements for joining
-                            the college.
+                            annual programme fee and requirements for
+                            joining the college.
                         </p>
 
                     </div>
-
 
 
                     <div class="step-card reveal">
@@ -4367,14 +3747,11 @@
         </section>
 
 
-
         <!-- =====================================================
              FUTURE ONLINE PORTAL
         ====================================================== -->
 
-        <section
-            class="future-section"
-        >
+        <section class="future-section">
 
             <div class="container">
 
@@ -4410,14 +3787,11 @@
         </section>
 
 
-
         <!-- =====================================================
              FINAL CTA
         ====================================================== -->
 
-        <section
-            class="cta-section"
-        >
+        <section class="cta-section">
 
             <div class="container">
 
@@ -4464,7 +3838,6 @@
     </main>
 
 
-
     <!-- =========================================================
          FOOTER
     ========================================================== -->
@@ -4495,7 +3868,6 @@
             </div>
 
 
-
             <div class="footer-column">
 
                 <h4>
@@ -4521,7 +3893,6 @@
             </div>
 
 
-
             <div class="footer-column">
 
                 <h4>
@@ -4540,12 +3911,11 @@
                     Contact
                 </a>
 
-                <a href="./admissions.html#fees">
-                    Tuition & Fees
+                <a href="./course.html#fees">
+                    Annual Tuition & Fees
                 </a>
 
             </div>
-
 
 
             <div class="footer-column">
@@ -4571,14 +3941,15 @@
         </div>
 
 
-
         <div class="footer-bottom">
 
             <div>
+
                 ©
                 <span id="currentYear"></span>
                 Global College of Missiology.
                 All Rights Reserved.
+
             </div>
 
             <div>
@@ -4588,7 +3959,6 @@
         </div>
 
     </footer>
-
 
 
     <!-- =========================================================
@@ -4603,7 +3973,6 @@
     >
         ↑
     </button>
-
 
 
     <!-- =========================================================
@@ -4622,7 +3991,9 @@
                 ================================================== */
 
                 const loader =
-                    document.getElementById("loader");
+                    document.getElementById(
+                        "loader"
+                    );
 
 
                 window.addEventListener(
@@ -4646,7 +4017,6 @@
 
                     }
                 );
-
 
 
                 /* =================================================
@@ -4691,7 +4061,6 @@
 
 
                 handleHeader();
-
 
 
                 /* =================================================
@@ -4808,7 +4177,9 @@
 
                     if (
                         mainNav &&
-                        mainNav.classList.contains("open")
+                        mainNav.classList.contains(
+                            "open"
+                        )
                     ) {
 
                         closeMenu();
@@ -4912,7 +4283,6 @@
                 }
 
 
-
                 /* =================================================
                    SCROLL REVEAL
                 ================================================== */
@@ -4986,7 +4356,6 @@
                 }
 
 
-
                 /* =================================================
                    BACK TO TOP
                 ================================================== */
@@ -5053,7 +4422,6 @@
                 }
 
 
-
                 /* =================================================
                    CURRENT YEAR
                 ================================================== */
@@ -5070,7 +4438,6 @@
                         new Date().getFullYear();
 
                 }
-
 
 
                 /* =================================================
@@ -5107,4 +4474,5 @@
     </script>
 
 </body>
+
 </html>

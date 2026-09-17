@@ -34,7 +34,9 @@
   </title>
 
 
-  <!-- GOOGLE FONTS -->
+  <!-- =========================================================
+       GOOGLE FONTS
+  ========================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -1712,6 +1714,10 @@
 
     .fee-price small {
 
+      display:block;
+
+      margin-top:8px;
+
       font-family:
         "Cormorant Garamond",
         Georgia,
@@ -1729,6 +1735,13 @@
       color:var(--muted);
 
       font-size:1rem;
+
+    }
+
+
+    .fee-card strong {
+
+      color:var(--gold-light);
 
     }
 
@@ -2151,9 +2164,9 @@
       display:grid;
 
       grid-template-columns:
-        1.5fr 1fr;
+        1.5fr 1fr 1fr;
 
-      gap:60px;
+      gap:45px;
 
       padding-bottom:45px;
 
@@ -2391,6 +2404,16 @@
 
         grid-template-columns:
           repeat(2,minmax(0,1fr));
+
+      }
+
+
+      .footer-grid {
+
+        grid-template-columns:
+          1.5fr 1fr 1fr;
+
+        gap:30px;
 
       }
 
@@ -2632,6 +2655,14 @@
 
       }
 
+
+      .footer-grid > div:first-child {
+
+        grid-column:
+          1 / -1;
+
+      }
+
     }
 
 
@@ -2793,6 +2824,13 @@
         grid-template-columns:1fr;
 
         gap:35px;
+
+      }
+
+
+      .footer-grid > div:first-child {
+
+        grid-column:auto;
 
       }
 
@@ -3169,38 +3207,47 @@
         class="nav-links"
         id="navLinks"
         aria-label="Main Navigation"
+        aria-hidden="false"
       >
 
         <a
           href="./home.html"
           class="active"
+          aria-current="page"
         >
           Home
         </a>
+
 
         <a href="./about.html">
           About
         </a>
 
+
         <a href="./director.html">
           Director
         </a>
+
 
         <a href="./course.html">
           Courses
         </a>
 
+
         <a href="./admissions.html">
           Admissions
         </a>
+
 
         <a href="./gallery.html">
           Gallery
         </a>
 
+
         <a href="./rules.html">
           Rules &amp; Regulations
         </a>
+
 
         <a href="./contact.html">
           Contact
@@ -3229,7 +3276,9 @@
   </header>
 
 
-  <!-- MOBILE OVERLAY -->
+  <!-- =========================================================
+       MOBILE OVERLAY
+  ========================================================== -->
 
   <div
     class="nav-overlay"
@@ -3267,9 +3316,11 @@
 
 
         <p>
+
           A Christ-centered institution committed to biblical education,
           spiritual development, leadership training, and preparation
           for effective ministry.
+
         </p>
 
 
@@ -3284,7 +3335,7 @@
 
 
           <a
-            href="./course.html"
+            href="./course.html#fees"
             class="btn btn-outline"
           >
             Start Your Course
@@ -3314,8 +3365,10 @@
 
 
         <h2 class="section-title reveal">
+
           More Than a Certificate.<br>
           Preparation for Your Kingdom Assignment.
+
         </h2>
 
 
@@ -3354,16 +3407,20 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">01</div>
+            <div class="gain-num">
+              01
+            </div>
 
             <h3>
               Biblical Foundation
             </h3>
 
             <p>
+
               Build a strong foundation in Scripture and develop the
               ability to understand, apply, and communicate God's Word
               effectively.
+
             </p>
 
           </div>
@@ -3371,16 +3428,20 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">02</div>
+            <div class="gain-num">
+              02
+            </div>
 
             <h3>
               Theological &amp; Missionary Training
             </h3>
 
             <p>
+
               Gain foundational knowledge in theology, missiology,
               evangelism, missions, church ministry, and Kingdom
               leadership.
+
             </p>
 
           </div>
@@ -3388,15 +3449,19 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">03</div>
+            <div class="gain-num">
+              03
+            </div>
 
             <h3>
               Spiritual Formation
             </h3>
 
             <p>
+
               Grow in prayer, spiritual discipline, faith, character,
               and sensitivity to the Holy Spirit.
+
             </p>
 
           </div>
@@ -3404,15 +3469,19 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">04</div>
+            <div class="gain-num">
+              04
+            </div>
 
             <h3>
               Practical Ministry Experience
             </h3>
 
             <p>
+
               Turn knowledge into ministry through practical exposure,
               service, evangelism, and real ministry responsibilities.
+
             </p>
 
           </div>
@@ -3420,15 +3489,19 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">05</div>
+            <div class="gain-num">
+              05
+            </div>
 
             <h3>
               Leadership Development
             </h3>
 
             <p>
+
               Develop the wisdom, confidence, discipline, and leadership
               capacity required to serve and lead effectively.
+
             </p>
 
           </div>
@@ -3436,16 +3509,20 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">06</div>
+            <div class="gain-num">
+              06
+            </div>
 
             <h3>
               Missionary Mindset
             </h3>
 
             <p>
+
               Develop a heart for the nations and understand how to
               participate in the Great Commission beyond your local
               environment.
+
             </p>
 
           </div>
@@ -3453,15 +3530,19 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">07</div>
+            <div class="gain-num">
+              07
+            </div>
 
             <h3>
               Discover Your Ministry Potential
             </h3>
 
             <p>
+
               Identify your gifts, strengths, passions, and areas of
               calling—and develop them for greater Kingdom usefulness.
+
             </p>
 
           </div>
@@ -3469,16 +3550,20 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">08</div>
+            <div class="gain-num">
+              08
+            </div>
 
             <h3>
               Character &amp; Capacity
             </h3>
 
             <p>
+
               Develop the integrity, humility, discipline,
               responsibility, and maturity required to carry spiritual
               influence.
+
             </p>
 
           </div>
@@ -3486,16 +3571,20 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">09</div>
+            <div class="gain-num">
+              09
+            </div>
 
             <h3>
               Mentorship &amp; Kingdom Community
             </h3>
 
             <p>
+
               Learn within a community of Kingdom-minded people and
               benefit from spiritual guidance, relationships,
               encouragement, and shared experience.
+
             </p>
 
           </div>
@@ -3503,16 +3592,20 @@
 
           <div class="gain-card reveal">
 
-            <div class="gain-num">10</div>
+            <div class="gain-num">
+              10
+            </div>
 
             <h3>
               Global Perspective
             </h3>
 
             <p>
+
               Prepare to serve beyond geographical boundaries with a
               vision for reaching people, communities, and nations with
               the Gospel.
+
             </p>
 
           </div>
@@ -3567,56 +3660,74 @@
 
 
           <div class="leave-item reveal">
+
             <b>Knowledge</b>
             <span>— to understand God's Word.</span>
+
           </div>
 
 
           <div class="leave-item reveal">
+
             <b>Wisdom</b>
             <span>— to apply it effectively.</span>
+
           </div>
 
 
           <div class="leave-item reveal">
+
             <b>Character</b>
             <span>— to represent Christ faithfully.</span>
+
           </div>
 
 
           <div class="leave-item reveal">
+
             <b>Capacity</b>
             <span>— to handle greater responsibility.</span>
+
           </div>
 
 
           <div class="leave-item reveal">
+
             <b>Experience</b>
             <span>— to serve practically.</span>
+
           </div>
 
 
           <div class="leave-item reveal">
+
             <b>Vision</b>
             <span>— to see beyond your immediate environment.</span>
+
           </div>
 
 
           <div class="leave-item reveal">
+
             <b>Passion</b>
             <span>— to reach people with the Gospel.</span>
+
           </div>
 
 
           <div class="leave-item reveal">
+
             <b>Courage</b>
             <span>— to respond to God's call.</span>
+
           </div>
 
 
           <div class="leave-item reveal">
+
             <b>Mission</b>
             <span>— to participate in the Great Commission.</span>
+
           </div>
 
 
@@ -3759,7 +3870,7 @@
 
             <img
               src="./img/logo/logo.png"
-              alt="Global College of Missiology campus"
+              alt="Global College of Missiology logo"
               loading="lazy"
             >
 
@@ -3773,62 +3884,82 @@
 
 
           <li class="reveal">
+
             <b>1. Knowledge</b>
             <span>— to understand God's Word.</span>
+
           </li>
 
 
           <li class="reveal">
+
             <b>2. Wisdom</b>
             <span>— to apply it effectively.</span>
+
           </li>
 
 
           <li class="reveal">
+
             <b>3. Character</b>
             <span>— to represent Christ faithfully.</span>
+
           </li>
 
 
           <li class="reveal">
+
             <b>4. Capacity</b>
             <span>— to handle greater responsibility.</span>
+
           </li>
 
 
           <li class="reveal">
+
             <b>5. Experience</b>
             <span>— to serve practically.</span>
+
           </li>
 
 
           <li class="reveal">
+
             <b>6. Refined Vision</b>
             <span>— to see beyond your immediate environment.</span>
+
           </li>
 
 
           <li class="reveal">
+
             <b>7. Passion</b>
             <span>— to reach people with the Gospel.</span>
+
           </li>
 
 
           <li class="reveal">
+
             <b>8. Courage</b>
             <span>— to respond to God's call.</span>
+
           </li>
 
 
           <li class="reveal">
+
             <b>9. Mission</b>
             <span>— to participate in the Great Commission.</span>
+
           </li>
 
 
           <li class="reveal">
+
             <b>10. Certificate Upon Completion</b>
             <span>— issued after your assessment test.</span>
+
           </li>
 
 
@@ -4018,14 +4149,16 @@
 
         <p class="section-sub reveal">
 
-          Explore the academic structure of our intensive 60-days
-          programme.
+          Explore the academic structure of our intensive 60-day
+          training programme, consisting of two 30-day semesters.
 
         </p>
 
 
         <div class="semesters">
 
+
+          <!-- FIRST SEMESTER -->
 
           <div class="semester reveal">
 
@@ -4064,6 +4197,8 @@
 
           </div>
 
+
+          <!-- SECOND SEMESTER -->
 
           <div class="semester reveal">
 
@@ -4134,7 +4269,7 @@
 
 
         <h2 class="section-title reveal">
-          Affordable Study Fees
+          Simple, Transparent Annual Fees
         </h2>
 
 
@@ -4151,8 +4286,9 @@
 
         <p class="section-sub reveal">
 
-          Tuition is charged per semester. Each semester is a
-          30-day intensive study period.
+          Tuition is paid once for the academic year. The annual fee
+          covers both First Semester and Second Semester, with each
+          semester consisting of a focused 30-day training period.
 
         </p>
 
@@ -4160,7 +4296,9 @@
         <div class="fees-grid">
 
 
-          <!-- NIGERIA -->
+          <!-- =================================================
+               STUDENTS IN NIGERIA
+          ================================================== -->
 
           <div class="fee-card reveal">
 
@@ -4175,32 +4313,59 @@
 
 
             <div class="fee-price">
+
               $15
+
               <small>
-                / semester
+                Annual Programme Fee
               </small>
+
             </div>
 
 
             <p>
-              First Semester: <strong>$15</strong>
-            </p>
 
+              One-time payment covering both
+              First Semester and Second Semester.
 
-            <p>
-              Second Semester: <strong>$15</strong>
             </p>
 
 
             <p style="margin-top:12px;">
-              30-day programme:
-              <strong>$30 total</strong>
+
+              First Semester:
+              <strong>
+                30 Days
+              </strong>
+
+            </p>
+
+
+            <p>
+
+              Second Semester:
+              <strong>
+                30 Days
+              </strong>
+
+            </p>
+
+
+            <p style="margin-top:12px;">
+
+              Total Academic Training:
+              <strong>
+                60 Days
+              </strong>
+
             </p>
 
           </div>
 
 
-          <!-- OUTSIDE NIGERIA -->
+          <!-- =================================================
+               STUDENTS OUTSIDE NIGERIA
+          ================================================== -->
 
           <div class="fee-card reveal">
 
@@ -4215,26 +4380,51 @@
 
 
             <div class="fee-price">
+
               $25
+
               <small>
-                / semester
+                Annual Programme Fee
               </small>
+
             </div>
 
 
             <p>
-              First Semester: <strong>$25</strong>
-            </p>
 
+              One-time payment covering both
+              First Semester and Second Semester.
 
-            <p>
-              Second Semester: <strong>$25</strong>
             </p>
 
 
             <p style="margin-top:12px;">
-              30-day programme:
-              <strong>$50 total</strong>
+
+              First Semester:
+              <strong>
+                30 Days
+              </strong>
+
+            </p>
+
+
+            <p>
+
+              Second Semester:
+              <strong>
+                30 Days
+              </strong>
+
+            </p>
+
+
+            <p style="margin-top:12px;">
+
+              Total Academic Training:
+              <strong>
+                60 Days
+              </strong>
+
             </p>
 
           </div>
@@ -4243,14 +4433,20 @@
         </div>
 
 
+        <!-- =================================================
+             IMPORTANT FEE NOTE
+        ================================================== -->
+
         <p class="fees-note reveal">
 
           <strong>
-            Please note:
+            Important:
           </strong>
 
-          The fees above are charged per semester.
-          The complete programme consists of two 15-day semesters.
+          The programme fee is paid once per academic year.
+          There is no separate payment for each semester.
+          The annual fee covers the complete 60-day academic
+          training programme consisting of two 30-day semesters.
 
         </p>
 
@@ -4261,7 +4457,7 @@
         >
 
           <a
-            href="./course.html"
+            href="./course.html#fees"
             class="btn btn-gold"
           >
             View Course Details
@@ -4363,7 +4559,10 @@
             </h4>
 
             <p>
-              60 days intensive study — two semesters of 30 days each.
+
+              60 days intensive study — two semesters of
+              30 days each.
+
             </p>
 
           </div>
@@ -4376,8 +4575,10 @@
             </h4>
 
             <p>
+
               Believers, ministers, missionaries, church leaders, and
               all who desire effective Great Commission participation.
+
             </p>
 
           </div>
@@ -4390,8 +4591,10 @@
             </h4>
 
             <p>
+
               A certificate is issued upon successful completion of
               the assessment test.
+
             </p>
 
           </div>
@@ -4404,8 +4607,10 @@
             </h4>
 
             <p>
+
               Contact the admissions office via phone, email, or
               WhatsApp to receive your application form.
+
             </p>
 
           </div>
@@ -4645,62 +4850,112 @@
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Student Conduct</span>
+
+            <span>
+              Student Conduct
+            </span>
+
           </div>
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Attendance</span>
+
+            <span>
+              Attendance
+            </span>
+
           </div>
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Academic Requirements</span>
+
+            <span>
+              Academic Requirements
+            </span>
+
           </div>
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Assignment Policies</span>
+
+            <span>
+              Assignment Policies
+            </span>
+
           </div>
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Examination Policies</span>
+
+            <span>
+              Examination Policies
+            </span>
+
           </div>
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Dress Code</span>
+
+            <span>
+              Dress Code
+            </span>
+
           </div>
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Respect for Lecturers</span>
+
+            <span>
+              Respect for Lecturers
+            </span>
+
           </div>
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Use of School Facilities</span>
+
+            <span>
+              Use of School Facilities
+            </span>
+
           </div>
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Disciplinary Procedures</span>
+
+            <span>
+              Disciplinary Procedures
+            </span>
+
           </div>
 
 
           <div class="rule reveal">
+
             <i>✦</i>
-            <span>Graduation Requirements</span>
+
+            <span>
+              Graduation Requirements
+            </span>
+
           </div>
 
 
@@ -4734,7 +4989,9 @@
 
 
       <h2 class="reveal">
+
         Your Journey of Biblical Education Starts Here
+
       </h2>
 
 
@@ -4757,7 +5014,7 @@
 
 
         <a
-          href="./course.html"
+          href="./course.html#fees"
           class="btn btn-outline"
         >
           Start Your Course
@@ -4781,6 +5038,8 @@
       <div class="footer-grid">
 
 
+        <!-- SCHOOL -->
+
         <div>
 
           <div class="footer-brand">
@@ -4792,8 +5051,10 @@
             >
 
             <span>
+
               Global College<br>
               of Missiology
+
             </span>
 
           </div>
@@ -4808,6 +5069,8 @@
 
         </div>
 
+
+        <!-- QUICK LINKS -->
 
         <div class="footer-col">
 
@@ -4824,11 +5087,13 @@
               </a>
             </li>
 
+
             <li>
               <a href="./about.html">
                 About
               </a>
             </li>
+
 
             <li>
               <a href="./director.html">
@@ -4836,11 +5101,13 @@
               </a>
             </li>
 
+
             <li>
               <a href="./course.html">
                 Courses
               </a>
             </li>
+
 
             <li>
               <a href="./admissions.html">
@@ -4848,11 +5115,29 @@
               </a>
             </li>
 
+
+          </ul>
+
+        </div>
+
+
+        <!-- GCM -->
+
+        <div class="footer-col">
+
+          <h4>
+            GCM
+          </h4>
+
+
+          <ul>
+
             <li>
               <a href="./gallery.html">
                 Gallery
               </a>
             </li>
+
 
             <li>
               <a href="./rules.html">
@@ -4860,11 +5145,27 @@
               </a>
             </li>
 
+
+            <li>
+              <a href="./course.html#fees">
+                Academic Fees
+              </a>
+            </li>
+
+
             <li>
               <a href="./contact.html">
                 Contact
               </a>
             </li>
+
+
+            <li>
+              <a href="./admissions.html">
+                Apply Now
+              </a>
+            </li>
+
 
           </ul>
 
@@ -4876,7 +5177,8 @@
 
       <div class="footer-bottom">
 
-        © 2026
+        ©
+        <span id="currentYear"></span>
 
         <b>
           Global College of Missiology
@@ -4930,6 +5232,21 @@
     const navOverlay =
       document.getElementById("navOverlay");
 
+    const currentYear =
+      document.getElementById("currentYear");
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    if (currentYear) {
+
+      currentYear.textContent =
+        new Date().getFullYear();
+
+    }
+
 
     /* =========================================================
        HEADER SCROLL EFFECT
@@ -4944,6 +5261,7 @@
         "scrolled",
         currentScroll > 40
       );
+
 
       toTop.classList.toggle(
         "show",
@@ -4999,17 +5317,26 @@
 
       document.body.classList.add("menu-open");
 
+
       hamburger.setAttribute(
         "aria-expanded",
         "true"
       );
+
 
       hamburger.setAttribute(
         "aria-label",
         "Close navigation menu"
       );
 
+
       navOverlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      navLinks.setAttribute(
         "aria-hidden",
         "false"
       );
@@ -5027,19 +5354,28 @@
 
       document.body.classList.remove("menu-open");
 
+
       hamburger.setAttribute(
         "aria-expanded",
         "false"
       );
+
 
       hamburger.setAttribute(
         "aria-label",
         "Open navigation menu"
       );
 
+
       navOverlay.setAttribute(
         "aria-hidden",
         "true"
+      );
+
+
+      navLinks.setAttribute(
+        "aria-hidden",
+        "false"
       );
 
     }
@@ -5144,6 +5480,7 @@
                     "visible"
                   );
 
+
                   revealObserver.unobserve(
                     entry.target
                   );
@@ -5155,10 +5492,12 @@
 
           },
           {
+
             threshold:.08,
 
             rootMargin:
               "0px 0px -40px 0px"
+
           }
         );
 
@@ -5256,10 +5595,12 @@
 
           },
           {
+
             threshold:.25,
 
             rootMargin:
               "-20% 0px -60% 0px"
+
           }
         );
 
@@ -5354,14 +5695,10 @@
 
 
     /* =========================================================
-       ESCAPE SCROLL LOCK IF PAGE IS LOADED DESKTOP
+       INITIAL MENU STATE
     ========================================================= */
 
-    if (window.innerWidth > 920) {
-
-      closeMenu();
-
-    }
+    closeMenu();
 
   </script>
 

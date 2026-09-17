@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-<title>Global College of Missiology — Welcome</title>
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+/>
+
+<title>
+  Global College of Missiology — Welcome
+</title>
 
 <meta
   name="description"
@@ -12,7 +19,12 @@
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
 
 <link
   href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&display=swap"
@@ -20,6 +32,10 @@
 >
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *,
 *::before,
@@ -29,7 +45,13 @@
   box-sizing: border-box;
 }
 
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
 :root {
+
   --gold: #c9a24b;
   --gold-light: #f0d78c;
   --gold-deep: #8f6b1f;
@@ -42,49 +64,87 @@
   --white: #ffffff;
 
   --container: 1200px;
+
 }
+
 
 /* =========================================================
    BASE
 ========================================================= */
 
 html {
+
   min-height: 100%;
-  background: var(--navy);
-  scroll-behavior: smooth;
+
+  background:
+    var(--navy);
+
+  scroll-behavior:
+    smooth;
+
 }
 
+
 body {
+
   min-height: 100%;
+
   width: 100%;
+
   overflow-x: hidden;
-  background: var(--navy);
-  color: var(--ivory);
-  font-family: "Cormorant Garamond", serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+
+  background:
+    var(--navy);
+
+  color:
+    var(--ivory);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  text-rendering:
+    optimizeLegibility;
+
 }
+
 
 button,
 a {
-  -webkit-tap-highlight-color: transparent;
+
+  -webkit-tap-highlight-color:
+    transparent;
+
 }
 
+
 a {
-  color: inherit;
+
+  color:
+    inherit;
+
 }
+
 
 /* =========================================================
    SACRED AMBIENT BACKGROUND
 ========================================================= */
 
 .bg {
+
   position: fixed;
+
   inset: -50%;
+
   width: 200%;
+
   height: 200%;
 
   background:
+
     radial-gradient(
       ellipse 45% 40% at 28% 30%,
       rgba(201, 162, 75, 0.16),
@@ -103,45 +163,62 @@ a {
       transparent 60%
     );
 
-  animation: drift 20s ease-in-out infinite alternate;
+  animation:
+    drift 20s ease-in-out infinite alternate;
 
-  pointer-events: none;
-  z-index: 0;
+  pointer-events:
+    none;
+
+  z-index:
+    0;
+
 }
+
 
 @keyframes drift {
 
   0% {
+
     transform:
       translate3d(0, 0, 0)
       rotate(0deg)
       scale(1);
+
   }
 
   100% {
+
     transform:
       translate3d(-3%, 3%, 0)
       rotate(4deg)
       scale(1.08);
+
   }
+
 }
+
 
 /* =========================================================
    LIGHT RAYS
 ========================================================= */
 
 .rays {
+
   position: fixed;
 
   top: -20%;
+
   left: 50%;
 
   width: 140vmax;
+
   height: 140vmax;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   background:
+
     conic-gradient(
       from 180deg at 50% 0%,
 
@@ -174,189 +251,278 @@ a {
       transparent 336deg
     );
 
-  animation: raysSway 16s ease-in-out infinite alternate;
+  animation:
+    raysSway 16s ease-in-out infinite alternate;
 
-  pointer-events: none;
-  opacity: 0.8;
+  pointer-events:
+    none;
 
-  z-index: 1;
+  opacity:
+    0.8;
+
+  z-index:
+    1;
+
 }
+
 
 @keyframes raysSway {
 
   from {
+
     transform:
       translateX(-50%)
       rotate(-2deg);
+
   }
 
   to {
+
     transform:
       translateX(-50%)
       rotate(2deg);
+
   }
+
 }
+
 
 /* =========================================================
    PARTICLES
 ========================================================= */
 
 #particles {
+
   position: fixed;
+
   inset: 0;
 
   width: 100%;
+
   height: 100%;
 
-  pointer-events: none;
+  pointer-events:
+    none;
 
-  z-index: 2;
+  z-index:
+    2;
+
 }
+
 
 /* =========================================================
    VIGNETTE
 ========================================================= */
 
 .vignette {
+
   position: fixed;
+
   inset: 0;
 
   background:
+
     radial-gradient(
       ellipse at center,
       transparent 38%,
       rgba(3, 5, 14, 0.86) 100%
     );
 
-  pointer-events: none;
+  pointer-events:
+    none;
 
-  z-index: 5;
+  z-index:
+    5;
+
 }
+
 
 /* =========================================================
    MAIN STAGE
 ========================================================= */
 
 .stage {
+
   position: relative;
 
   z-index: 10;
 
   min-height: 100svh;
+
   min-height: 100dvh;
 
   width: 100%;
 
   display: flex;
+
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
 
-  gap: clamp(22px, 4vh, 48px);
+  gap:
+    clamp(22px, 4vh, 48px);
 
   padding:
-    max(30px, env(safe-area-inset-top))
-    clamp(18px, 5vw, 50px)
-    max(70px, env(safe-area-inset-bottom))
-    clamp(18px, 5vw, 50px);
 
-  overflow: hidden;
+    max(
+      30px,
+      env(safe-area-inset-top)
+    )
+
+    clamp(
+      18px,
+      5vw,
+      50px
+    )
+
+    max(
+      100px,
+      env(safe-area-inset-bottom)
+    )
+
+    clamp(
+      18px,
+      5vw,
+      50px
+    );
+
+  overflow:
+    hidden;
+
 }
+
 
 /* =========================================================
    LOGO
 ========================================================= */
 
 .logo-wrap {
+
   position: relative;
 
-  width: clamp(
-    145px,
-    29vw,
-    270px
-  );
+  width:
+    clamp(
+      145px,
+      29vw,
+      270px
+    );
 
-  aspect-ratio: 1;
+  aspect-ratio:
+    1;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
-  opacity: 0;
+  opacity:
+    0;
 
   transform:
     scale(0.85)
     translateY(24px);
 
   animation:
+
     logoIn 1.6s
     cubic-bezier(0.16, 1, 0.3, 1)
     0.4s
     forwards;
+
 }
+
 
 @keyframes logoIn {
 
   to {
-    opacity: 1;
+
+    opacity:
+      1;
 
     transform:
       scale(1)
       translateY(0);
+
   }
+
 }
+
 
 /* =========================================================
    HALO
 ========================================================= */
 
 .halo {
+
   position: absolute;
 
-  inset: -18%;
+  inset:
+    -18%;
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
   background:
+
     radial-gradient(
       circle,
       rgba(201, 162, 75, 0.3),
       transparent 65%
     );
 
-  filter: blur(20px);
+  filter:
+    blur(20px);
 
   animation:
     pulse 4.5s ease-in-out infinite;
+
 }
+
 
 @keyframes pulse {
 
   0%,
   100% {
-    opacity: 0.55;
-    transform: scale(1);
+
+    opacity:
+      0.55;
+
+    transform:
+      scale(1);
+
   }
 
   50% {
-    opacity: 1;
-    transform: scale(1.12);
+
+    opacity:
+      1;
+
+    transform:
+      scale(1.12);
+
   }
+
 }
+
 
 /* =========================================================
    RINGS
 ========================================================= */
 
 .ring {
+
   position: absolute;
 
-  inset: -8%;
+  inset:
+    -8%;
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
   border:
     1px solid
@@ -364,79 +530,116 @@ a {
 
   animation:
     spin 16s linear infinite;
+
 }
 
+
 .ring::before {
-  content: "";
+
+  content:
+    "";
 
   position: absolute;
 
-  top: -4px;
-  left: 50%;
+  top:
+    -4px;
 
-  width: 8px;
-  height: 8px;
+  left:
+    50%;
 
-  border-radius: 50%;
+  width:
+    8px;
+
+  height:
+    8px;
+
+  border-radius:
+    50%;
 
   background:
     var(--gold-light);
 
   box-shadow:
+
     0 0 14px 4px
     rgba(240, 215, 140, 0.85);
 
   transform:
     translateX(-50%);
+
 }
 
+
 .ring.r2 {
-  inset: -15%;
+
+  inset:
+    -15%;
 
   border-color:
     rgba(201, 162, 75, 0.16);
 
-  animation-duration: 26s;
-  animation-direction: reverse;
+  animation-duration:
+    26s;
+
+  animation-direction:
+    reverse;
+
 }
 
+
 .ring.r2::before {
-  width: 5px;
-  height: 5px;
+
+  width:
+    5px;
+
+  height:
+    5px;
 
   background:
     var(--gold);
 
   box-shadow:
+
     0 0 10px 3px
     rgba(201, 162, 75, 0.7);
+
 }
+
 
 @keyframes spin {
 
   to {
+
     transform:
       rotate(360deg);
+
   }
+
 }
+
 
 /* =========================================================
    LOGO IMAGE
 ========================================================= */
 
 .logo-wrap img {
+
   position: relative;
 
   display: block;
 
   width: 100%;
+
   height: 100%;
 
-  object-fit: contain;
+  object-fit:
+    contain;
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
   filter:
+
     drop-shadow(
       0 0 28px
       rgba(201, 162, 75, 0.5)
@@ -444,64 +647,113 @@ a {
 
   animation:
     floaty 5.5s ease-in-out infinite;
+
 }
+
 
 @keyframes floaty {
 
   0%,
   100% {
+
     transform:
       translateY(0);
+
   }
 
   50% {
+
     transform:
       translateY(-10px);
+
   }
+
 }
+
 
 /* =========================================================
    WORDMARK
 ========================================================= */
 
 .wordmark {
-  width: min(100%, 1000px);
 
-  opacity: 0;
+  width:
+    min(
+      100%,
+      1000px
+    );
+
+  opacity:
+    0;
 
   animation:
     fadeUp 1.5s ease 1.3s forwards;
+
 }
+
 
 .wordmark .over {
-  display: block;
 
-  font-family: "Marcellus", serif;
+  display:
+    block;
+
+  font-family:
+    "Marcellus",
+    serif;
 
   font-size:
-    clamp(0.62rem, 1.8vw, 0.85rem);
+    clamp(
+      0.62rem,
+      1.8vw,
+      0.85rem
+    );
 
   letter-spacing:
-    clamp(0.25em, 0.6em, 0.6em);
+    clamp(
+      0.25em,
+      0.6em,
+      0.6em
+    );
 
   text-indent:
-    clamp(0.25em, 0.6em, 0.6em);
+    clamp(
+      0.25em,
+      0.6em,
+      0.6em
+    );
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 
   color:
-    rgba(240, 215, 140, 0.65);
+    rgba(
+      240,
+      215,
+      140,
+      0.65
+    );
 
   margin-bottom:
-    clamp(7px, 1.2vh, 14px);
+    clamp(
+      7px,
+      1.2vh,
+      14px
+    );
+
 }
 
+
 .wordmark .name {
-  display: block;
 
-  font-family: "Marcellus", serif;
+  display:
+    block;
 
-  font-weight: 400;
+  font-family:
+    "Marcellus",
+    serif;
+
+  font-weight:
+    400;
 
   font-size:
     clamp(
@@ -510,34 +762,62 @@ a {
       3rem
     );
 
-  line-height: 1.12;
+  line-height:
+    1.12;
 
   letter-spacing:
-    clamp(0.06em, 0.18em, 0.18em);
+    clamp(
+      0.06em,
+      0.18em,
+      0.18em
+    );
 
   text-indent:
-    clamp(0.06em, 0.18em, 0.18em);
+    clamp(
+      0.06em,
+      0.18em,
+      0.18em
+    );
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 
   color:
     var(--ivory);
 
   text-shadow:
+
     0 0 30px
-    rgba(201, 162, 75, 0.4);
+    rgba(
+      201,
+      162,
+      75,
+      0.4
+    );
+
 }
 
-.wordmark .under {
-  display: block;
 
-  max-width: 760px;
+.wordmark .under {
+
+  display:
+    block;
+
+  max-width:
+    760px;
 
   margin:
-    clamp(8px, 1.4vh, 14px)
+
+    clamp(
+      8px,
+      1.4vh,
+      14px
+    )
+
     auto 0;
 
-  font-style: italic;
+  font-style:
+    italic;
 
   font-size:
     clamp(
@@ -546,113 +826,191 @@ a {
       1.1rem
     );
 
-  line-height: 1.5;
+  line-height:
+    1.5;
 
   color:
-    rgba(245, 239, 224, 0.55);
+    rgba(
+      245,
+      239,
+      224,
+      0.55
+    );
 
   letter-spacing:
     0.08em;
+
 }
+
 
 /* =========================================================
    ORNAMENT
 ========================================================= */
 
 .ornament {
-  width: min(90vw, 500px);
 
-  display: flex;
+  width:
+    min(
+      90vw,
+      500px
+    );
 
-  align-items: center;
-  justify-content: center;
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
 
   gap:
-    clamp(8px, 2vw, 14px);
+    clamp(
+      8px,
+      2vw,
+      14px
+    );
 
-  opacity: 0;
+  opacity:
+    0;
 
   animation:
     fadeUp 1.4s ease 1.6s forwards;
+
 }
 
+
 .ornament span {
-  height: 1px;
 
-  flex: 1;
+  height:
+    1px;
 
-  max-width: 90px;
+  flex:
+    1;
+
+  max-width:
+    90px;
 
   background:
+
     linear-gradient(
       90deg,
       transparent,
       var(--gold)
     );
+
 }
 
+
 .ornament span:last-child {
+
   background:
+
     linear-gradient(
       90deg,
       var(--gold),
       transparent
     );
+
 }
 
-.ornament i {
-  flex-shrink: 0;
 
-  font-style: normal;
+.ornament i {
+
+  flex-shrink:
+    0;
+
+  font-style:
+    normal;
 
   color:
     var(--gold);
 
   font-size:
-    clamp(0.8rem, 2vw, 1rem);
+    clamp(
+      0.8rem,
+      2vw,
+      1rem
+    );
 
   text-shadow:
+
     0 0 12px
-    rgba(240, 215, 140, 0.9);
+    rgba(
+      240,
+      215,
+      140,
+      0.9
+    );
+
 }
+
 
 @keyframes fadeUp {
 
   from {
-    opacity: 0;
+
+    opacity:
+      0;
+
     transform:
       translateY(16px);
+
   }
 
   to {
-    opacity: 1;
+
+    opacity:
+      1;
+
     transform:
       translateY(0);
+
   }
+
 }
+
 
 /* =========================================================
    EXPLORE BUTTON
 ========================================================= */
 
 .explore {
-  position: relative;
 
-  display: inline-flex;
+  position:
+    relative;
 
-  align-items: center;
-  justify-content: center;
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
 
   gap:
-    clamp(8px, 1.6vw, 14px);
+    clamp(
+      8px,
+      1.6vw,
+      14px
+    );
 
-  min-height: 54px;
+  min-height:
+    54px;
 
-  max-width: 100%;
+  max-width:
+    100%;
 
   padding:
+
     14px
-    clamp(25px, 5vw, 52px);
+
+    clamp(
+      25px,
+      5vw,
+      52px
+    );
 
   font-family:
     "Marcellus",
@@ -666,71 +1024,126 @@ a {
     );
 
   letter-spacing:
-    clamp(0.16em, 0.38em, 0.38em);
+    clamp(
+      0.16em,
+      0.38em,
+      0.38em
+    );
 
   text-indent:
-    clamp(0.16em, 0.38em, 0.38em);
+    clamp(
+      0.16em,
+      0.38em,
+      0.38em
+    );
 
   text-transform:
     uppercase;
 
-  text-decoration: none;
+  text-decoration:
+    none;
 
   color:
     var(--gold-light);
 
   border:
     1px solid
-    rgba(201, 162, 75, 0.5);
+    rgba(
+      201,
+      162,
+      75,
+      0.5
+    );
 
   border-radius:
     999px;
 
   background:
+
     linear-gradient(
       120deg,
-      rgba(201, 162, 75, 0.05),
-      rgba(201, 162, 75, 0.16),
-      rgba(201, 162, 75, 0.05)
+      rgba(
+        201,
+        162,
+        75,
+        0.05
+      ),
+      rgba(
+        201,
+        162,
+        75,
+        0.16
+      ),
+      rgba(
+        201,
+        162,
+        75,
+        0.05
+      )
     );
 
   background-size:
     230% 100%;
 
   transition:
+
     color 0.4s,
+
     box-shadow 0.5s,
+
     background-position 0.9s ease,
+
     transform 0.3s ease;
 
-  overflow: hidden;
+  overflow:
+    hidden;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
-  opacity: 0;
+  opacity:
+    0;
 
   animation:
     fadeUp 1.5s ease 2s forwards;
 
-  touch-action: manipulation;
+  touch-action:
+    manipulation;
+
 }
 
+
 .explore::before {
-  content: "";
 
-  position: absolute;
+  content:
+    "";
 
-  top: 0;
-  left: -80%;
+  position:
+    absolute;
 
-  width: 55%;
-  height: 100%;
+  top:
+    0;
+
+  left:
+    -80%;
+
+  width:
+    55%;
+
+  height:
+    100%;
 
   background:
+
     linear-gradient(
       105deg,
       transparent,
-      rgba(255, 255, 255, 0.4),
+      rgba(
+        255,
+        255,
+        255,
+        0.4
+      ),
       transparent
     );
 
@@ -739,10 +1152,13 @@ a {
 
   transition:
     left 0.8s ease;
+
 }
+
 
 .explore:hover,
 .explore:focus-visible {
+
   color:
     #fff;
 
@@ -750,56 +1166,101 @@ a {
     100% 0;
 
   box-shadow:
+
     0 0 40px
-    rgba(201, 162, 75, 0.55),
+    rgba(
+      201,
+      162,
+      75,
+      0.55
+    ),
 
     inset 0 0 20px
-    rgba(201, 162, 75, 0.28);
+    rgba(
+      201,
+      162,
+      75,
+      0.28
+    );
 
-  outline: none;
+  outline:
+    none;
+
 }
+
 
 .explore:hover::before,
 .explore:focus-visible::before {
-  left: 135%;
+
+  left:
+    135%;
+
 }
+
 
 .explore .arrow {
-  display: inline-block;
+
+  display:
+    inline-block;
 
   transition:
+
     transform 0.45s
-    cubic-bezier(0.34, 1.56, 0.64, 1);
+    cubic-bezier(
+      0.34,
+      1.56,
+      0.64,
+      1
+    );
+
 }
+
 
 .explore:hover .arrow,
 .explore:focus-visible .arrow {
+
   transform:
     translateX(8px);
+
 }
 
+
 /* =========================================================
-   FEE POLICY
+   ANNUAL FEE POLICY
 ========================================================= */
 
 .fee-policy {
-  width: min(100%, 850px);
 
-  opacity: 0;
+  width:
+    min(
+      100%,
+      850px
+    );
+
+  opacity:
+    0;
 
   animation:
     fadeUp 1.5s ease 2.15s forwards;
+
 }
 
+
 .fee-title {
-  margin-bottom: 12px;
+
+  margin-bottom:
+    12px;
 
   font-family:
     "Marcellus",
     serif;
 
   font-size:
-    clamp(0.72rem, 1.8vw, 0.9rem);
+    clamp(
+      0.72rem,
+      1.8vw,
+      0.9rem
+    );
 
   letter-spacing:
     0.18em;
@@ -808,83 +1269,239 @@ a {
     uppercase;
 
   color:
-    rgba(240, 215, 140, 0.7);
+    rgba(
+      240,
+      215,
+      140,
+      0.7
+    );
+
 }
+
+
+.fee-subtitle {
+
+  max-width:
+    760px;
+
+  margin:
+    0 auto 14px;
+
+  font-size:
+    clamp(
+      0.78rem,
+      1.8vw,
+      0.95rem
+    );
+
+  line-height:
+    1.5;
+
+  color:
+    rgba(
+      245,
+      239,
+      224,
+      0.62
+    );
+
+}
+
 
 .fee-grid {
-  display: grid;
+
+  display:
+    grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
 
-  gap: 10px;
+  gap:
+    10px;
+
 }
 
+
 .fee-card {
-  min-width: 0;
+
+  min-width:
+    0;
 
   padding:
-    10px 16px;
+    12px 14px;
 
   border:
     1px solid
-    rgba(201, 162, 75, 0.2);
+    rgba(
+      201,
+      162,
+      75,
+      0.2
+    );
 
-  border-radius: 12px;
+  border-radius:
+    12px;
 
   background:
-    rgba(10, 16, 36, 0.48);
+    rgba(
+      10,
+      16,
+      36,
+      0.48
+    );
 
   backdrop-filter:
     blur(8px);
 
   -webkit-backdrop-filter:
     blur(8px);
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease;
+
 }
 
+
+.fee-card:hover {
+
+  border-color:
+    rgba(
+      201,
+      162,
+      75,
+      0.5
+    );
+
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(
+      14,
+      22,
+      51,
+      0.65
+    );
+
+}
+
+
 .fee-card strong {
-  display: block;
+
+  display:
+    block;
 
   font-family:
     "Marcellus",
     serif;
 
   font-size:
-    clamp(0.95rem, 2vw, 1.2rem);
+    clamp(
+      0.95rem,
+      2vw,
+      1.2rem
+    );
 
   color:
     var(--gold-light);
+
 }
+
 
 .fee-card span {
-  display: block;
 
-  margin-top: 2px;
+  display:
+    block;
+
+  margin-top:
+    3px;
 
   font-size:
-    clamp(0.7rem, 1.6vw, 0.82rem);
+    clamp(
+      0.7rem,
+      1.6vw,
+      0.82rem
+    );
 
   color:
-    rgba(245, 239, 224, 0.55);
+    rgba(
+      245,
+      239,
+      224,
+      0.55
+    );
+
 }
+
+
+.fee-note {
+
+  margin-top:
+    12px;
+
+  font-size:
+    clamp(
+      0.68rem,
+      1.6vw,
+      0.82rem
+    );
+
+  line-height:
+    1.4;
+
+  color:
+    rgba(
+      245,
+      239,
+      224,
+      0.5
+    );
+
+}
+
+
+.fee-note strong {
+
+  color:
+    var(--gold-light);
+
+}
+
 
 /* =========================================================
    VERSE
 ========================================================= */
 
 .verse {
-  position: absolute;
+
+  position:
+    absolute;
 
   bottom:
-    max(14px, env(safe-area-inset-bottom));
+    max(
+      14px,
+      env(safe-area-inset-bottom)
+    );
 
-  left: 50%;
+  left:
+    50%;
 
   transform:
     translateX(-50%);
 
   width:
-    min(92vw, 650px);
+    min(
+      92vw,
+      650px
+    );
 
   padding:
     0 10px;
@@ -906,9 +1523,15 @@ a {
     0.1em;
 
   color:
-    rgba(245, 239, 224, 0.45);
+    rgba(
+      245,
+      239,
+      224,
+      0.45
+    );
 
-  opacity: 0;
+  opacity:
+    0;
 
   animation:
     fadeUp 1.6s ease 2.6s forwards;
@@ -921,22 +1544,36 @@ a {
 
   text-overflow:
     ellipsis;
+
 }
 
-.verse::before {
-  content: "";
 
-  display: block;
+.verse::before {
+
+  content:
+    "";
+
+  display:
+    block;
 
   margin:
+
     0 auto
-    clamp(7px, 1.2vh, 12px);
 
-  width: 0;
+    clamp(
+      7px,
+      1.2vh,
+      12px
+    );
 
-  height: 1px;
+  width:
+    0;
+
+  height:
+    1px;
 
   background:
+
     linear-gradient(
       90deg,
       transparent,
@@ -946,47 +1583,70 @@ a {
 
   animation:
     lineGrow 1.6s ease 2.4s forwards;
+
 }
+
 
 @keyframes lineGrow {
 
   to {
+
     width:
-      min(300px, 55vw);
+      min(
+        300px,
+        55vw
+      );
+
   }
+
 }
+
 
 /* =========================================================
    TRANSITION VEIL
 ========================================================= */
 
 .veil {
-  position: fixed;
 
-  inset: 0;
+  position:
+    fixed;
 
-  z-index: 100;
+  inset:
+    0;
+
+  z-index:
+    100;
 
   background:
+
     radial-gradient(
       circle at center,
       #141d3d,
       #02040c
     );
 
-  opacity: 0;
+  opacity:
+    0;
 
-  pointer-events: none;
+  pointer-events:
+    none;
 
   transition:
     opacity 0.85s ease;
+
 }
+
 
 .veil.active {
-  opacity: 1;
 
-  pointer-events: all;
+  opacity:
+    1;
+
+  pointer-events:
+    all;
+
 }
+
 
 /* =========================================================
    TABLET
@@ -995,33 +1655,50 @@ a {
 @media (max-width: 900px) {
 
   .stage {
+
     gap:
-      clamp(20px, 3.5vh, 36px);
+      clamp(
+        20px,
+        3.5vh,
+        36px
+      );
+
   }
 
+
   .logo-wrap {
+
     width:
       clamp(
         140px,
         30vw,
         230px
       );
+
   }
 
+
   .wordmark .name {
+
     font-size:
       clamp(
         1.35rem,
         5.2vw,
         2.6rem
       );
+
   }
 
+
   .fee-grid {
-    gap: 8px;
+
+    gap:
+      8px;
+
   }
 
 }
+
 
 /* =========================================================
    MOBILE
@@ -1030,35 +1707,52 @@ a {
 @media (max-width: 650px) {
 
   .stage {
-    min-height: 100svh;
+
+    min-height:
+      100svh;
 
     justify-content:
       center;
 
     gap:
-      20px;
+      18px;
 
     padding:
+
       28px
+
       16px
-      72px;
+
+      82px;
+
   }
 
+
   .logo-wrap {
+
     width:
       clamp(
         125px,
         43vw,
         190px
       );
+
   }
+
 
   .wordmark {
+
     width:
-      min(100%, 520px);
+      min(
+        100%,
+        520px
+      );
+
   }
 
+
   .wordmark .over {
+
     font-size:
       0.62rem;
 
@@ -1067,9 +1761,12 @@ a {
 
     text-indent:
       0.25em;
+
   }
 
+
   .wordmark .name {
+
     font-size:
       clamp(
         1.35rem,
@@ -1085,9 +1782,12 @@ a {
 
     text-indent:
       0.07em;
+
   }
 
+
   .wordmark .under {
+
     font-size:
       0.88rem;
 
@@ -1099,14 +1799,23 @@ a {
 
     padding:
       0 8px;
+
   }
+
 
   .ornament {
+
     width:
-      min(88vw, 400px);
+      min(
+        88vw,
+        400px
+      );
+
   }
 
+
   .explore {
+
     min-height:
       52px;
 
@@ -1121,50 +1830,99 @@ a {
 
     text-indent:
       0.18em;
+
   }
+
 
   .fee-policy {
+
     width:
-      min(94vw, 430px);
+      min(
+        94vw,
+        460px
+      );
+
   }
 
+
   .fee-title {
+
     font-size:
       0.68rem;
 
     margin-bottom:
-      8px;
+      7px;
+
   }
+
+
+  .fee-subtitle {
+
+    font-size:
+      0.72rem;
+
+    margin-bottom:
+      9px;
+
+  }
+
 
   .fee-grid {
+
     grid-template-columns:
       1fr 1fr;
+
   }
+
 
   .fee-card:last-child {
+
     grid-column:
       1 / -1;
+
   }
 
+
   .fee-card {
+
     padding:
-      8px 10px;
+      9px 10px;
 
     border-radius:
       10px;
+
   }
+
 
   .fee-card strong {
+
     font-size:
-      0.95rem;
+      0.92rem;
+
   }
+
 
   .fee-card span {
+
     font-size:
-      0.68rem;
+      0.66rem;
+
   }
 
+
+  .fee-note {
+
+    font-size:
+      0.64rem;
+
+    padding:
+      0 4px;
+
+  }
+
+
   .verse {
+
     width:
       90vw;
 
@@ -1176,9 +1934,11 @@ a {
 
     font-size:
       0.67rem;
+
   }
 
 }
+
 
 /* =========================================================
    VERY SMALL PHONES
@@ -1187,36 +1947,55 @@ a {
 @media (max-width: 390px) {
 
   .stage {
+
     gap:
-      16px;
+      14px;
 
     padding:
+
       24px
+
       13px
-      65px;
+
+      72px;
+
   }
+
 
   .logo-wrap {
+
     width:
       118px;
+
   }
+
 
   .wordmark .name {
+
     font-size:
       1.27rem;
+
   }
+
 
   .wordmark .under {
+
     font-size:
       0.8rem;
+
   }
+
 
   .ornament {
+
     gap:
       7px;
+
   }
 
+
   .explore {
+
     min-height:
       48px;
 
@@ -1225,24 +2004,43 @@ a {
 
     font-size:
       0.67rem;
+
   }
+
 
   .fee-grid {
+
     gap:
       6px;
+
   }
+
 
   .fee-card strong {
+
     font-size:
       0.84rem;
+
   }
 
+
   .fee-card span {
+
     font-size:
       0.62rem;
+
+  }
+
+
+  .fee-note {
+
+    font-size:
+      0.59rem;
+
   }
 
 }
+
 
 /* =========================================================
    LANDSCAPE MOBILE
@@ -1251,6 +2049,7 @@ a {
 @media (max-height: 600px) and (orientation: landscape) {
 
   .stage {
+
     justify-content:
       flex-start;
 
@@ -1261,41 +2060,58 @@ a {
       24px;
 
     padding-bottom:
-      55px;
+      65px;
 
     gap:
       14px;
+
   }
+
 
   .logo-wrap {
+
     width:
       100px;
+
   }
+
 
   .wordmark .name {
+
     font-size:
       1.35rem;
+
   }
 
+
   .wordmark .under {
+
     margin-top:
       4px;
 
     font-size:
       0.78rem;
+
   }
+
 
   .fee-policy {
+
     margin-bottom:
       10px;
+
   }
 
+
   .verse {
+
     display:
       none;
+
   }
 
 }
+
 
 /* =========================================================
    LARGE DESKTOP
@@ -1304,21 +2120,30 @@ a {
 @media (min-width: 1400px) {
 
   .stage {
+
     gap:
       42px;
+
   }
+
 
   .logo-wrap {
+
     width:
       270px;
+
   }
 
+
   .wordmark .name {
+
     font-size:
       3rem;
+
   }
 
 }
+
 
 /* =========================================================
    TOUCH DEVICES
@@ -1327,18 +2152,35 @@ a {
 @media (hover: none) {
 
   .explore {
+
     transition:
+
       box-shadow 0.4s,
+
       background-position 0.9s ease,
+
       transform 0.2s ease;
+
   }
 
+
   .explore:active {
+
     transform:
       scale(0.97);
+
+  }
+
+
+  .fee-card:hover {
+
+    transform:
+      none;
+
   }
 
 }
+
 
 /* =========================================================
    REDUCED MOTION
@@ -1349,6 +2191,7 @@ a {
   *,
   *::before,
   *::after {
+
     animation-duration:
       0.01ms !important;
 
@@ -1360,6 +2203,7 @@ a {
 
     scroll-behavior:
       auto !important;
+
   }
 
 }
@@ -1367,19 +2211,31 @@ a {
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =======================================================
      BACKGROUND
 ======================================================= -->
 
-<div class="bg"></div>
-<div class="rays"></div>
+<div
+  class="bg"
+  aria-hidden="true"
+></div>
+
+
+<div
+  class="rays"
+  aria-hidden="true"
+></div>
+
 
 <canvas
   id="particles"
   aria-hidden="true"
 ></canvas>
+
 
 <div
   class="vignette"
@@ -1393,15 +2249,30 @@ a {
 
 <main class="stage">
 
-  <!-- LOGO -->
+
+  <!-- =====================================================
+       LOGO
+  ====================================================== -->
 
   <div class="logo-wrap">
 
-    <div class="halo"></div>
+    <div
+      class="halo"
+      aria-hidden="true"
+    ></div>
 
-    <div class="ring"></div>
 
-    <div class="ring r2"></div>
+    <div
+      class="ring"
+      aria-hidden="true"
+    ></div>
+
+
+    <div
+      class="ring r2"
+      aria-hidden="true"
+    ></div>
+
 
     <img
       src="./img/logo/logo.png"
@@ -1412,7 +2283,9 @@ a {
   </div>
 
 
-  <!-- SCHOOL NAME -->
+  <!-- =====================================================
+       SCHOOL NAME
+  ====================================================== -->
 
   <header class="wordmark">
 
@@ -1420,9 +2293,11 @@ a {
       Welcome to
     </span>
 
+
     <span class="name">
       Global College of Missiology
     </span>
+
 
     <span class="under">
       Equipping saints for the harvest fields of the world
@@ -1431,7 +2306,9 @@ a {
   </header>
 
 
-  <!-- ORNAMENT -->
+  <!-- =====================================================
+       ORNAMENT
+  ====================================================== -->
 
   <div
     class="ornament"
@@ -1447,7 +2324,9 @@ a {
   </div>
 
 
-  <!-- EXPLORE -->
+  <!-- =====================================================
+       EXPLORE BUTTON
+  ====================================================== -->
 
   <a
     href="./home.html"
@@ -1471,19 +2350,32 @@ a {
 
 
   <!-- =====================================================
-       FEE POLICY
+       ANNUAL FEE POLICY
   ====================================================== -->
 
   <section
     class="fee-policy"
-    aria-label="Semester fee information"
+    aria-label="Annual academic fee information"
   >
 
     <div class="fee-title">
-      Semester Fee Policy
+      Annual Academic Fee
     </div>
 
+
+    <p class="fee-subtitle">
+
+      Tuition is paid once for the academic year.
+      The annual fee covers both First Semester and
+      Second Semester.
+
+    </p>
+
+
     <div class="fee-grid">
+
+
+      <!-- NIGERIA -->
 
       <div class="fee-card">
 
@@ -1495,8 +2387,14 @@ a {
           Students in Nigeria
         </span>
 
+        <span>
+          Per academic year
+        </span>
+
       </div>
 
+
+      <!-- OUTSIDE NIGERIA -->
 
       <div class="fee-card">
 
@@ -1508,36 +2406,68 @@ a {
           Students outside Nigeria
         </span>
 
-      </div>
-
-
-      <div class="fee-card">
-
-        <strong>
-          30 Days
-        </strong>
-
         <span>
-          Duration per semester
+          Per academic year
         </span>
 
       </div>
 
+
+      <!-- PROGRAMME -->
+
+      <div class="fee-card">
+
+        <strong>
+          60 Days
+        </strong>
+
+        <span>
+          Complete academic training
+        </span>
+
+        <span>
+          Two semesters of 30 days each
+        </span>
+
+      </div>
+
+
     </div>
+
+
+    <p class="fee-note">
+
+      <strong>
+        Important:
+      </strong>
+
+      There is no separate semester fee.
+      The annual programme fee is paid once and covers
+      the complete 60-day training programme.
+
+    </p>
 
   </section>
 
 
-  <!-- VERSE -->
+  <!-- =====================================================
+       VERSE
+  ====================================================== -->
 
   <div class="verse">
-    "Go ye therefore, and teach all nations." — Matthew 28:19
+
+    "Go ye therefore, and teach all nations."
+    — Matthew 28:19
+
   </div>
+
 
 </main>
 
 
-<!-- TRANSITION -->
+<!-- =======================================================
+     PAGE TRANSITION
+======================================================= -->
 
 <div
   class="veil"
@@ -1553,12 +2483,19 @@ a {
 ========================================================= */
 
 const canvas =
-  document.getElementById("particles");
+  document.getElementById(
+    "particles"
+  );
+
 
 const ctx =
-  canvas.getContext("2d");
+  canvas.getContext(
+    "2d"
+  );
+
 
 let W = 0;
+
 let H = 0;
 
 let particles = [];
@@ -1566,33 +2503,50 @@ let particles = [];
 let animationFrame = null;
 
 
-/* Reduce particle count on smaller devices */
+/* =========================================================
+   PARTICLE COUNT
+========================================================= */
 
 function getParticleCount() {
 
   const width =
     window.innerWidth;
 
+
   if (width <= 390) {
+
     return 25;
+
   }
+
 
   if (width <= 650) {
+
     return 38;
+
   }
 
+
   if (width <= 1000) {
+
     return 60;
+
   }
+
 
   return Math.min(
     110,
-    Math.floor(width / 12)
+    Math.floor(
+      width / 12
+    )
   );
+
 }
 
 
-/* Resize canvas */
+/* =========================================================
+   RESIZE CANVAS
+========================================================= */
 
 function resizeCanvas() {
 
@@ -1602,20 +2556,34 @@ function resizeCanvas() {
       2
     );
 
-  W = window.innerWidth;
-  H = window.innerHeight;
+
+  W =
+    window.innerWidth;
+
+
+  H =
+    window.innerHeight;
+
 
   canvas.width =
-    Math.floor(W * dpr);
+    Math.floor(
+      W * dpr
+    );
+
 
   canvas.height =
-    Math.floor(H * dpr);
+    Math.floor(
+      H * dpr
+    );
+
 
   canvas.style.width =
     W + "px";
 
+
   canvas.style.height =
     H + "px";
+
 
   ctx.setTransform(
     dpr,
@@ -1625,12 +2593,17 @@ function resizeCanvas() {
     0,
     0
   );
+
 }
 
 
-/* Create particle */
+/* =========================================================
+   CREATE PARTICLE
+========================================================= */
 
-function createParticle(anywhere = true) {
+function createParticle(
+  anywhere = true
+) {
 
   return {
 
@@ -1646,13 +2619,20 @@ function createParticle(anywhere = true) {
       Math.random() * 1.5 + 0.35,
 
     vy:
-      -(Math.random() * 0.30 + 0.07),
+      -(
+        Math.random() * 0.30 +
+        0.07
+      ),
 
     vx:
-      (Math.random() - 0.5) * 0.12,
+      (
+        Math.random() -
+        0.5
+      ) * 0.12,
 
     alpha:
-      Math.random() * 0.5 + 0.1,
+      Math.random() * 0.5 +
+      0.1,
 
     tw:
       Math.random() *
@@ -1664,14 +2644,18 @@ function createParticle(anywhere = true) {
 }
 
 
-/* Build particles */
+/* =========================================================
+   BUILD PARTICLES
+========================================================= */
 
 function rebuildParticles() {
 
   particles = [];
 
+
   const count =
     getParticleCount();
+
 
   for (
     let i = 0;
@@ -1688,7 +2672,9 @@ function rebuildParticles() {
 }
 
 
-/* Draw particles */
+/* =========================================================
+   DRAW PARTICLES
+========================================================= */
 
 function drawParticles() {
 
@@ -1699,28 +2685,37 @@ function drawParticles() {
     H
   );
 
+
   for (
     const particle
     of particles
   ) {
 
-    particle.tw += 0.03;
+    particle.tw +=
+      0.03;
+
 
     particle.x +=
       particle.vx;
 
+
     particle.y +=
       particle.vy;
+
 
     const alpha =
       particle.alpha *
       (
         0.6 +
         0.4 *
-        Math.sin(particle.tw)
+        Math.sin(
+          particle.tw
+        )
       );
 
+
     ctx.beginPath();
+
 
     ctx.arc(
       particle.x,
@@ -1730,23 +2725,37 @@ function drawParticles() {
       Math.PI * 2
     );
 
+
     ctx.fillStyle =
-      `rgba(240,215,140,${alpha})`;
+      `rgba(
+        240,
+        215,
+        140,
+        ${alpha}
+      )`;
+
 
     ctx.shadowColor =
       "rgba(240,215,140,.9)";
 
-    ctx.shadowBlur = 5;
+
+    ctx.shadowBlur =
+      5;
+
 
     ctx.fill();
 
 
-    /* Respawn */
+    /* Respawn particle */
 
     if (
+
       particle.y < -12 ||
+
       particle.x < -12 ||
+
       particle.x > W + 12
+
     ) {
 
       Object.assign(
@@ -1758,6 +2767,7 @@ function drawParticles() {
 
   }
 
+
   animationFrame =
     requestAnimationFrame(
       drawParticles
@@ -1766,7 +2776,9 @@ function drawParticles() {
 }
 
 
-/* Initialize */
+/* =========================================================
+   INITIALIZE PARTICLES
+========================================================= */
 
 resizeCanvas();
 
@@ -1775,29 +2787,42 @@ rebuildParticles();
 drawParticles();
 
 
-/* Resize */
+/* =========================================================
+   RESIZE EVENT
+========================================================= */
 
 let resizeTimer;
 
+
 window.addEventListener(
+
   "resize",
+
   () => {
 
     clearTimeout(
       resizeTimer
     );
 
+
     resizeTimer =
-      setTimeout(() => {
+      setTimeout(
+        () => {
 
-        resizeCanvas();
+          resizeCanvas();
 
-        rebuildParticles();
+          rebuildParticles();
 
-      }, 150);
+        },
+        150
+      );
 
   },
-  { passive: true }
+
+  {
+    passive: true
+  }
+
 );
 
 
@@ -1810,13 +2835,16 @@ const link =
     "exploreLink"
   );
 
+
 const veil =
   document.getElementById(
     "veil"
   );
 
 
-/* Magnetic effect only on desktop */
+/* =========================================================
+   MAGNETIC BUTTON EFFECT
+========================================================= */
 
 const finePointer =
   window.matchMedia(
@@ -1826,77 +2854,113 @@ const finePointer =
 
 if (finePointer) {
 
-  let magneticFrame = null;
+  let magneticFrame =
+    null;
+
 
   document.addEventListener(
+
     "mousemove",
+
     (event) => {
 
       if (magneticFrame) {
+
         return;
+
       }
 
+
       magneticFrame =
-        requestAnimationFrame(() => {
+        requestAnimationFrame(
+          () => {
 
-          const rect =
-            link.getBoundingClientRect();
+            const rect =
+              link.getBoundingClientRect();
 
-          const centerX =
-            rect.left +
-            rect.width / 2;
 
-          const centerY =
-            rect.top +
-            rect.height / 2;
+            const centerX =
+              rect.left +
+              rect.width / 2;
 
-          const dx =
-            event.clientX -
-            centerX;
 
-          const dy =
-            event.clientY -
-            centerY;
+            const centerY =
+              rect.top +
+              rect.height / 2;
 
-          const distance =
-            Math.hypot(
-              dx,
-              dy
-            );
 
-          const strength = 26;
+            const dx =
+              event.clientX -
+              centerX;
 
-          if (
-            distance < 140 &&
-            distance > 0
-          ) {
 
-            const pull =
-              (
-                1 -
-                distance / 140
-              ) *
-              strength;
+            const dy =
+              event.clientY -
+              centerY;
 
-            link.style.transform =
-              `translate(
-                ${dx / distance * pull}px,
-                ${dy / distance * pull}px
-              )`;
 
-          } else {
+            const distance =
+              Math.hypot(
+                dx,
+                dy
+              );
 
-            link.style.transform =
-              "translate(0,0)";
+
+            const strength =
+              26;
+
+
+            if (
+
+              distance < 140 &&
+
+              distance > 0
+
+            ) {
+
+              const pull =
+                (
+                  1 -
+                  distance / 140
+                ) *
+                strength;
+
+
+              link.style.transform =
+                `translate(
+                  ${
+                    dx /
+                    distance *
+                    pull
+                  }px,
+
+                  ${
+                    dy /
+                    distance *
+                    pull
+                  }px
+                )`;
+
+            } else {
+
+              link.style.transform =
+                "translate(0,0)";
+
+            }
+
+
+            magneticFrame =
+              null;
 
           }
-
-          magneticFrame = null;
-
-        });
+        );
 
     },
-    { passive: true }
+
+    {
+      passive: true
+    }
+
   );
 
 }
@@ -1906,48 +2970,66 @@ if (finePointer) {
    PAGE TRANSITION
 ========================================================= */
 
-let navigating = false;
+let navigating =
+  false;
+
 
 link.addEventListener(
+
   "click",
+
   (event) => {
 
     if (navigating) {
+
       return;
+
     }
+
 
     event.preventDefault();
 
-    navigating = true;
+
+    navigating =
+      true;
+
 
     link.style.transform =
       "translate(0,0)";
 
+
     veil.classList.add(
       "active"
     );
+
 
     veil.setAttribute(
       "aria-hidden",
       "false"
     );
 
+
     const destination =
       link.getAttribute(
         "href"
       );
 
+
     setTimeout(
+
       () => {
 
         window.location.href =
           destination;
 
       },
+
       850
+
     );
 
   }
+
 );
 
 
@@ -1962,7 +3044,9 @@ const logoImg =
 
 
 logoImg.addEventListener(
+
   "error",
+
   () => {
 
     const seal =
@@ -1970,20 +3054,25 @@ logoImg.addEventListener(
         "div"
       );
 
+
     seal.className =
       "logo-fallback";
+
 
     seal.style.cssText = `
 
       width:100%;
+
       aspect-ratio:1;
 
       border-radius:50%;
 
       display:flex;
+
       flex-direction:column;
 
       align-items:center;
+
       justify-content:center;
 
       border:
@@ -2019,38 +3108,74 @@ logoImg.addEventListener(
       <span
         style="
           font-family:'Marcellus',serif;
-          font-size:clamp(2.2rem,10vmin,4rem);
-          color:var(--gold-light);
+
+          font-size:
+            clamp(
+              2.2rem,
+              10vmin,
+              4rem
+            );
+
+          color:
+            var(--gold-light);
+
           text-shadow:
             0 0 24px
             rgba(201,162,75,.85);
+
           letter-spacing:.05em;
         "
       >
         GCM
       </span>
 
+
       <span
         style="
-          font-size:clamp(.55rem,1.6vmin,.75rem);
+          font-size:
+            clamp(
+              .55rem,
+              1.6vmin,
+              .75rem
+            );
+
           letter-spacing:.4em;
+
           text-indent:.4em;
-          color:rgba(240,215,140,.7);
-          text-transform:uppercase;
+
+          color:
+            rgba(240,215,140,.7);
+
+          text-transform:
+            uppercase;
+
           margin-top:6px;
         "
       >
         Est. In Christ
       </span>
 
+
       <span
         style="
           position:absolute;
+
           top:8%;
+
           left:50%;
-          transform:translateX(-50%);
-          color:rgba(240,215,140,.8);
-          font-size:clamp(.7rem,2vmin,1rem);
+
+          transform:
+            translateX(-50%);
+
+          color:
+            rgba(240,215,140,.8);
+
+          font-size:
+            clamp(
+              .7rem,
+              2vmin,
+              1rem
+            );
         "
       >
         ✝
@@ -2064,7 +3189,11 @@ logoImg.addEventListener(
     );
 
   },
-  { once: true }
+
+  {
+    once: true
+  }
+
 );
 
 
@@ -2073,7 +3202,9 @@ logoImg.addEventListener(
 ========================================================= */
 
 document.addEventListener(
+
   "visibilitychange",
+
   () => {
 
     if (
@@ -2086,7 +3217,9 @@ document.addEventListener(
           animationFrame
         );
 
-        animationFrame = null;
+
+        animationFrame =
+          null;
 
       }
 
@@ -2101,6 +3234,7 @@ document.addEventListener(
     }
 
   }
+
 );
 
 </script>

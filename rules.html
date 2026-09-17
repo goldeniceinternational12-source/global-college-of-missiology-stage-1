@@ -56,6 +56,7 @@
             font-family: "Cormorant Garamond", Georgia, serif;
 
             color: #f5f1e8;
+
             background:
                 radial-gradient(
                     circle at top right,
@@ -1121,7 +1122,7 @@
 
 
         /* =========================================================
-           POLICY NOTE
+           ANNUAL TUITION POLICY
         ========================================================= */
 
         .policy-section {
@@ -1163,14 +1164,105 @@
             font-weight: 400;
         }
 
-        .policy-note p {
-            margin: 0;
+        .policy-intro {
+            margin-bottom: 24px !important;
 
             color: var(--muted);
 
             font-size: 16px;
 
             line-height: 1.75;
+        }
+
+        .policy-fees {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 16px;
+
+            margin: 0 auto 22px;
+
+            width: min(720px, 100%);
+        }
+
+        .policy-fee-card {
+            padding: 22px 18px;
+
+            border:
+                1px solid
+                rgba(201, 164, 76, 0.2);
+
+            border-radius: 16px;
+
+            background:
+                rgba(255, 255, 255, 0.035);
+        }
+
+        .policy-fee-card strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: var(--gold-light);
+
+            font-family: "Marcellus", serif;
+
+            font-size: 30px;
+
+            font-weight: 400;
+        }
+
+        .policy-fee-card span {
+            display: block;
+
+            color:
+                rgba(255, 255, 255, 0.78);
+
+            font-size: 15px;
+        }
+
+        .policy-duration {
+            width: min(720px, 100%);
+
+            margin: 0 auto;
+
+            padding: 18px;
+
+            border-top:
+                1px solid
+                rgba(201, 164, 76, 0.16);
+
+            border-bottom:
+                1px solid
+                rgba(201, 164, 76, 0.16);
+
+            color:
+                rgba(255, 255, 255, 0.8);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+        .policy-duration strong {
+            color: var(--gold-light);
+        }
+
+        .policy-final {
+            margin: 22px 0 0 !important;
+
+            color:
+                rgba(255, 255, 255, 0.72);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+        .policy-final strong {
+            color: var(--gold-light);
         }
 
 
@@ -1833,6 +1925,14 @@
                     25px 19px;
             }
 
+            .policy-fees {
+                grid-template-columns: 1fr;
+            }
+
+            .policy-fee-card strong {
+                font-size: 27px;
+            }
+
             .cta-section {
                 padding:
                     75px 16px;
@@ -1921,6 +2021,20 @@
 
             .rule-card p {
                 font-size: 15px;
+            }
+
+            .policy-note h3 {
+                font-size: 21px;
+            }
+
+            .policy-fee-card strong {
+                font-size: 25px;
+            }
+
+            .policy-fee-card span,
+            .policy-duration,
+            .policy-final {
+                font-size: 14px;
             }
         }
 
@@ -2514,7 +2628,7 @@
 
 
         <!-- =====================================================
-             POLICY NOTE
+             ANNUAL TUITION POLICY
         ====================================================== -->
 
         <section class="section policy-section">
@@ -2524,14 +2638,90 @@
                 <div class="policy-note reveal">
 
                     <h3>
-                        Important Notice
+                        Annual Tuition Fee Policy
                     </h3>
 
-                    <p>
-                        College policies and procedures may be updated when
-                        necessary. Students are expected to pay attention to
-                        official announcements and follow the latest
-                        instructions issued by the administration.
+                    <p class="policy-intro">
+                        Tuition is paid once per academic year. The annual
+                        programme fee covers both First Semester and Second
+                        Semester. There is no separate semester fee.
+                    </p>
+
+
+                    <div class="policy-fees">
+
+                        <div class="policy-fee-card">
+
+                            <strong>
+                                $15 USD
+                            </strong>
+
+                            <span>
+                                Students in Nigeria
+                            </span>
+
+                            <span>
+                                Per academic year
+                            </span>
+
+                        </div>
+
+
+                        <div class="policy-fee-card">
+
+                            <strong>
+                                $25 USD
+                            </strong>
+
+                            <span>
+                                Students outside Nigeria
+                            </span>
+
+                            <span>
+                                Per academic year
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="policy-duration">
+
+                        <strong>
+                            Academic Training Period:
+                        </strong>
+
+                        60 Days Total
+
+                        <br>
+
+                        First Semester:
+                        <strong>
+                            30 Days
+                        </strong>
+
+                        &nbsp; • &nbsp;
+
+                        Second Semester:
+                        <strong>
+                            30 Days
+                        </strong>
+
+                    </div>
+
+
+                    <p class="policy-final">
+
+                        <strong>
+                            Important:
+                        </strong>
+
+                        The annual fee is paid once for the complete
+                        academic year and covers both semesters.
+                        Students do not pay a separate fee for First
+                        Semester or Second Semester.
+
                     </p>
 
                 </div>

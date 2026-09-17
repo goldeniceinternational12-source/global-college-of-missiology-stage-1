@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -10,22 +12,29 @@
 
     <meta
         name="description"
-        content="Explore the courses and academic structure of Global College of Missiology."
+        content="Explore the courses, academic structure and tuition fees of Global College of Missiology."
     >
 
     <title>Courses | Global College of Missiology</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap"
         rel="stylesheet"
     >
 
+
     <style>
 
         :root {
+
             --navy: #050b14;
             --navy-2: #07111f;
             --navy-3: #0b192b;
@@ -43,22 +52,35 @@
             --line: rgba(201,164,92,.20);
 
             --container: 1400px;
+
             --side: clamp(16px, 5vw, 75px);
+
         }
+
 
         * {
+
             margin: 0;
             padding: 0;
+
             box-sizing: border-box;
+
         }
+
 
         html {
+
             scroll-behavior: smooth;
+
         }
 
+
         body {
+
             min-width: 320px;
+
             background: var(--navy);
+
             color: var(--cream);
 
             font-family:
@@ -67,28 +89,44 @@
                 serif;
 
             line-height: 1.7;
+
         }
+
 
         img {
+
             display: block;
+
             max-width: 100%;
+
         }
+
 
         a {
+
             color: inherit;
+
             text-decoration: none;
+
         }
 
+
         button {
+
             font: inherit;
+
         }
+
+
 
         /* =========================
            HEADER
         ========================= */
 
         .header {
+
             position: fixed;
+
             top: 0;
             left: 0;
             right: 0;
@@ -99,16 +137,22 @@
                 10px
                 var(--side)
                 0;
+
         }
 
+
         .navbar {
+
             width: min(var(--container), 100%);
+
             min-height: 82px;
 
             margin: auto;
+
             padding: 10px 16px;
 
             display: flex;
+
             align-items: center;
 
             gap: 20px;
@@ -123,31 +167,47 @@
                 rgba(3,8,17,.90);
 
             backdrop-filter: blur(18px);
+
         }
 
+
         .brand {
+
             display: flex;
+
             align-items: center;
+
             gap: 12px;
 
             flex-shrink: 0;
+
         }
 
+
         .brand img {
+
             width: 57px;
             height: 57px;
 
             object-fit: contain;
+
         }
+
 
         .brand-info {
+
             min-width: 0;
+
         }
 
+
         .brand-name {
+
             display: block;
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             color: var(--cream);
 
@@ -158,9 +218,12 @@
             letter-spacing: 1px;
 
             text-transform: uppercase;
+
         }
 
+
         .brand-subtitle {
+
             display: block;
 
             margin-top: 3px;
@@ -172,18 +235,25 @@
             letter-spacing: 2px;
 
             text-transform: uppercase;
+
         }
 
+
         .desktop-nav {
+
             margin-left: auto;
 
             display: flex;
+
             align-items: center;
 
             gap: 22px;
+
         }
 
+
         .desktop-nav a {
+
             position: relative;
 
             color: #d0c9bd;
@@ -193,35 +263,49 @@
             white-space: nowrap;
 
             transition: .3s ease;
+
         }
+
 
         .desktop-nav a:hover,
         .desktop-nav a.active {
+
             color: var(--gold-light);
+
         }
 
+
         .desktop-nav a::after {
+
             content: "";
 
             position: absolute;
 
             left: 0;
+
             bottom: -7px;
 
             width: 0;
+
             height: 1px;
 
             background: var(--gold);
 
             transition: .3s ease;
+
         }
+
 
         .desktop-nav a:hover::after,
         .desktop-nav a.active::after {
+
             width: 100%;
+
         }
 
+
         .nav-button {
+
             padding: 10px 15px;
 
             border:
@@ -232,30 +316,42 @@
 
             color: var(--gold-light) !important;
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 10px !important;
 
             letter-spacing: 1px;
 
             text-transform: uppercase;
+
         }
+
 
         .nav-button::after {
+
             display: none;
+
         }
 
+
         .nav-button:hover {
+
             background: var(--gold);
 
             color: var(--navy) !important;
+
         }
+
+
 
         /* =========================
            MOBILE MENU
         ========================= */
 
         .menu-toggle {
+
             width: 46px;
             height: 46px;
 
@@ -280,18 +376,25 @@
                 rgba(255,255,255,.04);
 
             cursor: pointer;
+
         }
 
+
         .menu-toggle span {
+
             width: 21px;
+
             height: 2px;
 
             background: var(--gold-light);
 
             transition: .3s ease;
+
         }
 
+
         .mobile-menu {
+
             position: fixed;
 
             top: 100px;
@@ -304,6 +407,7 @@
             padding: 12px;
 
             display: flex;
+
             flex-direction: column;
 
             background:
@@ -316,21 +420,29 @@
             border-radius: 17px;
 
             opacity: 0;
+
             visibility: hidden;
 
             transform: translateY(-15px);
 
             transition: .3s ease;
+
         }
 
+
         .mobile-menu.open {
+
             opacity: 1;
+
             visibility: visible;
 
             transform: translateY(0);
+
         }
 
+
         .mobile-menu a {
+
             padding: 14px;
 
             border-bottom:
@@ -340,33 +452,46 @@
             color: #d4cec1;
 
             font-size: 18px;
+
         }
 
+
         .mobile-menu a:last-child {
+
             border-bottom: 0;
+
         }
+
+
 
         /* =========================
            HERO
         ========================= */
 
         .hero {
+
             min-height: 75vh;
 
             display: flex;
+
             align-items: center;
 
             background:
+
                 linear-gradient(
                     90deg,
                     rgba(3,8,17,.96),
                     rgba(3,8,17,.65)
                 ),
+
                 url("campus.jpg")
                 center / cover no-repeat;
+
         }
 
+
         .hero-content {
+
             width: min(var(--container), 100%);
 
             margin: auto;
@@ -375,26 +500,36 @@
                 180px
                 var(--side)
                 100px;
+
         }
 
+
         .hero-label {
+
             color: var(--gold-light);
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 12px;
 
             letter-spacing: 4px;
 
             text-transform: uppercase;
+
         }
 
+
         .hero h1 {
+
             max-width: 950px;
 
             margin-top: 20px;
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size:
                 clamp(45px, 7vw, 90px);
@@ -402,13 +537,19 @@
             line-height: 1;
 
             font-weight: 400;
+
         }
+
 
         .hero h1 span {
+
             color: var(--gold-light);
+
         }
 
+
         .hero p {
+
             max-width: 760px;
 
             margin-top: 28px;
@@ -417,39 +558,57 @@
 
             font-size:
                 clamp(18px, 2vw, 23px);
+
         }
+
+
 
         /* =========================
            GENERAL
         ========================= */
 
         .section {
+
             padding:
                 clamp(75px, 10vw, 140px)
                 var(--side);
+
         }
+
 
         .container {
+
             width: min(var(--container), 100%);
+
             margin: auto;
+
         }
 
+
         .eyebrow {
+
             color: var(--gold);
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 11px;
 
             letter-spacing: 3px;
 
             text-transform: uppercase;
+
         }
 
+
         .title {
+
             margin-top: 15px;
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size:
                 clamp(36px, 5vw, 65px);
@@ -457,49 +616,69 @@
             line-height: 1.05;
 
             font-weight: 400;
+
         }
 
+
         .title span {
+
             color: var(--gold-light);
+
         }
+
+
 
         /* =========================
            DURATION SECTION
         ========================= */
 
         .duration-section {
+
             background:
+
                 linear-gradient(
                     135deg,
                     #07111f,
                     #050b14
                 );
+
         }
 
+
         .duration-heading {
+
             max-width: 850px;
 
             margin-bottom: 55px;
+
         }
 
+
         .duration-heading p {
+
             margin-top: 20px;
 
             color: var(--text);
 
             font-size: 19px;
+
         }
 
+
         .duration-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
             gap: 20px;
+
         }
 
+
         .duration-card {
+
             position: relative;
 
             padding: 40px 30px;
@@ -514,9 +693,12 @@
             text-align: center;
 
             transition: .35s ease;
+
         }
 
+
         .duration-card:hover {
+
             transform: translateY(-7px);
 
             border-color:
@@ -524,55 +706,279 @@
 
             background:
                 rgba(201,164,92,.05);
+
         }
 
+
         .duration-icon {
+
             font-size: 35px;
 
             margin-bottom: 18px;
+
         }
 
+
         .duration-card h3 {
-            font-family: "Marcellus", serif;
+
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 24px;
 
             font-weight: 400;
 
             color: var(--cream);
+
         }
 
+
         .duration-number {
+
             margin-top: 18px;
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 48px;
 
             color: var(--gold-light);
 
             line-height: 1;
+
         }
 
+
         .duration-number small {
+
             font-size: 18px;
 
             color: var(--gold);
+
         }
 
+
         .duration-card p {
+
             margin-top: 15px;
 
             color: var(--text-soft);
 
             font-size: 17px;
+
         }
+
+
+
+        /* =========================
+           FEE SECTION
+        ========================= */
+
+        .fee-section {
+
+            background: var(--navy);
+
+            text-align: center;
+
+        }
+
+
+        .fee-heading {
+
+            max-width: 850px;
+
+            margin:
+                0
+                auto
+                55px;
+
+        }
+
+
+        .fee-heading p {
+
+            margin-top: 20px;
+
+            color: var(--text);
+
+            font-size: 19px;
+
+        }
+
+
+        .fee-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .fee-card {
+
+            position: relative;
+
+            padding: 45px 35px;
+
+            border:
+                1px solid
+                rgba(201,164,92,.28);
+
+            border-radius: 14px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(201,164,92,.09),
+                    rgba(255,255,255,.025)
+                );
+
+            transition: .35s ease;
+
+        }
+
+
+        .fee-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(201,164,92,.60);
+
+        }
+
+
+        .fee-icon {
+
+            font-size: 38px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .fee-card h3 {
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 27px;
+
+            font-weight: 400;
+
+        }
+
+
+        .fee-price {
+
+            margin-top: 18px;
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 58px;
+
+            line-height: 1;
+
+        }
+
+
+        .fee-price small {
+
+            font-size: 18px;
+
+            color: var(--gold);
+
+        }
+
+
+        .fee-card p {
+
+            margin-top: 18px;
+
+            color: var(--text);
+
+            font-size: 17px;
+
+        }
+
+
+        .fee-badge {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 8px 15px;
+
+            border:
+                1px solid
+                rgba(201,164,92,.30);
+
+            border-radius: 30px;
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 11px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .fee-note {
+
+            max-width: 850px;
+
+            margin:
+                35px
+                auto
+                0;
+
+            padding: 22px 25px;
+
+            border-left:
+                3px solid
+                var(--gold);
+
+            background:
+                rgba(201,164,92,.05);
+
+            color: var(--text-soft);
+
+            font-size: 16px;
+
+        }
+
+
 
         /* =========================
            COURSE NOTICE
         ========================= */
 
         .notice {
+
             margin-bottom: 70px;
 
             padding: 35px;
@@ -589,59 +995,83 @@
                 rgba(201,164,92,.06);
 
             border-radius: 10px;
+
         }
 
+
         .notice h2 {
-            font-family: "Marcellus", serif;
+
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 28px;
 
             font-weight: 400;
 
             color: var(--gold-light);
+
         }
 
+
         .notice p {
+
             margin-top: 12px;
 
             color: var(--text);
 
             font-size: 18px;
+
         }
+
+
 
         /* =========================
            COURSES
         ========================= */
 
         .courses {
+
             background: var(--navy);
+
         }
 
+
         .courses-heading {
+
             max-width: 850px;
 
             margin-bottom: 55px;
+
         }
 
+
         .courses-heading p {
+
             margin-top: 18px;
 
             color: var(--text);
 
             font-size: 19px;
+
         }
 
+
         .course-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
             gap: 20px;
+
         }
 
+
         .course-card {
-            min-height: 310px;
+
+            min-height: 350px;
 
             padding: 35px;
 
@@ -650,6 +1080,7 @@
                 rgba(201,164,92,.16);
 
             background:
+
                 linear-gradient(
                     145deg,
                     rgba(201,164,92,.07),
@@ -657,43 +1088,94 @@
                 );
 
             transition: .35s ease;
+
         }
 
+
         .course-card:hover {
+
             transform: translateY(-7px);
 
             border-color:
                 rgba(201,164,92,.45);
+
         }
+
 
         .course-icon {
+
             font-size: 38px;
+
         }
 
+
         .course-card h3 {
+
             margin-top: 25px;
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 25px;
 
             font-weight: 400;
 
             color: var(--cream);
+
         }
 
+
         .course-card p {
+
             margin-top: 12px;
 
             color: var(--text-soft);
 
             font-size: 17px;
+
         }
 
+
+        .course-fee {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 22px;
+
+        }
+
+
+        .course-fee span {
+
+            padding: 7px 10px;
+
+            border:
+                1px solid
+                rgba(201,164,92,.25);
+
+            border-radius: 5px;
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 11px;
+
+        }
+
+
         .course-status {
+
             display: inline-block;
 
-            margin-top: 25px;
+            margin-top: 18px;
 
             padding: 8px 13px;
 
@@ -705,24 +1187,33 @@
 
             color: var(--gold-light);
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 10px;
 
             letter-spacing: 1.5px;
 
             text-transform: uppercase;
+
         }
+
+
 
         /* =========================
            SEMESTERS
         ========================= */
 
         .semesters {
+
             background: var(--navy-2);
+
         }
 
+
         .semester-grid {
+
             display: grid;
 
             grid-template-columns:
@@ -731,9 +1222,12 @@
             gap: 25px;
 
             margin-top: 55px;
+
         }
 
+
         .semester-card {
+
             padding: 45px;
 
             border:
@@ -742,93 +1236,168 @@
 
             background:
                 rgba(255,255,255,.025);
+
         }
 
+
         .semester-number {
+
             color: var(--gold);
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 12px;
 
             letter-spacing: 3px;
 
             text-transform: uppercase;
+
         }
 
+
         .semester-card h3 {
+
             margin-top: 15px;
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 35px;
 
             font-weight: 400;
+
         }
 
+
         .semester-duration {
+
             margin-top: 20px;
 
             color: var(--gold-light);
 
             font-size: 27px;
+
         }
 
+
         .semester-card p {
+
             margin-top: 15px;
 
             color: var(--text);
 
             font-size: 18px;
+
         }
+
+
+        .semester-fee {
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                rgba(201,164,92,.15);
+
+            color: var(--gold-light);
+
+            font-family:
+                "Marcellus",
+                serif;
+
+            font-size: 18px;
+
+        }
+
+
+        .semester-fee span {
+
+            color: var(--text-soft);
+
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-size: 16px;
+
+        }
+
+
 
         /* =========================
            CERTIFICATE
         ========================= */
 
         .certificate {
+
             text-align: center;
 
             background:
+
                 linear-gradient(
                     rgba(3,8,17,.92),
                     rgba(3,8,17,.96)
                 ),
+
                 url("gallery/conference.jpg")
                 center / cover no-repeat;
+
         }
 
+
         .certificate-content {
+
             max-width: 850px;
 
             margin: auto;
+
         }
 
+
         .certificate h2 {
-            font-family: "Marcellus", serif;
+
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size:
                 clamp(38px, 5vw, 65px);
 
             font-weight: 400;
+
         }
+
 
         .certificate h2 span {
+
             color: var(--gold-light);
+
         }
 
+
         .certificate p {
+
             margin-top: 20px;
 
             color: var(--text);
 
             font-size: 19px;
+
         }
 
+
         .button {
+
             display: inline-flex;
 
             align-items: center;
+
             justify-content: center;
 
             margin-top: 30px;
@@ -841,7 +1410,9 @@
 
             color: var(--navy);
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 11px;
 
@@ -850,19 +1421,26 @@
             text-transform: uppercase;
 
             transition: .3s ease;
+
         }
 
+
         .button:hover {
+
             background: var(--gold-light);
 
             transform: translateY(-3px);
+
         }
+
+
 
         /* =========================
            FOOTER
         ========================= */
 
         footer {
+
             padding:
                 70px
                 var(--side);
@@ -872,9 +1450,12 @@
             border-top:
                 1px solid
                 rgba(201,164,92,.14);
+
         }
 
+
         .footer-grid {
+
             width: min(var(--container), 100%);
 
             margin: auto;
@@ -885,26 +1466,37 @@
                 1.5fr 1fr 1fr;
 
             gap: 50px;
+
         }
 
+
         .footer-brand img {
+
             width: 72px;
             height: 72px;
 
             object-fit: contain;
 
             margin-bottom: 18px;
+
         }
 
+
         .footer-brand h3 {
-            font-family: "Marcellus", serif;
+
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 20px;
 
             font-weight: 400;
+
         }
 
+
         .footer-brand p {
+
             max-width: 370px;
 
             margin-top: 10px;
@@ -912,23 +1504,31 @@
             color: #878176;
 
             font-size: 16px;
+
         }
 
+
         .footer-column h4 {
+
             margin-bottom: 18px;
 
             color: var(--gold-light);
 
-            font-family: "Marcellus", serif;
+            font-family:
+                "Marcellus",
+                serif;
 
             font-size: 12px;
 
             letter-spacing: 2px;
 
             text-transform: uppercase;
+
         }
 
+
         .footer-column a {
+
             display: block;
 
             margin-bottom: 10px;
@@ -938,13 +1538,19 @@
             font-size: 16px;
 
             transition: .3s ease;
+
         }
+
 
         .footer-column a:hover {
+
             color: var(--gold-light);
+
         }
 
+
         .footer-bottom {
+
             width: min(var(--container), 100%);
 
             margin: 55px auto 0;
@@ -958,7 +1564,10 @@
             color: #625e57;
 
             font-size: 14px;
+
         }
+
+
 
         /* =========================
            RESPONSIVE
@@ -967,102 +1576,187 @@
         @media (max-width: 1000px) {
 
             .desktop-nav {
+
                 display: none;
+
             }
 
+
             .menu-toggle {
+
                 display: flex;
+
             }
+
 
             .duration-grid,
             .course-grid {
+
                 grid-template-columns:
                     repeat(2, 1fr);
+
             }
 
+
             .footer-grid {
+
                 grid-template-columns:
                     1fr 1fr;
+
             }
+
         }
+
+
 
         @media (max-width: 700px) {
 
             .navbar {
+
                 min-height: 70px;
+
             }
+
 
             .brand img {
+
                 width: 45px;
                 height: 45px;
+
             }
+
 
             .brand-name {
+
                 font-size: 10px;
+
                 max-width: 190px;
+
             }
+
 
             .brand-subtitle {
+
                 display: none;
+
             }
+
 
             .hero {
+
                 min-height: 680px;
+
             }
 
+
             .hero-content {
+
                 padding-top: 150px;
+
             }
+
 
             .duration-grid,
             .course-grid,
             .semester-grid,
+            .fee-grid,
             .footer-grid {
+
                 grid-template-columns: 1fr;
+
             }
+
 
             .duration-card {
+
                 padding: 35px 25px;
+
             }
+
 
             .semester-card {
+
                 padding: 32px 25px;
+
             }
+
 
             .notice {
+
                 padding: 25px;
+
             }
 
+
             .course-card {
+
                 min-height: auto;
+
+            }
+
+
+            .fee-card {
+
+                padding: 35px 25px;
+
+            }
+
+
+            .fee-price {
+
+                font-size: 50px;
+
             }
 
         }
 
+
+
         @media (max-width: 420px) {
 
             .hero h1 {
+
                 font-size: 42px;
+
             }
+
 
             .hero p {
+
                 font-size: 17px;
+
             }
+
 
             .title {
+
                 font-size: 36px;
+
             }
 
+
             .duration-number {
+
                 font-size: 42px;
+
+            }
+
+
+            .fee-price {
+
+                font-size: 46px;
+
             }
 
         }
 
     </style>
+
 </head>
 
+
 <body>
+
 
     <!-- =========================
          HEADER
@@ -1071,6 +1765,7 @@
     <header class="header">
 
         <nav class="navbar">
+
 
             <a
                 href="./home.html"
@@ -1082,11 +1777,13 @@
                     alt="Global College of Missiology Logo"
                 >
 
+
                 <span class="brand-info">
 
                     <span class="brand-name">
                         Global College of Missiology
                     </span>
+
 
                     <span class="brand-subtitle">
                         Training • Equipping • Deploying
@@ -1097,19 +1794,24 @@
             </a>
 
 
+
             <div class="desktop-nav">
+
 
                 <a href="./home.html">
                     Home
                 </a>
 
+
                 <a href="./about.html">
                     About
                 </a>
 
+
                 <a href="./director.html">
                     Director
                 </a>
+
 
                 <a
                     href="./course.html"
@@ -1118,17 +1820,21 @@
                     Courses
                 </a>
 
+
                 <a href="./admissions.html">
                     Admissions
                 </a>
+
 
                 <a href="./gallery.html">
                     Gallery
                 </a>
 
+
                 <a href="./rules.html">
                     Rules
                 </a>
+
 
                 <a
                     href="./admissions.html"
@@ -1140,6 +1846,7 @@
             </div>
 
 
+
             <button
                 class="menu-toggle"
                 id="menuToggle"
@@ -1148,12 +1855,15 @@
             >
 
                 <span></span>
+
                 <span></span>
+
                 <span></span>
 
             </button>
 
         </nav>
+
 
 
         <div
@@ -1165,29 +1875,36 @@
                 Home
             </a>
 
+
             <a href="./about.html">
                 About
             </a>
+
 
             <a href="./director.html">
                 Director
             </a>
 
+
             <a href="./course.html">
                 Courses
             </a>
+
 
             <a href="./admissions.html">
                 Admissions
             </a>
 
+
             <a href="./gallery.html">
                 Gallery
             </a>
 
+
             <a href="./rules.html">
                 Rules & Regulations
             </a>
+
 
             <a href="./admissions.html">
                 Start Your Course
@@ -1198,35 +1915,49 @@
     </header>
 
 
+
     <!-- =========================
          HERO
     ========================= -->
 
     <section class="hero">
 
+
         <div class="hero-content">
+
 
             <div class="hero-label">
                 Global College of Missiology
             </div>
 
+
             <h1>
+
                 Learn.
+
                 <br>
+
                 <span>Grow.</span>
+
                 <br>
+
                 Serve.
+
             </h1>
 
+
             <p>
+
                 Discover biblical, theological, missiological and
                 practical training designed to prepare you for
                 effective Kingdom service.
+
             </p>
 
         </div>
 
     </section>
+
 
 
     <!-- =========================
@@ -1235,90 +1966,139 @@
 
     <section class="section duration-section">
 
+
         <div class="container">
 
+
             <div class="duration-heading">
+
 
                 <div class="eyebrow">
                     Programme Structure
                 </div>
 
+
                 <h2 class="title">
+
                     A Focused
-                    <span>60-Day Programme.</span>
+
+                    <span>
+                        60-Day Programme.
+                    </span>
+
                 </h2>
 
+
                 <p>
+
                     The academic programme is divided into two semesters,
                     with each semester running for 30 days.
+
                 </p>
 
             </div>
 
 
+
             <div class="duration-grid">
 
+
                 <div class="duration-card">
+
 
                     <div class="duration-icon">
                         📖
                     </div>
 
+
                     <h3>
                         First Semester
                     </h3>
 
+
                     <div class="duration-number">
+
                         30
-                        <small>Days</small>
+
+                        <small>
+                            Days
+                        </small>
+
                     </div>
 
+
                     <p>
+
                         First semester academic and ministry training.
+
                     </p>
 
                 </div>
 
 
+
                 <div class="duration-card">
+
 
                     <div class="duration-icon">
                         ✝️
                     </div>
 
+
                     <h3>
                         Second Semester
                     </h3>
 
+
                     <div class="duration-number">
+
                         30
-                        <small>Days</small>
+
+                        <small>
+                            Days
+                        </small>
+
                     </div>
 
+
                     <p>
+
                         Second semester academic and practical training.
+
                     </p>
 
                 </div>
 
 
+
                 <div class="duration-card">
+
 
                     <div class="duration-icon">
                         🎓
                     </div>
 
+
                     <h3>
                         Total Duration
                     </h3>
 
+
                     <div class="duration-number">
+
                         60
-                        <small>Days</small>
+
+                        <small>
+                            Days
+                        </small>
+
                     </div>
 
+
                     <p>
+
                         Complete two-semester programme duration.
+
                     </p>
 
                 </div>
@@ -1328,6 +2108,153 @@
         </div>
 
     </section>
+
+
+
+    <!-- =========================
+         TUITION & FEES
+    ========================= -->
+
+    <section class="section fee-section">
+
+
+        <div class="container">
+
+
+            <div class="fee-heading">
+
+
+                <div class="eyebrow">
+                    Tuition & Fees
+                </div>
+
+
+                <h2 class="title">
+
+                    One-Time
+
+                    <span>
+                        Course Fee.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    The course fee is paid only once for each course
+                    and covers both the First and Second Semester.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="fee-grid">
+
+
+                <!-- NIGERIAN FEE -->
+
+                <div class="fee-card">
+
+
+                    <div class="fee-icon">
+                        🇳🇬
+                    </div>
+
+
+                    <h3>
+                        Nigerian Students
+                    </h3>
+
+
+                    <div class="fee-price">
+
+                        $15
+
+                    </div>
+
+
+                    <p>
+
+                        One-time fee per course.
+
+                        <br>
+
+                        Covers First & Second Semester.
+
+                    </p>
+
+
+                    <span class="fee-badge">
+                        One-Time Payment
+                    </span>
+
+                </div>
+
+
+
+                <!-- INTERNATIONAL FEE -->
+
+                <div class="fee-card">
+
+
+                    <div class="fee-icon">
+                        🌍
+                    </div>
+
+
+                    <h3>
+                        Non-Nigerian Students
+                    </h3>
+
+
+                    <div class="fee-price">
+
+                        $25
+
+                    </div>
+
+
+                    <p>
+
+                        One-time fee per course.
+
+                        <br>
+
+                        Covers First & Second Semester.
+
+                    </p>
+
+
+                    <span class="fee-badge">
+                        One-Time Payment
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fee-note">
+
+                <strong>
+                    Important:
+                </strong>
+
+                Students pay the applicable course fee only once.
+                There is no separate tuition fee for the second semester
+                of the same course. The displayed fee applies to each
+                course selected by the student.
+
+            </div>
+
+        </div>
+
+    </section>
+
 
 
     <!-- =========================
@@ -1336,58 +2263,120 @@
 
     <section class="section courses">
 
+
         <div class="container">
 
+
             <div class="notice">
+
 
                 <h2>
                     📢 Courses Currently Unavailable
                 </h2>
 
+
                 <p>
+
                     Courses are currently unavailable until resumption.
                     The official resumption date and further academic
                     information will be communicated to students.
+
+                    <br><br>
+
+                    <strong>
+                        Tuition Information:
+                    </strong>
+
+                    Nigerian students pay
+
+                    <strong>
+                        $15
+                    </strong>
+
+                    and non-Nigerian students pay
+
+                    <strong>
+                        $25
+                    </strong>
+
+                    as a one-time fee for each course covering both
+                    semesters.
+
                 </p>
 
             </div>
 
 
+
             <div class="courses-heading">
+
 
                 <div class="eyebrow">
                     Learn & Grow
                 </div>
 
+
                 <h2 class="title">
+
                     Our
-                    <span>Courses</span>
+
+                    <span>
+                        Courses
+                    </span>
+
                 </h2>
 
+
                 <p>
+
                     Our programmes cover biblical, theological,
                     missiological and practical areas of Kingdom service.
+
                 </p>
 
             </div>
 
 
+
             <div class="course-grid">
 
+
+
+                <!-- COURSE 1 -->
+
                 <article class="course-card">
+
 
                     <div class="course-icon">
                         📖
                     </div>
 
+
                     <h3>
                         Biblical Studies
                     </h3>
 
+
                     <p>
+
                         Develop a deeper understanding of God's Word,
                         biblical principles and Christian foundations.
+
                     </p>
+
+
+                    <div class="course-fee">
+
+                        <span>
+                            Nigerian: $15
+                        </span>
+
+                        <span>
+                            Non-Nigerian: $25
+                        </span>
+
+                    </div>
+
 
                     <span class="course-status">
                         Currently Unavailable
@@ -1396,20 +2385,42 @@
                 </article>
 
 
+
+                <!-- COURSE 2 -->
+
                 <article class="course-card">
+
 
                     <div class="course-icon">
                         🌍
                     </div>
 
+
                     <h3>
                         Missiology
                     </h3>
 
+
                     <p>
+
                         Learn the principles, practice and strategy
                         of missions and the Great Commission.
+
                     </p>
+
+
+                    <div class="course-fee">
+
+                        <span>
+                            Nigerian: $15
+                        </span>
+
+                        <span>
+                            Non-Nigerian: $25
+                        </span>
+
+                    </div>
+
 
                     <span class="course-status">
                         Currently Unavailable
@@ -1418,20 +2429,42 @@
                 </article>
 
 
+
+                <!-- COURSE 3 -->
+
                 <article class="course-card">
+
 
                     <div class="course-icon">
                         🎤
                     </div>
 
+
                     <h3>
                         Evangelism
                     </h3>
 
+
                     <p>
+
                         Be equipped to communicate the Gospel
                         effectively and reach people for Christ.
+
                     </p>
+
+
+                    <div class="course-fee">
+
+                        <span>
+                            Nigerian: $15
+                        </span>
+
+                        <span>
+                            Non-Nigerian: $25
+                        </span>
+
+                    </div>
+
 
                     <span class="course-status">
                         Currently Unavailable
@@ -1440,20 +2473,42 @@
                 </article>
 
 
+
+                <!-- COURSE 4 -->
+
                 <article class="course-card">
+
 
                     <div class="course-icon">
                         ⛪
                     </div>
 
+
                     <h3>
                         Church Leadership
                     </h3>
 
+
                     <p>
+
                         Learn biblical principles for leading,
                         developing and serving God's people.
+
                     </p>
+
+
+                    <div class="course-fee">
+
+                        <span>
+                            Nigerian: $15
+                        </span>
+
+                        <span>
+                            Non-Nigerian: $25
+                        </span>
+
+                    </div>
+
 
                     <span class="course-status">
                         Currently Unavailable
@@ -1462,20 +2517,42 @@
                 </article>
 
 
+
+                <!-- COURSE 5 -->
+
                 <article class="course-card">
+
 
                     <div class="course-icon">
                         🕊️
                     </div>
 
+
                     <h3>
                         Ministry Development
                     </h3>
 
+
                     <p>
+
                         Discover practical tools for developing
                         your gifts and serving effectively.
+
                     </p>
+
+
+                    <div class="course-fee">
+
+                        <span>
+                            Nigerian: $15
+                        </span>
+
+                        <span>
+                            Non-Nigerian: $25
+                        </span>
+
+                    </div>
+
 
                     <span class="course-status">
                         Currently Unavailable
@@ -1484,32 +2561,56 @@
                 </article>
 
 
+
+                <!-- COURSE 6 -->
+
                 <article class="course-card">
+
 
                     <div class="course-icon">
                         🌱
                     </div>
 
+
                     <h3>
                         Church Planting
                     </h3>
 
+
                     <p>
+
                         Gain practical knowledge for establishing
                         healthy and mission-focused churches.
+
                     </p>
+
+
+                    <div class="course-fee">
+
+                        <span>
+                            Nigerian: $15
+                        </span>
+
+                        <span>
+                            Non-Nigerian: $25
+                        </span>
+
+                    </div>
+
 
                     <span class="course-status">
                         Currently Unavailable
                     </span>
 
                 </article>
+
 
             </div>
 
         </div>
 
     </section>
+
 
 
     <!-- =========================
@@ -1518,70 +2619,127 @@
 
     <section class="section semesters">
 
+
         <div class="container">
+
 
             <div class="eyebrow">
                 Academic Journey
             </div>
 
+
             <h2 class="title">
+
                 Two Semesters.
+
                 <br>
-                <span>One Purpose.</span>
+
+                <span>
+                    One Purpose.
+                </span>
+
             </h2>
+
 
 
             <div class="semester-grid">
 
+
+
+                <!-- FIRST SEMESTER -->
+
                 <div class="semester-card">
+
 
                     <div class="semester-number">
                         Semester 01
                     </div>
 
+
                     <h3>
                         First Semester
                     </h3>
+
 
                     <div class="semester-duration">
                         30 Days
                     </div>
 
+
                     <p>
+
                         Students begin their academic journey with
                         biblical and foundational ministry training.
+
                     </p>
+
+
+                    <div class="semester-fee">
+
+                        Included in One-Time Course Fee
+
+                        <br>
+
+                        <span>
+                            No separate semester payment.
+                        </span>
+
+                    </div>
 
                 </div>
 
 
+
+                <!-- SECOND SEMESTER -->
+
                 <div class="semester-card">
+
 
                     <div class="semester-number">
                         Semester 02
                     </div>
 
+
                     <h3>
                         Second Semester
                     </h3>
+
 
                     <div class="semester-duration">
                         30 Days
                     </div>
 
+
                     <p>
+
                         Students continue with advanced training,
                         practical ministry development and preparation
                         for Kingdom service.
+
                     </p>
 
+
+                    <div class="semester-fee">
+
+                        Included in One-Time Course Fee
+
+                        <br>
+
+                        <span>
+                            No separate semester payment.
+                        </span>
+
+                    </div>
+
                 </div>
+
 
             </div>
 
         </div>
 
     </section>
+
 
 
     <!-- =========================
@@ -1590,33 +2748,48 @@
 
     <section class="section certificate">
 
+
         <div class="certificate-content">
+
 
             <div class="eyebrow">
                 Completion
             </div>
 
+
             <h2>
+
                 Complete Your
-                <span>Training.</span>
+
+                <span>
+                    Training.
+                </span>
+
             </h2>
 
+
             <p>
+
                 Upon completion of the programme and the required
                 assessment, students may proceed toward the
                 certificate stage.
+
             </p>
+
 
             <a
                 href="./admissions.html"
                 class="button"
             >
+
                 Start Your Journey →
+
             </a>
 
         </div>
 
     </section>
+
 
 
     <!-- =========================
@@ -1625,44 +2798,58 @@
 
     <footer>
 
+
         <div class="footer-grid">
 
+
+
             <div class="footer-brand">
+
 
                 <img
                     src="./img/logo/logo.png"
                     alt="Global College of Missiology"
                 >
 
+
                 <h3>
                     Global College of Missiology
                 </h3>
 
+
                 <p>
+
                     Training, equipping and deploying men and women
                     for ministry, missions and global evangelization.
+
                 </p>
 
             </div>
 
 
+
             <div class="footer-column">
+
 
                 <h4>
                     College
                 </h4>
 
+
                 <a href="./about.html">
                     About Us
                 </a>
+
 
                 <a href="./director.html">
                     Director
                 </a>
 
+
                 <a href="./course.html">
                     Courses
                 </a>
+
 
                 <a href="./admissions.html">
                     Admissions
@@ -1671,23 +2858,29 @@
             </div>
 
 
+
             <div class="footer-column">
+
 
                 <h4>
                     Information
                 </h4>
 
+
                 <a href="./gallery.html">
                     Gallery
                 </a>
+
 
                 <a href="./rules.html">
                     Rules & Regulations
                 </a>
 
+
                 <a href="./admissions.html">
                     Admission Guide
                 </a>
+
 
                 <a href="./contact.html">
                     Contact
@@ -1695,7 +2888,9 @@
 
             </div>
 
+
         </div>
+
 
 
         <div class="footer-bottom">
@@ -1708,14 +2903,21 @@
     </footer>
 
 
+
     <!-- =========================
          JAVASCRIPT
     ========================= -->
 
     <script>
 
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+
         const menuToggle =
             document.getElementById("menuToggle");
+
 
         const mobileMenu =
             document.getElementById("mobileMenu");
@@ -1730,6 +2932,12 @@
             }
         );
 
+
+
+        /* =========================
+           CLOSE MOBILE MENU
+           AFTER CLICKING A LINK
+        ========================= */
 
         document
             .querySelectorAll(".mobile-menu a")
@@ -1747,22 +2955,29 @@
             });
 
 
+
+        /* =========================
+           NAVBAR SHADOW ON SCROLL
+        ========================= */
+
         window.addEventListener(
             "scroll",
             function () {
 
+                const navbar =
+                    document.querySelector(".navbar");
+
+
                 if (window.scrollY > 50) {
 
-                    document
-                        .querySelector(".navbar")
-                        .style.boxShadow =
+                    navbar.style.boxShadow =
                         "0 15px 50px rgba(0,0,0,.30)";
 
-                } else {
+                }
 
-                    document
-                        .querySelector(".navbar")
-                        .style.boxShadow =
+                else {
+
+                    navbar.style.boxShadow =
                         "none";
 
                 }
@@ -1772,5 +2987,7 @@
 
     </script>
 
+
 </body>
+
 </html>
