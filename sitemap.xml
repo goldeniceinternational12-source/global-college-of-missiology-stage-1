@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Main Website Pages -->
 
     <url>
         <loc>https://www.gcmstudy.com/</loc>
@@ -35,6 +38,41 @@
 
     <url>
         <loc>https://www.gcmstudy.com/contact.html</loc>
+    </url>
+
+
+    <!-- Articles -->
+
+    <url>
+        <loc>https://www.gcmstudy.com/articles.html</loc>
+    </url>
+
+    <url>
+        <loc>https://www.gcmstudy.com/what-is-missiology.html</loc>
+    </url>
+
+    <url>
+        <loc>https://www.gcmstudy.com/understanding-the-great-commission.html</loc>
+    </url>
+
+    <url>
+        <loc>https://www.gcmstudy.com/why-missionary-training-matters.html</loc>
+    </url>
+
+    <url>
+        <loc>https://www.gcmstudy.com/preparing-for-cross-cultural-ministry.html</loc>
+    </url>
+
+    <url>
+        <loc>https://www.gcmstudy.com/christian-leadership-in-mission.html</loc>
+    </url>
+
+    <url>
+        <loc>https://www.gcmstudy.com/preparing-for-mission-work.html</loc>
+    </url>
+
+    <url>
+        <loc>https://www.gcmstudy.com/church-and-the-mission-of-god.html</loc>
     </url>
 
 </urlset>
