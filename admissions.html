@@ -2591,14 +2591,14 @@
                     <div class="info-box">
 
                         <div class="info-label">
-                            Semester Duration
+                            Academic Year Duration
                         </div>
 
                         <div
                             class="info-value"
                             id="semesterDurationInfo"
                         >
-                            30 Days
+                            12 Months
                         </div>
 
                     </div>
@@ -2668,7 +2668,7 @@
                                 </span>
 
                                 <strong id="courseFeeNigeria">
-                                    $15
+                                    $25
                                 </strong>
 
                                 <small>
@@ -2686,7 +2686,7 @@
                                 </span>
 
                                 <strong id="courseFeeInternational">
-                                    $25
+                                    $35
                                 </strong>
 
                                 <small>
@@ -2703,8 +2703,7 @@
                             class="fee-duration"
                             id="programmeDuration"
                         >
-                            60 Days · 2 semesters ·
-                            30 days per semester
+                            12 Months · 2 semesters · one annual academic year
                         </span>
 
 
@@ -2717,19 +2716,16 @@
                             <p>
                                 The programme fee is paid
                                 <strong>once for the complete
-                                academic year</strong>.
+                                12-month academic year</strong>.
                                 The academic year consists of
-                                <strong>2 semesters</strong>,
-                                with each semester lasting
-                                <strong>30 days</strong>,
-                                for a total programme duration
-                                of <strong>60 days</strong>.
-                                Nigerian students pay
-                                <strong>$15 USD</strong>,
+                                <strong>2 semesters</strong>
+                                within the same 12-month
+                                academic cycle. Nigerian students pay
+                                <strong>$25 USD</strong>,
                                 while students outside Nigeria
-                                pay <strong>$25 USD</strong>.
+                                pay <strong>$35 USD</strong>.
                                 The fee is not charged separately
-                                for individual courses.
+                                for individual courses or semesters.
                             </p>
 
                         </div>
@@ -2955,14 +2951,12 @@
                     programme confirmation, fee payment, account
                     creation, and enrollment. The academic year
                     consists of <strong>2 semesters</strong>,
-                    with each semester running for
-                    <strong>30 days</strong>, making a total
-                    programme duration of <strong>60 days</strong>.
+                    within the same 12-month academic year.
                     Nigerian students pay a
-                    <strong>one-time $15 USD</strong> fee for
+                    <strong>one-time $25 USD</strong> fee for
                     the complete academic year, while students
                     outside Nigeria pay a
-                    <strong>one-time $25 USD</strong> fee for
+                    <strong>one-time $35 USD</strong> fee for
                     the complete academic year. The fee is not
                     charged separately for individual courses or
                     semesters. Once enrollment is completed,
@@ -3361,22 +3355,19 @@
        PROGRAMME FEE RULES:
 
        Nigeria:
-       $15 USD
+       $25 USD
 
        Outside Nigeria:
-       $25 USD
+       $35 USD
 
        PAYMENT:
        One-time full academic year fee.
 
        ACADEMIC YEAR:
-       2 semesters
+       12 months
 
-       EACH SEMESTER:
-       30 days
-
-       TOTAL:
-       60 days
+       SEMESTERS:
+       2 semesters within the academic year
 
        The fee is NOT charged:
        - per semester
@@ -3401,23 +3392,20 @@
         semester:
             "First Semester",
 
-        semesterDuration:
-            30,
+        academicYearDurationMonths:
+            12,
 
         totalSemesters:
             2,
-
-        totalProgrammeDays:
-            60,
 
         course:
             "Theology of Christian Ministry (1)",
 
         programmeFeeNigeria:
-            15,
+            25,
 
         programmeFeeInternational:
-            25,
+            35,
 
         paymentType:
             "One-time full academic year fee",
@@ -3573,21 +3561,18 @@
        PROGRAMME DURATION
     ========================================================== */
 
-    const semesterDays =
-        admissionData.semesterDuration;
+    const academicYearDurationMonths =
+        admissionData.academicYearDurationMonths;
 
     const totalSemesters =
         admissionData.totalSemesters;
-
-    const totalProgrammeDays =
-        admissionData.totalProgrammeDays;
 
 
     if (semesterDurationInfo) {
 
         semesterDurationInfo.textContent =
-            semesterDays +
-            " Days";
+            academicYearDurationMonths +
+            " Months";
 
     }
 
@@ -3595,12 +3580,10 @@
     if (programmeDuration) {
 
         programmeDuration.textContent =
-            totalProgrammeDays +
-            " Days · " +
+            academicYearDurationMonths +
+            " Months · " +
             totalSemesters +
-            " semesters · " +
-            semesterDays +
-            " days per semester";
+            " semesters · one annual academic year";
 
     }
 

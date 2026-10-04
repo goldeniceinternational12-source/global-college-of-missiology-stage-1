@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -9,13 +8,7 @@
         content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
-    <!-- =========================================================
-         PRIMARY SEO
-    ========================================================== -->
-
-    <title>
-        Rules & Regulations | Global College of Missiology
-    </title>
+    <title>Rules & Regulations | Global College of Missiology</title>
 
     <meta
         name="description"
@@ -27,150 +20,83 @@
         content="Global College of Missiology, GCM, Rules and Regulations, Student Rules, Academic Integrity, Student Conduct, Bible College, Missiology, Christian Education, Ministry Training"
     >
 
-    <meta
-        name="author"
-        content="Global College of Missiology"
-    >
-
+    <meta name="author" content="Global College of Missiology">
     <meta
         name="robots"
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     >
-
     <meta
         name="googlebot"
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     >
 
-    <meta
-        name="theme-color"
-        content="#07111d"
-    >
-
-    <meta
-        name="application-name"
-        content="Global College of Missiology"
-    >
-
-    <!-- CANONICAL -->
+    <meta name="theme-color" content="#07111d">
+    <meta name="application-name" content="Global College of Missiology">
 
     <link
         rel="canonical"
         href="https://www.gcmstudy.com/rules.html"
     >
 
-    <!-- =========================================================
-         FAVICON
-    ========================================================== -->
+    <link rel="icon" type="image/png" href="./img/logo/logo.png">
+    <link rel="apple-touch-icon" href="./img/logo/logo.png">
 
-    <link
-        rel="icon"
-        type="image/png"
-        href="./img/logo/logo.png"
-    >
-
-    <link
-        rel="apple-touch-icon"
-        href="./img/logo/logo.png"
-    >
-
-    <!-- =========================================================
-         OPEN GRAPH
-    ========================================================== -->
-
-    <meta
-        property="og:type"
-        content="website"
-    >
-
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
     <meta
         property="og:title"
         content="Rules & Regulations | Global College of Missiology"
     >
-
     <meta
         property="og:description"
         content="Learn about the academic, conduct, attendance, communication and student responsibilities that guide life at Global College of Missiology."
     >
-
     <meta
         property="og:url"
         content="https://www.gcmstudy.com/rules.html"
     >
-
     <meta
         property="og:site_name"
         content="Global College of Missiology"
     >
-
     <meta
         property="og:image"
         content="https://www.gcmstudy.com/img/logo/logo.png"
     >
-
     <meta
         property="og:image:alt"
         content="Global College of Missiology logo"
     >
+    <meta property="og:locale" content="en_NG">
 
-    <meta
-        property="og:locale"
-        content="en_NG"
-    >
-
-    <!-- =========================================================
-         TWITTER / X
-    ========================================================== -->
-
-    <meta
-        name="twitter:card"
-        content="summary_large_image"
-    >
-
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
     <meta
         name="twitter:title"
         content="Rules & Regulations | Global College of Missiology"
     >
-
     <meta
         name="twitter:description"
         content="Read the Rules and Regulations governing academic life, conduct, attendance and student responsibilities at Global College of Missiology."
     >
-
     <meta
         name="twitter:image"
         content="https://www.gcmstudy.com/img/logo/logo.png"
     >
-
     <meta
         name="twitter:image:alt"
         content="Global College of Missiology logo"
     >
 
-    <!-- =========================================================
-         GOOGLE FONTS
-    ========================================================== -->
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap"
         rel="stylesheet"
     >
 
-    <!-- =========================================================
-         STRUCTURED DATA
-    ========================================================== -->
-
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -190,12 +116,27 @@
     }
     </script>
 
-
     <style>
+        :root {
+            --gold: #c9a44c;
+            --gold-light: #e5ca7c;
+            --gold-dark: #9f7d2e;
 
-        /* =========================================================
-           GLOBAL RESET
-        ========================================================= */
+            --navy: #07111d;
+            --navy-light: #0c1b2a;
+            --navy-soft: #102438;
+
+            --white: #ffffff;
+            --cream: #f5f1e8;
+            --muted: #b9c0c8;
+
+            --border: rgba(201, 164, 76, 0.22);
+
+            --shadow:
+                0 25px 70px rgba(0, 0, 0, 0.42);
+
+            --container: 1240px;
+        }
 
         *,
         *::before,
@@ -210,23 +151,20 @@
 
         body {
             margin: 0;
-            padding: 0;
             min-height: 100vh;
+            overflow-x: hidden;
 
-            font-family: "Cormorant Garamond", Georgia, serif;
-
-            color: #f5f1e8;
-
+            color: var(--cream);
             background:
                 radial-gradient(
                     circle at top right,
                     rgba(201, 164, 76, 0.08),
                     transparent 30%
                 ),
-                #07111d;
+                var(--navy);
 
-            overflow-x: hidden;
-
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 17px;
             line-height: 1.7;
         }
 
@@ -268,10 +206,7 @@
         h1,
         h2,
         h3,
-        h4 {
-            overflow-wrap: anywhere;
-        }
-
+        h4,
         p,
         li,
         a,
@@ -280,35 +215,11 @@
         }
 
         :focus-visible {
-            outline: 3px solid #c9a44c;
+            outline: 3px solid var(--gold);
             outline-offset: 4px;
         }
 
-        :root {
-            --gold: #c9a44c;
-            --gold-light: #e5ca7c;
-            --gold-dark: #9f7d2e;
-
-            --navy: #07111d;
-            --navy-light: #0c1b2a;
-            --navy-soft: #102438;
-
-            --white: #ffffff;
-            --cream: #f5f1e8;
-            --muted: #b9c0c8;
-
-            --border: rgba(201, 164, 76, 0.22);
-
-            --shadow:
-                0 25px 70px rgba(0, 0, 0, 0.42);
-
-            --container: 1240px;
-        }
-
-
-        /* =========================================================
-           LOADER
-        ========================================================== */
+        /* Loader */
 
         #pageLoader {
             position: fixed;
@@ -319,7 +230,7 @@
             align-items: center;
             justify-content: center;
 
-            background: #07111d;
+            background: var(--navy);
 
             opacity: 1;
             visibility: visible;
@@ -341,17 +252,14 @@
             align-items: center;
             justify-content: center;
 
-            text-align: center;
-
             padding: 24px;
+            text-align: center;
         }
 
         .loader-logo {
             width: 100px;
             height: 100px;
-
             object-fit: contain;
-
             margin-bottom: 18px;
 
             filter:
@@ -359,37 +267,29 @@
                     0 0 22px rgba(201, 164, 76, 0.24)
                 );
 
-            animation:
-                loaderPulse 1.5s ease-in-out infinite;
+            animation: loaderPulse 1.5s ease-in-out infinite;
         }
 
         .loader-name {
             margin: 0;
-
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-
-            font-size:
-                clamp(18px, 3vw, 25px);
-
+            font-size: clamp(18px, 3vw, 25px);
             letter-spacing: 2px;
         }
 
         .loader-line {
             width: 100px;
             height: 2px;
-
             margin-top: 18px;
 
             background: var(--gold);
 
-            animation:
-                loaderLine 1.4s ease-in-out infinite;
+            animation: loaderLine 1.4s ease-in-out infinite;
         }
 
         @keyframes loaderPulse {
-
             0%,
             100% {
                 transform: scale(0.97);
@@ -403,7 +303,6 @@
         }
 
         @keyframes loaderLine {
-
             0% {
                 transform: scaleX(0.25);
                 opacity: 0.35;
@@ -420,23 +319,17 @@
             }
         }
 
-
-        /* =========================================================
-           HEADER
-        ========================================================== */
+        /* Header */
 
         #siteHeader {
             position: fixed;
-
             top: 0;
             left: 0;
 
             width: 100%;
-
             z-index: 7000;
 
-            padding:
-                14px 20px;
+            padding: 14px 20px;
 
             transition:
                 background 0.3s ease,
@@ -448,8 +341,7 @@
             padding-top: 10px;
             padding-bottom: 10px;
 
-            background:
-                rgba(4, 10, 18, 0.88);
+            background: rgba(4, 10, 18, 0.88);
 
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
@@ -459,26 +351,19 @@
         }
 
         .nav-container {
-            width:
-                min(100%, 1400px);
-
+            width: min(100%, 1400px);
             min-height: 70px;
 
             margin: 0 auto;
-
-            padding:
-                0 22px;
+            padding: 0 22px;
 
             display: flex;
-
             align-items: center;
             justify-content: space-between;
-
             gap: 20px;
 
             border:
-                1px solid
-                rgba(255, 255, 255, 0.07);
+                1px solid rgba(255, 255, 255, 0.07);
 
             border-radius: 18px;
 
@@ -489,8 +374,7 @@
             -webkit-backdrop-filter: blur(15px);
 
             box-shadow:
-                0 12px 40px
-                rgba(0, 0, 0, 0.18);
+                0 12px 40px rgba(0, 0, 0, 0.18);
         }
 
         #siteHeader.scrolled .nav-container {
@@ -498,37 +382,26 @@
                 rgba(201, 164, 76, 0.15);
         }
 
-
-        /* =========================================================
-           BRAND
-        ========================================================== */
-
         .brand {
             flex-shrink: 0;
 
             display: inline-flex;
-
             align-items: center;
+            gap: 12px;
 
             min-width: 0;
-
-            gap: 12px;
         }
 
         .brand img {
             width: 52px;
             height: 52px;
-
-            object-fit: contain;
-
             flex-shrink: 0;
+            object-fit: contain;
         }
 
         .brand-text {
             display: flex;
-
             flex-direction: column;
-
             min-width: 0;
         }
 
@@ -536,13 +409,9 @@
             color: var(--white);
 
             font-family: "Marcellus", serif;
-
             font-size: 15px;
-
             line-height: 1.15;
-
             letter-spacing: 0.7px;
-
             white-space: nowrap;
         }
 
@@ -552,25 +421,17 @@
             color: var(--gold-light);
 
             font-size: 11px;
-
             letter-spacing: 1.4px;
-
             text-transform: uppercase;
-
             white-space: nowrap;
         }
 
-
-        /* =========================================================
-           DESKTOP NAVIGATION
-        ========================================================== */
+        /* Navigation */
 
         #mainNav {
             display: flex;
-
             align-items: center;
             justify-content: flex-end;
-
             gap: 5px;
 
             margin-left: auto;
@@ -580,22 +441,16 @@
             position: relative;
 
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
 
             min-height: 44px;
+            padding: 8px 11px;
 
-            padding:
-                8px 11px;
-
-            color:
-                rgba(255, 255, 255, 0.82);
+            color: rgba(255, 255, 255, 0.82);
 
             font-family: "Marcellus", serif;
-
             font-size: 12px;
-
             letter-spacing: 0.25px;
 
             border-radius: 9px;
@@ -609,35 +464,29 @@
         #mainNav a:hover,
         #mainNav a.active {
             color: var(--gold-light);
-
-            background:
-                rgba(201, 164, 76, 0.08);
+            background: rgba(201, 164, 76, 0.08);
         }
 
         #mainNav a.active::after {
             content: "";
 
             position: absolute;
-
             left: 14px;
             right: 14px;
-
             bottom: 4px;
 
             height: 2px;
 
             background: var(--gold);
-
             border-radius: 999px;
         }
 
         #mainNav .nav-cta {
             margin-left: 7px;
-
             padding-left: 18px;
             padding-right: 18px;
 
-            color: #07111d;
+            color: var(--navy);
 
             background:
                 linear-gradient(
@@ -649,12 +498,11 @@
             font-weight: 700;
 
             box-shadow:
-                0 8px 25px
-                rgba(201, 164, 76, 0.18);
+                0 8px 25px rgba(201, 164, 76, 0.18);
         }
 
         #mainNav .nav-cta:hover {
-            color: #07111d;
+            color: var(--navy);
 
             background:
                 linear-gradient(
@@ -666,27 +514,26 @@
             transform: translateY(-1px);
         }
 
-
-        /* =========================================================
-           MOBILE MENU
-        ========================================================== */
+        /* Mobile menu */
 
         .menu-toggle {
             display: none;
 
             position: relative;
-
             z-index: 7200;
 
             width: 50px;
             min-width: 50px;
             height: 50px;
-
             padding: 0;
 
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+
             border:
-                1px solid
-                rgba(201, 164, 76, 0.25);
+                1px solid rgba(201, 164, 76, 0.25);
 
             border-radius: 12px;
 
@@ -694,13 +541,6 @@
                 rgba(255, 255, 255, 0.05);
 
             cursor: pointer;
-
-            align-items: center;
-            justify-content: center;
-
-            flex-direction: column;
-
-            gap: 5px;
         }
 
         .menu-toggle span {
@@ -710,7 +550,6 @@
             height: 2px;
 
             border-radius: 999px;
-
             background: var(--white);
 
             transition:
@@ -746,9 +585,7 @@
 
         .menu-overlay {
             position: fixed;
-
             inset: 0;
-
             z-index: 5500;
 
             background:
@@ -765,27 +602,19 @@
 
         .menu-overlay.show {
             opacity: 1;
-
             visibility: visible;
-
             pointer-events: auto;
         }
 
-
-        /* =========================================================
-           HERO
-        ========================================================== */
+        /* Hero */
 
         .rules-hero {
             position: relative;
 
             min-height: 620px;
-
-            padding:
-                190px 20px 100px;
+            padding: 190px 20px 100px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
@@ -796,9 +625,9 @@
             background:
                 linear-gradient(
                     rgba(4, 10, 18, 0.68),
-                    rgba(4, 10, 18, 0.88)
+                    rgba(4, 10, 18, 0.9)
                 ),
-                url("./assets/images/campus.jpg")
+                url("./img/seminers/seminars.jpeg")
                 center / cover no-repeat;
         }
 
@@ -806,7 +635,6 @@
             content: "";
 
             position: absolute;
-
             inset: 0;
 
             background:
@@ -819,33 +647,25 @@
 
         .hero-content {
             position: relative;
-
             z-index: 2;
 
-            width:
-                min(900px, 100%);
-
+            width: min(900px, 100%);
             margin: 0 auto;
         }
 
         .hero-kicker {
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
 
             min-height: 38px;
-
-            padding:
-                6px 16px;
-
+            padding: 6px 16px;
             margin-bottom: 20px;
 
             color: var(--gold-light);
 
             border:
-                1px solid
-                rgba(201, 164, 76, 0.3);
+                1px solid rgba(201, 164, 76, 0.3);
 
             border-radius: 999px;
 
@@ -853,11 +673,8 @@
                 rgba(201, 164, 76, 0.08);
 
             font-family: "Marcellus", serif;
-
             font-size: 12px;
-
             letter-spacing: 2px;
-
             text-transform: uppercase;
         }
 
@@ -867,14 +684,9 @@
             color: var(--white);
 
             font-family: "Marcellus", serif;
-
-            font-size:
-                clamp(42px, 7vw, 78px);
-
+            font-size: clamp(42px, 7vw, 78px);
             line-height: 1.02;
-
             font-weight: 400;
-
             letter-spacing: -1px;
         }
 
@@ -884,63 +696,42 @@
 
         .rules-hero p {
             max-width: 700px;
+            margin: 0 auto;
 
-            margin:
-                0 auto;
+            color: rgba(255, 255, 255, 0.78);
 
-            color:
-                rgba(255, 255, 255, 0.78);
-
-            font-size:
-                clamp(17px, 2.2vw, 21px);
-
+            font-size: clamp(17px, 2.2vw, 21px);
             line-height: 1.65;
         }
 
-
-        /* =========================================================
-           GENERAL SECTIONS
-        ========================================================== */
+        /* General */
 
         .section {
             width: 100%;
-
-            padding:
-                100px 20px;
+            padding: 100px 20px;
         }
 
         .container {
-            width:
-                min(
-                    var(--container),
-                    100%
-                );
-
+            width: min(var(--container), 100%);
             margin: 0 auto;
         }
 
         .section-heading {
             max-width: 800px;
-
-            margin:
-                0 auto 55px;
-
+            margin: 0 auto 55px;
             text-align: center;
         }
 
-        .section-heading .eyebrow {
+        .section-heading .eyebrow,
+        .commitment-content .eyebrow {
             display: block;
-
             margin-bottom: 13px;
 
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-
             font-size: 12px;
-
             letter-spacing: 2.5px;
-
             text-transform: uppercase;
         }
 
@@ -950,12 +741,8 @@
             color: var(--white);
 
             font-family: "Marcellus", serif;
-
-            font-size:
-                clamp(32px, 5vw, 50px);
-
+            font-size: clamp(32px, 5vw, 50px);
             line-height: 1.15;
-
             font-weight: 400;
         }
 
@@ -964,16 +751,11 @@
 
             color: var(--muted);
 
-            font-size:
-                clamp(16px, 2vw, 19px);
-
+            font-size: clamp(16px, 2vw, 19px);
             line-height: 1.7;
         }
 
-
-        /* =========================================================
-           INTRO
-        ========================================================== */
+        /* Introduction */
 
         .intro-section {
             background:
@@ -985,13 +767,9 @@
         }
 
         .intro-card {
-            width:
-                min(900px, 100%);
-
+            width: min(900px, 100%);
             margin: 0 auto;
-
-            padding:
-                clamp(28px, 5vw, 55px);
+            padding: clamp(28px, 5vw, 55px);
 
             border:
                 1px solid var(--border);
@@ -1006,19 +784,15 @@
                 );
 
             box-shadow: var(--shadow);
-
             text-align: center;
         }
 
         .intro-card p {
             margin: 0;
 
-            color:
-                rgba(255, 255, 255, 0.78);
+            color: rgba(255, 255, 255, 0.78);
 
-            font-size:
-                clamp(17px, 2.2vw, 21px);
-
+            font-size: clamp(17px, 2.2vw, 21px);
             line-height: 1.85;
         }
 
@@ -1026,36 +800,27 @@
             color: var(--gold-light);
         }
 
-
-        /* =========================================================
-           RULES GRID
-        ========================================================== */
+        /* Rules */
 
         .rules-section {
-            background:
-                #081521;
+            background: #081521;
         }
 
         .rules-grid {
             display: grid;
-
             grid-template-columns:
                 repeat(3, minmax(0, 1fr));
-
             gap: 22px;
         }
 
         .rule-card {
             position: relative;
-
             min-width: 0;
 
-            padding:
-                30px 26px;
+            padding: 30px 26px;
 
             border:
-                1px solid
-                rgba(255, 255, 255, 0.075);
+                1px solid rgba(255, 255, 255, 0.075);
 
             border-radius: 20px;
 
@@ -1067,8 +832,7 @@
                 );
 
             box-shadow:
-                0 15px 45px
-                rgba(0, 0, 0, 0.17);
+                0 15px 45px rgba(0, 0, 0, 0.17);
 
             overflow: hidden;
 
@@ -1082,7 +846,6 @@
             content: "";
 
             position: absolute;
-
             top: 0;
             left: 0;
 
@@ -1117,19 +880,16 @@
         .rule-number {
             width: 48px;
             height: 48px;
-
             margin-bottom: 22px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             color: var(--gold-light);
 
             border:
-                1px solid
-                rgba(201, 164, 76, 0.3);
+                1px solid rgba(201, 164, 76, 0.3);
 
             border-radius: 50%;
 
@@ -1137,7 +897,6 @@
                 rgba(201, 164, 76, 0.08);
 
             font-family: "Marcellus", serif;
-
             font-size: 15px;
         }
 
@@ -1147,11 +906,8 @@
             color: var(--white);
 
             font-family: "Marcellus", serif;
-
             font-size: 21px;
-
             font-weight: 400;
-
             line-height: 1.3;
         }
 
@@ -1161,14 +917,10 @@
             color: var(--muted);
 
             font-size: 16px;
-
             line-height: 1.75;
         }
 
-
-        /* =========================================================
-           COMMITMENT
-        ========================================================== */
+        /* Commitment */
 
         .commitment-section {
             background:
@@ -1181,19 +933,16 @@
 
         .commitment-grid {
             display: grid;
-
             grid-template-columns:
                 minmax(0, 0.9fr)
                 minmax(0, 1.1fr);
 
             align-items: center;
-
             gap: 70px;
         }
 
         .commitment-image {
             position: relative;
-
             min-width: 0;
         }
 
@@ -1201,7 +950,6 @@
             content: "";
 
             position: absolute;
-
             left: 18px;
             bottom: -18px;
 
@@ -1209,21 +957,17 @@
             height: 100%;
 
             border:
-                1px solid
-                rgba(201, 164, 76, 0.3);
+                1px solid rgba(201, 164, 76, 0.3);
 
             border-radius: 22px;
-
             z-index: 0;
         }
 
         .commitment-image img {
             position: relative;
-
             z-index: 1;
 
             width: 100%;
-
             min-height: 420px;
 
             object-fit: cover;
@@ -1238,19 +982,7 @@
         }
 
         .commitment-content .eyebrow {
-            display: block;
-
             margin-bottom: 14px;
-
-            color: var(--gold-light);
-
-            font-family: "Marcellus", serif;
-
-            font-size: 12px;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
         }
 
         .commitment-content h2 {
@@ -1259,12 +991,8 @@
             color: var(--white);
 
             font-family: "Marcellus", serif;
-
-            font-size:
-                clamp(32px, 5vw, 52px);
-
+            font-size: clamp(32px, 5vw, 52px);
             line-height: 1.1;
-
             font-weight: 400;
         }
 
@@ -1274,16 +1002,12 @@
             color: var(--muted);
 
             font-size: 17px;
-
             line-height: 1.8;
         }
 
         .commitment-list {
-            margin:
-                25px 0 0;
-
+            margin: 25px 0 0;
             padding: 0;
-
             list-style: none;
         }
 
@@ -1291,12 +1015,9 @@
             position: relative;
 
             padding-left: 31px;
-
             margin-bottom: 14px;
 
-            color:
-                rgba(255, 255, 255, 0.8);
-
+            color: rgba(255, 255, 255, 0.8);
             font-size: 16px;
         }
 
@@ -1304,41 +1025,29 @@
             content: "✓";
 
             position: absolute;
-
             left: 0;
             top: 0;
 
             color: var(--gold-light);
 
             font-family: Arial, sans-serif;
-
             font-weight: 700;
         }
 
-
-        /* =========================================================
-           ANNUAL TUITION
-        ========================================================== */
+        /* Annual Tuition */
 
         .policy-section {
             padding-top: 20px;
-
-            background: #07111d;
+            background: var(--navy);
         }
 
         .policy-note {
-            width:
-                min(1000px, 100%);
-
+            width: min(1000px, 100%);
             margin: 0 auto;
-
-            padding:
-                30px
-                clamp(22px, 4vw, 42px);
+            padding: 30px clamp(22px, 4vw, 42px);
 
             border:
-                1px solid
-                rgba(201, 164, 76, 0.25);
+                1px solid rgba(201, 164, 76, 0.25);
 
             border-radius: 20px;
 
@@ -1354,9 +1063,7 @@
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-
             font-size: 24px;
-
             font-weight: 400;
         }
 
@@ -1366,32 +1073,25 @@
             color: var(--muted);
 
             font-size: 16px;
-
             line-height: 1.75;
         }
 
         .policy-fees {
             display: grid;
-
             grid-template-columns:
                 repeat(2, minmax(0, 1fr));
 
+            width: min(720px, 100%);
+            margin: 0 auto 22px;
+
             gap: 16px;
-
-            margin:
-                0 auto 22px;
-
-            width:
-                min(720px, 100%);
         }
 
         .policy-fee-card {
-            padding:
-                22px 18px;
+            padding: 22px 18px;
 
             border:
-                1px solid
-                rgba(201, 164, 76, 0.2);
+                1px solid rgba(201, 164, 76, 0.2);
 
             border-radius: 16px;
 
@@ -1401,48 +1101,36 @@
 
         .policy-fee-card strong {
             display: block;
-
             margin-bottom: 5px;
 
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-
             font-size: 30px;
-
             font-weight: 400;
         }
 
         .policy-fee-card span {
             display: block;
 
-            color:
-                rgba(255, 255, 255, 0.78);
-
+            color: rgba(255, 255, 255, 0.78);
             font-size: 15px;
         }
 
         .policy-duration {
-            width:
-                min(720px, 100%);
-
+            width: min(720px, 100%);
             margin: 0 auto;
-
             padding: 18px;
 
             border-top:
-                1px solid
-                rgba(201, 164, 76, 0.16);
+                1px solid rgba(201, 164, 76, 0.16);
 
             border-bottom:
-                1px solid
-                rgba(201, 164, 76, 0.16);
+                1px solid rgba(201, 164, 76, 0.16);
 
-            color:
-                rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.8);
 
             font-size: 16px;
-
             line-height: 1.8;
         }
 
@@ -1451,14 +1139,11 @@
         }
 
         .policy-final {
-            margin:
-                22px 0 0 !important;
+            margin: 22px 0 0 !important;
 
-            color:
-                rgba(255, 255, 255, 0.72);
+            color: rgba(255, 255, 255, 0.72);
 
             font-size: 15px;
-
             line-height: 1.8;
         }
 
@@ -1466,19 +1151,14 @@
             color: var(--gold-light);
         }
 
-
-        /* =========================================================
-           CTA
-        ========================================================== */
+        /* CTA */
 
         .cta-section {
             position: relative;
 
-            padding:
-                110px 20px;
+            padding: 110px 20px;
 
             text-align: center;
-
             overflow: hidden;
 
             background:
@@ -1500,8 +1180,7 @@
             top: -250px;
             left: 50%;
 
-            transform:
-                translateX(-50%);
+            transform: translateX(-50%);
 
             border-radius: 50%;
 
@@ -1513,12 +1192,9 @@
 
         .cta-content {
             position: relative;
-
             z-index: 1;
 
-            width:
-                min(760px, 100%);
-
+            width: min(760px, 100%);
             margin: 0 auto;
         }
 
@@ -1528,12 +1204,8 @@
             color: var(--white);
 
             font-family: "Marcellus", serif;
-
-            font-size:
-                clamp(32px, 5vw, 54px);
-
+            font-size: clamp(32px, 5vw, 54px);
             font-weight: 400;
-
             line-height: 1.12;
         }
 
@@ -1541,38 +1213,29 @@
             margin-bottom: 30px;
 
             color: var(--muted);
-
             font-size: 18px;
         }
 
         .cta-buttons {
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             flex-wrap: wrap;
-
             gap: 13px;
         }
 
         .btn {
             min-height: 52px;
-
-            padding:
-                12px 24px;
+            padding: 12px 24px;
 
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
 
             border-radius: 10px;
 
             font-family: "Marcellus", serif;
-
             font-size: 14px;
-
             letter-spacing: 0.4px;
 
             transition:
@@ -1582,7 +1245,7 @@
         }
 
         .btn-primary {
-            color: #07111d;
+            color: var(--navy);
 
             background:
                 linear-gradient(
@@ -1595,8 +1258,7 @@
                 1px solid var(--gold);
 
             box-shadow:
-                0 10px 30px
-                rgba(201, 164, 76, 0.18);
+                0 10px 30px rgba(201, 164, 76, 0.18);
         }
 
         .btn-primary:hover {
@@ -1617,8 +1279,7 @@
                 rgba(255, 255, 255, 0.035);
 
             border:
-                1px solid
-                rgba(255, 255, 255, 0.16);
+                1px solid rgba(255, 255, 255, 0.16);
         }
 
         .btn-secondary:hover {
@@ -1630,30 +1291,19 @@
             color: var(--gold-light);
         }
 
-
-        /* =========================================================
-           FOOTER
-        ========================================================== */
+        /* Footer */
 
         footer {
-            padding:
-                65px 20px 28px;
+            padding: 65px 20px 28px;
 
-            background:
-                #040b13;
+            background: #040b13;
 
             border-top:
-                1px solid
-                rgba(255, 255, 255, 0.06);
+                1px solid rgba(255, 255, 255, 0.06);
         }
 
         .footer-container {
-            width:
-                min(
-                    var(--container),
-                    100%
-                );
-
+            width: min(var(--container), 100%);
             margin: 0 auto;
         }
 
@@ -1677,7 +1327,6 @@
             height: 70px;
 
             object-fit: contain;
-
             margin-bottom: 17px;
         }
 
@@ -1687,21 +1336,17 @@
             color: var(--white);
 
             font-family: "Marcellus", serif;
-
             font-size: 20px;
-
             font-weight: 400;
         }
 
         .footer-brand p {
             max-width: 350px;
-
             margin: 0;
 
             color: var(--muted);
 
             font-size: 15px;
-
             line-height: 1.75;
         }
 
@@ -1711,11 +1356,8 @@
             color: var(--gold-light);
 
             font-family: "Marcellus", serif;
-
             font-size: 15px;
-
             font-weight: 400;
-
             letter-spacing: 0.7px;
         }
 
@@ -1723,18 +1365,15 @@
             display: block;
 
             width: fit-content;
-
             max-width: 100%;
 
             margin-bottom: 10px;
 
-            color:
-                rgba(255, 255, 255, 0.63);
+            color: rgba(255, 255, 255, 0.63);
 
             font-size: 15px;
 
-            transition:
-                color 0.2s ease;
+            transition: color 0.2s ease;
         }
 
         .footer-column a:hover {
@@ -1745,32 +1384,23 @@
             padding-top: 24px;
 
             border-top:
-                1px solid
-                rgba(255, 255, 255, 0.07);
+                1px solid rgba(255, 255, 255, 0.07);
 
             display: flex;
-
             align-items: center;
             justify-content: space-between;
-
-            gap: 20px;
-
             flex-wrap: wrap;
+            gap: 20px;
         }
 
         .footer-bottom p {
             margin: 0;
 
-            color:
-                rgba(255, 255, 255, 0.45);
-
+            color: rgba(255, 255, 255, 0.45);
             font-size: 13px;
         }
 
-
-        /* =========================================================
-           BACK TO TOP
-        ========================================================== */
+        /* Back to top */
 
         #backTop {
             position: fixed;
@@ -1784,13 +1414,11 @@
             height: 50px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             border:
-                1px solid
-                rgba(201, 164, 76, 0.35);
+                1px solid rgba(201, 164, 76, 0.35);
 
             border-radius: 50%;
 
@@ -1807,8 +1435,7 @@
             opacity: 0;
             visibility: hidden;
 
-            transform:
-                translateY(10px);
+            transform: translateY(10px);
 
             transition:
                 opacity 0.25s ease,
@@ -1819,31 +1446,22 @@
 
         #backTop.show {
             opacity: 1;
-
             visibility: visible;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
         #backTop:hover {
             background:
                 rgba(201, 164, 76, 0.12);
 
-            transform:
-                translateY(-3px);
+            transform: translateY(-3px);
         }
 
-
-        /* =========================================================
-           SCROLL REVEAL
-        ========================================================== */
+        /* Reveal */
 
         .reveal {
             opacity: 0;
-
-            transform:
-                translateY(25px);
+            transform: translateY(25px);
 
             transition:
                 opacity 0.75s ease,
@@ -1852,28 +1470,19 @@
 
         .reveal.visible {
             opacity: 1;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
-
-        /* =========================================================
-           TABLET
-        ========================================================== */
+        /* Tablet */
 
         @media (max-width: 1100px) {
-
             #siteHeader {
-                padding:
-                    10px 14px;
+                padding: 10px 14px;
             }
 
             .nav-container {
                 min-height: 64px;
-
-                padding:
-                    0 16px;
+                padding: 0 16px;
             }
 
             .menu-toggle {
@@ -1892,26 +1501,20 @@
                 display: none;
 
                 flex-direction: column;
-
                 align-items: stretch;
                 justify-content: flex-start;
 
                 gap: 5px;
-
                 margin: 0;
-
                 padding: 14px;
 
-                max-height:
-                    calc(100svh - 96px);
+                max-height: calc(100svh - 96px);
 
                 overflow-y: auto;
-
                 overscroll-behavior: contain;
 
                 border:
-                    1px solid
-                    rgba(201, 164, 76, 0.2);
+                    1px solid rgba(201, 164, 76, 0.2);
 
                 border-radius: 18px;
 
@@ -1922,8 +1525,7 @@
                 -webkit-backdrop-filter: blur(20px);
 
                 box-shadow:
-                    0 25px 80px
-                    rgba(0, 0, 0, 0.55);
+                    0 25px 80px rgba(0, 0, 0, 0.55);
             }
 
             #mainNav.open {
@@ -1932,33 +1534,24 @@
 
             #mainNav a {
                 width: 100%;
-
                 min-height: 50px;
-
-                padding:
-                    12px 15px;
+                padding: 12px 15px;
 
                 justify-content: flex-start;
 
                 font-size: 14px;
-
                 border-radius: 10px;
             }
 
             #mainNav a.active::after {
                 left: 15px;
-
                 right: auto;
-
                 width: 25px;
-
                 bottom: 6px;
             }
 
             #mainNav .nav-cta {
-                margin:
-                    8px 0 0;
-
+                margin: 8px 0 0;
                 justify-content: center;
             }
 
@@ -1977,24 +1570,16 @@
             }
         }
 
-
-        /* =========================================================
-           MOBILE
-        ========================================================== */
+        /* Mobile */
 
         @media (max-width: 700px) {
-
             #siteHeader {
-                padding:
-                    8px 10px;
+                padding: 8px 10px;
             }
 
             .nav-container {
                 min-height: 60px;
-
-                padding:
-                    0 11px;
-
+                padding: 0 11px;
                 border-radius: 14px;
             }
 
@@ -2013,7 +1598,6 @@
 
             .brand-subtitle {
                 font-size: 8px;
-
                 letter-spacing: 1px;
             }
 
@@ -2028,30 +1612,22 @@
                 left: 10px;
                 right: 10px;
 
-                max-height:
-                    calc(100svh - 84px);
+                max-height: calc(100svh - 84px);
             }
 
             .rules-hero {
-                min-height:
-                    570px;
-
-                padding:
-                    155px 16px 75px;
+                min-height: 570px;
+                padding: 155px 16px 75px;
             }
 
             .hero-kicker {
                 font-size: 10px;
-
                 letter-spacing: 1.5px;
-
-                padding:
-                    6px 12px;
+                padding: 6px 12px;
             }
 
             .rules-hero h1 {
-                font-size:
-                    clamp(39px, 13vw, 58px);
+                font-size: clamp(39px, 13vw, 58px);
             }
 
             .rules-hero p {
@@ -2059,8 +1635,7 @@
             }
 
             .section {
-                padding:
-                    70px 16px;
+                padding: 70px 16px;
             }
 
             .section-heading {
@@ -2068,14 +1643,11 @@
             }
 
             .section-heading h2 {
-                font-size:
-                    clamp(30px, 9vw, 42px);
+                font-size: clamp(30px, 9vw, 42px);
             }
 
             .intro-card {
-                padding:
-                    27px 20px;
-
+                padding: 27px 20px;
                 border-radius: 18px;
             }
 
@@ -2085,24 +1657,20 @@
 
             .rules-grid {
                 grid-template-columns: 1fr;
-
                 gap: 16px;
             }
 
             .rule-card {
-                padding:
-                    26px 21px;
+                padding: 26px 21px;
             }
 
             .commitment-grid {
                 grid-template-columns: 1fr;
-
                 gap: 45px;
             }
 
             .commitment-image img {
                 min-height: 280px;
-
                 max-height: 430px;
             }
 
@@ -2112,8 +1680,7 @@
             }
 
             .commitment-content h2 {
-                font-size:
-                    clamp(31px, 9vw, 44px);
+                font-size: clamp(31px, 9vw, 44px);
             }
 
             .policy-section {
@@ -2121,8 +1688,7 @@
             }
 
             .policy-note {
-                padding:
-                    25px 19px;
+                padding: 25px 19px;
             }
 
             .policy-fees {
@@ -2134,13 +1700,11 @@
             }
 
             .cta-section {
-                padding:
-                    75px 16px;
+                padding: 75px 16px;
             }
 
             .cta-buttons {
                 flex-direction: column;
-
                 width: 100%;
             }
 
@@ -2149,15 +1713,12 @@
             }
 
             footer {
-                padding:
-                    50px 16px 25px;
+                padding: 50px 16px 25px;
             }
 
             .footer-main {
                 grid-template-columns: 1fr;
-
                 gap: 32px;
-
                 padding-bottom: 32px;
             }
 
@@ -2167,28 +1728,21 @@
 
             .footer-bottom {
                 align-items: flex-start;
-
                 flex-direction: column;
-
                 gap: 8px;
             }
 
             #backTop {
                 right: 14px;
                 bottom: 14px;
-
                 width: 46px;
                 height: 46px;
             }
         }
 
-
-        /* =========================================================
-           VERY SMALL PHONES
-        ========================================================== */
+        /* Small phones */
 
         @media (max-width: 380px) {
-
             .brand-text {
                 max-width: 180px;
             }
@@ -2202,11 +1756,8 @@
             }
 
             .rules-hero {
-                min-height:
-                    540px;
-
-                padding-top:
-                    140px;
+                min-height: 540px;
+                padding-top: 140px;
             }
 
             .rules-hero h1 {
@@ -2236,13 +1787,9 @@
             }
         }
 
-
-        /* =========================================================
-           REDUCED MOTION
-        ========================================================== */
+        /* Reduced motion */
 
         @media (prefers-reduced-motion: reduce) {
-
             html {
                 scroll-behavior: auto;
             }
@@ -2251,37 +1798,24 @@
             *::before,
             *::after {
                 animation-duration: 0.01ms !important;
-
                 animation-iteration-count: 1 !important;
-
                 transition-duration: 0.01ms !important;
             }
 
             .reveal {
                 opacity: 1;
-
                 transform: none;
             }
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-    <!-- =========================================================
-         PAGE LOADER
-    ========================================================== -->
+    <!-- Page Loader -->
 
-    <div
-        id="pageLoader"
-        aria-hidden="true"
-    >
-
+    <div id="pageLoader" aria-hidden="true">
         <div class="loader-inner">
-
             <img
                 src="./img/logo/logo.png"
                 alt=""
@@ -2295,15 +1829,10 @@
             </p>
 
             <div class="loader-line"></div>
-
         </div>
-
     </div>
 
-
-    <!-- =========================================================
-         MOBILE MENU OVERLAY
-    ========================================================== -->
+    <!-- Mobile Menu Overlay -->
 
     <div
         class="menu-overlay"
@@ -2311,10 +1840,7 @@
         aria-hidden="true"
     ></div>
 
-
-    <!-- =========================================================
-         HEADER
-    ========================================================== -->
+    <!-- Header -->
 
     <header id="siteHeader">
 
@@ -2325,7 +1851,6 @@
                 class="brand"
                 aria-label="Global College of Missiology Home"
             >
-
                 <img
                     src="./img/logo/logo.png"
                     alt="Global College of Missiology Logo"
@@ -2334,7 +1859,6 @@
                 >
 
                 <span class="brand-text">
-
                     <span class="brand-name">
                         Global College of Missiology
                     </span>
@@ -2342,13 +1866,8 @@
                     <span class="brand-subtitle">
                         Equipping Global Ministers
                     </span>
-
                 </span>
-
             </a>
-
-
-            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="menu-toggle"
@@ -2358,21 +1877,15 @@
                 aria-expanded="false"
                 aria-controls="mainNav"
             >
-
                 <span></span>
                 <span></span>
                 <span></span>
-
             </button>
-
-
-            <!-- NAVIGATION -->
 
             <nav
                 id="mainNav"
                 aria-label="Main navigation"
             >
-
                 <a href="./home.html">
                     Home
                 </a>
@@ -2415,29 +1928,19 @@
                 >
                     Apply Now
                 </a>
-
             </nav>
 
         </div>
-
     </header>
-
-
-    <!-- =========================================================
-         MAIN CONTENT
-    ========================================================== -->
 
     <main>
 
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
+        <!-- Hero -->
 
         <section
             class="rules-hero"
             aria-labelledby="rules-title"
         >
-
             <div class="hero-content reveal">
 
                 <span class="hero-kicker">
@@ -2457,25 +1960,19 @@
                 </p>
 
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             INTRO
-        ====================================================== -->
+        <!-- Introduction -->
 
         <section
             class="section intro-section"
             aria-labelledby="rules-introduction"
         >
-
             <div class="container">
 
                 <div class="intro-card reveal">
 
                     <p id="rules-introduction">
-
                         The rules and regulations of
                         <strong>
                             Global College of Missiology
@@ -2484,25 +1981,19 @@
                         spiritual growth, discipline, respect and a healthy
                         learning environment for every member of the college
                         community.
-
                     </p>
 
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             RULES
-        ====================================================== -->
+        <!-- Rules -->
 
         <section
             class="section rules-section"
             aria-labelledby="college-standards-title"
         >
-
             <div class="container">
 
                 <div class="section-heading reveal">
@@ -2523,18 +2014,10 @@
 
                 </div>
 
-
                 <div class="rules-grid">
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            01
-                        </div>
+                        <div class="rule-number" aria-hidden="true">01</div>
 
                         <h3>
                             Respect and Good Conduct
@@ -2546,18 +2029,10 @@
                             directors, staff and every member of the college
                             community.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            02
-                        </div>
+                        <div class="rule-number" aria-hidden="true">02</div>
 
                         <h3>
                             Academic Integrity
@@ -2569,18 +2044,10 @@
                             and other forms of academic dishonesty are not
                             acceptable.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            03
-                        </div>
+                        <div class="rule-number" aria-hidden="true">03</div>
 
                         <h3>
                             Attendance and Participation
@@ -2592,18 +2059,10 @@
                             other academic activities relevant to their
                             programme.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            04
-                        </div>
+                        <div class="rule-number" aria-hidden="true">04</div>
 
                         <h3>
                             Submission of Assignments
@@ -2614,18 +2073,10 @@
                             be submitted according to the instructions and
                             deadlines communicated by the college or lecturer.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            05
-                        </div>
+                        <div class="rule-number" aria-hidden="true">05</div>
 
                         <h3>
                             Communication
@@ -2636,18 +2087,10 @@
                             administrators and lecturers respectfully and
                             through the appropriate official channels.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            06
-                        </div>
+                        <div class="rule-number" aria-hidden="true">06</div>
 
                         <h3>
                             Use of College Resources
@@ -2659,18 +2102,10 @@
                             responsibly and only for appropriate educational
                             purposes.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            07
-                        </div>
+                        <div class="rule-number" aria-hidden="true">07</div>
 
                         <h3>
                             Appropriate Online Behaviour
@@ -2682,18 +2117,10 @@
                             student groups, discussion platforms and other
                             college-related digital spaces.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            08
-                        </div>
+                        <div class="rule-number" aria-hidden="true">08</div>
 
                         <h3>
                             Personal Responsibility
@@ -2704,18 +2131,10 @@
                             personal information, account credentials and
                             academic activities secure and up to date.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            09
-                        </div>
+                        <div class="rule-number" aria-hidden="true">09</div>
 
                         <h3>
                             Spiritual Discipline
@@ -2727,18 +2146,10 @@
                             character and a commitment to the mission of
                             the college.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            10
-                        </div>
+                        <div class="rule-number" aria-hidden="true">10</div>
 
                         <h3>
                             Misconduct
@@ -2750,18 +2161,10 @@
                             college standards may be subject to appropriate
                             administrative action.
                         </p>
-
                     </article>
 
-
                     <article class="rule-card reveal">
-
-                        <div
-                            class="rule-number"
-                            aria-hidden="true"
-                        >
-                            11
-                        </div>
+                        <div class="rule-number" aria-hidden="true">11</div>
 
                         <h3>
                             Compliance With College Policies
@@ -2772,29 +2175,22 @@
                             instructions and updates communicated by the
                             leadership and administration of the college.
                         </p>
-
                     </article>
 
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             STUDENT COMMITMENT
-        ====================================================== -->
+        <!-- Student Commitment -->
 
         <section
             class="section commitment-section"
             aria-labelledby="student-commitment-title"
         >
-
             <div class="container">
 
                 <div class="commitment-grid">
-
 
                     <div class="commitment-image reveal">
 
@@ -2807,7 +2203,6 @@
                         >
 
                     </div>
-
 
                     <div class="commitment-content reveal">
 
@@ -2834,9 +2229,7 @@
                             and a willingness to grow.
                         </p>
 
-
                         <ul class="commitment-list">
-
                             <li>
                                 Pursue academic excellence.
                             </li>
@@ -2856,7 +2249,6 @@
                             <li>
                                 Represent the values of the college positively.
                             </li>
-
                         </ul>
 
                     </div>
@@ -2864,19 +2256,14 @@
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             ANNUAL TUITION POLICY
-        ====================================================== -->
+        <!-- Annual Tuition -->
 
         <section
             class="section policy-section"
             aria-labelledby="tuition-policy-title"
         >
-
             <div class="container">
 
                 <div class="policy-note reveal">
@@ -2891,14 +2278,10 @@
                         Semester. There is no separate semester fee.
                     </p>
 
-
                     <div class="policy-fees">
 
                         <div class="policy-fee-card">
-
-                            <strong>
-                                $15 USD
-                            </strong>
+                            <strong>$25 USD</strong>
 
                             <span>
                                 Students in Nigeria
@@ -2907,15 +2290,10 @@
                             <span>
                                 Per academic year
                             </span>
-
                         </div>
 
-
                         <div class="policy-fee-card">
-
-                            <strong>
-                                $25 USD
-                            </strong>
+                            <strong>$35 USD</strong>
 
                             <span>
                                 Students outside Nigeria
@@ -2924,36 +2302,33 @@
                             <span>
                                 Per academic year
                             </span>
-
                         </div>
 
                     </div>
 
-
                     <div class="policy-duration">
 
                         <strong>
-                            Academic Training Period:
+                            Academic Programme:
                         </strong>
 
-                        60 Days Total
+                        One Full Academic Year
 
                         <br>
 
                         First Semester:
                         <strong>
-                            30 Days
+                            Semester 1
                         </strong>
 
                         &nbsp; • &nbsp;
 
                         Second Semester:
                         <strong>
-                            30 Days
+                            Semester 2
                         </strong>
 
                     </div>
-
 
                     <p class="policy-final">
 
@@ -2971,19 +2346,14 @@
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             CTA
-        ====================================================== -->
+        <!-- CTA -->
 
         <section
             class="cta-section"
             aria-labelledby="rules-cta-title"
         >
-
             <div class="cta-content reveal">
 
                 <h2 id="rules-cta-title">
@@ -3014,22 +2384,17 @@
                 </div>
 
             </div>
-
         </section>
 
     </main>
 
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
+    <!-- Footer -->
 
     <footer>
 
         <div class="footer-container">
 
             <div class="footer-main">
-
 
                 <div class="footer-brand">
 
@@ -3053,31 +2418,18 @@
 
                 </div>
 
-
                 <div class="footer-column">
 
                     <h4>
                         Quick Links
                     </h4>
 
-                    <a href="./home.html">
-                        Home
-                    </a>
-
-                    <a href="./about.html">
-                        About
-                    </a>
-
-                    <a href="./director.html">
-                        Director
-                    </a>
-
-                    <a href="./course.html">
-                        Courses
-                    </a>
+                    <a href="./home.html">Home</a>
+                    <a href="./about.html">About</a>
+                    <a href="./director.html">Director</a>
+                    <a href="./course.html">Courses</a>
 
                 </div>
-
 
                 <div class="footer-column">
 
@@ -3107,7 +2459,6 @@
 
                 </div>
 
-
                 <div class="footer-column">
 
                     <h4>
@@ -3134,7 +2485,6 @@
 
             </div>
 
-
             <div class="footer-bottom">
 
                 <p>
@@ -3154,10 +2504,7 @@
 
     </footer>
 
-
-    <!-- =========================================================
-         BACK TO TOP
-    ========================================================== -->
+    <!-- Back To Top -->
 
     <button
         id="backTop"
@@ -3168,55 +2515,39 @@
         ↑
     </button>
 
-
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================== -->
-
     <script>
-
         document.addEventListener("DOMContentLoaded", () => {
 
-
-            /* =====================================================
-               LOADER
-            ====================================================== */
+            /* Loader */
 
             const pageLoader =
                 document.getElementById("pageLoader");
 
-            window.setTimeout(() => {
-
+            const hideLoader = () => {
                 if (pageLoader) {
-
                     pageLoader.classList.add("loaded");
-
                 }
+            };
 
-            }, 450);
+            window.setTimeout(hideLoader, 450);
+
+            window.addEventListener("load", hideLoader, {
+                once: true
+            });
 
 
-            /* =====================================================
-               HEADER SCROLL
-            ====================================================== */
+            /* Header */
 
             const siteHeader =
                 document.getElementById("siteHeader");
 
             const updateHeader = () => {
-
                 if (!siteHeader) return;
 
-                if (window.scrollY > 25) {
-
-                    siteHeader.classList.add("scrolled");
-
-                } else {
-
-                    siteHeader.classList.remove("scrolled");
-
-                }
-
+                siteHeader.classList.toggle(
+                    "scrolled",
+                    window.scrollY > 25
+                );
             };
 
             updateHeader();
@@ -3224,15 +2555,11 @@
             window.addEventListener(
                 "scroll",
                 updateHeader,
-                {
-                    passive: true
-                }
+                { passive: true }
             );
 
 
-            /* =====================================================
-               MOBILE MENU
-            ====================================================== */
+            /* Mobile Menu */
 
             const menuToggle =
                 document.getElementById("menuToggle");
@@ -3243,16 +2570,13 @@
             const menuOverlay =
                 document.getElementById("menuOverlay");
 
-
             if (
                 menuToggle &&
                 mainNav &&
                 menuOverlay
             ) {
-
                 const navLinks =
                     mainNav.querySelectorAll("a");
-
 
                 const setMenuState = (open) => {
 
@@ -3292,46 +2616,33 @@
                         "menu-open",
                         open
                     );
-
                 };
-
 
                 menuToggle.addEventListener(
                     "click",
                     () => {
-
                         const isOpen =
                             mainNav.classList.contains("open");
 
                         setMenuState(!isOpen);
-
                     }
                 );
-
 
                 menuOverlay.addEventListener(
                     "click",
                     () => {
-
                         setMenuState(false);
-
                     }
                 );
 
-
                 navLinks.forEach((link) => {
-
                     link.addEventListener(
                         "click",
                         () => {
-
                             setMenuState(false);
-
                         }
                     );
-
                 });
-
 
                 document.addEventListener(
                     "keydown",
@@ -3341,16 +2652,11 @@
                             event.key === "Escape" &&
                             mainNav.classList.contains("open")
                         ) {
-
                             setMenuState(false);
-
                             menuToggle.focus();
-
                         }
-
                     }
                 );
-
 
                 window.addEventListener(
                     "resize",
@@ -3359,29 +2665,21 @@
                         if (
                             window.innerWidth > 1100
                         ) {
-
                             setMenuState(false);
-
                         }
-
                     }
                 );
-
             }
 
 
-            /* =====================================================
-               SCROLL REVEAL
-            ====================================================== */
+            /* Scroll Reveal */
 
             const revealElements =
                 document.querySelectorAll(".reveal");
 
-
             if (
                 "IntersectionObserver" in window
             ) {
-
                 const revealObserver =
                     new IntersectionObserver(
                         (entries, observer) => {
@@ -3392,7 +2690,6 @@
                                     if (
                                         entry.isIntersecting
                                     ) {
-
                                         entry.target.classList.add(
                                             "visible"
                                         );
@@ -3400,147 +2697,95 @@
                                         observer.unobserve(
                                             entry.target
                                         );
-
                                     }
-
                                 }
                             );
-
                         },
                         {
                             threshold: 0.12
                         }
                     );
 
-
                 revealElements.forEach(
                     (element) => {
-
-                        revealObserver.observe(
-                            element
-                        );
-
+                        revealObserver.observe(element);
                     }
                 );
 
             } else {
-
                 revealElements.forEach(
                     (element) => {
-
-                        element.classList.add(
-                            "visible"
-                        );
-
+                        element.classList.add("visible");
                     }
                 );
-
             }
 
 
-            /* =====================================================
-               BACK TO TOP
-            ====================================================== */
+            /* Back To Top */
 
             const backTop =
                 document.getElementById("backTop");
 
-
             if (backTop) {
 
-                const updateBackTop =
-                    () => {
-
-                        if (
-                            window.scrollY > 500
-                        ) {
-
-                            backTop.classList.add(
-                                "show"
-                            );
-
-                        } else {
-
-                            backTop.classList.remove(
-                                "show"
-                            );
-
-                        }
-
-                    };
-
+                const updateBackTop = () => {
+                    backTop.classList.toggle(
+                        "show",
+                        window.scrollY > 500
+                    );
+                };
 
                 updateBackTop();
-
 
                 window.addEventListener(
                     "scroll",
                     updateBackTop,
-                    {
-                        passive: true
-                    }
+                    { passive: true }
                 );
-
 
                 backTop.addEventListener(
                     "click",
                     () => {
-
                         window.scrollTo({
                             top: 0,
                             behavior: "smooth"
                         });
-
                     }
                 );
-
             }
 
 
-            /* =====================================================
-               CURRENT YEAR
-            ====================================================== */
+            /* Current Year */
 
             const year =
                 document.getElementById("year");
 
             if (year) {
-
                 year.textContent =
                     new Date().getFullYear();
-
             }
 
 
-            /* =====================================================
-               IMAGE ERROR HANDLING
-            ====================================================== */
+            /* Image Error Handling */
 
-            const images =
-                document.querySelectorAll("img");
-
-
-            images.forEach(
-                (image) => {
+            document
+                .querySelectorAll("img")
+                .forEach((image) => {
 
                     image.addEventListener(
                         "error",
                         () => {
-
                             console.warn(
                                 "Image could not be loaded:",
                                 image.src
                             );
-
                         }
                     );
-
-                }
-            );
+                });
 
         });
-
     </script>
 
 </body>
 </html>
+

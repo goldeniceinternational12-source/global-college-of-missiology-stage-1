@@ -2,64 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Why Missionary Training Matters | Global College of Missiology</title>
 
-    <meta name="description"
-          content="Discover why missionary training matters and how biblical, theological, cultural, and practical preparation can help Christians serve effectively in mission.">
-
+    <meta name="description" content="Discover why missionary training matters and how biblical, theological, cultural, and practical preparation can help Christians serve effectively in mission.">
     <meta name="author" content="Global College of Missiology">
-
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-
     <meta name="theme-color" content="#07111f">
 
-    <!-- Canonical -->
-    <link rel="canonical"
-          href="https://www.gcmstudy.com/why-missionary-training-matters.html">
+    <link rel="canonical" href="https://www.gcmstudy.com/why-missionary-training-matters.html">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./img/logo/logo.png">
     <link rel="apple-touch-icon" href="./img/logo/logo.png">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="article">
-    <meta property="og:title"
-          content="Why Missionary Training Matters | Global College of Missiology">
-    <meta property="og:description"
-          content="Discover why biblical, theological, cultural, and practical preparation matters for Christian mission.">
-    <meta property="og:url"
-          content="https://www.gcmstudy.com/why-missionary-training-matters.html">
-    <meta property="og:site_name"
-          content="Global College of Missiology">
-    <meta property="og:image"
-          content="https://www.gcmstudy.com/img/logo/logo.png">
-    <meta property="og:image:alt"
-          content="Global College of Missiology">
+    <meta property="og:title" content="Why Missionary Training Matters | Global College of Missiology">
+    <meta property="og:description" content="Discover why biblical, theological, cultural, and practical preparation matters for Christian mission.">
+    <meta property="og:url" content="https://www.gcmstudy.com/why-missionary-training-matters.html">
+    <meta property="og:site_name" content="Global College of Missiology">
+    <meta property="og:image" content="https://www.gcmstudy.com/img/logo/logo.png">
+    <meta property="og:image:alt" content="Global College of Missiology">
     <meta property="og:locale" content="en_NG">
 
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title"
-          content="Why Missionary Training Matters | Global College of Missiology">
-    <meta name="twitter:description"
-          content="Discover why biblical, theological, cultural, and practical preparation matters for Christian mission.">
-    <meta name="twitter:image"
-          content="https://www.gcmstudy.com/img/logo/logo.png">
-    <meta name="twitter:image:alt"
-          content="Global College of Missiology">
+    <meta name="twitter:title" content="Why Missionary Training Matters | Global College of Missiology">
+    <meta name="twitter:description" content="Discover why biblical, theological, cultural, and practical preparation matters for Christian mission.">
+    <meta name="twitter:image" content="https://www.gcmstudy.com/img/logo/logo.png">
+    <meta name="twitter:image:alt" content="Global College of Missiology">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&family=Montserrat:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -86,6 +63,17 @@
     </script>
 
     <style>
+        :root {
+            --navy: #07111f;
+            --navy-soft: #0c192b;
+            --gold: #d4af37;
+            --gold-light: #e2c45d;
+            --ivory: #f4f0e8;
+            --text: #ddd8ce;
+            --muted: #aaa49a;
+            --border: rgba(212, 175, 55, 0.18);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -98,14 +86,44 @@
 
         body {
             font-family: "Montserrat", sans-serif;
-            background: #07111f;
-            color: #f4f0e8;
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(212, 175, 55, 0.045),
+                    transparent 32%
+                ),
+                var(--navy);
+            color: var(--ivory);
             line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(212, 175, 55, 0.025),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(212, 175, 55, 0.02),
+                    transparent 25%
+                );
+            z-index: -1;
         }
 
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
         }
 
         /* =========================
@@ -116,87 +134,91 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-
             background: rgba(7, 17, 31, 0.96);
-
-            backdrop-filter: blur(14px);
-
-            border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
         }
 
         .nav {
             width: min(1180px, 92%);
-            margin: auto;
-
             min-height: 82px;
-
+            margin: auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             gap: 30px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-
             gap: 12px;
-
             flex-shrink: 0;
         }
 
         .logo img {
             width: 48px;
             height: 48px;
-
             object-fit: contain;
         }
 
         .logo-text {
             font-family: "Marcellus", serif;
-
             font-size: 16px;
-
-            letter-spacing: 1px;
-
-            color: #d4af37;
+            line-height: 1.2;
+            letter-spacing: 0.8px;
+            color: var(--gold);
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-
+            justify-content: flex-end;
             gap: 24px;
         }
 
         .nav-links a {
+            position: relative;
+            padding: 8px 0;
             font-size: 12px;
-
             font-weight: 600;
-
             letter-spacing: 0.7px;
-
             color: #ddd7ca;
+            transition: color 0.3s ease;
+        }
 
-            transition: 0.3s ease;
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #d4af37;
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
         }
 
         .menu-btn {
             display: none;
-
-            background: none;
-            border: none;
-
-            color: #d4af37;
-
-            font-size: 28px;
-
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--gold);
+            font-size: 25px;
+            line-height: 1;
             cursor: pointer;
         }
 
@@ -206,15 +228,11 @@
 
         .article-hero {
             min-height: 430px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
-            padding: 100px 20px 80px;
-
+            padding: 105px 20px 85px;
             background:
                 radial-gradient(
                     circle at center,
@@ -229,51 +247,35 @@
 
         .article-label {
             display: inline-block;
-
-            color: #d4af37;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
             margin-bottom: 20px;
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
         .article-hero h1 {
             font-family: "Cormorant Garamond", serif;
-
             font-size: clamp(46px, 7vw, 76px);
-
             line-height: 1;
-
             font-weight: 600;
-
+            letter-spacing: -0.5px;
             margin-bottom: 25px;
         }
 
         .article-intro {
             max-width: 730px;
-
             margin: auto;
-
             color: #c9c3b8;
-
             font-size: 16px;
         }
 
         .article-meta {
             margin-top: 28px;
-
-            font-size: 11px;
-
             color: #8f8b83;
-
+            font-size: 11px;
             letter-spacing: 1px;
-
             text-transform: uppercase;
         }
 
@@ -287,13 +289,11 @@
 
         .article-container {
             width: min(850px, 92%);
-
             margin: auto;
         }
 
         .article-content {
-            color: #ddd8ce;
-
+            color: var(--text);
             font-size: 16px;
         }
 
@@ -303,28 +303,22 @@
 
         .article-content h2 {
             font-family: "Cormorant Garamond", serif;
-
-            color: #f4f0e8;
-
+            color: var(--ivory);
             font-size: 38px;
-
             line-height: 1.2;
-
             margin: 55px 0 20px;
         }
 
         .article-content h3 {
             font-family: "Cormorant Garamond", serif;
-
-            color: #d4af37;
-
+            color: var(--gold);
             font-size: 29px;
-
+            line-height: 1.25;
             margin: 35px 0 15px;
         }
 
         .article-content strong {
-            color: #f4f0e8;
+            color: var(--ivory);
         }
 
         /* =========================
@@ -333,35 +327,22 @@
 
         .scripture {
             margin: 35px 0;
-
             padding: 25px 30px;
-
-            border-left: 3px solid #d4af37;
-
+            border-left: 3px solid var(--gold);
             background: rgba(255, 255, 255, 0.035);
-
             color: #e8e2d6;
-
             font-family: "Cormorant Garamond", serif;
-
             font-size: 23px;
-
             line-height: 1.5;
         }
 
         .scripture span {
             display: block;
-
             margin-top: 12px;
-
             font-family: "Montserrat", sans-serif;
-
             font-size: 11px;
-
-            color: #d4af37;
-
+            color: var(--gold);
             letter-spacing: 1px;
-
             text-transform: uppercase;
         }
 
@@ -371,12 +352,16 @@
 
         .article-list {
             margin: 20px 0 30px 25px;
+            padding-left: 15px;
         }
 
         .article-list li {
             margin-bottom: 12px;
-
             padding-left: 8px;
+        }
+
+        .article-list li::marker {
+            color: var(--gold);
         }
 
         /* =========================
@@ -385,16 +370,17 @@
 
         .highlight-box {
             margin: 35px 0;
-
             padding: 28px 30px;
-
             border: 1px solid rgba(212, 175, 55, 0.2);
-
             background: rgba(212, 175, 55, 0.045);
         }
 
         .highlight-box h3 {
             margin-top: 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
         }
 
         /* =========================
@@ -403,13 +389,9 @@
 
         .article-cta {
             margin-top: 70px;
-
             padding: 45px 35px;
-
             text-align: center;
-
             border: 1px solid rgba(212, 175, 55, 0.25);
-
             background:
                 linear-gradient(
                     135deg,
@@ -420,57 +402,48 @@
 
         .article-cta h2 {
             margin: 0 0 12px;
-
             font-family: "Cormorant Garamond", serif;
-
             font-size: 38px;
+            line-height: 1.2;
         }
 
         .article-cta p {
             max-width: 650px;
-
             margin: 0 auto 25px;
-
             color: #bbb5aa;
         }
 
         .btn {
-            display: inline-block;
-
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
             padding: 14px 26px;
-
-            background: #d4af37;
-
-            color: #07111f;
-
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            color: var(--navy);
             font-size: 12px;
-
             font-weight: 700;
-
             letter-spacing: 1px;
-
             text-transform: uppercase;
-
-            transition: 0.3s ease;
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-
-            background: #e2c45d;
+            background: var(--gold-light);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.12);
         }
 
         .back-link {
             display: inline-block;
-
             margin-top: 35px;
-
-            color: #d4af37;
-
+            color: var(--gold);
             font-size: 12px;
-
             font-weight: 600;
-
             letter-spacing: 0.7px;
         }
 
@@ -484,51 +457,44 @@
 
         footer {
             border-top: 1px solid rgba(212, 175, 55, 0.16);
-
             padding: 35px 20px;
-
             text-align: center;
-
             color: #77736c;
-
             font-size: 11px;
         }
 
         footer strong {
-            color: #d4af37;
+            color: var(--gold);
         }
 
         /* =========================
            RESPONSIVE
         ========================= */
 
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
+            .nav {
+                min-height: 76px;
+            }
 
             .menu-btn {
-                display: block;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .nav-links {
                 position: absolute;
-
-                top: 82px;
-
+                top: 76px;
                 left: 0;
                 right: 0;
-
                 display: none;
-
                 flex-direction: column;
-
-                align-items: flex-start;
-
-                padding: 25px 5%;
-
-                gap: 20px;
-
-                background: #07111f;
-
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 5% 20px;
+                background: rgba(7, 17, 31, 0.99);
                 border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+                box-shadow: 0 18px 30px rgba(0, 0, 0, 0.2);
             }
 
             .nav-links.show {
@@ -536,12 +502,12 @@
             }
 
             .nav-links a {
+                padding: 13px 0;
                 font-size: 13px;
             }
 
             .article-hero {
                 min-height: 380px;
-
                 padding-top: 80px;
             }
 
@@ -555,9 +521,13 @@
         }
 
         @media (max-width: 550px) {
-
             .nav {
+                width: 92%;
                 min-height: 72px;
+            }
+
+            .logo {
+                gap: 9px;
             }
 
             .logo img {
@@ -566,11 +536,21 @@
             }
 
             .logo-text {
+                max-width: 190px;
                 font-size: 13px;
+            }
+
+            .nav-links {
+                top: 72px;
             }
 
             .article-hero {
                 padding: 75px 18px 60px;
+            }
+
+            .article-label {
+                font-size: 10px;
+                letter-spacing: 2px;
             }
 
             .article-hero h1 {
@@ -581,18 +561,55 @@
                 font-size: 14px;
             }
 
+            .article-meta {
+                font-size: 9px;
+            }
+
+            main {
+                padding-bottom: 65px;
+            }
+
             .article-content h2 {
                 font-size: 31px;
+                margin-top: 45px;
+            }
+
+            .article-content h3 {
+                font-size: 26px;
             }
 
             .scripture {
                 padding: 20px;
-
                 font-size: 20px;
+            }
+
+            .highlight-box {
+                padding: 22px;
             }
 
             .article-cta {
                 padding: 35px 20px;
+            }
+
+            .article-cta h2 {
+                font-size: 32px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                animation: none !important;
             }
         }
     </style>
@@ -601,23 +618,27 @@
 <body>
 
 <header>
-
     <nav class="nav">
 
-        <a href="./index.html" class="logo">
-
-            <img src="./img/logo/logo.png"
-                 alt="Global College of Missiology Logo">
+        <a href="./index.html" class="logo" aria-label="Global College of Missiology home">
+            <img
+                src="./img/logo/logo.png"
+                alt="Global College of Missiology Logo"
+            >
 
             <span class="logo-text">
                 Global College of Missiology
             </span>
-
         </a>
 
-        <button class="menu-btn"
-                id="menuBtn"
-                aria-label="Open navigation">
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navLinks"
+        >
             ☰
         </button>
 
@@ -650,9 +671,7 @@
         </div>
 
     </nav>
-
 </header>
-
 
 <section class="article-hero">
 
@@ -682,7 +701,6 @@
 
 </section>
 
-
 <main>
 
     <article class="article-container">
@@ -704,7 +722,6 @@
                 with greater understanding and responsibility.
             </p>
 
-
             <h2>
                 What Is Missionary Training?
             </h2>
@@ -724,7 +741,6 @@
             </p>
 
             <div class="scripture">
-
                 "Be diligent to present yourself approved to God,
                 a worker who has no need to be ashamed, rightly
                 handling the word of truth."
@@ -732,9 +748,7 @@
                 <span>
                     2 Timothy 2:15
                 </span>
-
             </div>
-
 
             <h2>
                 A Strong Biblical Foundation
@@ -758,7 +772,6 @@
                 distinguish between biblical teaching and ideas that
                 may not accurately represent Christian doctrine.
             </p>
-
 
             <h2>
                 Developing Theological Understanding
@@ -792,7 +805,6 @@
 
             </div>
 
-
             <h2>
                 Understanding Culture
             </h2>
@@ -816,7 +828,6 @@
                 workers communicate that message more responsibly
                 within the context in which they serve.
             </p>
-
 
             <h2>
                 Communication Is Essential
@@ -859,7 +870,6 @@
 
             </ul>
 
-
             <h2>
                 Preparing for Cross-Cultural Challenges
             </h2>
@@ -882,7 +892,6 @@
                 listening, and a willingness to learn.
             </p>
 
-
             <h2>
                 Evangelism and Discipleship
             </h2>
@@ -903,15 +912,12 @@
             </p>
 
             <div class="scripture">
-
                 "Go therefore and make disciples of all nations..."
 
                 <span>
                     Matthew 28:19
                 </span>
-
             </div>
-
 
             <h2>
                 Leadership and Teamwork
@@ -937,7 +943,6 @@
                 people grow.
             </p>
 
-
             <h2>
                 Practical Ministry Experience
             </h2>
@@ -961,7 +966,6 @@
                 further learning is necessary.
             </p>
 
-
             <h2>
                 Spiritual Formation
             </h2>
@@ -984,7 +988,6 @@
                 commitment to faithful service.
             </p>
 
-
             <h2>
                 Mission Requires Lifelong Learning
             </h2>
@@ -1006,7 +1009,6 @@
                 Christian workers continue developing throughout their
                 ministry.
             </p>
-
 
             <h2>
                 Who Can Benefit From Missionary Training?
@@ -1053,7 +1055,6 @@
 
             </ul>
 
-
             <h2>
                 Preparation and the Great Commission
             </h2>
@@ -1072,7 +1073,6 @@
                 necessary to serve responsibly within the calling they
                 believe they have received.
             </p>
-
 
             <h2>
                 Conclusion
@@ -1099,7 +1099,6 @@
 
         </div>
 
-
         <section class="article-cta">
 
             <h2>
@@ -1117,15 +1116,13 @@
 
         </section>
 
-
         <a href="./articles.html" class="back-link">
-            ← Back to Articles & Insights
+            ← Back to Articles &amp; Insights
         </a>
 
     </article>
 
 </main>
-
 
 <footer>
 
@@ -1137,28 +1134,44 @@
 
 </footer>
 
-
 <script>
-
     const menuBtn = document.getElementById("menuBtn");
     const navLinks = document.getElementById("navLinks");
 
     menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
+        const isOpen = navLinks.classList.toggle("show");
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        menuBtn.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
     });
 
     document.querySelectorAll(".nav-links a").forEach(link => {
-
         link.addEventListener("click", () => {
             navLinks.classList.remove("show");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.setAttribute("aria-label", "Open navigation");
         });
+    });
 
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) {
+            navLinks.classList.remove("show");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.setAttribute("aria-label", "Open navigation");
+        }
     });
 
     document.getElementById("year").textContent =
         new Date().getFullYear();
-
 </script>
 
 </body>
 </html>
+

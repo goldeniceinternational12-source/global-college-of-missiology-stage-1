@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -10,9 +8,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Contact Global College of Missiology | Enquiries & Admissions
-    </title>
+    <title>Contact Global College of Missiology | Enquiries & Admissions</title>
 
     <meta
         name="description"
@@ -157,7 +153,6 @@
     {
         "@context": "https://schema.org",
         "@graph": [
-
             {
                 "@type": "WebSite",
                 "@id": "https://www.gcmstudy.com/#website",
@@ -165,7 +160,6 @@
                 "name": "Global College of Missiology",
                 "inLanguage": "en-NG"
             },
-
             {
                 "@type": "EducationalOrganization",
                 "@id": "https://www.gcmstudy.com/#organization",
@@ -182,7 +176,6 @@
                     "addressCountry": "NG"
                 }
             },
-
             {
                 "@type": "ContactPage",
                 "@id": "https://www.gcmstudy.com/contact.html#webpage",
@@ -200,7 +193,6 @@
                     "@id": "https://www.gcmstudy.com/contact.html#breadcrumb"
                 }
             },
-
             {
                 "@type": "BreadcrumbList",
                 "@id": "https://www.gcmstudy.com/contact.html#breadcrumb",
@@ -219,18 +211,18 @@
                     }
                 ]
             }
-
         ]
     }
     </script>
 
     <style>
-
         /* ==============================
            RESET
         ============================== */
 
-        * {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -330,7 +322,6 @@
         }
 
         @keyframes loaderPulse {
-
             0%,
             100% {
                 transform: scale(1);
@@ -361,14 +352,13 @@
 
         .navbar {
             width: min(1200px, 92%);
-            height: 88px;
+            min-height: 88px;
             margin: auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 20px;
         }
-
-        /* Logo */
 
         .brand {
             display: flex;
@@ -401,8 +391,6 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
         }
-
-        /* Navigation */
 
         .nav-links {
             display: flex;
@@ -457,8 +445,6 @@
             color: var(--navy) !important;
         }
 
-        /* Mobile Menu Button */
-
         .menu-toggle {
             width: 45px;
             height: 45px;
@@ -491,8 +477,6 @@
         .menu-toggle.active span:nth-child(3) {
             transform: translateY(-7px) rotate(-45deg);
         }
-
-        /* Mobile Overlay */
 
         .menu-overlay {
             position: fixed;
@@ -527,7 +511,7 @@
                     rgba(4, 17, 32, 0.76),
                     rgba(4, 17, 32, 0.86)
                 ),
-                url("./assets/images/campus.jpg") center/cover no-repeat;
+                url("./img/class room/class room.jpeg") center/cover no-repeat;
         }
 
         .hero::after {
@@ -762,6 +746,7 @@
         .quick-btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 9px;
             padding: 11px 17px;
             border-radius: 5px;
@@ -838,14 +823,14 @@
             transform: translateY(-2px);
         }
 
-        .submit-btn i {
-            margin-right: 7px;
-        }
-
         .submit-btn:disabled {
             opacity: 0.7;
             cursor: wait;
             transform: none;
+        }
+
+        .submit-btn i {
+            margin-right: 7px;
         }
 
         .form-note {
@@ -901,6 +886,7 @@
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             background: var(--gold);
             color: var(--navy);
@@ -994,11 +980,17 @@
             color: #aeb9c5;
             font-size: 15px;
             margin-bottom: 12px;
+            align-items: flex-start;
         }
 
         .footer-contact i {
             color: var(--gold);
             margin-top: 5px;
+            flex: 0 0 auto;
+        }
+
+        .footer-contact a:hover {
+            color: var(--gold);
         }
 
         .footer-bottom {
@@ -1069,10 +1061,9 @@
            RESPONSIVE
         ============================== */
 
-        @media (max-width: 1050px) {
-
+        @media (max-width: 1100px) {
             .nav-links {
-                gap: 15px;
+                gap: 14px;
             }
 
             .nav-links a {
@@ -1089,20 +1080,21 @@
         }
 
         @media (max-width: 850px) {
-
             .navbar {
-                height: 80px;
+                min-height: 80px;
             }
 
             .menu-toggle {
                 display: flex;
+                position: relative;
+                z-index: 6000;
             }
 
             .nav-links {
                 position: fixed;
                 top: 80px;
                 right: -100%;
-                width: min(340px, 85%);
+                width: min(340px, 88%);
                 height: calc(100vh - 80px);
                 height: calc(100svh - 80px);
                 background: #071a2f;
@@ -1148,6 +1140,13 @@
         }
 
         @media (max-width: 650px) {
+            .navbar {
+                width: min(94%, 1200px);
+            }
+
+            .brand {
+                gap: 8px;
+            }
 
             .brand-title {
                 font-size: 15px;
@@ -1165,6 +1164,8 @@
 
             .hero {
                 padding-top: 130px;
+                min-height: 650px;
+                min-height: 88svh;
             }
 
             .section {
@@ -1186,7 +1187,7 @@
             }
 
             .quick-btn {
-                justify-content: center;
+                width: 100%;
             }
 
             .whatsapp-box {
@@ -1194,8 +1195,7 @@
             }
         }
 
-        @media (max-width: 420px) {
-
+        @media (max-width: 480px) {
             .brand-subtitle {
                 display: none;
             }
@@ -1215,6 +1215,48 @@
             .section-heading h2 {
                 font-size: 31px;
             }
+
+            .contact-card {
+                padding: 30px 20px;
+            }
+
+            .info-item {
+                gap: 12px;
+            }
+
+            .info-item-icon {
+                width: 40px;
+                height: 40px;
+                flex-basis: 40px;
+            }
+
+            .whatsapp-btn {
+                width: 100%;
+            }
+
+            .back-to-top {
+                right: 15px;
+                bottom: 15px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .brand-title {
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .contact-info-box,
+            .contact-form-box {
+                padding: 24px 17px;
+            }
         }
 
         /* ==============================
@@ -1222,7 +1264,6 @@
         ============================== */
 
         @media (prefers-reduced-motion: reduce) {
-
             html {
                 scroll-behavior: auto;
             }
@@ -1240,9 +1281,7 @@
                 transform: none;
             }
         }
-
     </style>
-
 </head>
 
 <body>
@@ -1256,9 +1295,7 @@
         id="loader"
         aria-hidden="true"
     >
-
         <div class="loader-content">
-
             <img
                 src="./img/logo/logo.png"
                 alt="Global College of Missiology Logo"
@@ -1270,11 +1307,8 @@
             <p>
                 GLOBAL COLLEGE OF MISSIOLOGY
             </p>
-
         </div>
-
     </div>
-
 
     <!-- ==============================
          MOBILE OVERLAY
@@ -1286,26 +1320,21 @@
         aria-hidden="true"
     ></div>
 
-
     <!-- ==============================
          HEADER
     ============================== -->
 
     <header>
-
         <nav
             class="navbar"
             aria-label="Main Navigation"
         >
-
-            <!-- BRAND -->
 
             <a
                 href="./home.html"
                 class="brand"
                 aria-label="Global College of Missiology Home"
             >
-
                 <img
                     src="./img/logo/logo.png"
                     alt="Global College of Missiology logo"
@@ -1314,7 +1343,6 @@
                 >
 
                 <span class="brand-text">
-
                     <span class="brand-title">
                         Global College of Missiology
                     </span>
@@ -1322,13 +1350,8 @@
                     <span class="brand-subtitle">
                         Training Kingdom Leaders
                     </span>
-
                 </span>
-
             </a>
-
-
-            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="menu-toggle"
@@ -1338,21 +1361,15 @@
                 aria-expanded="false"
                 aria-controls="navLinks"
             >
-
                 <span></span>
                 <span></span>
                 <span></span>
-
             </button>
-
-
-            <!-- NAVIGATION -->
 
             <ul
                 class="nav-links"
                 id="navLinks"
             >
-
                 <li>
                     <a href="./home.html">
                         Home
@@ -1413,13 +1430,9 @@
                         Apply Now
                     </a>
                 </li>
-
             </ul>
-
         </nav>
-
     </header>
-
 
     <!-- ==============================
          MAIN CONTENT
@@ -1433,7 +1446,6 @@
             class="hero"
             aria-labelledby="contact-title"
         >
-
             <div class="hero-content">
 
                 <div
@@ -1453,9 +1465,7 @@
                 </p>
 
             </div>
-
         </section>
-
 
         <!-- CONTACT INFORMATION -->
 
@@ -1481,7 +1491,6 @@
                 </p>
 
             </div>
-
 
             <div class="contact-grid">
 
@@ -1510,7 +1519,6 @@
                     </a>
 
                 </div>
-
 
                 <!-- WHATSAPP -->
 
@@ -1543,7 +1551,6 @@
 
                 </div>
 
-
                 <!-- PHONE -->
 
                 <div class="contact-card reveal">
@@ -1572,8 +1579,7 @@
 
             </div>
 
-
-            <!-- CONTACT FORM AREA -->
+            <!-- CONTACT AREA -->
 
             <div class="contact-wrapper">
 
@@ -1592,7 +1598,6 @@
                         available to assist you.
                     </p>
 
-
                     <div class="info-item">
 
                         <div
@@ -1603,7 +1608,6 @@
                         </div>
 
                         <div>
-
                             <h4>
                                 Location
                             </h4>
@@ -1611,11 +1615,9 @@
                             <p>
                                 Isiokpo, Rivers State, Nigeria
                             </p>
-
                         </div>
 
                     </div>
-
 
                     <div class="info-item">
 
@@ -1627,7 +1629,6 @@
                         </div>
 
                         <div>
-
                             <h4>
                                 Email
                             </h4>
@@ -1635,11 +1636,9 @@
                             <a href="mailto:gcm4global@gmail.com">
                                 gcm4global@gmail.com
                             </a>
-
                         </div>
 
                     </div>
-
 
                     <div class="info-item">
 
@@ -1651,7 +1650,6 @@
                         </div>
 
                         <div>
-
                             <h4>
                                 Phone
                             </h4>
@@ -1659,11 +1657,9 @@
                             <a href="tel:+2347076988378">
                                 +234 707 698 8378
                             </a>
-
                         </div>
 
                     </div>
-
 
                     <div class="info-item">
 
@@ -1675,7 +1671,6 @@
                         </div>
 
                         <div>
-
                             <h4>
                                 Enquiries
                             </h4>
@@ -1683,11 +1678,9 @@
                             <p>
                                 Monday – Saturday
                             </p>
-
                         </div>
 
                     </div>
-
 
                     <!-- QUICK BUTTONS -->
 
@@ -1701,9 +1694,9 @@
                                 class="fa-solid fa-phone"
                                 aria-hidden="true"
                             ></i>
+
                             Call Us
                         </a>
-
 
                         <a
                             href="https://wa.me/2347076988378"
@@ -1715,13 +1708,13 @@
                                 class="fa-brands fa-whatsapp"
                                 aria-hidden="true"
                             ></i>
+
                             WhatsApp
                         </a>
 
                     </div>
 
                 </div>
-
 
                 <!-- CONTACT FORM -->
 
@@ -1751,7 +1744,6 @@
 
                         </div>
 
-
                         <div class="form-group">
 
                             <label for="email">
@@ -1769,7 +1761,6 @@
                             >
 
                         </div>
-
 
                         <div class="form-group">
 
@@ -1789,7 +1780,6 @@
 
                         </div>
 
-
                         <div class="form-group">
 
                             <label for="message">
@@ -1806,22 +1796,18 @@
 
                         </div>
 
-
                         <button
                             type="submit"
                             class="submit-btn"
                             id="submitBtn"
                         >
-
                             <i
                                 class="fa-brands fa-whatsapp"
                                 aria-hidden="true"
                             ></i>
 
                             Send Message via WhatsApp
-
                         </button>
-
 
                         <p class="form-note">
                             Your message will open directly in WhatsApp.
@@ -1834,7 +1820,6 @@
             </div>
 
         </section>
-
 
         <!-- WHATSAPP CTA -->
 
@@ -1866,14 +1851,12 @@
                     rel="noopener noreferrer"
                     class="whatsapp-btn"
                 >
-
                     <i
                         class="fa-brands fa-whatsapp"
                         aria-hidden="true"
                     ></i>
 
                     Chat With Us
-
                 </a>
 
             </div>
@@ -1881,7 +1864,6 @@
         </section>
 
     </main>
-
 
     <!-- ==============================
          FOOTER
@@ -1899,7 +1881,6 @@
                     href="./home.html"
                     class="footer-logo"
                 >
-
                     <img
                         src="./img/logo/logo.png"
                         alt="Global College of Missiology logo"
@@ -1910,7 +1891,6 @@
                     <h3>
                         Global College of Missiology
                     </h3>
-
                 </a>
 
                 <p class="footer-about">
@@ -1920,7 +1900,6 @@
                 </p>
 
             </div>
-
 
             <!-- QUICK LINKS -->
 
@@ -1987,7 +1966,6 @@
 
             </div>
 
-
             <!-- CONTACT -->
 
             <div class="footer-column">
@@ -1999,7 +1977,6 @@
                 <ul class="footer-contact">
 
                     <li>
-
                         <i
                             class="fa-solid fa-location-dot"
                             aria-hidden="true"
@@ -2008,11 +1985,9 @@
                         <span>
                             Isiokpo, Rivers State, Nigeria
                         </span>
-
                     </li>
 
                     <li>
-
                         <i
                             class="fa-solid fa-envelope"
                             aria-hidden="true"
@@ -2021,11 +1996,9 @@
                         <a href="mailto:gcm4global@gmail.com">
                             gcm4global@gmail.com
                         </a>
-
                     </li>
 
                     <li>
-
                         <i
                             class="fa-solid fa-phone"
                             aria-hidden="true"
@@ -2034,11 +2007,9 @@
                         <a href="tel:+2347076988378">
                             +234 707 698 8378
                         </a>
-
                     </li>
 
                     <li>
-
                         <i
                             class="fa-brands fa-whatsapp"
                             aria-hidden="true"
@@ -2051,7 +2022,6 @@
                         >
                             WhatsApp
                         </a>
-
                     </li>
 
                 </ul>
@@ -2060,27 +2030,20 @@
 
         </div>
 
-
         <!-- FOOTER BOTTOM -->
 
         <div class="footer-bottom">
 
             <p>
-
                 &copy;
-
                 <span id="currentYear"></span>
-
                 Global College of Missiology.
-
                 All Rights Reserved.
-
             </p>
 
         </div>
 
     </footer>
-
 
     <!-- ==============================
          BACK TO TOP
@@ -2092,33 +2055,24 @@
         type="button"
         aria-label="Back to top"
     >
-
         <i class="fa-solid fa-arrow-up"></i>
-
     </button>
-
 
     <!-- ==============================
          JAVASCRIPT
     ============================== -->
 
     <script>
-
         /* ==============================
            LOADER
         ============================== */
 
         window.addEventListener("load", function () {
-
-            const loader =
-                document.getElementById("loader");
+            const loader = document.getElementById("loader");
 
             setTimeout(function () {
-
                 loader.classList.add("hide");
-
             }, 700);
-
         });
 
 
@@ -2137,11 +2091,8 @@
 
 
         function openMenu() {
-
             navLinks.classList.add("active");
-
             menuOverlay.classList.add("active");
-
             menuToggle.classList.add("active");
 
             menuToggle.setAttribute(
@@ -2154,17 +2105,18 @@
                 "Close navigation menu"
             );
 
-            document.body.classList.add("menu-open");
+            menuOverlay.setAttribute(
+                "aria-hidden",
+                "false"
+            );
 
+            document.body.classList.add("menu-open");
         }
 
 
         function closeMenu() {
-
             navLinks.classList.remove("active");
-
             menuOverlay.classList.remove("active");
-
             menuToggle.classList.remove("active");
 
             menuToggle.setAttribute(
@@ -2177,27 +2129,25 @@
                 "Open navigation menu"
             );
 
-            document.body.classList.remove("menu-open");
+            menuOverlay.setAttribute(
+                "aria-hidden",
+                "true"
+            );
 
+            document.body.classList.remove("menu-open");
         }
 
 
         menuToggle.addEventListener(
             "click",
             function () {
-
                 if (
                     navLinks.classList.contains("active")
                 ) {
-
                     closeMenu();
-
                 } else {
-
                     openMenu();
-
                 }
-
             }
         );
 
@@ -2211,12 +2161,10 @@
         document
             .querySelectorAll(".nav-links a")
             .forEach(function (link) {
-
                 link.addEventListener(
                     "click",
                     closeMenu
                 );
-
             });
 
 
@@ -2227,13 +2175,9 @@
         document.addEventListener(
             "keydown",
             function (event) {
-
                 if (event.key === "Escape") {
-
                     closeMenu();
-
                 }
-
             }
         );
 
@@ -2255,13 +2199,11 @@
 
                 event.preventDefault();
 
-
                 const name =
                     document
                         .getElementById("name")
                         .value
                         .trim();
-
 
                 const email =
                     document
@@ -2269,13 +2211,11 @@
                         .value
                         .trim();
 
-
                 const phone =
                     document
                         .getElementById("phone")
                         .value
                         .trim();
-
 
                 const message =
                     document
@@ -2290,13 +2230,11 @@
                     !phone ||
                     !message
                 ) {
-
                     alert(
                         "Please complete all the required fields."
                     );
 
                     return;
-
                 }
 
 
@@ -2305,7 +2243,7 @@
 
 
                 const whatsappMessage =
-                    `Hello Global College of Missiology,
+`Hello Global College of Missiology,
 
 My name is ${name}.
 
@@ -2343,16 +2281,9 @@ Thank you.`;
                     );
 
 
-                /*
-                    Fallback if the browser blocks
-                    opening a new tab.
-                */
-
                 if (!newWindow) {
-
                     window.location.href =
                         whatsappURL;
-
                 }
 
 
@@ -2364,7 +2295,6 @@ Thank you.`;
                     submitBtn.disabled = false;
 
                 }, 2000);
-
             }
         );
 
@@ -2382,13 +2312,9 @@ Thank you.`;
             function () {
 
                 if (window.scrollY > 450) {
-
                     backToTop.classList.add("show");
-
                 } else {
-
                     backToTop.classList.remove("show");
-
                 }
 
             }
@@ -2400,11 +2326,8 @@ Thank you.`;
             function () {
 
                 window.scrollTo({
-
                     top: 0,
-
                     behavior: "smooth"
-
                 });
 
             }
@@ -2419,46 +2342,55 @@ Thank you.`;
             document.querySelectorAll(".reveal");
 
 
-        const revealObserver =
-            new IntersectionObserver(
-                function (entries, observer) {
+        if ("IntersectionObserver" in window) {
 
-                    entries.forEach(
-                        function (entry) {
+            const revealObserver =
+                new IntersectionObserver(
+                    function (entries, observer) {
 
-                            if (
-                                entry.isIntersecting
-                            ) {
+                        entries.forEach(
+                            function (entry) {
 
-                                entry.target.classList.add(
-                                    "visible"
-                                );
+                                if (
+                                    entry.isIntersecting
+                                ) {
 
-                                observer.unobserve(
-                                    entry.target
-                                );
+                                    entry.target.classList.add(
+                                        "visible"
+                                    );
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+                                }
 
                             }
+                        );
 
-                        }
+                    },
+                    {
+                        threshold: 0.12
+                    }
+                );
+
+
+            revealElements.forEach(
+                function (element) {
+                    revealObserver.observe(
+                        element
                     );
-
-                },
-                {
-                    threshold: 0.12
                 }
             );
 
+        } else {
 
-        revealElements.forEach(
-            function (element) {
+            revealElements.forEach(
+                function (element) {
+                    element.classList.add("visible");
+                }
+            );
 
-                revealObserver.observe(
-                    element
-                );
-
-            }
-        );
+        }
 
 
         /* ==============================
@@ -2481,16 +2413,13 @@ Thank you.`;
             function () {
 
                 if (window.innerWidth > 850) {
-
                     closeMenu();
-
                 }
 
             }
         );
-
     </script>
 
 </body>
-
 </html>
+
