@@ -541,6 +541,49 @@
       text-transform: uppercase;
     }
 
+
+    /* STUDENT ORIENTATION */
+    .orientation {
+      background: radial-gradient(circle at center, rgba(201,162,75,.08), transparent 60%), var(--navy);
+    }
+
+    .orientation-video-wrap {
+      max-width: 1000px;
+      margin: 55px auto 0;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      padding: 10px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.3);
+    }
+
+    .orientation-video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      background: #000;
+      object-fit: contain;
+    }
+
+    .orientation-note {
+      max-width: 800px;
+      margin: 25px auto 0;
+      color: var(--muted);
+      font-size: 18px;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .orientation-video-wrap {
+        margin-top: 40px;
+        padding: 6px;
+      }
+
+      .orientation-note {
+        font-size: 17px;
+      }
+    }
+
     /* ABOUT */
     .about {
       background: linear-gradient(180deg, var(--navy-2), var(--navy));
@@ -1407,6 +1450,31 @@
 
         <div class="big-quote reveal">“Don't just answer the call. Prepare for the assignment.”</div>
         <p class="quote-tagline reveal">Global College of Missiology — Training. Equipping. Deploying.</p>
+      </div>
+    </section>
+
+    <!-- STUDENT ORIENTATION -->
+    <section class="orientation" id="orientation">
+      <div class="container">
+        <p class="eyebrow reveal">Student Orientation</p>
+        <h2 class="section-title reveal">Welcome to Global College of Missiology</h2>
+        <div class="divider reveal"><span></span><i>✦</i><span></span></div>
+        <p class="section-sub reveal">Before beginning your journey with Global College of Missiology, take a moment to watch our student orientation video.</p>
+
+        <div class="orientation-video-wrap reveal">
+          <video
+            class="orientation-video"
+            controls
+            preload="metadata"
+            playsinline
+            aria-label="Global College of Missiology Student Orientation Video"
+          >
+            <source src="/Stage 1/img/orientation-video.mp4/orientation-video.mp4.mp4" type="video/mp4">
+            Your browser does not support the video player. Please use a modern browser to watch the orientation video.
+          </video>
+        </div>
+
+        <p class="orientation-note reveal">Watch this short orientation to learn more about your journey as a student of Global College of Missiology.</p>
       </div>
     </section>
 
