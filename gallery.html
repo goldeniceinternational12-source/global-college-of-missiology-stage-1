@@ -2414,7 +2414,48 @@
 
         }
 
-    </style>
+
+/* 2026 STUDENT WEEK GALLERY */
+.student-week-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.student-week-card {
+    overflow: hidden;
+    border: 1px solid rgba(201, 162, 75, 0.3);
+    border-radius: 16px;
+    background: rgba(10, 16, 36, 0.04);
+}
+
+.student-week-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.student-week-caption {
+    padding: 13px 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+@media (max-width: 760px) {
+    .student-week-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .student-week-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 
 </head>
 
@@ -3230,6 +3271,53 @@
              CTA
         ================================================== -->
 
+        <!-- 2026 STUDENT WEEK GALLERY -->
+        <section class="section student-week-section" id="student-week-2026" aria-labelledby="student-week-2026-title">
+            <div class="section-heading reveal">
+                <div class="section-kicker">Student Life</div>
+                <h2 id="student-week-2026-title">2026 Student Week</h2>
+                <p>Special moments, activities and fellowship from GCM Student Week 2026.</p>
+            </div>
+
+            <div class="student-week-grid">
+                <div class="student-week-card reveal" data-lightbox role="button" tabindex="0" aria-label="View Student Week photo 1">
+                    <img src="./img/student-week-2026-1.jpg.jpeg" alt="GCM 2026 Student Week photo 1" loading="lazy" decoding="async">
+                    <div class="student-week-caption">Student Week 2026</div>
+                </div>
+                <div class="student-week-card reveal" data-lightbox role="button" tabindex="0" aria-label="View Student Week photo 2">
+                    <img src="./img/student-week-2026-2.jpg.jpeg" alt="GCM 2026 Student Week photo 2" loading="lazy" decoding="async">
+                    <div class="student-week-caption">Student Week 2026</div>
+                </div>
+                <div class="student-week-card reveal" data-lightbox role="button" tabindex="0" aria-label="View Student Week photo 3">
+                    <img src="./img/student-week-2026-3.jpg.jpeg" alt="GCM 2026 Student Week photo 3" loading="lazy" decoding="async">
+                    <div class="student-week-caption">Student Week 2026</div>
+                </div>
+                <div class="student-week-card reveal" data-lightbox role="button" tabindex="0" aria-label="View Student Week photo 4">
+                    <img src="./img/student-week-2026-4.jpg.jpeg" alt="GCM 2026 Student Week photo 4" loading="lazy" decoding="async">
+                    <div class="student-week-caption">Student Week 2026</div>
+                </div>
+                <div class="student-week-card reveal" data-lightbox role="button" tabindex="0" aria-label="View Student Week photo 5">
+                    <img src="./img/student-week-2026-5.jpg.jpeg" alt="GCM 2026 Student Week photo 5" loading="lazy" decoding="async">
+                    <div class="student-week-caption">Student Week 2026</div>
+                </div>
+                <div class="student-week-card reveal" data-lightbox role="button" tabindex="0" aria-label="View Student Week photo 6">
+                    <img src="./img/student-week-2026-6.jpg.jpeg" alt="GCM 2026 Student Week photo 6" loading="lazy" decoding="async">
+                    <div class="student-week-caption">Student Week 2026</div>
+                </div>
+                <div class="student-week-card reveal" data-lightbox role="button" tabindex="0" aria-label="View Student Week photo 7">
+                    <img src="./img/student-week-2026-7.jpg.jpeg" alt="GCM 2026 Student Week photo 7" loading="lazy" decoding="async">
+                    <div class="student-week-caption">Student Week 2026</div>
+                </div>
+                <div class="student-week-card reveal" data-lightbox role="button" tabindex="0" aria-label="View Student Week photo 8">
+                    <img src="./img/student-week-2026-8.jpg.jpeg" alt="GCM 2026 Student Week photo 8" loading="lazy" decoding="async">
+                    <div class="student-week-caption">Student Week 2026</div>
+                </div>
+                <div class="student-week-card reveal" data-lightbox role="button" tabindex="0" aria-label="View Student Week photo 9">
+                    <img src="./img/student-week-2026-9.jpg.jpeg" alt="GCM 2026 Student Week photo 9" loading="lazy" decoding="async">
+                    <div class="student-week-caption">Student Week 2026</div>
+                </div>
+            </div>
+        </section>
         <section
             class="gallery-cta reveal"
             aria-labelledby="gallery-cta-title"
